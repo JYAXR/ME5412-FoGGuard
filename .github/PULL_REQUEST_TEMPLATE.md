@@ -1,14 +1,14 @@
-## What changed
+## 修改内容
 
-Describe the smallest useful change and link its Issue (`Closes #...`).
+简要说明本次最小且有用的修改，并关联 Issue（`Closes #...`）。
 
-## Evidence
+## 验证证据
 
-- [ ] Tests or manual checks pass
-- [ ] Interface/docs updated if a contract changed
-- [ ] No participant-identifiable data or secrets added
-- [ ] Screenshot or metric included when relevant
+- [ ] 自动测试或人工检查通过
+- [ ] 如修改接口，已同步更新接口文档
+- [ ] 未加入可识别参与者身份的数据或密钥
+- [ ] 适用时已附截图或指标
 
-## Reviewer focus
+## 审查重点
 
-Call out the module boundary, safety behavior, or trade-off that deserves attention.
+指出需要重点关注的模块边界、安全行为或设计取舍。

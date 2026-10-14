@@ -1,49 +1,49 @@
-# Five roles and three-week roadmap
+# 五人分工与三周路线图
 
-## Role responsibilities
+## 角色与责任
 
-| Role | Primary responsibility | Concrete outputs | Backup/reviewer |
+| 角色 | 主要责任 | 明确交付物 | 互审/备份 |
 |---|---|---|---|
-| Robotics 1 — Data & FoG | canonical data, replay, FoG baseline | loader, windowing, FoG score, dataset notes | Automation 2 |
-| Robotics 2 — Turning & integration | turning intent and pipeline integration | turn baseline, orchestrated replay, integration fixes | Automation 1 |
-| Automation 1 — Cueing & safety | adaptive control logic | state machine, refractory logic, fail-safe tests | Robotics 2 |
-| Automation 2 — Evaluation & QA | experiments and reproducibility | metrics, labelled scenarios, regression tests, final tables | Robotics 1 |
-| Industrial Design — UX & storytelling | safe understandable demo | Streamlit flow, cue visualization, usability test, presentation assets | whole team |
+| 机器人 1——数据与 FoG | 标准数据、回放、FoG 基线 | 加载器、窗口切分、FoG 评分、数据说明 | 自动化 2 |
+| 机器人 2——转向与集成 | 转向意图和整条流程集成 | 转向基线、编排回放、集成修复 | 自动化 1 |
+| 自动化 1——提示与安全 | 自适应控制逻辑 | 状态机、不应期逻辑、故障安全测试 | 机器人 2 |
+| 自动化 2——评估与质量 | 实验与可复现性 | 指标、标注场景、回归测试、最终表格 | 机器人 1 |
+| 工业设计——体验与表达 | 安全且易理解的演示 | Streamlit 流程、提示可视化、可用性测试、展示素材 | 全组 |
 
-Every role also reviews one other role's pull request. The project coordinator can be any member; coordination does not replace a technical role.
+每位成员还要审查另一角色的 Pull Request。项目协调人可以由任何成员兼任，但协调工作不能替代其技术职责。
 
-## Week 1 — contracts and vertical slice
+## 第 1 周——冻结接口，打通纵向流程
 
-Goal: one synthetic file passes through the complete pipeline.
+目标：让一个合成数据文件通过完整流程。
 
-- Freeze `SensorWindow`, result, context, and cue contracts.
-- Generate canonical synthetic data and validate the loader.
-- Implement explainable FoG and turn baselines.
-- Implement the cueing policy and a one-page Streamlit shell.
-- Establish metrics, tests, branch rules, and the task board.
+- 确定 `SensorWindow`、检测结果、控制上下文和提示命令接口。
+- 生成标准合成数据并验证加载器。
+- 实现可解释的 FoG 和转向意图基线。
+- 实现提示策略和单页 Streamlit 外壳。
+- 建立指标、测试、分支规则和任务板。
 
-Exit check: a fresh clone can generate data, run tests, and show one end-to-end replay.
+周末验收：全新克隆后能够生成数据、运行测试并展示一次端到端回放。
 
-## Week 2 — evidence and user experience
+## 第 2 周——积累证据，完善体验
 
-Goal: credible behavior on representative scenarios.
+目标：在代表性场景中获得可信结果。
 
-- Add at least three scenarios: normal walking, straight-walk FoG, turning FoG.
-- Tune thresholds only on a documented development split.
-- Measure precision, recall, F1, turn accuracy, false cues/minute, and cue latency.
-- Improve controller state/refractory behavior and surface its reason in the UI.
-- Conduct a five-person heuristic/usability walkthrough and record changes.
+- 增加至少三种场景：正常行走、直行 FoG、转向 FoG。
+- 只在有记录的开发集上调整阈值。
+- 测量精确率、召回率、F1、转向准确率、每分钟误提示数和提示延迟。
+- 改善控制器状态与不应期行为，并在 UI 中显示决策原因。
+- 进行一次五人启发式/可用性走查并记录修改。
 
-Exit check: results are reproducible and the team can explain one failure case per module.
+周末验收：结果可复现，且每个模块至少能解释一个失败案例。
 
-## Week 3 — freeze, validate, present
+## 第 3 周——冻结、验证与展示
 
-Goal: a reliable five-minute demonstration and honest engineering report.
+目标：完成可靠的五分钟演示和诚实的工程报告。
 
-- Freeze interfaces and features by midweek.
-- Run the final evaluation and archive config/results.
-- Add failure-safe, missing-data, and boundary tests.
-- Rehearse demo recovery using the synthetic dataset.
-- Finish architecture figure, limitations, ethics/safety statement, slides, and demo video backup.
+- 周中前冻结接口和功能。
+- 运行最终评估并保存配置与结果。
+- 增加故障安全、缺失数据和边界条件测试。
+- 使用合成数据排练演示恢复流程。
+- 完成架构图、局限性、伦理/安全声明、幻灯片和备用演示视频。
 
-Exit check: tagged demo build, final metrics table, presentation, and clear limitations.
+最终验收：带标签的演示版本、最终指标表、展示材料和清晰的局限性说明。

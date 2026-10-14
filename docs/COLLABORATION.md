@@ -1,26 +1,26 @@
-# Lightweight GitHub collaboration
+# 轻量级 GitHub 协作方式
 
-## Branch and review
+## 分支与审查
 
-- Protect `main` socially during the three-week sprint: no direct feature work on it.
-- Branch names: `feat/<short-topic>`, `fix/<short-topic>`, or `docs/<short-topic>`.
-- One Issue per deliverable and one primary owner. Pairing is encouraged; ownership stays clear.
-- Pull requests should be reviewable in about 15 minutes and include evidence: test output, metric table, or UI screenshot.
-- One approval is enough. The reviewer checks interfaces, safety fallback, and reproducibility.
+- 三周冲刺期间不要直接在 `main` 上开发功能。
+- 分支命名使用 `feat/<简短主题>`、`fix/<简短主题>` 或 `docs/<简短主题>`。
+- 每个交付物对应一个 Issue 和一位主要负责人；可以结对，但责任归属要清晰。
+- Pull Request 应控制在约 15 分钟内可以完成审查，并附上测试输出、指标表或 UI 截图。
+- 一位组员批准即可合并；审查重点是接口、安全降级和可复现性。
 
-## Daily rhythm
+## 每日节奏
 
-- 10-minute stand-up: yesterday, today, blocker.
-- Update the task board after stand-up.
-- Integrate to `main` at least every second day.
-- Friday checkpoint: run the complete replay and record metrics, even if imperfect.
+- 10 分钟站会：昨天完成、今天计划、当前阻塞。
+- 站会结束后更新任务板。
+- 至少每两天向 `main` 集成一次。
+- 每周五运行完整回放并记录指标，即使结果还不完美。
 
-## Definition of done
+## 完成定义
 
-A task is done only when code/docs are pushed, the acceptance checks in its Issue pass, and downstream owners can use it without private instructions.
+只有当代码或文档已推送、Issue 中的验收项全部通过，并且下游负责人无需口头补充即可使用时，任务才算完成。
 
-## Suggested board columns
+## 建议看板列
 
 `Backlog` → `Ready` → `In progress` → `Review` → `Done`
 
-Keep no more than one in-progress item per person. Use labels `week-1`, `week-2`, `week-3`, `integration`, and `design` for quick filtering.
+每人同时进行的任务不超过一个。使用 `week-1`、`week-2`、`week-3`、`integration` 和 `design` 等标签快速筛选。

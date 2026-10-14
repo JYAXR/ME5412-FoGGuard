@@ -1,27 +1,27 @@
-# Architecture and interface rules
+# 系统架构与接口规则
 
-## Data flow
+## 数据流
 
-`WindowReplay` emits immutable `SensorWindow` objects. The FoG and turning modules consume the same window independently. Their results are joined into `ControllerContext`; the cueing controller returns one `CueCommand`. The UI displays outputs but does not own detection or control logic. Evaluation calls the same modules used by the UI.
+`WindowReplay` 输出不可变的 `SensorWindow` 对象。FoG 检测模块和转向意图模块独立处理同一个窗口，它们的结果合并为 `ControllerContext`，随后提示控制器返回一个 `CueCommand`。UI 只负责展示结果，不包含检测或控制逻辑；评估模块调用与 UI 完全相同的算法模块。
 
-## Boundary rules
+## 模块边界规则
 
-- Shared contracts live only in `types.py` and `interfaces.py`.
-- Every probability/confidence is in `[0, 1]`; timestamps and durations are seconds.
-- Accelerometer input uses m/s²; gyroscope input uses degrees/s; axes are x, y, z.
-- A model must be deterministic for identical input/configuration.
-- Missing, stale, or low-confidence input must produce `CueType.NONE`.
-- Models may add evidence fields but may not rename shared fields without an interface issue.
+- 共享数据契约只定义在 `types.py` 和 `interfaces.py`。
+- 所有概率和置信度都在 `[0, 1]`；时间戳和持续时间统一使用秒。
+- 加速度单位为 m/s²，角速度单位为 deg/s，轴顺序固定为 x、y、z。
+- 对相同输入和配置，模型必须给出确定且可复现的结果。
+- 输入缺失、过期或置信度不足时，必须输出 `CueType.NONE`。
+- 模型可以增加 evidence 字段，但不得在没有接口 Issue 的情况下重命名共享字段。
 
-## MVP integration sequence
+## MVP 集成顺序
 
-1. Load and validate canonical CSV.
-2. Produce overlapping two-second windows every 0.5 seconds.
-3. Run FoG and turn baselines on every window.
-4. Join predictions and run the cueing policy.
-5. Render probability, intent, and cue timelines.
-6. Compare predicted and labelled windows using the evaluation module.
+1. 加载并校验标准 CSV。
+2. 每 0.5 秒生成一个长度为 2 秒的重叠窗口。
+3. 对每个窗口运行 FoG 和转向意图基线。
+4. 合并预测结果并运行提示策略。
+5. 绘制概率、转向意图和提示时间线。
+6. 使用评估模块比较预测窗口与标注窗口。
 
-## Deferred beyond three weeks
+## 三周内明确不做
 
-Live hardware streaming, deep learning deployment, mobile apps, personalized clinical tuning, closed-loop actuation, and human-subject validation are explicitly out of scope.
+实时硬件数据流、深度学习部署、移动端应用、个性化临床调参、闭环物理执行和人体参与者验证均不属于本次三周项目范围。

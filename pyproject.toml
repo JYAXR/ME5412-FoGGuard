@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "me5412-fogguard"
 version = "0.1.0"
-description = "Offline FoG detection, turning-intent, and adaptive cueing prototype"
+description = "离线冻结步态检测、转向意图识别与自适应提示原型"
 requires-python = ">=3.10"
 
 [tool.setuptools.packages.find]

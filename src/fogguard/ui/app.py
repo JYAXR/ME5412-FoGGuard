@@ -13,14 +13,14 @@ from fogguard.turning import YawRateTurnRecognizer
 from fogguard.types import ControllerContext
 
 st.set_page_config(page_title="FoGGuard", page_icon="🚶", layout="wide")
-st.title("FoGGuard — offline gait replay")
-st.caption("Coursework prototype only; not for diagnosis or clinical use.")
+st.title("FoGGuard——离线步态回放")
+st.caption("仅用于课程项目，不用于诊断或临床使用。")
 
 default_path = Path("data/demo/synthetic_gait.csv")
-path_text = st.sidebar.text_input("Replay CSV", str(default_path))
-fog_threshold = st.sidebar.slider("FoG threshold", 0.0, 1.0, 0.60, 0.05)
+path_text = st.sidebar.text_input("回放 CSV", str(default_path))
+fog_threshold = st.sidebar.slider("FoG 阈值", 0.0, 1.0, 0.60, 0.05)
 
-if st.sidebar.button("Run replay", type="primary"):
+if st.sidebar.button("开始回放", type="primary"):
     try:
         frame = load_csv(path_text)
         replay = WindowReplay(frame)
@@ -44,6 +44,6 @@ if st.sidebar.button("Run replay", type="primary"):
         st.plotly_chart(px.line(result, x="time_s", y="fog_probability"), use_container_width=True)
         st.dataframe(result, use_container_width=True, hide_index=True)
     except Exception as exc:  # Keep the demo failure visible to the team.
-        st.error(f"Replay failed: {exc}")
+        st.error(f"回放失败：{exc}")
 else:
-    st.info("Generate demo data, then choose Run replay.")
+    st.info("请先生成演示数据，再点击“开始回放”。")

@@ -1,19 +1,19 @@
-name: Project task
-description: A scoped three-week sprint deliverable
-title: "[TASK] "
+name: 项目任务
+description: 一个范围清晰的三周冲刺交付物
+title: "[任务] "
 labels: []
 body:
   - type: textarea
     id: outcome
     attributes:
-      label: Outcome
-      description: State the observable result, not just the activity.
+      label: 预期结果
+      description: 描述可观察的结果，而不只是要做的活动。
     validations:
       required: true
   - type: textarea
     id: acceptance
     attributes:
-      label: Acceptance checks
+      label: 验收项
       value: |
         - [ ]
         - [ ]
@@ -22,15 +22,15 @@ body:
   - type: dropdown
     id: week
     attributes:
-      label: Target week
+      label: 目标周次
       options:
-        - Week 1
-        - Week 2
-        - Week 3
+        - 第 1 周
+        - 第 2 周
+        - 第 3 周
     validations:
       required: true
   - type: textarea
     id: interfaces
     attributes:
-      label: Interfaces or dependencies
-      description: List upstream inputs and downstream consumers.
+      label: 接口或依赖
+      description: 列出上游输入和下游使用方。
