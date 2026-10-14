@@ -43,3 +43,31 @@ def test_written_scenarios_load_and_replay(tmp_path: Path) -> None:
         assert len(windows) == 57
         assert windows[0].accel_mps2.shape == (100, 3)
         assert windows[0].gyro_dps.shape == (100, 3)
+
+
+def test_replay_aligns_sample_labels_to_fog_windows() -> None:
+    windows = list(WindowReplay(build_scenario("straight_fog")).windows())
+    positive_windows = [window for window in windows if window.metadata["fog_label"] == "1"]
+
+    assert len(positive_windows) == 11
+    assert windows[0].metadata == {"fog_fraction": "0.000000", "fog_label": "0"}
+    assert max(float(window.metadata["fog_fraction"]) for window in windows) == 1.0
+
+
+def test_replay_accepts_unlabelled_data() -> None:
+    frame = build_scenario("normal").drop(columns="fog_label")
+
+    first_window = next(WindowReplay(frame).windows())
+
+    assert "fog_label" not in first_window.metadata
+    assert "fog_fraction" not in first_window.metadata
+
+
+def test_load_csv_rejects_invalid_fog_labels(tmp_path: Path) -> None:
+    frame = build_scenario("normal")
+    frame.loc[0, "fog_label"] = 2
+    path = tmp_path / "invalid.csv"
+    frame.to_csv(path, index=False)
+
+    with pytest.raises(ValueError, match="fog_label must contain only 0 or 1"):
+        load_csv(path)
