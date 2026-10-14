@@ -18,4 +18,6 @@ def load_csv(path: str | Path) -> pd.DataFrame:
         raise ValueError(f"Dataset is missing required columns: {missing}")
     if not frame["timestamp_s"].is_monotonic_increasing:
         raise ValueError("timestamp_s must be monotonically increasing")
+    if "fog_label" in frame.columns and not frame["fog_label"].isin((0, 1)).all():
+        raise ValueError("fog_label must contain only 0 or 1")
     return frame
