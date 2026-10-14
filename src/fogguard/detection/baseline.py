@@ -24,5 +24,9 @@ class FreezeIndexDetector:
             probability=probability,
             is_fog=probability >= self.threshold,
             model_name="freeze-index-baseline",
-            evidence={"freeze_index": freeze_index},
+            evidence={
+                "freeze_index": freeze_index,
+                "locomotor_power": locomotor,
+                "freeze_power": freeze,
+            },
         )
