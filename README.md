@@ -30,6 +30,15 @@ streamlit run src/fogguard/ui/app.py
 
 使用 `python scripts/generate_demo_data.py` 生成小型演示数据；使用 `pytest` 和 `ruff check .` 进行检查。
 
+生成数据后，可以重复运行 FoG 基线评估：
+
+```bash
+python scripts/evaluate_fog_baseline.py
+python scripts/evaluate_fog_baseline.py --threshold 0.35
+```
+
+命令会按场景输出窗口数量、真实/预测 FoG 窗口数，以及 accuracy、precision、recall 和 F1。合成场景结果只用于检查工程管线，不代表临床性能。
+
 ## 仓库结构与负责人
 
 | 路径 | 主要角色 | 用途 |
