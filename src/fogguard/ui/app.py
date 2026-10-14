@@ -18,7 +18,9 @@ st.caption("仅用于课程项目，不用于诊断或临床使用。")
 
 default_path = Path("data/demo/synthetic_gait.csv")
 path_text = st.sidebar.text_input("回放 CSV", str(default_path))
-fog_threshold = st.sidebar.slider("FoG 阈值", 0.0, 1.0, 0.60, 0.05)
+fog_threshold = st.sidebar.slider(
+    "FoG 阈值", 0.0, 1.0, FreezeIndexDetector().threshold, 0.01
+)
 
 if st.sidebar.button("开始回放", type="primary"):
     try:
@@ -43,7 +45,7 @@ if st.sidebar.button("开始回放", type="primary"):
         result = pd.DataFrame(rows)
         st.plotly_chart(px.line(result, x="time_s", y="fog_probability"), use_container_width=True)
         st.dataframe(result, use_container_width=True, hide_index=True)
-    except Exception as exc:  # Keep the demo failure visible to the team.
+    except Exception as exc:  # noqa: BLE001 - final UI boundary reports demo failures.
         st.error(f"回放失败：{exc}")
 else:
     st.info("请先生成演示数据，再点击“开始回放”。")

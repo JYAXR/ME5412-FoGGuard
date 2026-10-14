@@ -4,7 +4,7 @@ data:
   step_seconds: 0.5
 
 detection:
-  fog_threshold: 0.60
+  fog_threshold: 0.21
 
 turning:
   yaw_rate_threshold_dps: 20.0

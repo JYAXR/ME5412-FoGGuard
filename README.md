@@ -34,10 +34,10 @@ streamlit run src/fogguard/ui/app.py
 
 ```bash
 python scripts/evaluate_fog_baseline.py
-python scripts/evaluate_fog_baseline.py --threshold 0.35
+python scripts/calibrate_fog_threshold.py
 ```
 
-命令会按场景输出窗口数量、真实/预测 FoG 窗口数，以及 accuracy、precision、recall 和 F1。合成场景结果只用于检查工程管线，不代表临床性能。
+评估命令会按场景输出窗口数量、真实/预测 FoG 窗口数，以及 accuracy、precision、recall 和 F1。标定命令会用预先声明的规则选择阈值，并将本地报告写入 `reports/fog_threshold_calibration.json`。当前合成场景标定得到 `0.21`；它只用于检查工程管线，不代表临床性能。
 
 ## 仓库结构与负责人
 

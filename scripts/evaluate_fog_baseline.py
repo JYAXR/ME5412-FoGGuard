@@ -24,7 +24,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--threshold",
         type=float,
-        default=0.60,
+        default=FreezeIndexDetector().threshold,
         help="FoG probability threshold used by FreezeIndexDetector",
     )
     return parser.parse_args()

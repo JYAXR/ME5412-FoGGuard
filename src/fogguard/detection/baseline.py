@@ -9,7 +9,7 @@ from fogguard.types import DetectionResult, SensorWindow
 
 @dataclass
 class FreezeIndexDetector:
-    threshold: float = 0.60
+    threshold: float = 0.21
 
     def predict(self, window: SensorWindow) -> DetectionResult:
         window.validate()
