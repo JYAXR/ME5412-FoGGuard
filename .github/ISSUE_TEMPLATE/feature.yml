@@ -1,0 +1,36 @@
+name: Project task
+description: A scoped three-week sprint deliverable
+title: "[TASK] "
+labels: []
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: State the observable result, not just the activity.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance checks
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: dropdown
+    id: week
+    attributes:
+      label: Target week
+      options:
+        - Week 1
+        - Week 2
+        - Week 3
+    validations:
+      required: true
+  - type: textarea
+    id: interfaces
+    attributes:
+      label: Interfaces or dependencies
+      description: List upstream inputs and downstream consumers.

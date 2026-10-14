@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environments and secrets
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Private or generated data
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+artifacts/
+reports/*.csv
+reports/*.json
+
+# Streamlit
+.streamlit/secrets.toml
