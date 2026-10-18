@@ -9,6 +9,15 @@ import pandas as pd
 from fogguard.data.dataset import validate_frame
 from fogguard.types import SensorWindow
 
+PROVENANCE_COLUMNS = (
+    "subject_id",
+    "recording_id",
+    "sensor_position",
+    "source_dataset",
+    "source_license",
+    "gyro_available",
+)
+
 
 @dataclass
 class WindowReplay:
@@ -65,6 +74,10 @@ class WindowReplay:
                 metadata["scenario_id"] = (
                     scenario_ids[0] if len(scenario_ids) == 1 else "mixed"
                 )
+            for column in PROVENANCE_COLUMNS:
+                if column in chunk.columns:
+                    values = chunk[column].astype(str).unique()
+                    metadata[column] = values[0] if len(values) == 1 else "mixed"
             window = SensorWindow(
                 timestamp_s=chunk["timestamp_s"].to_numpy(dtype=float),
                 accel_mps2=chunk[["ax", "ay", "az"]].to_numpy(dtype=float),

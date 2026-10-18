@@ -25,3 +25,13 @@ def test_evaluate_fog_detector_requires_window_labels() -> None:
 
     with pytest.raises(ValueError, match="requires every window"):
         evaluate_fog_detector(WindowReplay(frame), FreezeIndexDetector())
+
+
+def test_evaluation_reports_specificity_and_balanced_accuracy() -> None:
+    report = evaluate_fog_detector(
+        WindowReplay(build_scenario("normal")),
+        FreezeIndexDetector(threshold=0.35),
+    )
+
+    assert report["specificity"] == pytest.approx(1.0)
+    assert report["balanced_accuracy"] == pytest.approx(0.5)
