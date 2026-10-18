@@ -13,6 +13,8 @@ class YawRateTurnRecognizer:
 
     def predict(self, window: SensorWindow) -> TurnIntent:
         window.validate()
+        if window.metadata.get("gyro_available", "true").lower() != "true":
+            raise ValueError("Turning recognition requires measured gyroscope data")
         mean_yaw = float(np.mean(window.gyro_dps[:, 2]))
         magnitude = abs(mean_yaw)
         if magnitude < self.threshold_dps:
