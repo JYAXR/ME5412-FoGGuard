@@ -1,6 +1,7 @@
 """Protocols that allow each sub-team to work against stable boundaries."""
 
-from typing import Iterable, Protocol
+from collections.abc import Iterable
+from typing import Protocol
 
 from fogguard.types import (
     ControllerContext,
