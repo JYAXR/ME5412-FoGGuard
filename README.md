@@ -76,16 +76,19 @@ pip install -e .
 streamlit run src/fogguard/ui/app.py
 ```
 
-使用 `python scripts/generate_demo_data.py` 生成小型演示数据；使用 `pytest` 和 `ruff check .` 进行检查。
+使用 `python scripts/generate_demo_data.py` 生成小型演示数据；使用 `python scripts/generate_simulated_responses.py` 生成明确标注的 P1 模拟响应；使用 `pytest` 和 `ruff check .` 进行检查。
 
 生成数据后，可以重复运行 FoG 基线评估：
 
 ```bash
 python scripts/evaluate_fog_baseline.py
 python scripts/calibrate_fog_threshold.py
+python scripts/evaluate_fog_events.py
 ```
 
 评估命令会按场景输出窗口数量、真实/预测 FoG 窗口数，以及 accuracy、precision、recall 和 F1。标定命令会用预先声明的规则选择阈值，并将本地报告写入 `reports/fog_threshold_calibration.json`。当前合成场景标定得到 `0.21`；它只用于检查工程管线，不代表临床性能。标定记录中的 F1＝1.00 表示这些合成数据上的窗口分类没有误报或漏报，不能解读为真实患者检测准确率达到 100%。开发与留出场景来自同一生成器，详见[阈值标定记录](docs/FOG_THRESHOLD_CALIBRATION.md)。
+
+机器人 1 的扩展场景、事件级证据、已知失败案例及交接方式见[数据与 FoG 交接说明](docs/ROBOT1_HANDOFF.md)。
 
 ## 仓库结构与负责人
 

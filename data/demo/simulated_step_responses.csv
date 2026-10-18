@@ -1,0 +1,8 @@
+scenario_id,timestamp_s,foot,forward_m,lateral_m,response_status,delay_s,reliability,source
+response_success,12.5,left,0.32,0.1,success,0.0,1.0,simulated
+response_success,13.2,right,0.34,-0.1,success,0.0,1.0,simulated
+response_delayed,14.0,left,0.28,0.09,delayed,1.5,0.9,simulated
+response_delayed,14.8,right,0.3,-0.09,success,0.0,0.9,simulated
+response_unable,12.5,none,,,unable,,1.0,simulated
+response_none,12.5,none,,,no_response,,1.0,simulated
+response_missing,12.5,none,,,missing_input,,0.0,simulated
