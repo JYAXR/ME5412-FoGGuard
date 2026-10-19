@@ -30,11 +30,34 @@ def test_core_scenarios_reach_the_shared_pipeline(
     assert forbidden_turn not in set(result["turn"])
 
 
-def test_voluntary_stop_is_not_misclassified_as_turning() -> None:
-    result = replay_frame(build_scenario("voluntary_stop"))
+def test_voluntary_stop_is_recognized_and_suppresses_fog_cues() -> None:
+    result = replay_frame(
+        build_scenario("voluntary_stop"),
+        controller=AdaptiveCueingController(min_confidence=0.21),
+    )
 
     assert set(result["turn"]) == {"straight"}
     assert set(result["truth_turn_label"]) == {"straight"}
+    stationary = result[result["motion_state"] == "stationary"]
+    assert len(stationary) == 7
+    assert stationary["fog_detected"].all()
+    assert stationary["fog_suppressed"].all()
+    assert not result["effective_fog_detected"].any()
+    assert result["effective_fog_matches_truth"].all()
+    assert set(result["cue"]) == {"none"}
+    assert set(stationary["cue_reason"]) == {"Stationary state suppresses FoG cue"}
+
+
+def test_stationary_suppression_does_not_hide_straight_fog() -> None:
+    result = replay_frame(
+        build_scenario("straight_fog"),
+        controller=AdaptiveCueingController(min_confidence=0.21),
+    )
+
+    assert set(result["motion_state"]) == {"walking"}
+    assert not result["fog_suppressed"].any()
+    assert result["effective_fog_detected"].sum() == 11
+    assert (result["cue"] != "none").any()
 
 
 def test_missing_gyroscope_safely_disables_cues() -> None:
@@ -59,6 +82,7 @@ def test_pipeline_exposes_ui_and_evaluation_contract() -> None:
     assert result["turn_confidence"].between(0.0, 1.0).all()
     assert set(result["truth_fog_label"]) <= {"0", "1"}
     assert result["fog_matches_truth"].dtype == bool
+    assert result["effective_fog_matches_truth"].dtype == bool
     assert result["turn_matches_truth"].dtype == bool
 
 

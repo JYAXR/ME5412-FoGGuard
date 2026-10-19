@@ -10,6 +10,10 @@ turning:
   yaw_rate_threshold_dps: 20.0
   uncertainty_margin: 0.10
 
+motion:
+  stationary_rms_threshold_mps2: 0.15
+  uncertainty_margin: 0.10
+
 cueing:
   min_confidence: 0.60
   refractory_seconds: 3.0

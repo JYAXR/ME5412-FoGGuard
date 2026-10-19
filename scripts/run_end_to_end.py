@@ -9,6 +9,7 @@ import pandas as pd
 
 from fogguard.cueing import AdaptiveCueingController
 from fogguard.detection import FreezeIndexDetector
+from fogguard.motion import AccelerationMotionRecognizer
 from fogguard.pipeline import replay_csv
 from fogguard.turning import YawRateTurnRecognizer
 
@@ -29,6 +30,7 @@ def run_scenarios(
     fog_threshold: float = 0.21,
     turn_threshold_dps: float = 20.0,
     turn_uncertainty_margin: float = 0.10,
+    stationary_rms_threshold_mps2: float = 0.15,
     cue_threshold: float | None = None,
 ) -> pd.DataFrame:
     """Return one machine-readable table for all requested scenarios."""
@@ -38,6 +40,9 @@ def run_scenarios(
         result = replay_csv(
             path,
             detector=FreezeIndexDetector(threshold=fog_threshold),
+            motion_recognizer=AccelerationMotionRecognizer(
+                stationary_rms_threshold_mps2=stationary_rms_threshold_mps2
+            ),
             turner=YawRateTurnRecognizer(
                 threshold_dps=turn_threshold_dps,
                 uncertainty_margin=turn_uncertainty_margin,
@@ -65,6 +70,7 @@ def main() -> None:
     parser.add_argument("--fog-threshold", type=float, default=0.21)
     parser.add_argument("--turn-threshold-dps", type=float, default=20.0)
     parser.add_argument("--turn-uncertainty-margin", type=float, default=0.10)
+    parser.add_argument("--stationary-rms-threshold-mps2", type=float, default=0.15)
     parser.add_argument(
         "--cue-threshold",
         type=float,
@@ -78,6 +84,7 @@ def main() -> None:
         fog_threshold=args.fog_threshold,
         turn_threshold_dps=args.turn_threshold_dps,
         turn_uncertainty_margin=args.turn_uncertainty_margin,
+        stationary_rms_threshold_mps2=args.stationary_rms_threshold_mps2,
         cue_threshold=args.cue_threshold,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -85,7 +92,9 @@ def main() -> None:
 
     summary = result.groupby("scenario_id", sort=False).agg(
         windows=("window_end_s", "size"),
-        fog_windows=("fog_detected", "sum"),
+        raw_fog_windows=("fog_detected", "sum"),
+        suppressed_fog_windows=("fog_suppressed", "sum"),
+        effective_fog_windows=("effective_fog_detected", "sum"),
         cues=("cue", lambda values: int((values != "none").sum())),
     )
     print(summary.to_string())

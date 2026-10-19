@@ -7,6 +7,7 @@ from fogguard.types import (
     ControllerContext,
     CueCommand,
     DetectionResult,
+    MotionEstimate,
     SensorWindow,
     TurnIntent,
 )
@@ -22,6 +23,10 @@ class FoGDetector(Protocol):
 
 class TurnIntentRecognizer(Protocol):
     def predict(self, window: SensorWindow) -> TurnIntent: ...
+
+
+class MotionStateRecognizer(Protocol):
+    def predict(self, window: SensorWindow) -> MotionEstimate: ...
 
 
 class CueingController(Protocol):

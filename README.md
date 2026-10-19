@@ -84,7 +84,7 @@ streamlit run src/fogguard/ui/app.py
 python scripts/run_end_to_end.py
 ```
 
-命令依次处理正常、直行 FoG、左右转 FoG、正常右转、主动停步和恢复场景，并将逐窗口结果写入 `reports/robot2_end_to_end.csv`。输出明确区分模型结果与评估真值，包含窗口时间、FoG 评分、转向方向/置信度/时间范围、提示及原因。无陀螺仪或阈值边界不可靠时转向输出 `unknown`，控制器安全降级为无提示。实现、字段和交接说明见[机器人 2 情境与集成交接](docs/ROBOT2_HANDOFF.md)。
+命令依次处理正常、直行 FoG、左右转 FoG、正常右转、主动停步和恢复场景，并将逐窗口结果写入 `reports/robot2_end_to_end.csv`。输出明确区分原始 FoG、静止抑制后的有效 FoG 与评估真值，包含窗口时间、运动状态、转向方向/置信度/时间范围、提示及原因。无陀螺仪或阈值边界不可靠时转向输出 `unknown`；检测到静止时保留原始 FoG 误报并抑制救援提示。实现、字段和交接说明见[机器人 2 情境与集成交接](docs/ROBOT2_HANDOFF.md)。
 
 生成数据后，可以重复运行 FoG 基线评估：
 
