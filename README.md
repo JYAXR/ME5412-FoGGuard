@@ -78,6 +78,14 @@ streamlit run src/fogguard/ui/app.py
 
 使用 `python scripts/generate_demo_data.py` 生成小型演示数据；使用 `python scripts/generate_simulated_responses.py` 生成明确标注的 P1 模拟响应；使用 `pytest` 和 `ruff check .` 进行检查。
 
+机器人 2 的 P0 端到端回放可用一条命令运行：
+
+```bash
+python scripts/run_end_to_end.py
+```
+
+命令依次处理正常、直行 FoG、左右转 FoG、正常右转、主动停步和恢复场景，并将逐窗口结果写入 `reports/robot2_end_to_end.csv`。输出明确区分模型结果与评估真值，包含窗口时间、FoG 评分、转向方向/置信度/时间范围、提示及原因。无陀螺仪或阈值边界不可靠时转向输出 `unknown`，控制器安全降级为无提示。实现、字段和交接说明见[机器人 2 情境与集成交接](docs/ROBOT2_HANDOFF.md)。
+
 生成数据后，可以重复运行 FoG 基线评估：
 
 ```bash

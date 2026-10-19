@@ -8,6 +8,7 @@ detection:
 
 turning:
   yaw_rate_threshold_dps: 20.0
+  uncertainty_margin: 0.10
 
 cueing:
   min_confidence: 0.60

@@ -19,6 +19,9 @@ class AdaptiveCueingController:
         if in_refractory or context.fog.probability < self.min_confidence:
             return CueCommand(CueType.NONE, 0.0, 0.0, "No confident FoG event or refractory")
 
+        if context.turn.direction is TurnDirection.UNKNOWN:
+            return CueCommand(CueType.NONE, 0.0, 0.0, "Turning context unavailable")
+
         if context.turn.direction in {TurnDirection.LEFT, TurnDirection.RIGHT}:
             return CueCommand(CueType.HAPTIC, 0.8, self.duration_seconds, "FoG during turn")
         return CueCommand(CueType.AUDITORY, 0.6, self.duration_seconds, "FoG during straight gait")
