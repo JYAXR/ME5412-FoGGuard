@@ -1,6 +1,77 @@
 # 机器人 1 数据与 FoG 交接说明
 
-更新日期：2026-10-19。项目剩余两周，因此机器人 1 的范围收敛为：立即交付稳定的 P0 数据管线、公开真实数据基准和失败证据；随后只提供最小、来源透明的 P1 模拟响应输入，并协助最终评估。新的参与者招募或数据采集不在两周范围内，但公开真实数据验证属于必做项。
+更新日期：2026-10-21。项目剩余两周，因此机器人 1 的范围收敛为：立即交付稳定的 P0 数据管线、公开真实数据基准和失败证据；随后只提供最小、来源透明的 P1 模拟响应输入，并协助最终评估。新的参与者招募或数据采集不在两周范围内，但公开真实数据验证属于必做项。
+
+## 本轮新增交付：FoG-STAR 联合识别模型
+
+机器人 1 当前工作的结束点是：把可复现的数据处理、训练、按受试者验证、模型产物和机器可读推理结果交给机器人 2。机器人 1 提供的方向分类是模型侧候选证据，不代表接管机器人 2 的情境识别、时序状态机或端到端系统集成职责。
+
+### 机器人 1 已完成
+
+- 使用 FoG-STAR 公开数据，下载脚本会核验官方 MD5。
+- 以受试者、会话、任务为边界切窗，窗口不会跨越这些边界或长缺失段。
+- 输入为左脚踝和下背部共 12 路 IMU；同时保留原始姿态信息和动态频带特征。
+- 训练两个输出头：FoG 概率/判定，以及 `straight`、`left`、`right`、`other` 情境。
+- 用受试者分组的 5 折验证，避免同一受试者同时出现在训练和验证中。
+- 产出可加载模型、JSON 评估报告和面向新 CSV 的批量推理脚本。
+
+关键交付文件：
+
+- `src/fogguard/data/fogstar.py`
+- `src/fogguard/modeling/fogstar_baseline.py`
+- `scripts/download_fogstar.py`
+- `scripts/train_fogstar_baseline.py`
+- `scripts/predict_fogstar_baseline.py`
+- `artifacts/fogstar_multitask_baseline.joblib`（本地生成，不纳入 Git）
+- `reports/fogstar_multitask_baseline.json`（本地生成，不纳入 Git）
+- `docs/FOGSTAR_MODEL.md`
+
+本次交接所用本地产物校验值：
+
+- 模型 SHA256：`17F71663DD6B637019FC4526EB14A6B73016D5A121BC5149D7C5EF37CD89FDBC`
+- 报告 SHA256：`0B9CCE86A5AA8A0820DFF1D25317042CBD07D363CB1AC35F3FEF55405B761B64`
+
+重新训练会产生新的校验值；机器人 2 若不直接接收上述模型文件，应使用相同数据版本和训练命令重新生成。
+
+复现命令：
+
+```bash
+python scripts/download_fogstar.py
+python scripts/train_fogstar_baseline.py
+python scripts/predict_fogstar_baseline.py path/to/new_gait.csv
+```
+
+当前完整数据基线结果：FoG macro-F1 为 `0.749`，四状态 macro-F1 为 `0.762`。这组结果用于工程基线和后续比较，不应被描述为临床验证结论。
+
+### 交给机器人 2 的输出契约
+
+推理 CSV 每行对应一个窗口，机器人 2 可以直接消费以下字段：
+
+| 字段 | 含义 | 机器人 2 的使用约束 |
+|---|---|---|
+| `window_start_s`, `window_end_s` | 窗口时间范围 | 用于排序、合并事件和对齐其他传感器 |
+| `fog_probability` | 原始 FoG 概率 | 必须保留，不能只保留最终状态 |
+| `is_fog` | 按训练期校准阈值得到的 FoG 判定 | 作为冻结候选事件输入 |
+| `direction` | `straight/left/right/other` | `other` 必须映射为未知或拒识，不能强制改成三类之一 |
+| `direction_confidence` | 当前方向预测置信度 | 可用于拒识和多模块仲裁 |
+| `state` | FoG 优先的四状态结果 | 仅是模型级结果，不能直接触发提示 |
+| `subject_id`, `session_id` | 数据来源标识 | 用于审计、分组和避免跨会话合并 |
+
+### 机器人 2 的接入任务
+
+1. 将 `direction` 映射到现有 `TurnDirection`，并把 `other` 映射为 `UNKNOWN`。
+2. 保留现有 `YawRateTurnRecognizer` 作为可比较的基线或回退路径，明确记录最终采用、仲裁或替换策略。
+3. 增加时间平滑、迟滞、最短持续时间、事件合并、恢复期和输入新鲜度检查。
+4. 将稳定后的结果接入 `ControllerContext`、控制器、回放流程和 UI；模型单窗输出不能直接驱动提示。
+5. 同时记录原始概率、模型判定、情境输出和最终控制决策，保证可追踪。
+6. 在真实提示逻辑启用前补充事件级灵敏度、误报率、检测延迟和跨受试者测试。
+
+### 明确不属于机器人 1 本轮范围
+
+- 控制器和提示状态机的修改。
+- UI、ROS 或实时采集链路的端到端接入。
+- 机器人 2 现有情境识别模块的无记录替换。
+- 把窗口级研究结果表述为临床安全结论。
 
 ## 已交付基础
 

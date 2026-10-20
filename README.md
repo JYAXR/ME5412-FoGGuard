@@ -78,6 +78,18 @@ streamlit run src/fogguard/ui/app.py
 
 使用 `python scripts/generate_demo_data.py` 生成小型演示数据；使用 `python scripts/generate_simulated_responses.py` 生成明确标注的 P1 模拟响应；使用 `pytest` 和 `ruff check .` 进行检查。
 
+FoG、直行和左右转向的联合识别改用 FoG-STAR 多任务基线：
+
+```bash
+python scripts/download_fogstar.py
+python scripts/train_fogstar_baseline.py
+python scripts/predict_fogstar_baseline.py path/to/new_sensor_data.csv
+```
+
+数据选择、标签、跨受试者验证及新数据格式见 [FoG-STAR 多任务识别基线](docs/FOGSTAR_MODEL.md)。
+
+这部分是机器人 1 的“数据与模型”交付：模型提供 FoG 与方向候选结果；机器人 2 负责把结果与现有情境识别器对照或仲裁，加入时间逻辑和安全门控后再接入 `ControllerContext`、控制器和 UI。详细字段契约见 [机器人 1 数据与 FoG 交接说明](docs/ROBOT1_HANDOFF.md)。
+
 机器人 2 的 P0 端到端回放可用一条命令运行：
 
 ```bash
@@ -106,6 +118,8 @@ python scripts/evaluate_daphnet.py
 合成评估命令会按场景输出窗口数量、真实/预测 FoG 窗口数，以及 accuracy、precision、recall 和 F1。标定命令会用预先声明的规则选择阈值，并将本地报告写入 `reports/fog_threshold_calibration.json`。合成场景得到的 `0.21` 只用于检查工程管线，不代表临床性能，也不会因 Daphnet 各折阈值中位数为 `0.73` 就直接替换。标定记录中的 F1＝1.00 只表示同一生成器数据上的窗口分类没有误报或漏报，详见[阈值标定记录](docs/FOG_THRESHOLD_CALIBRATION.md)。
 
 机器人 1 的扩展场景、事件级证据、已知失败案例及交接方式见[数据与 FoG 交接说明](docs/ROBOT1_HANDOFF.md)。
+
+最终可视化仿真视频的系统分层、论文约束恢复策略、分镜和机器人 1 交接后的四人计划见[仿真视频与剩余工作计划](docs/SIMULATION_VIDEO_PLAN.md)。
 
 ## 仓库结构与负责人
 
