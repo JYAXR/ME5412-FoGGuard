@@ -2,6 +2,19 @@
 
 本文记录 Issue #3 的 P0 实现、输出契约、复现方式和已知边界。转向标签只用于事后评估，不进入识别或提示决策。
 
+## 来自机器人 1 的新模型输入（2026-10-21）
+
+机器人 1 已新增 FoG-STAR 多任务基线，能够逐窗口输出 FoG 概率/判定和 `straight`、`left`、`right`、`other` 方向候选。该输出是机器人 2 情境层的新输入选项，不自动替代本文件中的 `YawRateTurnRecognizer`。
+
+机器人 2 接入时应：
+
+- 将 `other` 映射为 `TurnDirection.UNKNOWN`，保留拒识语义。
+- 保留原始 `fog_probability` 和 `direction_confidence`，不要只传最终 `state`。
+- 明确选择“对照、回退、仲裁或替换”策略，并在报告中记录。
+- 完成时间平滑、事件级评价、`ControllerContext` 映射和提示安全门控后，才允许进入端到端链路。
+
+完整模型说明和字段契约见 `docs/FOGSTAR_MODEL.md` 与 `docs/ROBOT1_HANDOFF.md`。
+
 > [!IMPORTANT]
 > 本次工作新增了静止状态识别：系统根据 IMU 加速度活动量输出
 > `motion_state=stationary`，并在静止状态与原始 FoG 阳性冲突时抑制救援提示。
