@@ -62,8 +62,9 @@ def test_daphnet_provenance_reaches_windows_and_blocks_turning(tmp_path: Path) -
     assert window.metadata["source_license"] == "CC-BY-4.0"
     assert window.metadata["gyro_available"] == "false"
     assert np.count_nonzero(window.gyro_dps) == 0
-    with pytest.raises(ValueError, match="requires measured gyroscope"):
-        YawRateTurnRecognizer().predict(window)
+    turn = YawRateTurnRecognizer().predict(window)
+    assert turn.direction.value == "unknown"
+    assert turn.confidence == 0.0
 
 
 def test_daphnet_loader_rejects_unknown_annotations(tmp_path: Path) -> None:

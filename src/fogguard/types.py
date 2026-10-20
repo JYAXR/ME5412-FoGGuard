@@ -16,6 +16,12 @@ class TurnDirection(str, Enum):
     UNKNOWN = "unknown"
 
 
+class MotionState(str, Enum):
+    WALKING = "walking"
+    STATIONARY = "stationary"
+    UNKNOWN = "unknown"
+
+
 class CueType(str, Enum):
     NONE = "none"
     AUDITORY = "auditory"
@@ -55,11 +61,19 @@ class TurnIntent:
 
 
 @dataclass(frozen=True)
+class MotionEstimate:
+    state: MotionState
+    confidence: float
+    dynamic_accel_rms_mps2: float
+
+
+@dataclass(frozen=True)
 class ControllerContext:
     now_s: float
     fog: DetectionResult
     turn: TurnIntent
     seconds_since_last_cue: float | None = None
+    motion: MotionEstimate | None = None
 
 
 @dataclass(frozen=True)
