@@ -32,6 +32,7 @@ def run_scenarios(
     turn_uncertainty_margin: float = 0.10,
     stationary_rms_threshold_mps2: float = 0.15,
     cue_threshold: float | None = None,
+    suppress_stationary_fog: bool = False,
 ) -> pd.DataFrame:
     """Return one machine-readable table for all requested scenarios."""
     cue_threshold = fog_threshold if cue_threshold is None else cue_threshold
@@ -48,6 +49,7 @@ def run_scenarios(
                 uncertainty_margin=turn_uncertainty_margin,
             ),
             controller=AdaptiveCueingController(min_confidence=cue_threshold),
+            suppress_stationary_fog=suppress_stationary_fog,
         )
         result["scenario_id"] = scenario_id
         results.append(result)
@@ -71,6 +73,8 @@ def main() -> None:
     parser.add_argument("--turn-threshold-dps", type=float, default=20.0)
     parser.add_argument("--turn-uncertainty-margin", type=float, default=0.10)
     parser.add_argument("--stationary-rms-threshold-mps2", type=float, default=0.15)
+    parser.add_argument("--suppress-stationary-fog", action="store_true",
+                        help="Reproduce the previous experimental stationary-suppression policy.")
     parser.add_argument(
         "--cue-threshold",
         type=float,
@@ -86,6 +90,7 @@ def main() -> None:
         turn_uncertainty_margin=args.turn_uncertainty_margin,
         stationary_rms_threshold_mps2=args.stationary_rms_threshold_mps2,
         cue_threshold=args.cue_threshold,
+        suppress_stationary_fog=args.suppress_stationary_fog,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     result.to_csv(args.output, index=False)

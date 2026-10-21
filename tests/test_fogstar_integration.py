@@ -116,7 +116,9 @@ def test_stationary_proxy_preserves_raw_fog_but_suppresses_effective_event() -> 
     raw["motion_confidence"] = 0.9
     raw["dynamic_accel_rms_mps2"] = 0.05
 
-    result = FogStarTemporalIntegrator().process(raw)
+    result = FogStarTemporalIntegrator(
+        FogStarIntegrationConfig(suppress_stationary_fog=True)
+    ).process(raw)
 
     assert result["is_fog"].all()
     assert result["fog_suppressed"].all()
@@ -124,6 +126,20 @@ def test_stationary_proxy_preserves_raw_fog_but_suppresses_effective_event() -> 
     assert not result["stable_fog_detected"].any()
     assert set(result["turn"]) == {"unknown"}
     assert set(result["cue"]) == {"none"}
+
+
+def test_default_stationary_fog_can_confirm_and_reach_cue_controller() -> None:
+    raw = _predictions([0.8, 0.8, 0.8])
+    raw["motion_state"] = "stationary"
+    raw["motion_confidence"] = 0.9
+    raw["dynamic_accel_rms_mps2"] = 0.05
+
+    result = FogStarTemporalIntegrator().process(raw)
+
+    assert not result["fog_suppressed"].any()
+    assert result["event_phase"].tolist() == ["suspected", "confirmed", "confirmed"]
+    assert result.loc[1, "turn"] == "straight"
+    assert result.loc[1, "cue"] == "auditory"
 
 
 def test_event_evaluation_reports_detection_delay_and_false_event() -> None:

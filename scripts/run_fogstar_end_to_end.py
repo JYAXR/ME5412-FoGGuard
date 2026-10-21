@@ -38,6 +38,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--recovery-windows", type=int, default=3)
     parser.add_argument("--direction-confidence", type=float, default=0.60)
     parser.add_argument("--maximum-input-age-s", type=float, default=1.0)
+    parser.add_argument("--suppress-stationary-fog", action="store_true",
+                        help="Reproduce the previous experimental stationary-suppression policy.")
     return parser.parse_args()
 
 
@@ -48,6 +50,7 @@ def main() -> None:
         recovery_windows=args.recovery_windows,
         minimum_direction_confidence=args.direction_confidence,
         maximum_input_age_s=args.maximum_input_age_s,
+        suppress_stationary_fog=args.suppress_stationary_fog,
     )
     if args.predictions:
         result = integrate_fogstar_predictions(pd.read_csv(args.predictions), config=config)

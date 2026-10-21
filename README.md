@@ -90,7 +90,7 @@ python scripts/predict_fogstar_baseline.py path/to/new_sensor_data.csv
 
 这部分是机器人 1 的“数据与模型”交付：模型提供 FoG 与方向候选结果；机器人 2 负责把结果与现有情境识别器对照或仲裁，加入时间逻辑和安全门控后再接入 `ControllerContext`、控制器和 UI。详细字段契约见 [机器人 1 数据与 FoG 交接说明](docs/ROBOT1_HANDOFF.md)。
 
-机器人 2 已完成 FoG-STAR 时序接入。以下命令会使用按受试者隔离的五折预测验收持续确认、迟滞、恢复观察、静止冲突、方向拒识和提示门控：
+机器人 2 已完成 FoG-STAR 时序接入。当前项目重点是 FoG 步态提示和恢复引导，暂缓主观停步意图区分；静止状态继续记录，默认不据此抑制 FoG 提示。以下命令使用按受试者隔离的五折预测验收持续确认、迟滞、恢复观察、方向拒识和提示门控：
 
 ```bash
 python scripts/train_fogstar_baseline.py
@@ -105,7 +105,7 @@ python scripts/evaluate_fogstar_integration.py
 python scripts/run_end_to_end.py
 ```
 
-命令依次处理正常、直行 FoG、左右转 FoG、正常右转、主动停步和恢复场景，并将逐窗口结果写入 `reports/robot2_end_to_end.csv`。输出明确区分原始 FoG、静止抑制后的有效 FoG 与评估真值，包含窗口时间、运动状态、转向方向/置信度/时间范围、提示及原因。无陀螺仪或阈值边界不可靠时转向输出 `unknown`；检测到静止时保留原始 FoG 误报并抑制救援提示。实现、字段和交接说明见[机器人 2 情境与集成交接](docs/ROBOT2_HANDOFF.md)。
+命令依次处理正常、直行 FoG、左右转 FoG、正常右转、停步和恢复场景，将逐窗口结果写入 `reports/robot2_end_to_end.csv`。输出包含原始 FoG、有效 FoG、评估真值、运动状态、方向/置信度/时间范围和提示原因。默认保留静止期间的 FoG 候选；如需复现历史静止抑制实验，可加 `--suppress-stationary-fog`。无陀螺仪或阈值边界不可靠时方向仍输出 `unknown`。实现、字段和交接说明见[机器人 2 情境与集成交接](docs/ROBOT2_HANDOFF.md)。
 
 生成数据后，可以重复运行 FoG 基线评估：
 

@@ -10,10 +10,12 @@ class AdaptiveCueingController:
     min_confidence: float = 0.60
     refractory_seconds: float = 3.0
     duration_seconds: float = 2.0
+    suppress_stationary_fog: bool = False
 
     def decide(self, context: ControllerContext) -> CueCommand:
         if (
-            context.motion is not None
+            self.suppress_stationary_fog
+            and context.motion is not None
             and context.motion.state is MotionState.STATIONARY
             and context.fog.is_fog
         ):

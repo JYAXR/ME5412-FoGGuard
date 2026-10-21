@@ -44,6 +44,7 @@ class FogStarIntegrationConfig:
     minimum_direction_confidence: float = 0.60
     minimum_fallback_confidence: float = 0.60
     use_yaw_agreement_fallback: bool = False
+    suppress_stationary_fog: bool = False
     exit_probability_margin: float = 0.10
     maximum_input_age_s: float = 1.0
     maximum_window_gap_s: float = 0.75
@@ -97,7 +98,10 @@ class FogStarTemporalIntegrator:
         self.config = config or FogStarIntegrationConfig()
         # Event confirmation owns the model threshold. The controller still
         # requires stable is_fog=True and applies its refractory period.
-        self.controller = controller or AdaptiveCueingController(min_confidence=0.0)
+        self.controller = controller or AdaptiveCueingController(
+            min_confidence=0.0,
+            suppress_stationary_fog=self.config.suppress_stationary_fog,
+        )
         self._next_event_id = 1
         self._reset_sequence()
 
@@ -307,11 +311,16 @@ class FogStarTemporalIntegrator:
                     raise ValueError("fog_threshold must be between 0 and 1")
                 exit_threshold = max(0.0, threshold - self.config.exit_probability_margin)
                 fog_suppressed = (
-                    motion is not None
+                    self.config.suppress_stationary_fog
+                    and motion is not None
                     and motion.state is MotionState.STATIONARY
                     and model_positive
                 )
-                if motion is not None and motion.state is MotionState.STATIONARY:
+                if (
+                    self.config.suppress_stationary_fog
+                    and motion is not None
+                    and motion.state is MotionState.STATIONARY
+                ):
                     turn = TurnDirection.UNKNOWN
                     turn_confidence = 0.0
                     direction_source = "stationary_rejection"
