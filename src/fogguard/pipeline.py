@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from dataclasses import replace
 from pathlib import Path
 
 import pandas as pd
@@ -58,6 +59,7 @@ def replay_frame(
     sample_rate_hz: float = 50.0,
     window_seconds: float = 2.0,
     step_seconds: float = 0.5,
+    suppress_stationary_fog: bool = False,
 ) -> pd.DataFrame:
     """Run one dataframe through the shared detector, context, and cueing path."""
     detector = detector or FreezeIndexDetector()
@@ -77,14 +79,16 @@ def replay_frame(
         fog = detector.predict(window)
         motion = motion_recognizer.predict(window)
         turn = turner.predict(window)
-        fog_suppressed = fog.is_fog and motion.state is MotionState.STATIONARY
+        fog_suppressed = (
+            suppress_stationary_fog and fog.is_fog and motion.state is MotionState.STATIONARY
+        )
         effective_fog_detected = fog.is_fog and not fog_suppressed
         now_s = float(window.timestamp_s[-1])
         seconds_since_last_cue = None if last_cue_time_s is None else now_s - last_cue_time_s
         cue = controller.decide(
             ControllerContext(
                 now_s=now_s,
-                fog=fog,
+                fog=replace(fog, is_fog=effective_fog_detected),
                 turn=turn,
                 seconds_since_last_cue=seconds_since_last_cue,
                 motion=motion,
@@ -149,6 +153,7 @@ def replay_csv(
     sample_rate_hz: float = 50.0,
     window_seconds: float = 2.0,
     step_seconds: float = 0.5,
+    suppress_stationary_fog: bool = False,
 ) -> pd.DataFrame:
     """Load a canonical CSV and run it through :func:`replay_frame`."""
     source = Path(path)
@@ -161,6 +166,7 @@ def replay_csv(
         sample_rate_hz=sample_rate_hz,
         window_seconds=window_seconds,
         step_seconds=step_seconds,
+        suppress_stationary_fog=suppress_stationary_fog,
     )
     result.insert(0, "source_file", str(source))
     return result

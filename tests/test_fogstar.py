@@ -40,7 +40,9 @@ def test_fogstar_windows_keep_independent_fog_and_direction_targets() -> None:
 
     assert len(windows) == 3
     assert windows[0].direction_label == "straight"
+    assert windows[0].activity_label == 1
     assert windows[-1].direction_label == "right"
+    assert windows[-1].activity_label == 6
     assert windows[-1].fog_label == 1
     assert windows[-1].samples.shape == (120, 12)
 
@@ -96,7 +98,16 @@ def test_fogstar_model_round_trip_and_prediction(tmp_path: Path) -> None:
     model.save(path)
 
     prediction = FogStarMultiTaskModel.load(path).predict_window(windows[-1])
+    batch = FogStarMultiTaskModel.load(path).predict_windows(windows)
 
     assert 0.0 <= prediction["fog_probability"] <= 1.0
     assert prediction["direction"] in {"straight", "right", "other"}
     assert prediction["state"] in {"fog", "straight", "right", "other"}
+    assert len(batch) == len(windows)
+    assert batch[-1]["direction"] == prediction["direction"]
+    assert batch[-1]["state"] == prediction["state"]
+    assert batch[-1]["is_fog"] == prediction["is_fog"]
+    assert batch[-1]["fog_probability"] == pytest.approx(prediction["fog_probability"])
+    assert batch[-1]["direction_confidence"] == pytest.approx(
+        prediction["direction_confidence"]
+    )

@@ -30,10 +30,11 @@ def test_core_scenarios_reach_the_shared_pipeline(
     assert forbidden_turn not in set(result["turn"])
 
 
-def test_voluntary_stop_is_recognized_and_suppresses_fog_cues() -> None:
+def test_opt_in_stationary_suppression_can_reproduce_previous_policy() -> None:
     result = replay_frame(
         build_scenario("voluntary_stop"),
         controller=AdaptiveCueingController(min_confidence=0.21),
+        suppress_stationary_fog=True,
     )
 
     assert set(result["turn"]) == {"straight"}
@@ -45,7 +46,21 @@ def test_voluntary_stop_is_recognized_and_suppresses_fog_cues() -> None:
     assert not result["effective_fog_detected"].any()
     assert result["effective_fog_matches_truth"].all()
     assert set(result["cue"]) == {"none"}
-    assert set(stationary["cue_reason"]) == {"Stationary state suppresses FoG cue"}
+    assert set(stationary["cue_reason"]) == {"No confident FoG event or refractory"}
+
+
+def test_default_pipeline_records_stationary_state_without_vetoing_fog() -> None:
+    result = replay_frame(
+        build_scenario("voluntary_stop"),
+        controller=AdaptiveCueingController(min_confidence=0.21),
+    )
+
+    stationary = result[result["motion_state"] == "stationary"]
+    assert len(stationary) == 7
+    assert stationary["fog_detected"].all()
+    assert not result["fog_suppressed"].any()
+    assert stationary["effective_fog_detected"].all()
+    assert stationary["cue"].ne("none").any()
 
 
 def test_stationary_suppression_does_not_hide_straight_fog() -> None:
