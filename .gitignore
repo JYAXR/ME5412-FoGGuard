@@ -26,8 +26,10 @@ data/raw/*
 data/processed/*
 !data/processed/.gitkeep
 artifacts/
-reports/*.csv
-reports/*.json
+reports/**/*.csv
+reports/**/*.json
+reports/**/*.html
+reports/**/*.jpg
 
 # Streamlit
 .streamlit/secrets.toml
