@@ -90,6 +90,15 @@ python scripts/predict_fogstar_baseline.py path/to/new_sensor_data.csv
 
 这部分是机器人 1 的“数据与模型”交付：模型提供 FoG 与方向候选结果；机器人 2 负责把结果与现有情境识别器对照或仲裁，加入时间逻辑和安全门控后再接入 `ControllerContext`、控制器和 UI。详细字段契约见 [机器人 1 数据与 FoG 交接说明](docs/ROBOT1_HANDOFF.md)。
 
+机器人 2 已完成 FoG-STAR 时序接入。以下命令会使用按受试者隔离的五折预测验收持续确认、迟滞、恢复观察、静止冲突、方向拒识和提示门控：
+
+```bash
+python scripts/train_fogstar_baseline.py
+python scripts/evaluate_fogstar_integration.py
+```
+
+逐窗结果写入 `reports/fogstar_robot2_end_to_end.csv`，事件指标写入 `reports/fogstar_robot2_integration.json`。当前真实数据结果仍有明显误报和方向拒识，因此仅作为课程工程基线，不表示临床可用。规则、字段、数值和限制见[机器人 2 情境与集成交接](docs/ROBOT2_HANDOFF.md)。
+
 机器人 2 的 P0 端到端回放可用一条命令运行：
 
 ```bash

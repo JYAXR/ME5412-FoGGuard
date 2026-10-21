@@ -15,7 +15,7 @@ class AdaptiveCueingController:
         if (
             context.motion is not None
             and context.motion.state is MotionState.STATIONARY
-            and (context.fog.is_fog or context.fog.probability >= self.min_confidence)
+            and context.fog.is_fog
         ):
             return CueCommand(CueType.NONE, 0.0, 0.0, "Stationary state suppresses FoG cue")
 
@@ -23,7 +23,11 @@ class AdaptiveCueingController:
             context.seconds_since_last_cue is not None
             and context.seconds_since_last_cue < self.refractory_seconds
         )
-        if in_refractory or context.fog.probability < self.min_confidence:
+        if (
+            in_refractory
+            or not context.fog.is_fog
+            or context.fog.probability < self.min_confidence
+        ):
             return CueCommand(CueType.NONE, 0.0, 0.0, "No confident FoG event or refractory")
 
         if context.turn.direction is TurnDirection.UNKNOWN:

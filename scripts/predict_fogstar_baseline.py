@@ -5,9 +5,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-import pandas as pd
-
-from fogguard.data import iter_fogstar_windows, load_fogstar_frame
+from fogguard.data import load_fogstar_frame
+from fogguard.fogstar_pipeline import predict_fogstar_frame
 from fogguard.modeling import FogStarMultiTaskModel
 
 
@@ -29,22 +28,10 @@ def main() -> None:
         sensor_positions=sensor_positions,
         require_labels=False,
     )
-    rows = []
-    for window in iter_fogstar_windows(frame, sensor_positions=sensor_positions):
-        rows.append(
-            {
-                "window_start_s": window.start_s,
-                "window_end_s": window.end_s,
-                "subject_id": window.subject_id,
-                "session_id": window.session_id,
-                **model.predict_window(window),
-            }
-        )
-    if not rows:
-        raise ValueError("No complete valid windows were found in the input")
+    result = predict_fogstar_frame(frame, model, sensor_positions=sensor_positions)
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    pd.DataFrame(rows).to_csv(args.output, index=False)
-    print(f"Wrote {len(rows)} predictions to {args.output}")
+    result.to_csv(args.output, index=False)
+    print(f"Wrote {len(result)} predictions to {args.output}")
 
 
 if __name__ == "__main__":

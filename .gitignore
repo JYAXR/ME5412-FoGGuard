@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .pytest_cache/
+.pytest_tmp_*/
 .ruff_cache/
 .mypy_cache/
 
@@ -30,3 +31,4 @@ reports/*.json
 
 # Streamlit
 .streamlit/secrets.toml
+.streamlit.*.log

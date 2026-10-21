@@ -2,6 +2,72 @@
 
 本文记录 Issue #3 的 P0 实现、输出契约、复现方式和已知边界。转向标签只用于事后评估，不进入识别或提示决策。
 
+## FoG-STAR 新数据重新接入与验收（2026-10-21）
+
+机器人 2 已按机器人 1 最新 FoG-STAR v3.0 交接重新实现端到端链路。默认链路不再让模型单窗输出直接驱动提示，而是依次执行：字段校验 → 方向拒识/平滑 → 静止冲突门控 → FoG 持续确认与迟滞 → 恢复观察/事件合并 → `ControllerContext` → 控制器。真值字段只在最后的离线评估中读取。
+
+### 固定的工程规则
+
+- 连续 `2` 个模型阳性窗口才从 `suspected` 进入 `confirmed`；单窗阳性不提示。
+- 退出阈值比每折模型阈值低 `0.10`，避免阈值附近反复切换。
+- 首个阴性窗口进入 `recovery`，连续 `3` 个恢复窗口后退出；期间再次阳性并回同一个事件 ID。
+- 相邻输出间隔超过 `0.75 s`、输入年龄超过 `1.0 s` 或时间倒序时，不沿用旧事件；输出 `safe_none` 或拒绝输入。
+- FoG-STAR `direction=other` 始终映射为 `TurnDirection.UNKNOWN`。方向置信度低于 `0.60` 时同样拒识；方向还需连续两窗一致才成为最终 `turn`。
+- `YawRateTurnRecognizer` 的输出以 `yaw_turn/yaw_turn_confidence` 保留作对照。它在本数据轴向和默认阈值下覆盖率高但左右转区分很差，因此默认不参与仲裁；只有显式设置 `use_yaw_agreement_fallback=True` 才启用“一致才回退”。
+- 控制器现在必须同时看到 `DetectionResult.is_fog=True` 和足够评分，避免高分但尚未确认的单窗直接触发。
+
+FoG-STAR 时间线的关键输出如下；输入中的 `state` 仍只是模型级显示字段：
+
+| 字段 | 含义 |
+|---|---|
+| `fog_probability`, `fog_threshold`, `is_fog` | 原始评分、该留出折阈值和原始模型判定 |
+| `direction`, `direction_confidence` | 原始 FoG-STAR 方向及置信度 |
+| `yaw_turn`, `yaw_turn_confidence` | 保留作对照的角速度基线，不默认替换模型方向 |
+| `motion_state`, `motion_confidence`, `dynamic_accel_rms_mps2` | 独立静止代理及物理证据 |
+| `fog_suppressed`, `effective_model_fog` | 静止冲突是否被保留但阻止进入事件 |
+| `event_phase`, `event_id`, `stable_fog_detected` | 因果时序状态、合并事件和最终控制输入 |
+| `turn`, `turn_confidence`, `turn_source` | 拒识和平滑后的控制情境及来源 |
+| `input_fresh`, `input_age_s`, `integration_reason` | 数据质量与每次状态变化原因 |
+| `cue`, `cue_reason`, `seconds_since_last_cue` | 控制器输出、不提示原因和真实提示历史 |
+| `truth_*` | 仅供离线验收的标签，时序集成器不读取这些字段作决策 |
+
+### 静止代理及边界
+
+FoG-STAR 链路新增左踝动态加速度 RMS 静止判断，工程阈值为 `0.30 m/s²`。若模型 FoG 阳性同时被识别为静止，系统保留原始 `is_fog` 和概率，另写 `fog_suppressed=true`，但不让该窗口进入有效事件或提示。
+
+这里识别的仍然只是传感器的“静止状态”，不是患者的主观意图。即使数据标签为 `Stand`，也不能仅凭 IMU 证明患者是主动停步；同样，真正的运动不能排除 FoG。该代理在本次 FoG-STAR 留出预测中覆盖 `55.4%` 的站立窗口，在行走窗口上的静止率为 `0.19%`，因此不能被描述为已经可靠解决“主动停步与 FoG”的临床区分问题。
+
+### 无受试者泄漏的结果
+
+训练脚本现在额外保存五折、按受试者隔离的 `reports/fogstar_oof_predictions.csv`。机器人 2 的指标来自这些留出预测，而不是最终模型对训练数据的回放。默认参数结果为：
+
+| 指标 | 结果 |
+|---|---:|
+| 真值窗口事件 | 81 |
+| 已确认事件 | 69 |
+| 事件召回率 | 0.852 |
+| 中位确认延迟 | 0.50 s |
+| 平均确认延迟 | 0.754 s |
+| 误报事件 | 113 |
+| 误报事件/分钟 | 1.367 |
+| 最终方向覆盖率 | 0.606 |
+| 已接受方向 macro-F1 | 0.957 |
+
+安全门控没有消除模型误报：7,739 个非 FoG 窗口上仍有 69 次提示；1,283 个非 FoG `Stand` 窗口中，原始模型报阳性 381 个，静止规则抑制 99 个，仍有 1 次提示。另一方面，真实直行 FoG 的方向在默认置信度下经常被拒识，因此控制器可能安全地不提示。结果说明本实现完成了可追踪的工程集成，但仍不具备临床提示安全性，不能只引用事件召回率。
+
+### 复现
+
+```bash
+python scripts/download_fogstar.py
+python scripts/train_fogstar_baseline.py
+python scripts/evaluate_fogstar_integration.py
+python scripts/run_fogstar_end_to_end.py --predictions reports/fogstar_oof_predictions.csv
+pytest -q
+ruff check .
+```
+
+生成但不纳入 Git 的文件包括模型、机器人 1 训练报告、留出预测、机器人 2 逐窗时间线和集成指标 JSON。
+
 ## 来自机器人 1 的新模型输入（2026-10-21）
 
 机器人 1 已新增 FoG-STAR 多任务基线，能够逐窗口输出 FoG 概率/判定和 `straight`、`left`、`right`、`other` 方向候选。该输出是机器人 2 情境层的新输入选项，不自动替代本文件中的 `YawRateTurnRecognizer`。
