@@ -6,6 +6,8 @@
 原仓库：`JYAXR/ME5412-FoGGuard`。此次 PR 基于 #24 的 `codex/automation1-guidance`，
 不是把尚未合并的 #23/#24 当作 main 的现状。
 
+现有评审为原仓库 [PR #25](https://github.com/JYAXR/ME5412-FoGGuard/pull/25)。后续通常直接追加到上述同一分支，PR 会自动更新。首次检出请使用总入口中的 `git clone --branch ...`，不要在默认 main 上寻找本贡献的新文件。
+
 建议本地 remotes：origin 指向贡献 fork，upstream 指向原仓库。开始前检查实际状态：
 
 ```bash

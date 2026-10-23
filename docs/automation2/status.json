@@ -18,7 +18,10 @@
       16,
       17
     ],
-    "release_tag": "automation2-handoff-2026-10-23"
+    "release_tag": "automation2-handoff-2026-10-23",
+    "pull_request_url": "https://github.com/JYAXR/ME5412-FoGGuard/pull/25",
+    "pull_request_number": 25,
+    "first_published_source_commit": "772bb98519e5859a7074aa734e8660737629299f"
   },
   "entrypoints": {
     "human": "AUTOMATION2_START_HERE.md",
@@ -156,5 +159,15 @@
     "auto_merge": false,
     "preserve_dated_evidence": true,
     "new_assets_use_new_release_tag": true
+  },
+  "ci_observation": {
+    "verified_commit": "772bb98519e5859a7074aa734e8660737629299f",
+    "run_url": "https://github.com/NuyoahQQ/ME5412-FoGGuard/actions/runs/39898636276",
+    "platforms": {
+      "ubuntu-latest": "success",
+      "windows-latest": "success"
+    },
+    "scope": "Offline tests/lint/strategy evaluation/demo only; no raw-data reproduction on CI",
+    "later_commits": "Check their own workflow result; do not infer PASS from this historical observation"
   }
 }

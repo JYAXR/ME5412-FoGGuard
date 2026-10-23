@@ -4,6 +4,9 @@
 
 依赖原仓库 [PR #24](https://github.com/JYAXR/ME5412-FoGGuard/pull/24)，其上还有 [PR #23](https://github.com/JYAXR/ME5412-FoGGuard/pull/23)。本贡献通过独立分支提交评审，未替团队合并到 main，未关闭原任务。
 
+**原仓库评审入口：[PR #25](https://github.com/JYAXR/ME5412-FoGGuard/pull/25)。**
+首个源码提交的 Windows / Ubuntu 离线 CI 均已通过，见 [Actions 记录](https://github.com/NuyoahQQ/ME5412-FoGGuard/actions/runs/39898636276)；后续提交状态以各自 Checks 为准。
+
 ## 不运行代码，先检查结果
 
 [下载本次版本附件](https://github.com/NuyoahQQ/ME5412-FoGGuard/releases/tag/automation2-handoff-2026-10-23)：
@@ -39,7 +42,14 @@
 
 ## 运行与检查
 
-在本分支的仓库根目录，Python 3.12：
+本贡献尚未进入默认 main。首次拿代码请明确选择贡献分支，并使用一个不存在的新目录，避免覆盖已有项目：
+
+```bash
+git clone --branch feat/automation2-review-and-recognition --single-branch https://github.com/NuyoahQQ/ME5412-FoGGuard.git ME5412-FoGGuard-automation2
+cd ME5412-FoGGuard-automation2
+```
+
+然后在该仓库根目录，Python 3.12：
 
 ```bash
 python -m pip install -r requirements.txt -c docs/automation2/tested-constraints.txt
