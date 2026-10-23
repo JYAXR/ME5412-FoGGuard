@@ -1,0 +1,12 @@
+﻿subject_id,session_id,task_id,observed_s,truth_fog_s,alarm_s,true_alarm_s,false_alarm_s,missed_fog_s,model_support_s,raw_samples,incomplete_imu_samples,all_missing_input_channels,prediction_windows,truth_events
+9,1,7,22.366666666666788,16.699999999992542,0,0,0.0,16.699999999992542,0,1342,1342,ankleL_acc_x|ankleL_acc_y|ankleL_acc_z|ankleL_gyro_x|ankleL_gyro_y|ankleL_gyro_z|back_acc_y|back_acc_z,0,2
+12,1,7,48.26666666666688,40.39999999999691,0,0,0.0,40.39999999999691,0,2896,2896,back_gyro_x|back_gyro_y|back_gyro_z,0,1
+17,1,3,33.549999999997,4.94999999998754,0,0,0.0,4.94999999998754,0,2013,2013,ankleL_acc_x|ankleL_acc_y|ankleL_acc_z|ankleL_gyro_x|ankleL_gyro_y|ankleL_gyro_z|back_acc_x|back_acc_y|back_acc_z|back_gyro_x|back_gyro_y|back_gyro_z,0,4
+17,1,4,31.833333333336668,0.0,0,0,0.0,0.0,0,1910,1910,ankleL_acc_x|ankleL_acc_y|ankleL_acc_z|ankleL_gyro_x|ankleL_gyro_y|ankleL_gyro_z|back_acc_x|back_acc_y|back_acc_z|back_gyro_x|back_gyro_y|back_gyro_z,0,0
+17,1,6,41.08333333333712,0.0,0,0,0.0,0.0,0,2465,2465,ankleL_acc_x|ankleL_acc_y|ankleL_acc_z|ankleL_gyro_x|ankleL_gyro_y|ankleL_gyro_z|back_acc_x|back_acc_y|back_acc_z|back_gyro_x|back_gyro_y|back_gyro_z,0,0
+17,1,7,14.083333333327118,0.0,0,0,0.0,0.0,0,845,845,ankleL_acc_x|ankleL_acc_y|ankleL_acc_z|ankleL_gyro_x|ankleL_gyro_y|ankleL_gyro_z|back_acc_x|back_acc_y|back_acc_z|back_gyro_x|back_gyro_y|back_gyro_z,0,0
+21,1,3,22.91666666666697,5.599999999993088,0,0,0.0,5.599999999993088,0,1375,1375,back_acc_x|back_acc_y|back_acc_z|back_gyro_x|back_gyro_y|back_gyro_z,0,2
+21,1,4,22.66666666666606,4.4999999999918145,0,0,0.0,4.4999999999918145,0,1360,1360,back_acc_x|back_acc_y|back_acc_z|back_gyro_x|back_gyro_y|back_gyro_z,0,2
+21,1,6,32.46666666666624,11.200000000019827,0,0,0.0,11.200000000019827,0,1948,1948,back_acc_x|back_acc_y|back_acc_z|back_gyro_x|back_gyro_y|back_gyro_z,0,3
+21,1,7,72.61666666666679,19.899999999995998,0,0,0.0,19.899999999995998,0,4357,4357,back_acc_x|back_acc_y|back_acc_z|back_gyro_x|back_gyro_y|back_gyro_z,0,1
+22,1,4,57.299999999996544,14.599999999992178,0,0,0.0,14.599999999992178,0,3438,3438,back_acc_x|back_acc_y|back_acc_z|back_gyro_x|back_gyro_y|back_gyro_z,0,2

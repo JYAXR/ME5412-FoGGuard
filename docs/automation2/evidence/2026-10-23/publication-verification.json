@@ -1,0 +1,45 @@
+{
+  "schema": "fogguard.automation2.publication-verification.v1",
+  "base_sha": "58135167a3be0aaa4c93e9c138d732efda9dd38a",
+  "base_files_retained": 101,
+  "deleted_base_files": [],
+  "existing_files_modified": [
+    ".gitignore",
+    "README.md",
+    "pyproject.toml",
+    "src/fogguard/cueing/replay.py"
+  ],
+  "new_source_files_and_evidence": "see PR added files",
+  "source_hash_manifest": "source-code-sha256.json",
+  "pytest_passed": 241,
+  "checks": {
+    "pytest": {
+      "exit_code": 0
+    },
+    "ruff": {
+      "exit_code": 0
+    },
+    "baseline_evaluation": {
+      "exit_code": 0
+    },
+    "integrated_demo": {
+      "exit_code": 0
+    },
+    "real_data_audit": {
+      "exit_code": 0
+    }
+  },
+  "real_recognition_matches_v2_snapshot": true,
+  "integrated_cases": 22,
+  "integrated_runs": 110,
+  "baseline_pairs": 112,
+  "baseline_acceptance": {
+    "PASS": 21,
+    "FAIL": 0,
+    "KNOWN_LIMITATION": 1
+  },
+  "no_model_retraining": true,
+  "no_shared_type_changes": true,
+  "no_original_controller_changes": true,
+  "ci_status": "not_yet_executed_on_GitHub; local checks passed"
+}

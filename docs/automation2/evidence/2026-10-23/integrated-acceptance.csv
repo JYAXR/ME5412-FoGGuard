@@ -1,0 +1,23 @@
+﻿check,status,evidence
+22 场景与 110 组运行,PASS,demo/manifest.json
+命令生命周期无异常,PASS,demo/manifest.json
+正常直行不启动救援提示,PASS,normal_march.csv
+正常右转不启动救援提示,PASS,normal_right_turn_march.csv
+left_fog 转向目标正确,PASS,left_fog_march.csv
+right_fog 转向目标正确,PASS,right_fog_march.csv
+原地目标不向前漂移,PASS,march_recovery_march.csv
+原地步不冒充向前稳定步,PASS,march_recovery_march.csv
+交替完成后返回向前,PASS,march_recovery_march.csv
+稳定向前后渐弱并退出,PASS,march_recovery_march.csv
+错误脚别不伪造完成,PASS,march_wrong_foot_march.csv
+响应缺失固定降级,PASS,march_missing_input_march.csv
+march_unknown_direction 撤销双模态,PASS,march_unknown_direction_march.csv
+stale_input 撤销双模态,PASS,stale_input_march.csv
+无响应备用超时,PASS,persistent_no_response_march.csv
+持续无响应达到最大时长后停止,PASS,persistent_no_response_march.csv
+再次冻结恢复强度,PASS,refreeze_during_fade_march.csv
+间距调整保持配置范围,PASS,adaptive_spacing_march.csv
+固定间距消融保持 0.40 m,PASS,adaptive_spacing_no_spacing.csv
+关闭渐弱不出现渐弱状态,PASS,march_recovery_no_fade.csv
+没有真值时不编造检测指标,PASS,manifest.json external_predictions
+原工作副本 109 文件完整保留,PASS,source_preservation.json

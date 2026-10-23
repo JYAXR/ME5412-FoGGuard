@@ -1,0 +1,5 @@
+﻿manifestation,positive_windows,subjects,TP,FN,recall
+拖步 Shuffling,96,7,48,48,0.5
+混合表现,1,1,0,1,0.0
+运动不能 Akinesia,1403,7,908,495,0.647184604419102
+颤动 Trembling,397,12,291,106,0.7329974811083123

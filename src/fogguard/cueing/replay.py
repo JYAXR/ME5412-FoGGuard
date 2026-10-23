@@ -41,6 +41,7 @@ def replay_guidance(
     config: GuidanceConfig | None = None,
     responses: pd.DataFrame | None = None,
     finalize: bool = True,
+    controller_type: type[GuidanceController] = GuidanceController,
 ) -> pd.DataFrame:
     """Replay Robot 2 outputs. Responses match scenario_id, never truth_*.
 
@@ -84,7 +85,7 @@ def replay_guidance(
             if len(group[["subject_id", "session_id", "task_id"]].drop_duplicates()) != 1:
                 raise ValueError("Each response scenario must map to exactly one subject/session/task")
 
-    controller = GuidanceController(config)
+    controller = controller_type(config)
     sequence: tuple[str, ...] | None = None
     seen_sequences: set[tuple[str, ...]] = set()
     response_index = 0
@@ -114,7 +115,7 @@ def replay_guidance(
             seen_sequences.add(current)
             sequence = current
             response_index = 0
-            controller = GuidanceController(
+            controller = controller_type(
                 config, responses_configured=current[-1] in response_groups,
             )
         now = _number(row["window_end_s"])
