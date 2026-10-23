@@ -169,5 +169,42 @@
     },
     "scope": "Offline tests/lint/strategy evaluation/demo only; no raw-data reproduction on CI",
     "later_commits": "Check their own workflow result; do not infer PASS from this historical observation"
+  },
+  "engineering_comparison": {
+    "snapshot": "docs/automation2/evidence/2026-10-23-engineering-v1",
+    "human_entry": "docs/automation2/evidence/2026-10-23-engineering-v1/RESULTS.md",
+    "release_url": "https://github.com/NuyoahQQ/ME5412-FoGGuard/releases/tag/automation2-engineering-comparison-2026-10-23",
+    "cases": 112,
+    "strategies": 5,
+    "runs": 560,
+    "scope": "deterministic constructed candidates and preset responses; engineering behavior only",
+    "shared_original_controller_or_parameters_modified": false,
+    "real_data_retraining_or_reassessment_in_this_experiment": false,
+    "independent_csv_hashes_verified": 884,
+    "independently_checked_runs": 560,
+    "local_tests_passed": 245,
+    "local_ruff_passed": true,
+    "recovery_tail_s": {
+      "fading": 1.0,
+      "no_fade": 7.5,
+      "fixed": 1.0,
+      "cases": 72
+    },
+    "spacing_error_cm": {
+      "adaptive": 2.4626971469076735,
+      "fixed_spacing": 6.666666666666668,
+      "cases": 72,
+      "target": "preset step length clipped to 32-55 cm"
+    },
+    "march_active_s": {
+      "march": 9.25,
+      "countdown": 9.0,
+      "cases": 8
+    },
+    "known_limits": [
+      "all strategies prompt on four deliberately false voluntary-stop cases",
+      "four slow-cadence marching cases time out the 3s mode before four steps",
+      "no patient efficacy conclusion; no total winner selected"
+    ]
   }
 }

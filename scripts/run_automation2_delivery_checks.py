@@ -38,6 +38,10 @@ def main():
                             str(output / "integrated"), "--predictions",
                             "docs/examples/robot2_predictions.csv"],
     }
+    commands["engineering_comparison"] = [
+        "scripts/run_engineering_comparison.py", "--output-dir", str(output / "engineering")]
+    commands["engineering_verification"] = [
+        "scripts/verify_engineering_comparison.py", "--output-dir", str(output / "engineering")]
     if supplied:
         commands["real_data_audit"] = ["recognition/evaluate.py", "--raw", str(args.raw.resolve()),
                                       "--predictions", str(args.oof.resolve()), "--training-report",

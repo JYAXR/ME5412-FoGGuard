@@ -86,3 +86,9 @@ the offline checks on Windows and Ubuntu, but does not download/train real data.
 
 See `CONTINUING_AND_UPLOAD.md` before a subsequent upload. Keep dated evidence immutable,
 make a new snapshot for changed experiments, and record which code/config/inputs produced it.
+
+## Added engineering comparison (separate from prior 110 demo runs)
+
+Read `evidence/2026-10-23-engineering-v1/RESULTS.md` and `status.json.engineering_comparison`. 112 parameterized cases × 5 = 560 runs, actual temporal integrator/controller, preset identical responses across strategies. Generator: `scripts/run_engineering_comparison.py`; independent CSV verifier: `scripts/verify_engineering_comparison.py`, both accept `--output-dir`. The cumulative check runner now runs both after existing checks, on Windows and Ubuntu CI.
+
+Do not call the 1.0 vs 7.5 s cue tail patient recovery time or the 2.46 vs 6.67 cm preset target error human landing accuracy. Fixed cueing also has a 1.0 s tail here. Marching has no duration advantage; 1 s stationary cadence cannot meet four steps within the existing 3 s fallback window. The original parameters were preserved for evaluation. Voluntary-stop candidate errors still trigger all strategies. Review these limits with teammates rather than silently changing their controller or declaring clinical superiority.

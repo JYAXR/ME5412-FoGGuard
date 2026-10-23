@@ -7,6 +7,17 @@
 **原仓库评审入口：[PR #25](https://github.com/JYAXR/ME5412-FoGGuard/pull/25)。**
 首个源码提交的 Windows / Ubuntu 离线 CI 均已通过，见 [Actions 记录](https://github.com/NuyoahQQ/ME5412-FoGGuard/actions/runs/39898636276)；后续提交状态以各自 Checks 为准。
 
+## 新增：五种提示方案的比较结论
+
+**[直接看中文结论和对照表](docs/automation2/evidence/2026-10-23-engineering-v1/RESULTS.md)**，无需逐个操作网页。112 个参数化案例 × 5 方案，共 560 次运行，与之前的 110 次演示分开保存。
+
+- 持续向前响应案例：冻结标注结束后继续提示均值，开启渐弱 1.0 秒、关闭渐弱 7.5 秒；固定提示也是 1.0 秒。
+- 相对裁剪后预设步长的间距误差：自适应 2.46 cm、固定间距 6.67 cm。
+- 踏步提示总时长 9.25 秒、倒计时 9.00 秒；未显示时长优势。慢节奏还暴露四步与三秒窗口不匹配。
+- 四个故意注入冻结误判的主动停步案例，五方案都错误提示；缺点如实保留。
+
+[下载本轮全部输入和时间线](https://github.com/NuyoahQQ/ME5412-FoGGuard/releases/tag/automation2-engineering-comparison-2026-10-23)。本轮本地 245 项测试及独立复核通过；CI 以本次提交 Checks 为准。以上是工程比较，不能宣称患者疗效或完整方案全面更好。
+
 ## 不运行代码，先检查结果
 
 [下载本次版本附件](https://github.com/NuyoahQQ/ME5412-FoGGuard/releases/tag/automation2-handoff-2026-10-23)：
