@@ -1,0 +1,187 @@
+{
+  "counts": {
+    "PASS": 21,
+    "FAIL": 0,
+    "KNOWN_LIMITATION": 1
+  },
+  "regression_gate_passed": true,
+  "scope": "工程回归门槛；通过不表示已知识别局限解决，也不代表全组最终验收",
+  "checks": [
+    {
+      "check": "negative_normal",
+      "case": "constructed_normal",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "负例不启动救援提示",
+      "evidence": "timelines/constructed_normal/response.csv"
+    },
+    {
+      "check": "negative_normal_right_turn",
+      "case": "constructed_normal_right_turn",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "负例不启动救援提示",
+      "evidence": "timelines/constructed_normal_right_turn/response.csv"
+    },
+    {
+      "check": "negative_single_candidate",
+      "case": "constructed_single_candidate",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "负例不启动救援提示",
+      "evidence": "timelines/constructed_single_candidate/response.csv"
+    },
+    {
+      "check": "sensor_negative_normal",
+      "case": "sensor_normal",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "传感器负例不误提示",
+      "evidence": "timelines/sensor_normal/response.csv"
+    },
+    {
+      "check": "sensor_negative_normal_right_turn",
+      "case": "sensor_normal_right_turn",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "传感器负例不误提示",
+      "evidence": "timelines/sensor_normal_right_turn/response.csv"
+    },
+    {
+      "check": "sensor_episode_straight_fog",
+      "case": "sensor_straight_fog",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "核心传感器冻结场景形成一次提示并明确停止",
+      "evidence": "timelines/sensor_straight_fog/response.csv"
+    },
+    {
+      "check": "sensor_episode_turning_fog",
+      "case": "sensor_turning_fog",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "核心传感器冻结场景形成一次提示并明确停止",
+      "evidence": "timelines/sensor_turning_fog/response.csv"
+    },
+    {
+      "check": "sensor_episode_right_turning_fog",
+      "case": "sensor_right_turning_fog",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "核心传感器冻结场景形成一次提示并明确停止",
+      "evidence": "timelines/sensor_right_turning_fog/response.csv"
+    },
+    {
+      "check": "sensor_episode_fog_recovery",
+      "case": "sensor_fog_recovery",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "核心传感器冻结场景形成一次提示并明确停止",
+      "evidence": "timelines/sensor_fog_recovery/response.csv"
+    },
+    {
+      "check": "short_dip",
+      "case": "constructed_short_dip",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "短暂评分回落维持同一提示，不重复启动",
+      "evidence": "timelines/constructed_short_dip/response.csv"
+    },
+    {
+      "check": "direction_left_fog",
+      "case": "constructed_left_fog",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "转弯脚印朝向符号正确",
+      "evidence": "timelines/constructed_left_fog/response.csv"
+    },
+    {
+      "check": "direction_right_fog",
+      "case": "constructed_right_fog",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "转弯脚印朝向符号正确",
+      "evidence": "timelines/constructed_right_fog/response.csv"
+    },
+    {
+      "check": "safety_unknown_direction",
+      "case": "constructed_unknown_direction",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "活动提示遇到不可靠输入后撤销双模态及目标",
+      "evidence": "timelines/constructed_unknown_direction/response.csv"
+    },
+    {
+      "check": "safety_stale_input",
+      "case": "constructed_stale_input",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "活动提示遇到不可靠输入后撤销双模态及目标",
+      "evidence": "timelines/constructed_stale_input/response.csv"
+    },
+    {
+      "check": "fading",
+      "case": "constructed_successful_recovery",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "可靠模拟落脚后逐渐减弱并停止",
+      "evidence": "timelines/constructed_successful_recovery/response.csv"
+    },
+    {
+      "check": "no_fade_factor",
+      "case": "constructed_successful_recovery",
+      "strategy": "no_fade",
+      "status": "PASS",
+      "meaning": "只关闭渐弱后不进入渐弱状态",
+      "evidence": "timelines/constructed_successful_recovery/no_fade.csv"
+    },
+    {
+      "check": "refreeze",
+      "case": "constructed_refreeze_during_fade",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "渐弱期间再次冻结恢复配置强度",
+      "evidence": "timelines/constructed_refreeze_during_fade/response.csv"
+    },
+    {
+      "check": "bounded_no_response",
+      "case": "constructed_persistent_no_response",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "一次倒计时备用，达到时长上限停止，同事件不重启",
+      "evidence": "timelines/constructed_persistent_no_response/response.csv"
+    },
+    {
+      "check": "missing_response",
+      "case": "constructed_response_missing",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "响应源缺失退回固定提示，不冒充无响应",
+      "evidence": "timelines/constructed_response_missing/response.csv"
+    },
+    {
+      "check": "spacing_bounds",
+      "case": "constructed_adaptive_spacing",
+      "strategy": "spacing",
+      "status": "PASS",
+      "meaning": "可选间距确实变化，且满足范围和单次变化限制",
+      "evidence": "timelines/constructed_adaptive_spacing/spacing.csv"
+    },
+    {
+      "check": "stationary_suppression_reference",
+      "case": "sensor_voluntary_stop_suppression_on",
+      "strategy": "response",
+      "status": "PASS",
+      "meaning": "可选静止抑制对照不启动提示；不改变默认配置",
+      "evidence": "timelines/sensor_voluntary_stop_suppression_on/response.csv"
+    },
+    {
+      "check": "stationary_default_limit",
+      "case": "sensor_voluntary_stop",
+      "strategy": "response",
+      "status": "KNOWN_LIMITATION",
+      "meaning": "默认策略主动停步误启动 1 次；保留原规则并披露",
+      "evidence": "timelines/sensor_voluntary_stop/response.csv"
+    }
+  ]
+}

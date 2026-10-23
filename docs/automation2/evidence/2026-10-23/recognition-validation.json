@@ -1,0 +1,14 @@
+{
+  "original_files_preserved": 109,
+  "integrated_files_preserved": 121,
+  "v1_source_and_archive_preserved": true,
+  "full_tests": "........................................................................ [ 29%]\n........................................................................ [ 59%]\n........................................................................ [ 89%]\n.........................                                                [100%]\n241 passed in 19.02s",
+  "lint": "All checks passed!",
+  "window_metrics_unchanged": true,
+  "raw_windows_checked": 9636,
+  "independent_time_metrics_agree": true,
+  "original_records": 106,
+  "predicted_records": 95,
+  "no_retraining": true,
+  "no_remote_changes": true
+}

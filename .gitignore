@@ -34,3 +34,6 @@ reports/**/*.jpg
 # Streamlit
 .streamlit/secrets.toml
 .streamlit.*.log
+
+# Automation 2 dated local check runs (source evidence is curated under docs/automation2/)
+reports/automation2-delivery/

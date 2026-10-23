@@ -1,0 +1,160 @@
+{
+  "schema": "fogguard.automation2.handoff.v1",
+  "snapshot_date": "2026-10-23",
+  "review_state": "requires teammate review; not merged",
+  "publication": {
+    "repository": "NuyoahQQ/ME5412-FoGGuard",
+    "branch": "feat/automation2-review-and-recognition",
+    "upstream": "JYAXR/ME5412-FoGGuard",
+    "base_branch": "codex/automation1-guidance",
+    "base_sha": "58135167a3be0aaa4c93e9c138d732efda9dd38a",
+    "dependency_prs": [
+      23,
+      24
+    ],
+    "related_issues": [
+      5,
+      8,
+      16,
+      17
+    ],
+    "release_tag": "automation2-handoff-2026-10-23"
+  },
+  "entrypoints": {
+    "human": "AUTOMATION2_START_HERE.md",
+    "ai": "docs/automation2/AI_HANDOFF.md",
+    "continuation": "docs/automation2/CONTINUING_AND_UPLOAD.md",
+    "checks": "python -X utf8 scripts/run_automation2_delivery_checks.py",
+    "tests": "python -X utf8 -m pytest tests recognition -q",
+    "demo": "python -X utf8 scripts/run_complete_demo.py",
+    "recognition": "recognition/evaluate.py",
+    "evidence": "docs/automation2/evidence/2026-10-23"
+  },
+  "recognition": {
+    "scope": "saved subject-held-out OOF, binary FoG/non-FoG; no retraining in this audit",
+    "subjects": 22,
+    "raw_records": 106,
+    "records_with_predictions": 95,
+    "records_without_predictions": 11,
+    "raw_windows_verified": 9636,
+    "window_metrics": {
+      "windows": 9636,
+      "TP": 1247,
+      "TN": 6760,
+      "FP": 979,
+      "FN": 650,
+      "precision": 0.5601976639712489,
+      "recall": 0.6573537163943068,
+      "specificity": 0.8734978679415946,
+      "fog_f1": 0.6048993451370361,
+      "macro_f1": 0.7486837474249443,
+      "balanced_accuracy": 0.7654257921679507,
+      "accuracy": 0.8309464508094645,
+      "majority_baseline": 0.8031340805313408,
+      "auc": 0.8575800583656992
+    },
+    "sample_event_coverage": {
+      "observed_s": 5483.783333333392,
+      "truth_fog_s": 1072.1166666666052,
+      "alarm_s": 1107.733333333334,
+      "true_alarm_s": 600.6666666666544,
+      "false_alarm_s": 507.0666666666797,
+      "missed_fog_s": 471.4499999999509,
+      "model_support_s": 4795.883333333314,
+      "truth_events": 101,
+      "covered_events": 76,
+      "missed_events": 25,
+      "missed_events_without_model_support": 18,
+      "event_any_overlap_coverage": 0.7524752475247525,
+      "time_precision": 0.5422484352431277,
+      "time_recall": 0.5602624092527451,
+      "decision_support_fraction": 0.874557407142866,
+      "alarm_events": 445,
+      "false_alarm_events": 262,
+      "covered_with_preexisting_alarm": 11,
+      "new_alarm_delay_cases": 65,
+      "median_new_alarm_onset_delay_s": 1.1833333333339624,
+      "no_support_reasons": {
+        "整段无有效预测窗口": 17,
+        "首个判定前": 0,
+        "末个判定保持期后": 1,
+        "预测时间断档": 0
+      }
+    },
+    "truth_manifestation_groups": [
+      {
+        "manifestation": "拖步 Shuffling",
+        "positive_windows": 96,
+        "subjects": 7,
+        "TP": 48,
+        "FN": 48,
+        "recall": 0.5
+      },
+      {
+        "manifestation": "混合表现",
+        "positive_windows": 1,
+        "subjects": 1,
+        "TP": 0,
+        "FN": 1,
+        "recall": 0.0
+      },
+      {
+        "manifestation": "运动不能 Akinesia",
+        "positive_windows": 1403,
+        "subjects": 7,
+        "TP": 908,
+        "FN": 495,
+        "recall": 0.647184604419102
+      },
+      {
+        "manifestation": "颤动 Trembling",
+        "positive_windows": 397,
+        "subjects": 12,
+        "TP": 291,
+        "FN": 106,
+        "recall": 0.7329974811083123
+      }
+    ],
+    "raw_sha256": "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477",
+    "oof_sha256": "4b658292d0427c59b254d1abfe4a25d4ba3439e0ab978579165192e1472044da",
+    "training_report_sha256": "0b9cce86a5aa8a0820dff1d25317042cbd07d363cb1ac35f3fef55405b761b64",
+    "subtype_predictions_available": false
+  },
+  "simulation": {
+    "input_scope": "constructed candidates and simulated responses; no patient efficacy claim",
+    "cases": 22,
+    "strategies": 5,
+    "runs": 110,
+    "command_audit_failures": 0,
+    "shared_online_contract_approved": false,
+    "built_in_cases": 21,
+    "includes_robot2_handoff_case": true
+  },
+  "baseline_evaluation": {
+    "scenario_strategy_pairs": 112,
+    "acceptance_pass": 21,
+    "known_limitations": 1
+  },
+  "historical_validation": {
+    "pytest_passed": 241,
+    "ruff_passed": true,
+    "independent_sample_time_check_agreed": true,
+    "recognition_package_reproduction_identical": true,
+    "note": "Historical evaluation; run checks on modified code. CI default does not rerun raw-data audit."
+  },
+  "known_limits": [
+    "FoG model precision/recall remain inadequate for clinical use",
+    "11 records have missing required inputs and no valid OOF windows",
+    "voluntary-stop false prompts remain a known limitation",
+    "manifestation labels are truth groups, not model subtype predictions",
+    "formal shared online interface and final design need teammate review",
+    "event any-overlap coverage is not one-to-one event F1"
+  ],
+  "future_upload_policy": {
+    "append_commits_to_existing_branch": true,
+    "force_push": false,
+    "auto_merge": false,
+    "preserve_dated_evidence": true,
+    "new_assets_use_new_release_tag": true
+  }
+}

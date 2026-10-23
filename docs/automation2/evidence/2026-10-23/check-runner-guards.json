@@ -1,0 +1,10 @@
+{
+  "nonempty_output": {
+    "expected_exit_code": 2,
+    "actual_exit_code": 2
+  },
+  "partial_raw_inputs": {
+    "expected_exit_code": 2,
+    "actual_exit_code": 2
+  }
+}
