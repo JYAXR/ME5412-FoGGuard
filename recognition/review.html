@@ -1,0 +1,72 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FoGGuard · 真实数据识别验收 v2</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f5ef;color:#20342e;font:16px/1.65 'Microsoft YaHei',sans-serif}main{max-width:1200px;margin:auto;padding:32px 24px}h1{font-size:32px;margin:8px 0}h2{font-size:20px}p{max-width:1000px}.eyebrow{letter-spacing:3px;color:#526c60;font-size:13px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.card,section{background:white;padding:18px;border:1px solid #d5ddd5;border-radius:12px;margin:12px 0}.value{font-size:28px;font-weight:bold}select,button{font:inherit;padding:9px;margin:4px;border:1px solid #acbfb0;border-radius:6px;background:#fff;color:#20342e}button{cursor:pointer}button:hover{background:#e6eee6}input{width:100%}canvas{width:100%;height:420px;display:block}.note{color:#53635a;font-size:14px}.tag{display:inline-block;padding:3px 10px;background:#e8eee6;border-radius:6px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{text-align:left;padding:7px;border-bottom:1px solid #e4e9e1}.scroll{overflow-x:auto}a{color:#17654f}#detail{font-size:16px;min-height:60px}@media(max-width:600px){main{padding:16px}h1{font-size:25px}select{max-width:100%}}
+</style><main>
+<div class="eyebrow">FOGGUARD / AUTOMATION 2 / REAL DATA AUDIT</div>
+<h1>真实数据里，哪些冻结识别对了？</h1>
+<p>FoG-STAR 的 22 位参与者、106 段原始记录：95 段有预测，11 段无有效预测窗口，均纳入下方事件覆盖评估。窗口指标仅针对有预测的 9,636 个窗口。这里回放的是保存的<strong>参与者隔离交叉验证预测</strong>。</p>
+<div class="cards" id="cards"></div>
+<p class="note">精确率：报冻结时有多少是真的。召回率：真实冻结有多少被找到。窗口长 2 秒（120 点），每 0.5 秒移动一次。下面新增冻结表现分组和基于逐点标注的事件覆盖评估；模型仍只预测冻结／非冻结，不预测亚型。</p>
+<section><h2>哪些冻结表现容易漏掉？</h2><p>按数据集真值分组，比较同一个二分类模型的召回率。窗口内冻结样本中，某表现占比严格超过 50% 才归入该组，否则为混合表现。这里的分组是事后分析，不参与预测。</p>
+<div class="scroll"><table><thead><tr><th>冻结表现真值</th><th>参与者</th><th>冻结窗口</th><th>识别命中</th><th>漏报</th><th>召回率</th></tr></thead><tbody id="subtypes"></tbody></table></div>
+<p class="note">官方标签是 Shuffling、Trembling、Akinesia，没有直接叫“动态冻结”的标签。本页不自行把这些标签合并成未经团队定义的“动态”类别。</p>
+<div id="uncertainty" class="note"></div></section>
+<section><h2>真实冻结事件有没有被覆盖？</h2><div class="cards" id="eventCards"></div>
+<p class="note">真实事件来自原始逐点 FoG 连续区间。预测只能从输入窗口结束时刻开始生效，每次最多保持 0.5 秒，不向前涂满输入窗口。任何正时长重叠计作“事件有覆盖”；这允许一个报警跨越多个事件，因此不是一对一事件 F1，必须同时看冻结时间覆盖率和误报时长。</p>
+<div id="eventDetail"></div><p class="note">下表列出最长的完全漏检事件（最多 20 条）。点击跳转到最接近该事件起点的预测窗口；橙色区域仍表示模型输入窗口，滑块可继续查看后续。无预测支持的事件不能凭空补结果。</p>
+<div class="scroll"><table><thead><tr><th>记录</th><th>记录内起点</th><th>事件时长</th><th>有模型判定的时长</th><th>判定覆盖说明</th><th>查看</th></tr></thead><tbody id="eventMisses"></tbody></table></div></section>
+<section><h2>逐窗口核对</h2><label>参与者 / 会话 / 任务 <select id="record" aria-label="选择记录"></select></label>
+<div><button id="fn">最长连续漏报案例</button><button id="fp">最长连续误报案例</button><button id="tp">最长连续命中案例</button></div>
+<div id="context" class="note"></div><canvas id="plot" aria-label="传感器曲线、样本标签与模型概率"></canvas>
+<label>选择窗口 <input type="range" id="window" aria-label="选择窗口" min="0" value="0"></label>
+<div><button id="prev">上一窗口</button><button id="next">下一窗口</button><button id="nextError">下一处误报或漏报</button></div>
+<div id="detail"></div><p class="note">曲线仅为展示抽取至 20 Hz；缺测处留空，不补零。指标与标签核对使用原始 60 Hz 数据。加速度为含重力的模长（g）。橙色背景表示当前 2 秒输入窗口；概率点画在窗口结束处，表示读完该窗口才得到判断。下方标签是抽样后的原始逐点标注，窗口真值由原始 120 点中冻结比例 ≥ 50% 决定。</p></section>
+<section><h2>按动作场景检查</h2><p class="note">动作同样来自真值，不是模型的转向预测。窗口取唯一占比 ≥ 50% 的动作；无唯一多数时列作混合动作。无冻结窗口时召回率显示 —。</p><div class="scroll"><table><thead><tr><th>动作真值</th><th>窗口</th><th>误报</th><th>漏报</th><th>精确率</th><th>召回率</th></tr></thead><tbody id="activities"></tbody></table></div></section>
+<section><h2>每位参与者的表现</h2><div class="scroll"><table><thead><tr><th>参与者</th><th>窗口</th><th>TP</th><th>FP</th><th>FN</th><th>精确率</th><th>召回率</th></tr></thead><tbody id="subjects"></tbody></table></div><p class="note">— 表示分母为零；没有冻结标签的参与者，召回率无法定义。</p></section>
+<section><h2>如何验收与转交</h2><ol><li>先点漏报与误报案例，观察标签、概率和阈值；拖动窗口滑块逐个核对。</li><li>切换参与者记录，确认不是只展示成功样例。案例按连续同类窗口数量排序，未人工挑选漂亮结果。</li><li>用同目录 CSV 核对窗口、参与者和记录指标；JSON 记录数据哈希、分折及全部 9,636 个窗口的原始标签核验。</li></ol>
+<p>本次复用了既有 OOF 概率，并核对分折中训练/测试参与者隔离、阈值归属及原始标签；没有重新训练模型，也不能仅凭这次文件核验独立证明过去训练过程。模型效果仍有明显误报、漏报，不能称为识别任务已达标。</p>
+<p class="note">数据来源：<a href="https://doi.org/10.5281/zenodo.17838806">FoG-STAR v3.0</a>；归属与文献见随附说明。原始 README 将 timestamp 写作 ms，但本文件相邻点间隔实测约 1/60，原程序也以秒处理，本页沿用经核验的秒。仅用于课程算法评估，不是临床疗效结论。</p></section></main>
+<script>
+const DATA=__DATA__;
+const $=id=>document.getElementById(id), pct=x=>x==null?'—':(100*x).toFixed(1)+'%';
+const m=DATA.summary.metrics;
+$('cards').innerHTML=[['冻结召回率',pct(m.recall)],['冻结精确率',pct(m.precision)],['冻结 F1',m.fog_f1.toFixed(3)],['宏平均 F1',m.macro_f1.toFixed(3)],['漏报 / 误报',m.FN+' / '+m.FP],['全部窗口',m.windows]].map(([a,b])=>`<div class="card">${a}<div class="value">${b}</div></div>`).join('');
+DATA.records.forEach((r,i)=>$('record').add(new Option(r.name+(r.windows.length?'':' · 无预测'),i)));
+let ri=0,wi=0,eventFocus=null;
+const colors={TP:'#17654f',TN:'#536c61',FP:'#b05b00',FN:'#b53147'};
+const names={TP:'命中冻结',TN:'正确排除',FP:'误报',FN:'漏报'};
+function draw(){const r=DATA.records[ri],w=r.windows[wi]??null;$('window').max=Math.max(0,r.windows.length-1);$('window').value=wi;$('window').disabled=!w;['prev','next','nextError'].forEach(id=>$(id).disabled=!w);
+$('context').textContent=`${r.name} · 留出测试折 ${r.fold} · ${r.windows.length} 个窗口 · 原始记录起点 ${r.origin_s.toFixed(3)} 秒`;
+$('detail').innerHTML=w?`<span class="tag" style="color:${colors[w[6]]}">${w[6]} · ${names[w[6]]}</span> 第 ${wi+1} 个窗口，记录内 ${w[0].toFixed(2)}–${w[1].toFixed(2)} 秒。真值：${w[2]?'冻结':'非冻结'}（冻结占比 ${pct(w[7])}，表现：${w[8]}，动作：${w[9]}）；模型：${w[3]?'冻结':'非冻结'}，概率 ${w[4].toFixed(3)}，阈值 ${w[5].toFixed(2)}。`:'本记录无有效预测窗口。这里显示原始信号与冻结真值；没有模型概率或预测标签。'+(eventFocus?` 当前事件：${eventFocus.start.toFixed(2)}–${eventFocus.end.toFixed(2)} 秒。`:'');
+const c=$('plot'),dpr=window.devicePixelRatio||1,width=c.clientWidth,height=420;c.width=width*dpr;c.height=height*dpr;const g=c.getContext('2d');g.scale(dpr,dpr);g.clearRect(0,0,width,height);
+const center=w?w[1]:eventFocus?(eventFocus.start+eventFocus.end)/2:Math.min(12,r.samples.at(-1)[0]/2),span=!w&&eventFocus?Math.max(12,(eventFocus.end-eventFocus.start)/2+3):12;
+const left=58,right=width-18,lo=Math.max(0,center-span),hi=Math.max(lo+.05,Math.min(r.samples.at(-1)[0],center+span)),x=t=>left+(t-lo)/(hi-lo)*(right-left);
+if(w){g.fillStyle='#fcf0d8';g.fillRect(Math.max(left,x(w[0])),20,Math.min(right,x(w[1]))-Math.max(left,x(w[0])),350);}
+g.font='12px Microsoft YaHei';g.fillStyle='#20342e';g.fillText('加速度模长 g：左踝（绿）/ 背部（蓝）',left,16);
+const samples=r.samples.filter(s=>s[0]>=lo&&s[0]<=hi),max=Math.max(2,...samples.flatMap(s=>[s[1],s[2]]).filter(Number.isFinite));
+function line(points,color){g.strokeStyle=color;g.lineWidth=1.4;g.beginPath();let active=false;points.forEach(([a,b])=>{if(!Number.isFinite(b)){active=false;return;}if(active)g.lineTo(a,b);else g.moveTo(a,b);active=true;});g.stroke();}
+[1,2].forEach((ch,i)=>line(samples.map(s=>[x(s[0]),s[ch]===null?null:150-s[ch]/max*120]),i?'#3876a1':'#17654f'));
+g.fillStyle='#53635a';g.fillText(max.toFixed(1),22,35);g.fillText('0',35,151);
+g.fillText(w?'冻结概率（绿） / 判定阈值（虚线）':'无有效预测，概率区域留空',left,188);if(w){g.setLineDash([5,4]);line([[left,300-w[5]*90],[right,300-w[5]*90]],'#a57a25');g.setLineDash([]);}
+const windows=r.windows.filter(v=>v[1]>=lo&&v[1]<=hi);line(windows.flatMap((v,i)=>i&&v[1]-windows[i-1][1]>.75?[[x(v[1]),null],[x(v[1]),300-v[4]*90]]:[[x(v[1]),300-v[4]*90]]),'#17654f');
+windows.forEach(v=>{g.fillStyle=colors[v[6]];g.beginPath();g.arc(x(v[1]),300-v[4]*90,3,0,7);g.fill();});
+g.fillStyle='#20342e';g.fillText('原始逐点冻结标签（红）',left,330);samples.forEach((s,i)=>{if(s[3]){g.fillStyle='#b53147';g.fillRect(x(s[0]),343,Math.max(1,x(samples[i+1]?.[0]??s[0]+.05)-x(s[0])),22);}});
+g.strokeStyle='#ccd7cd';[155,305,370].forEach(y=>{g.beginPath();g.moveTo(left,y);g.lineTo(right,y);g.stroke();});g.fillStyle='#53635a';for(let j=0;j<=4;j++){const t=lo+(hi-lo)*j/4;g.fillText(t.toFixed(1)+'s',x(t)-10,397);}g.fillText('1.0',22,215);g.fillText('0.0',22,300);}
+$('record').onchange=()=>{ri=+$('record').value;wi=0;eventFocus=null;draw();};$('window').oninput=()=>{wi=+$('window').value;eventFocus=null;draw();};
+['FN','FP','TP'].forEach(kind=>$(kind.toLowerCase()).onclick=()=>{const q=DATA.summary.selected_cases.find(c=>c.outcome===kind);ri=q.record;wi=q.window;eventFocus=null;$('record').value=ri;draw();});
+$('prev').onclick=()=>{wi=Math.max(0,wi-1);draw();};$('next').onclick=()=>{wi=Math.min(DATA.records[ri].windows.length-1,wi+1);draw();};
+$('nextError').onclick=()=>{const ws=DATA.records[ri].windows;for(let j=1;j<=ws.length;j++){const k=(wi+j)%ws.length;if(['FP','FN'].includes(ws[k][6])){wi=k;draw();return;}}$('detail').textContent='本记录没有误报或漏报窗口。';};
+const grouped=new Map();DATA.records.forEach(r=>{if(!grouped.has(r.subject))grouped.set(r.subject,{TP:0,TN:0,FP:0,FN:0,windows:0});const a=grouped.get(r.subject);Object.keys(a).forEach(k=>a[k]+=r.metrics[k]);});
+$('subjects').innerHTML=[...grouped].map(([s,a])=>`<tr><td>P${s}</td><td>${a.windows}</td><td>${a.TP}</td><td>${a.FP}</td><td>${a.FN}</td><td>${pct(a.TP+a.FP?a.TP/(a.TP+a.FP):null)}</td><td>${pct(a.TP+a.FN?a.TP/(a.TP+a.FN):null)}</td></tr>`).join('');
+const diag=DATA.summary.diagnostics,es=diag.event_summary;
+$('subtypes').innerHTML=diag.subtypes.map(r=>`<tr><td>${r.manifestation}</td><td>${r.subjects}</td><td>${r.positive_windows}</td><td>${r.TP}</td><td>${r.FN}</td><td>${pct(r.recall)}</td></tr>`).join('');
+const ci=diag.bootstrap.metrics;
+$('uncertainty').textContent=`按参与者整体重采样 2,000 次的百分位 95% 区间：召回率 ${pct(ci.recall.low)}–${pct(ci.recall.high)}，精确率 ${pct(ci.precision.low)}–${pct(ci.precision.high)}。仅反映这 22 位参与者结果的重采样波动，未重新训练模型，也不替代新参与者验证。`;
+$('eventCards').innerHTML=[['有覆盖的真实事件',es.covered_events+' / '+es.truth_events],['事件有覆盖比例',pct(es.event_any_overlap_coverage)],['冻结时间覆盖率',pct(es.time_recall)],['报警时间精确率',pct(es.time_precision)]].map(([a,b])=>`<div class="card">${a}<div class="value">${b}</div></div>`).join('');
+$('eventDetail').textContent=`完全未覆盖 ${es.missed_events} 个事件，其中 ${es.missed_events_without_model_support} 个没有任何模型判定支持。模型判定覆盖记录时长 ${pct(es.decision_support_fraction)}。误报累计 ${es.false_alarm_s.toFixed(1)} 秒，漏报冻结累计 ${es.missed_fog_s.toFixed(1)} 秒。${es.covered_with_preexisting_alarm} 个事件起点前报警已存在；其余被覆盖事件中，新报警首次重叠的条件中位延迟为 ${es.median_new_alarm_onset_delay_s===null?'—':es.median_new_alarm_onset_delay_s.toFixed(2)+' 秒'}（${es.new_alarm_delay_cases} 个事件）。完全漏检不计入此延迟中位数，不能只用延迟评价效果。`;
+$('eventMisses').innerHTML=diag.missed_events.map((r,i)=>`<tr><td>P${r.subject_id} / S${r.session_id} / T${r.task_id}</td><td>${r.relative_start_s.toFixed(2)}s</td><td>${r.duration_s.toFixed(2)}s</td><td>${r.model_support_s.toFixed(2)}s</td><td>${r.support_reason}</td><td><button class="eventJump" data-index="${i}" ${r.record===null?'disabled':''}>查看事件 ${i+1}</button></td></tr>`).join('');
+document.querySelectorAll('.eventJump').forEach(button=>button.onclick=()=>{const row=diag.missed_events[+button.dataset.index];ri=row.record;wi=row.closest_window??0;eventFocus={start:row.relative_start_s,end:row.relative_start_s+row.duration_s};$('record').value=ri;draw();$('record').scrollIntoView({block:'start',behavior:'instant'});});
+$('activities').innerHTML=diag.activities.map(r=>`<tr><td>${r.activity}</td><td>${r.windows}</td><td>${r.FP}</td><td>${r.FN}</td><td>${pct(r.precision)}</td><td>${pct(r.recall)}</td></tr>`).join('');
+window.addEventListener('resize',draw);$('fn').click();
+</script></html>

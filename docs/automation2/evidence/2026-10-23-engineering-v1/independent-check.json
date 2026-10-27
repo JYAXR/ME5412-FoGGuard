@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "independently_checked_runs": 560,
+  "csv_hashes_verified": 884,
+  "input_command_alignment": "all input columns / all 560 runs match; numeric CSV representations compared with tolerance 1e-12 (e.g. 1 vs 1.0)",
+  "duration_check": "saved timestamp integration, no production metric imports",
+  "maximum_episode_s": 15,
+  "slow_march_timeouts": 4,
+  "fast_march_completions": 4,
+  "critical_failure_counts": {
+    "audit_failures": 0,
+    "invalid_input_active_rows": 0,
+    "unclosed_commands": 0,
+    "spacing_out_of_bounds_rows": 0,
+    "turn_errors": 0,
+    "censored_stops": 0
+  }
+}

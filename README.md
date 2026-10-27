@@ -1,5 +1,9 @@
 # ME5412 FoGGuard
 
+> **自动化 2 新交付（2026-10-23，待组内评审）：** [从这里开始](AUTOMATION2_START_HERE.md) · [AI 接手说明](docs/automation2/AI_HANDOFF.md) · [机器可读状态](docs/automation2/status.json)。
+> 包含策略比较、可选踏步仿真、真实数据识别与缺测分析。依赖 PR #24；不表示已合并 main，也不表示模型已达标。
+
+
 自动化 1 的脚印＋声音仿真控制实现已提交本分支，待组内评审：
 
 ```bash

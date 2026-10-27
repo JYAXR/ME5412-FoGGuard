@@ -1,0 +1,13 @@
+{
+  "method": "independent 60Hz sample-midpoint decision lookup",
+  "values": {
+    "observed_s": 5483.783333333334,
+    "truth_fog_s": 1072.1166666666663,
+    "true_alarm_s": 600.6666666666665,
+    "false_alarm_s": 507.0666666666667,
+    "missed_fog_s": 471.45000000000005,
+    "model_support_s": 4795.883333333332
+  },
+  "truth_events": 101,
+  "matches_interval_evaluation": true
+}

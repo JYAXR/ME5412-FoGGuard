@@ -1,0 +1,15 @@
+{
+  "activityRows": 9,
+  "clientWidth": 1265,
+  "participantRows": 22,
+  "records": 106,
+  "scrollWidth": 1265,
+  "subtypeRows": 4,
+  "allRecordsRendered": 106,
+  "renderFailures": [],
+  "consoleErrors": [],
+  "noPredictionEventChecked": true,
+  "predictedEventNavigationChecked": true,
+  "sliderChecked": true,
+  "falsePositiveJumpChecked": true
+}

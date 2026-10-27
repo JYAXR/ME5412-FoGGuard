@@ -1,0 +1,26 @@
+{
+  "schema": "fogguard.release-assets.v1",
+  "release_url": "https://github.com/NuyoahQQ/ME5412-FoGGuard/releases/tag/automation2-handoff-2026-10-23",
+  "assets": [
+    {
+      "name": "FoGGuard-recognition-review-v2.zip",
+      "bytes": 3782967,
+      "sha256": "2f63fc1c0ff12948d0e59c932143954b874f2196f0641c9676f27d90234e61d1"
+    },
+    {
+      "name": "FoGGuard-integrated-demo-v3.zip",
+      "bytes": 13104719,
+      "sha256": "f71c9cdb4a3ca01f46dac944710251a8de0ed405a1d331286ccacd631749af6e"
+    },
+    {
+      "name": "FoGGuard-demo.mp4",
+      "bytes": 956132,
+      "sha256": "44b0bfa13a7ecb2cfd539c92a6a1e865714583749e9f65c8234102b4f9a969d5"
+    },
+    {
+      "name": "FoGGuard-report-draft.pptx",
+      "bytes": 295532,
+      "sha256": "990a54e18807867d878e263ec72dcc978342892b272921519266bae1909db681"
+    }
+  ]
+}

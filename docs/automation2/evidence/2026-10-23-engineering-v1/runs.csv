@@ -1,0 +1,561 @@
+case,strategy,direction,interval,length,family,onset,duration,truth_events,missed_truth_events,unmatched_starts,starts_on_non_fog_windows,truth_to_start_s,confirmed_to_start_s,active_s,active_non_fog_s,after_final_truth_end_active_s,invalid_input_active_rows,start_count,stop_count,timeout_stops,censored_stops,fade_stops,march_completions,march_mode_timeouts,unclosed_commands,spacing_error_m,minimum_spacing_m,maximum_spacing_m,spacing_out_of_bounds_rows,turn_checks,turn_errors,stop_reasons,audit_failures
+000_forward,fixed,straight,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+000_forward,countdown,straight,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+000_forward,march,straight,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+000_forward,no_fade,straight,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,0,0,"{""episode_timeout"": 1}",0
+000_forward,no_spacing,straight,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+001_forward,fixed,straight,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+001_forward,countdown,straight,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+001_forward,march,straight,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+001_forward,no_fade,straight,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+001_forward,no_spacing,straight,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+002_forward,fixed,straight,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+002_forward,countdown,straight,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+002_forward,march,straight,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+002_forward,no_fade,straight,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,0,0,"{""episode_timeout"": 1}",0
+002_forward,no_spacing,straight,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000002,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+003_forward,fixed,straight,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+003_forward,countdown,straight,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+003_forward,march,straight,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+003_forward,no_fade,straight,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,0,0,"{""episode_timeout"": 1}",0
+003_forward,no_spacing,straight,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+004_forward,fixed,straight,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+004_forward,countdown,straight,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+004_forward,march,straight,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+004_forward,no_fade,straight,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+004_forward,no_spacing,straight,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+005_forward,fixed,straight,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+005_forward,countdown,straight,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+005_forward,march,straight,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+005_forward,no_fade,straight,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,0,0,"{""episode_timeout"": 1}",0
+005_forward,no_spacing,straight,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+006_forward,fixed,straight,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+006_forward,countdown,straight,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+006_forward,march,straight,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+006_forward,no_fade,straight,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,0,0,"{""episode_timeout"": 1}",0
+006_forward,no_spacing,straight,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+007_forward,fixed,straight,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+007_forward,countdown,straight,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+007_forward,march,straight,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+007_forward,no_fade,straight,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+007_forward,no_spacing,straight,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+008_forward,fixed,straight,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+008_forward,countdown,straight,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+008_forward,march,straight,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+008_forward,no_fade,straight,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,0,0,"{""episode_timeout"": 1}",0
+008_forward,no_spacing,straight,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+009_forward,fixed,straight,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+009_forward,countdown,straight,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+009_forward,march,straight,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+009_forward,no_fade,straight,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,0,0,"{""episode_timeout"": 1}",0
+009_forward,no_spacing,straight,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+010_forward,fixed,straight,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+010_forward,countdown,straight,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+010_forward,march,straight,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+010_forward,no_fade,straight,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+010_forward,no_spacing,straight,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+011_forward,fixed,straight,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+011_forward,countdown,straight,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+011_forward,march,straight,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+011_forward,no_fade,straight,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,0,0,"{""episode_timeout"": 1}",0
+011_forward,no_spacing,straight,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+012_forward,fixed,straight,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+012_forward,countdown,straight,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+012_forward,march,straight,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+012_forward,no_fade,straight,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,0,0,"{""episode_timeout"": 1}",0
+012_forward,no_spacing,straight,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+013_forward,fixed,straight,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+013_forward,countdown,straight,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+013_forward,march,straight,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+013_forward,no_fade,straight,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+013_forward,no_spacing,straight,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+014_forward,fixed,straight,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+014_forward,countdown,straight,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+014_forward,march,straight,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+014_forward,no_fade,straight,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,0,0,"{""episode_timeout"": 1}",0
+014_forward,no_spacing,straight,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000002,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+015_forward,fixed,straight,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+015_forward,countdown,straight,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+015_forward,march,straight,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+015_forward,no_fade,straight,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,0,0,"{""episode_timeout"": 1}",0
+015_forward,no_spacing,straight,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+016_forward,fixed,straight,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+016_forward,countdown,straight,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+016_forward,march,straight,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+016_forward,no_fade,straight,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+016_forward,no_spacing,straight,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+017_forward,fixed,straight,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+017_forward,countdown,straight,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+017_forward,march,straight,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+017_forward,no_fade,straight,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,0,0,"{""episode_timeout"": 1}",0
+017_forward,no_spacing,straight,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+018_forward,fixed,straight,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+018_forward,countdown,straight,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+018_forward,march,straight,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+018_forward,no_fade,straight,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,0,0,"{""episode_timeout"": 1}",0
+018_forward,no_spacing,straight,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+019_forward,fixed,straight,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+019_forward,countdown,straight,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+019_forward,march,straight,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+019_forward,no_fade,straight,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+019_forward,no_spacing,straight,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+020_forward,fixed,straight,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+020_forward,countdown,straight,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+020_forward,march,straight,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+020_forward,no_fade,straight,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,0,0,"{""episode_timeout"": 1}",0
+020_forward,no_spacing,straight,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+021_forward,fixed,straight,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+021_forward,countdown,straight,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+021_forward,march,straight,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+021_forward,no_fade,straight,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,0,0,"{""episode_timeout"": 1}",0
+021_forward,no_spacing,straight,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+022_forward,fixed,straight,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+022_forward,countdown,straight,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+022_forward,march,straight,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+022_forward,no_fade,straight,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+022_forward,no_spacing,straight,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+023_forward,fixed,straight,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+023_forward,countdown,straight,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+023_forward,march,straight,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+023_forward,no_fade,straight,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,0,0,"{""episode_timeout"": 1}",0
+023_forward,no_spacing,straight,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+024_forward,fixed,left,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+024_forward,countdown,left,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+024_forward,march,left,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+024_forward,no_fade,left,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+024_forward,no_spacing,left,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+025_forward,fixed,left,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+025_forward,countdown,left,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+025_forward,march,left,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+025_forward,no_fade,left,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+025_forward,no_spacing,left,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+026_forward,fixed,left,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+026_forward,countdown,left,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+026_forward,march,left,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+026_forward,no_fade,left,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+026_forward,no_spacing,left,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000002,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+027_forward,fixed,left,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+027_forward,countdown,left,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+027_forward,march,left,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+027_forward,no_fade,left,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+027_forward,no_spacing,left,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+028_forward,fixed,left,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+028_forward,countdown,left,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+028_forward,march,left,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+028_forward,no_fade,left,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+028_forward,no_spacing,left,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+029_forward,fixed,left,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+029_forward,countdown,left,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+029_forward,march,left,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+029_forward,no_fade,left,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+029_forward,no_spacing,left,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+030_forward,fixed,left,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+030_forward,countdown,left,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+030_forward,march,left,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+030_forward,no_fade,left,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+030_forward,no_spacing,left,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+031_forward,fixed,left,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+031_forward,countdown,left,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+031_forward,march,left,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+031_forward,no_fade,left,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+031_forward,no_spacing,left,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+032_forward,fixed,left,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+032_forward,countdown,left,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+032_forward,march,left,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+032_forward,no_fade,left,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+032_forward,no_spacing,left,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+033_forward,fixed,left,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+033_forward,countdown,left,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+033_forward,march,left,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+033_forward,no_fade,left,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+033_forward,no_spacing,left,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+034_forward,fixed,left,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+034_forward,countdown,left,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+034_forward,march,left,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+034_forward,no_fade,left,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+034_forward,no_spacing,left,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+035_forward,fixed,left,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+035_forward,countdown,left,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+035_forward,march,left,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+035_forward,no_fade,left,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+035_forward,no_spacing,left,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+036_forward,fixed,left,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+036_forward,countdown,left,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+036_forward,march,left,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+036_forward,no_fade,left,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+036_forward,no_spacing,left,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+037_forward,fixed,left,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+037_forward,countdown,left,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+037_forward,march,left,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+037_forward,no_fade,left,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+037_forward,no_spacing,left,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+038_forward,fixed,left,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+038_forward,countdown,left,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+038_forward,march,left,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+038_forward,no_fade,left,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+038_forward,no_spacing,left,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000002,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+039_forward,fixed,left,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+039_forward,countdown,left,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+039_forward,march,left,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+039_forward,no_fade,left,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+039_forward,no_spacing,left,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+040_forward,fixed,left,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+040_forward,countdown,left,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+040_forward,march,left,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+040_forward,no_fade,left,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+040_forward,no_spacing,left,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+041_forward,fixed,left,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+041_forward,countdown,left,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+041_forward,march,left,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+041_forward,no_fade,left,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+041_forward,no_spacing,left,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+042_forward,fixed,left,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+042_forward,countdown,left,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+042_forward,march,left,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+042_forward,no_fade,left,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+042_forward,no_spacing,left,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+043_forward,fixed,left,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+043_forward,countdown,left,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+043_forward,march,left,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+043_forward,no_fade,left,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+043_forward,no_spacing,left,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+044_forward,fixed,left,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+044_forward,countdown,left,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+044_forward,march,left,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+044_forward,no_fade,left,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+044_forward,no_spacing,left,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+045_forward,fixed,left,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+045_forward,countdown,left,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+045_forward,march,left,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+045_forward,no_fade,left,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+045_forward,no_spacing,left,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+046_forward,fixed,left,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+046_forward,countdown,left,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+046_forward,march,left,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+046_forward,no_fade,left,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+046_forward,no_spacing,left,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+047_forward,fixed,left,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+047_forward,countdown,left,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+047_forward,march,left,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+047_forward,no_fade,left,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+047_forward,no_spacing,left,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+048_forward,fixed,right,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+048_forward,countdown,right,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+048_forward,march,right,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+048_forward,no_fade,right,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+048_forward,no_spacing,right,0.5,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+049_forward,fixed,right,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+049_forward,countdown,right,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+049_forward,march,right,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+049_forward,no_fade,right,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+049_forward,no_spacing,right,0.5,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+050_forward,fixed,right,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+050_forward,countdown,right,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+050_forward,march,right,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+050_forward,no_fade,right,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+050_forward,no_spacing,right,0.5,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000002,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+051_forward,fixed,right,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+051_forward,countdown,right,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+051_forward,march,right,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+051_forward,no_fade,right,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+051_forward,no_spacing,right,1.0,0.24,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+052_forward,fixed,right,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+052_forward,countdown,right,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+052_forward,march,right,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+052_forward,no_fade,right,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+052_forward,no_spacing,right,1.0,0.4,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+053_forward,fixed,right,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+053_forward,countdown,right,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+053_forward,march,right,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+053_forward,no_fade,right,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+053_forward,no_spacing,right,1.0,0.52,forward,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+054_forward,fixed,right,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+054_forward,countdown,right,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+054_forward,march,right,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+054_forward,no_fade,right,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+054_forward,no_spacing,right,0.5,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+055_forward,fixed,right,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+055_forward,countdown,right,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+055_forward,march,right,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+055_forward,no_fade,right,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+055_forward,no_spacing,right,0.5,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+056_forward,fixed,right,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+056_forward,countdown,right,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+056_forward,march,right,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+056_forward,no_fade,right,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+056_forward,no_spacing,right,0.5,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+057_forward,fixed,right,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+057_forward,countdown,right,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+057_forward,march,right,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+057_forward,no_fade,right,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+057_forward,no_spacing,right,1.0,0.24,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+058_forward,fixed,right,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+058_forward,countdown,right,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+058_forward,march,right,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+058_forward,no_fade,right,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+058_forward,no_spacing,right,1.0,0.4,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+059_forward,fixed,right,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+059_forward,countdown,right,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+059_forward,march,right,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+059_forward,no_fade,right,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+059_forward,no_spacing,right,1.0,0.52,forward,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+060_forward,fixed,right,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+060_forward,countdown,right,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+060_forward,march,right,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02090909090909091,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+060_forward,no_fade,right,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+060_forward,no_spacing,right,0.5,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+061_forward,fixed,right,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+061_forward,countdown,right,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+061_forward,march,right,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.5418214643756407e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+061_forward,no_fade,right,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+061_forward,no_spacing,right,0.5,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+062_forward,fixed,right,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+062_forward,countdown,right,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+062_forward,march,right,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.038181818181818164,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+062_forward,no_fade,right,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+062_forward,no_spacing,right,0.5,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000002,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+063_forward,fixed,right,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+063_forward,countdown,right,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+063_forward,march,right,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.046,0.32,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+063_forward,no_fade,right,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+063_forward,no_spacing,right,1.0,0.24,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+064_forward,fixed,right,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+064_forward,countdown,right,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+064_forward,march,right,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,3.3306690738754695e-17,0.4,0.4000000000000001,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+064_forward,no_fade,right,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+064_forward,no_spacing,right,1.0,0.4,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+065_forward,fixed,right,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,13,0,"{""detection_recovery_completed"": 1}",0
+065_forward,countdown,right,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+065_forward,march,right,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08399999999999996,0.4,0.52,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+065_forward,no_fade,right,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+065_forward,no_spacing,right,1.0,0.52,forward,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12,0.4,0.4,0,13,0,"{""simulated_recovery_fade_completed"": 1}",0
+066_forward,fixed,right,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+066_forward,countdown,right,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+066_forward,march,right,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.012105263157894735,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+066_forward,no_fade,right,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.008518518518518517,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+066_forward,no_spacing,right,0.5,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000003,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+067_forward,fixed,right,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+067_forward,countdown,right,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+067_forward,march,right,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.966787215428332e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+067_forward,no_fade,right,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,5.1399214103016507e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+067_forward,no_spacing,right,0.5,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+068_forward,fixed,right,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+068_forward,countdown,right,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+068_forward,march,right,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.02210526315789473,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+068_forward,no_fade,right,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.015555555555555548,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+068_forward,no_spacing,right,0.5,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+069_forward,fixed,right,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+069_forward,countdown,right,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+069_forward,march,right,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.025555555555555554,0.32,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+069_forward,no_fade,right,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.016428571428571428,0.32,0.4,0,30,0,"{""episode_timeout"": 1}",0
+069_forward,no_spacing,right,1.0,0.24,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.08000000000000002,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+070_forward,fixed,right,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+070_forward,countdown,right,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+070_forward,march,right,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,4.3175339846533866e-17,0.4,0.4000000000000001,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+070_forward,no_fade,right,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,4.7580986769649563e-17,0.4,0.4000000000000001,0,30,0,"{""episode_timeout"": 1}",0
+070_forward,no_spacing,right,1.0,0.4,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.0,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+071_forward,fixed,right,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,21,0,"{""detection_recovery_completed"": 1}",0
+071_forward,countdown,right,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+071_forward,march,right,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.04666666666666665,0.4,0.52,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+071_forward,no_fade,right,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,0,0,0.02999999999999999,0.4,0.52,0,30,0,"{""episode_timeout"": 1}",0
+071_forward,no_spacing,right,1.0,0.52,forward,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,0.12000000000000001,0.4,0.4,0,21,0,"{""simulated_recovery_fade_completed"": 1}",0
+072_march,fixed,straight,0.5,0.4,march,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+072_march,countdown,straight,0.5,0.4,march,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+072_march,march,straight,0.5,0.4,march,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,1,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+072_march,no_fade,straight,0.5,0.4,march,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,1,0,0,,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+072_march,no_spacing,straight,0.5,0.4,march,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,1,0,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+073_march,fixed,straight,1.0,0.4,march,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+073_march,countdown,straight,1.0,0.4,march,4,12,1,0,0,0,0.5,0.0,8.5,3.0,3.0,0,1,1,0,0,1,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+073_march,march,straight,1.0,0.4,march,4,12,1,0,0,0,0.5,0.0,9.5,4.0,4.0,0,1,1,0,0,1,0,1,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+073_march,no_fade,straight,1.0,0.4,march,4,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,1,0,,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+073_march,no_spacing,straight,1.0,0.4,march,4,12,1,0,0,0,0.5,0.0,9.5,4.0,4.0,0,1,1,0,0,1,0,1,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+074_march,fixed,straight,0.5,0.4,march,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+074_march,countdown,straight,0.5,0.4,march,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+074_march,march,straight,0.5,0.4,march,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,1,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+074_march,no_fade,straight,0.5,0.4,march,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,1,0,0,,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+074_march,no_spacing,straight,0.5,0.4,march,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,1,0,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+075_march,fixed,straight,1.0,0.4,march,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+075_march,countdown,straight,1.0,0.4,march,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+075_march,march,straight,1.0,0.4,march,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,1,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+075_march,no_fade,straight,1.0,0.4,march,4,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,1,0,,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+075_march,no_spacing,straight,1.0,0.4,march,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,1,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+076_march,fixed,straight,0.5,0.4,march,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+076_march,countdown,straight,0.5,0.4,march,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+076_march,march,straight,0.5,0.4,march,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,1,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+076_march,no_fade,straight,0.5,0.4,march,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,1,0,0,,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+076_march,no_spacing,straight,0.5,0.4,march,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,1,1,0,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+077_march,fixed,straight,1.0,0.4,march,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+077_march,countdown,straight,1.0,0.4,march,8,12,1,0,0,0,0.5,0.0,8.5,3.0,3.0,0,1,1,0,0,1,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+077_march,march,straight,1.0,0.4,march,8,12,1,0,0,0,0.5,0.0,9.5,4.0,4.0,0,1,1,0,0,1,0,1,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+077_march,no_fade,straight,1.0,0.4,march,8,12,1,0,0,0,0.5,0.0,15.0,9.5,9.5,0,1,1,1,0,0,0,1,0,,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+077_march,no_spacing,straight,1.0,0.4,march,8,12,1,0,0,0,0.5,0.0,9.5,4.0,4.0,0,1,1,0,0,1,0,1,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+078_march,fixed,straight,0.5,0.4,march,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+078_march,countdown,straight,0.5,0.4,march,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+078_march,march,straight,0.5,0.4,march,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,1,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+078_march,no_fade,straight,0.5,0.4,march,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,1,0,0,,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+078_march,no_spacing,straight,0.5,0.4,march,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,1,0,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+079_march,fixed,straight,1.0,0.4,march,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+079_march,countdown,straight,1.0,0.4,march,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+079_march,march,straight,1.0,0.4,march,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,1,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+079_march,no_fade,straight,1.0,0.4,march,8,20,1,0,0,0,0.5,0.0,15.0,5.5,5.5,0,1,1,1,0,0,0,1,0,,0.4,0.4000000000000001,0,0,0,"{""episode_timeout"": 1}",0
+079_march,no_spacing,straight,1.0,0.4,march,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,1,0,1,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 1}",0
+080_stale_input,fixed,straight,0.5,0.4,stale_input,4,12,1,0,1,0,0.5,0.25,5.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+080_stale_input,countdown,straight,0.5,0.4,stale_input,4,12,1,0,1,0,0.5,0.25,5.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+080_stale_input,march,straight,0.5,0.4,stale_input,4,12,1,0,1,0,0.5,0.25,5.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+080_stale_input,no_fade,straight,0.5,0.4,stale_input,4,12,1,0,1,0,0.5,0.25,5.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+080_stale_input,no_spacing,straight,0.5,0.4,stale_input,4,12,1,0,1,0,0.5,0.25,5.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+081_stale_input,fixed,straight,0.5,0.4,stale_input,4,20,1,0,1,0,0.5,0.25,9.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+081_stale_input,countdown,straight,0.5,0.4,stale_input,4,20,1,0,1,0,0.5,0.25,9.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+081_stale_input,march,straight,0.5,0.4,stale_input,4,20,1,0,1,0,0.5,0.25,9.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+081_stale_input,no_fade,straight,0.5,0.4,stale_input,4,20,1,0,1,0,0.5,0.25,9.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+081_stale_input,no_spacing,straight,0.5,0.4,stale_input,4,20,1,0,1,0,0.5,0.25,9.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+082_stale_input,fixed,straight,0.5,0.4,stale_input,8,12,1,0,1,0,0.5,0.25,5.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+082_stale_input,countdown,straight,0.5,0.4,stale_input,8,12,1,0,1,0,0.5,0.25,5.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+082_stale_input,march,straight,0.5,0.4,stale_input,8,12,1,0,1,0,0.5,0.25,5.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+082_stale_input,no_fade,straight,0.5,0.4,stale_input,8,12,1,0,1,0,0.5,0.25,5.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+082_stale_input,no_spacing,straight,0.5,0.4,stale_input,8,12,1,0,1,0,0.5,0.25,5.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+083_stale_input,fixed,straight,0.5,0.4,stale_input,8,20,1,0,1,0,0.5,0.25,9.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+083_stale_input,countdown,straight,0.5,0.4,stale_input,8,20,1,0,1,0,0.5,0.25,9.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+083_stale_input,march,straight,0.5,0.4,stale_input,8,20,1,0,1,0,0.5,0.25,9.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+083_stale_input,no_fade,straight,0.5,0.4,stale_input,8,20,1,0,1,0,0.5,0.25,9.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+083_stale_input,no_spacing,straight,0.5,0.4,stale_input,8,20,1,0,1,0,0.5,0.25,9.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""stale_input"": 1}",0
+084_unknown_direction,fixed,straight,0.5,0.4,unknown_direction,4,12,1,0,1,0,0.5,0.0,4.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+084_unknown_direction,countdown,straight,0.5,0.4,unknown_direction,4,12,1,0,1,0,0.5,0.0,4.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+084_unknown_direction,march,straight,0.5,0.4,unknown_direction,4,12,1,0,1,0,0.5,0.0,4.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+084_unknown_direction,no_fade,straight,0.5,0.4,unknown_direction,4,12,1,0,1,0,0.5,0.0,4.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+084_unknown_direction,no_spacing,straight,0.5,0.4,unknown_direction,4,12,1,0,1,0,0.5,0.0,4.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+085_unknown_direction,fixed,straight,0.5,0.4,unknown_direction,4,20,1,0,1,0,0.5,0.0,8.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+085_unknown_direction,countdown,straight,0.5,0.4,unknown_direction,4,20,1,0,1,0,0.5,0.0,8.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+085_unknown_direction,march,straight,0.5,0.4,unknown_direction,4,20,1,0,1,0,0.5,0.0,8.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+085_unknown_direction,no_fade,straight,0.5,0.4,unknown_direction,4,20,1,0,1,0,0.5,0.0,8.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+085_unknown_direction,no_spacing,straight,0.5,0.4,unknown_direction,4,20,1,0,1,0,0.5,0.0,8.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+086_unknown_direction,fixed,straight,0.5,0.4,unknown_direction,8,12,1,0,1,0,0.5,0.0,4.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+086_unknown_direction,countdown,straight,0.5,0.4,unknown_direction,8,12,1,0,1,0,0.5,0.0,4.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+086_unknown_direction,march,straight,0.5,0.4,unknown_direction,8,12,1,0,1,0,0.5,0.0,4.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+086_unknown_direction,no_fade,straight,0.5,0.4,unknown_direction,8,12,1,0,1,0,0.5,0.0,4.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+086_unknown_direction,no_spacing,straight,0.5,0.4,unknown_direction,8,12,1,0,1,0,0.5,0.0,4.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+087_unknown_direction,fixed,straight,0.5,0.4,unknown_direction,8,20,1,0,1,0,0.5,0.0,8.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+087_unknown_direction,countdown,straight,0.5,0.4,unknown_direction,8,20,1,0,1,0,0.5,0.0,8.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+087_unknown_direction,march,straight,0.5,0.4,unknown_direction,8,20,1,0,1,0,0.5,0.0,8.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+087_unknown_direction,no_fade,straight,0.5,0.4,unknown_direction,8,20,1,0,1,0,0.5,0.0,8.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+087_unknown_direction,no_spacing,straight,0.5,0.4,unknown_direction,8,20,1,0,1,0,0.5,0.0,8.0,1.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1, ""direction_unavailable"": 1}",0
+088_missing_response,fixed,straight,0.5,0.4,missing_response,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+088_missing_response,countdown,straight,0.5,0.4,missing_response,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+088_missing_response,march,straight,0.5,0.4,missing_response,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+088_missing_response,no_fade,straight,0.5,0.4,missing_response,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+088_missing_response,no_spacing,straight,0.5,0.4,missing_response,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+089_missing_response,fixed,straight,0.5,0.4,missing_response,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+089_missing_response,countdown,straight,0.5,0.4,missing_response,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+089_missing_response,march,straight,0.5,0.4,missing_response,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+089_missing_response,no_fade,straight,0.5,0.4,missing_response,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+089_missing_response,no_spacing,straight,0.5,0.4,missing_response,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+090_missing_response,fixed,straight,0.5,0.4,missing_response,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+090_missing_response,countdown,straight,0.5,0.4,missing_response,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+090_missing_response,march,straight,0.5,0.4,missing_response,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+090_missing_response,no_fade,straight,0.5,0.4,missing_response,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+090_missing_response,no_spacing,straight,0.5,0.4,missing_response,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+091_missing_response,fixed,straight,0.5,0.4,missing_response,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+091_missing_response,countdown,straight,0.5,0.4,missing_response,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+091_missing_response,march,straight,0.5,0.4,missing_response,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+091_missing_response,no_fade,straight,0.5,0.4,missing_response,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+091_missing_response,no_spacing,straight,0.5,0.4,missing_response,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+092_wrong_foot,fixed,straight,0.5,0.4,wrong_foot,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+092_wrong_foot,countdown,straight,0.5,0.4,wrong_foot,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+092_wrong_foot,march,straight,0.5,0.4,wrong_foot,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+092_wrong_foot,no_fade,straight,0.5,0.4,wrong_foot,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+092_wrong_foot,no_spacing,straight,0.5,0.4,wrong_foot,4,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+093_wrong_foot,fixed,straight,0.5,0.4,wrong_foot,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+093_wrong_foot,countdown,straight,0.5,0.4,wrong_foot,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+093_wrong_foot,march,straight,0.5,0.4,wrong_foot,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,1,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+093_wrong_foot,no_fade,straight,0.5,0.4,wrong_foot,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,1,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+093_wrong_foot,no_spacing,straight,0.5,0.4,wrong_foot,4,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,1,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+094_wrong_foot,fixed,straight,0.5,0.4,wrong_foot,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+094_wrong_foot,countdown,straight,0.5,0.4,wrong_foot,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+094_wrong_foot,march,straight,0.5,0.4,wrong_foot,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+094_wrong_foot,no_fade,straight,0.5,0.4,wrong_foot,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+094_wrong_foot,no_spacing,straight,0.5,0.4,wrong_foot,8,12,1,0,0,0,0.5,0.0,6.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+095_wrong_foot,fixed,straight,0.5,0.4,wrong_foot,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+095_wrong_foot,countdown,straight,0.5,0.4,wrong_foot,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+095_wrong_foot,march,straight,0.5,0.4,wrong_foot,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,1,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+095_wrong_foot,no_fade,straight,0.5,0.4,wrong_foot,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,1,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+095_wrong_foot,no_spacing,straight,0.5,0.4,wrong_foot,8,20,1,0,0,0,0.5,0.0,10.5,1.0,1.0,0,1,1,0,0,0,0,1,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+096_voluntary_false_positive,fixed,straight,0.5,0.4,voluntary_false_positive,4,12,0,0,1,1,,0.0,6.5,6.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+096_voluntary_false_positive,countdown,straight,0.5,0.4,voluntary_false_positive,4,12,0,0,1,1,,0.0,6.5,6.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+096_voluntary_false_positive,march,straight,0.5,0.4,voluntary_false_positive,4,12,0,0,1,1,,0.0,6.5,6.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+096_voluntary_false_positive,no_fade,straight,0.5,0.4,voluntary_false_positive,4,12,0,0,1,1,,0.0,6.5,6.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+096_voluntary_false_positive,no_spacing,straight,0.5,0.4,voluntary_false_positive,4,12,0,0,1,1,,0.0,6.5,6.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+097_voluntary_false_positive,fixed,straight,0.5,0.4,voluntary_false_positive,4,20,0,0,1,1,,0.0,10.5,10.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+097_voluntary_false_positive,countdown,straight,0.5,0.4,voluntary_false_positive,4,20,0,0,1,1,,0.0,10.5,10.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+097_voluntary_false_positive,march,straight,0.5,0.4,voluntary_false_positive,4,20,0,0,1,1,,0.0,10.5,10.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+097_voluntary_false_positive,no_fade,straight,0.5,0.4,voluntary_false_positive,4,20,0,0,1,1,,0.0,10.5,10.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+097_voluntary_false_positive,no_spacing,straight,0.5,0.4,voluntary_false_positive,4,20,0,0,1,1,,0.0,10.5,10.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+098_voluntary_false_positive,fixed,straight,0.5,0.4,voluntary_false_positive,8,12,0,0,1,1,,0.0,6.5,6.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+098_voluntary_false_positive,countdown,straight,0.5,0.4,voluntary_false_positive,8,12,0,0,1,1,,0.0,6.5,6.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+098_voluntary_false_positive,march,straight,0.5,0.4,voluntary_false_positive,8,12,0,0,1,1,,0.0,6.5,6.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+098_voluntary_false_positive,no_fade,straight,0.5,0.4,voluntary_false_positive,8,12,0,0,1,1,,0.0,6.5,6.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+098_voluntary_false_positive,no_spacing,straight,0.5,0.4,voluntary_false_positive,8,12,0,0,1,1,,0.0,6.5,6.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+099_voluntary_false_positive,fixed,straight,0.5,0.4,voluntary_false_positive,8,20,0,0,1,1,,0.0,10.5,10.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+099_voluntary_false_positive,countdown,straight,0.5,0.4,voluntary_false_positive,8,20,0,0,1,1,,0.0,10.5,10.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+099_voluntary_false_positive,march,straight,0.5,0.4,voluntary_false_positive,8,20,0,0,1,1,,0.0,10.5,10.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+099_voluntary_false_positive,no_fade,straight,0.5,0.4,voluntary_false_positive,8,20,0,0,1,1,,0.0,10.5,10.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+099_voluntary_false_positive,no_spacing,straight,0.5,0.4,voluntary_false_positive,8,20,0,0,1,1,,0.0,10.5,10.5,0.0,0,1,1,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 1}",0
+100_persistent_no_response,fixed,straight,0.5,0.4,persistent_no_response,4,36,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,0,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+100_persistent_no_response,countdown,straight,0.5,0.4,persistent_no_response,4,36,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,0,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+100_persistent_no_response,march,straight,0.5,0.4,persistent_no_response,4,36,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+100_persistent_no_response,no_fade,straight,0.5,0.4,persistent_no_response,4,36,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+100_persistent_no_response,no_spacing,straight,0.5,0.4,persistent_no_response,4,36,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+101_persistent_no_response,fixed,straight,0.5,0.4,persistent_no_response,4,44,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,0,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+101_persistent_no_response,countdown,straight,0.5,0.4,persistent_no_response,4,44,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,0,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+101_persistent_no_response,march,straight,0.5,0.4,persistent_no_response,4,44,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+101_persistent_no_response,no_fade,straight,0.5,0.4,persistent_no_response,4,44,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+101_persistent_no_response,no_spacing,straight,0.5,0.4,persistent_no_response,4,44,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+102_persistent_no_response,fixed,straight,0.5,0.4,persistent_no_response,8,36,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,0,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+102_persistent_no_response,countdown,straight,0.5,0.4,persistent_no_response,8,36,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,0,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+102_persistent_no_response,march,straight,0.5,0.4,persistent_no_response,8,36,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+102_persistent_no_response,no_fade,straight,0.5,0.4,persistent_no_response,8,36,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+102_persistent_no_response,no_spacing,straight,0.5,0.4,persistent_no_response,8,36,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+103_persistent_no_response,fixed,straight,0.5,0.4,persistent_no_response,8,44,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,0,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+103_persistent_no_response,countdown,straight,0.5,0.4,persistent_no_response,8,44,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,0,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+103_persistent_no_response,march,straight,0.5,0.4,persistent_no_response,8,44,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+103_persistent_no_response,no_fade,straight,0.5,0.4,persistent_no_response,8,44,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+103_persistent_no_response,no_spacing,straight,0.5,0.4,persistent_no_response,8,44,1,0,0,0,0.5,0.0,15.0,0.0,0.0,0,1,1,1,0,0,0,1,0,,0.4,0.4,0,0,0,"{""episode_timeout"": 1}",0
+104_refreeze,fixed,straight,0.5,0.4,refreeze,4,12,2,0,0,0,0.5,0.0,5.5,2.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 2}",0
+104_refreeze,countdown,straight,0.5,0.4,refreeze,4,12,2,0,0,0,0.5,0.0,5.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+104_refreeze,march,straight,0.5,0.4,refreeze,4,12,2,0,0,0,0.5,0.0,5.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+104_refreeze,no_fade,straight,0.5,0.4,refreeze,4,12,2,0,0,0,0.75,0.25,15.5,12.0,10.5,0,2,2,0,0,0,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""detection_recovery_completed"": 1, ""event_changed"": 1}",0
+104_refreeze,no_spacing,straight,0.5,0.4,refreeze,4,12,2,0,0,0,0.5,0.0,5.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+105_refreeze,fixed,straight,0.5,0.4,refreeze,4,20,2,0,0,0,0.5,0.0,9.5,2.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 2}",0
+105_refreeze,countdown,straight,0.5,0.4,refreeze,4,20,2,0,0,0,0.5,0.0,9.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+105_refreeze,march,straight,0.5,0.4,refreeze,4,20,2,0,0,0,0.5,0.0,9.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+105_refreeze,no_fade,straight,0.5,0.4,refreeze,4,20,2,0,0,0,0.75,0.25,15.5,8.0,6.5,0,2,2,0,0,0,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""detection_recovery_completed"": 1, ""event_changed"": 1}",0
+105_refreeze,no_spacing,straight,0.5,0.4,refreeze,4,20,2,0,0,0,0.5,0.0,9.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+106_refreeze,fixed,straight,0.5,0.4,refreeze,8,12,2,0,0,0,0.5,0.0,5.5,2.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 2}",0
+106_refreeze,countdown,straight,0.5,0.4,refreeze,8,12,2,0,0,0,0.5,0.0,5.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+106_refreeze,march,straight,0.5,0.4,refreeze,8,12,2,0,0,0,0.5,0.0,5.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+106_refreeze,no_fade,straight,0.5,0.4,refreeze,8,12,2,0,0,0,0.75,0.25,15.5,12.0,10.5,0,2,2,0,0,0,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""detection_recovery_completed"": 1, ""event_changed"": 1}",0
+106_refreeze,no_spacing,straight,0.5,0.4,refreeze,8,12,2,0,0,0,0.5,0.0,5.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+107_refreeze,fixed,straight,0.5,0.4,refreeze,8,20,2,0,0,0,0.5,0.0,9.5,2.0,1.0,0,2,2,0,0,0,0,0,0,,0.4,0.4,0,0,0,"{""detection_recovery_completed"": 2}",0
+107_refreeze,countdown,straight,0.5,0.4,refreeze,8,20,2,0,0,0,0.5,0.0,9.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+107_refreeze,march,straight,0.5,0.4,refreeze,8,20,2,0,0,0,0.5,0.0,9.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+107_refreeze,no_fade,straight,0.5,0.4,refreeze,8,20,2,0,0,0,0.75,0.25,15.5,8.0,6.5,0,2,2,0,0,0,0,0,0,,0.4,0.4000000000000001,0,0,0,"{""detection_recovery_completed"": 1, ""event_changed"": 1}",0
+107_refreeze,no_spacing,straight,0.5,0.4,refreeze,8,20,2,0,0,0,0.5,0.0,9.5,2.0,1.0,0,2,2,0,0,2,0,0,0,,0.4,0.4,0,0,0,"{""simulated_recovery_fade_completed"": 2}",0
+108_normal,fixed,straight,0.5,0.4,normal,4,1,0,0,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+108_normal,countdown,straight,0.5,0.4,normal,4,1,0,0,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+108_normal,march,straight,0.5,0.4,normal,4,1,0,0,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+108_normal,no_fade,straight,0.5,0.4,normal,4,1,0,0,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+108_normal,no_spacing,straight,0.5,0.4,normal,4,1,0,0,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+109_normal,fixed,straight,0.5,0.4,normal,8,1,0,0,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+109_normal,countdown,straight,0.5,0.4,normal,8,1,0,0,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+109_normal,march,straight,0.5,0.4,normal,8,1,0,0,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+109_normal,no_fade,straight,0.5,0.4,normal,8,1,0,0,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+109_normal,no_spacing,straight,0.5,0.4,normal,8,1,0,0,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+110_single_candidate,fixed,straight,0.5,0.4,single_candidate,4,1,1,1,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+110_single_candidate,countdown,straight,0.5,0.4,single_candidate,4,1,1,1,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+110_single_candidate,march,straight,0.5,0.4,single_candidate,4,1,1,1,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+110_single_candidate,no_fade,straight,0.5,0.4,single_candidate,4,1,1,1,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+110_single_candidate,no_spacing,straight,0.5,0.4,single_candidate,4,1,1,1,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+111_single_candidate,fixed,straight,0.5,0.4,single_candidate,8,1,1,1,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+111_single_candidate,countdown,straight,0.5,0.4,single_candidate,8,1,1,1,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+111_single_candidate,march,straight,0.5,0.4,single_candidate,8,1,1,1,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+111_single_candidate,no_fade,straight,0.5,0.4,single_candidate,8,1,1,1,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0
+111_single_candidate,no_spacing,straight,0.5,0.4,single_candidate,8,1,1,1,0,0,,,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,,0.4,0.4,0,0,0,{},0

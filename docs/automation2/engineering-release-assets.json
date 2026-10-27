@@ -1,0 +1,11 @@
+{
+  "schema": "fogguard.engineering-release-assets.v1",
+  "release_url": "https://github.com/NuyoahQQ/ME5412-FoGGuard/releases/tag/automation2-engineering-comparison-2026-10-23",
+  "assets": [
+    {
+      "name": "FoGGuard-engineering-comparison-v1.zip",
+      "bytes": 1814543,
+      "sha256": "c808f69be283f816af68fb19bcc8df6750ce948701484a59803efc3d13e4c5a3"
+    }
+  ]
+}
