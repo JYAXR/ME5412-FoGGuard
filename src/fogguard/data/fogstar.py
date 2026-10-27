@@ -37,6 +37,8 @@ class FogStarWindow:
     fog_fraction: float | None = None
     direction_label: str | None = None
     direction_fraction: float | None = None
+    activity_label: int | None = None
+    activity_fraction: float | None = None
 
     def validate(self) -> None:
         if self.samples.ndim != 2 or self.samples.shape[1] != len(self.channel_names):
@@ -49,6 +51,8 @@ class FogStarWindow:
             raise ValueError("fog_label must be 0, 1, or None")
         if self.direction_label not in FOGSTAR_DIRECTION_LABELS | {None}:
             raise ValueError("direction_label is invalid")
+        if self.activity_label is not None and self.activity_label not in range(8):
+            raise ValueError("activity_label is invalid")
 
 
 def sensor_columns(sensor_positions: Iterable[str]) -> tuple[str, ...]:
@@ -148,6 +152,16 @@ def _direction_target(activity: NDArray[np.int64], threshold: float) -> tuple[st
     return label, fraction
 
 
+def _activity_target(activity: NDArray[np.int64], threshold: float) -> tuple[int | None, float]:
+    counts = pd.Series(activity).value_counts()
+    top_count = int(counts.iloc[0])
+    fraction = top_count / len(activity)
+    tied = int((counts == top_count).sum()) > 1
+    if tied or fraction < threshold:
+        return None, fraction
+    return int(counts.index[0]), fraction
+
+
 def iter_fogstar_windows(
     frame: pd.DataFrame,
     *,
@@ -205,9 +219,15 @@ def iter_fogstar_windows(
 
                 direction_label: str | None = None
                 direction_fraction: float | None = None
+                activity_label: int | None = None
+                activity_fraction: float | None = None
                 if "activity" in chunk:
+                    activity = chunk["activity"].to_numpy(dtype=int)
                     direction_label, direction_fraction = _direction_target(
-                        chunk["activity"].to_numpy(dtype=int), direction_positive_fraction
+                        activity, direction_positive_fraction
+                    )
+                    activity_label, activity_fraction = _activity_target(
+                        activity, direction_positive_fraction
                     )
 
                 window = FogStarWindow(
@@ -223,6 +243,8 @@ def iter_fogstar_windows(
                     fog_fraction=fog_fraction,
                     direction_label=direction_label,
                     direction_fraction=direction_fraction,
+                    activity_label=activity_label,
+                    activity_fraction=activity_fraction,
                 )
                 window.validate()
                 yield window

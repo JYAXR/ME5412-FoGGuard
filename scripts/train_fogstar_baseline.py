@@ -9,6 +9,7 @@ from collections import Counter
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 from sklearn.metrics import (
     balanced_accuracy_score,
     classification_report,
@@ -19,6 +20,7 @@ from sklearn.metrics import (
 from sklearn.model_selection import StratifiedGroupKFold
 
 from fogguard.data import load_fogstar_windows
+from fogguard.fogstar_pipeline import estimate_fogstar_motion, estimate_fogstar_yaw_turn
 from fogguard.modeling import (
     FogStarMultiTaskModel,
     build_feature_matrix,
@@ -61,6 +63,7 @@ def train_and_evaluate(
     n_splits: int,
     n_estimators: int,
     random_state: int,
+    oof_output: Path | None = None,
 ) -> tuple[FogStarMultiTaskModel, dict]:
     windows = load_fogstar_windows(dataset_path, sensor_positions=sensor_positions)
     if any(window.fog_label is None or window.direction_label is None for window in windows):
@@ -90,6 +93,8 @@ def train_and_evaluate(
     fog_prediction = np.full(len(windows), -1, dtype=int)
     fog_probability = np.full(len(windows), np.nan, dtype=float)
     direction_prediction = np.full(len(windows), "unknown", dtype=object)
+    direction_confidence = np.full(len(windows), np.nan, dtype=float)
+    prediction_threshold = np.full(len(windows), np.nan, dtype=float)
     fold_subjects: list[dict[str, list[str]]] = []
     fold_fog_thresholds: list[float] = []
 
@@ -109,7 +114,13 @@ def train_and_evaluate(
         direction_model.fit(x[train_index], y_context[train_index])
         fog_probability[test_index] = fog_model.predict_proba(fog_x[test_index])[:, fog_index]
         fog_prediction[test_index] = fog_probability[test_index] >= threshold
-        direction_prediction[test_index] = direction_model.predict(x[test_index])
+        direction_probabilities = direction_model.predict_proba(x[test_index])
+        direction_indices = np.argmax(direction_probabilities, axis=1)
+        direction_prediction[test_index] = direction_model.classes_[direction_indices]
+        direction_confidence[test_index] = direction_probabilities[
+            np.arange(len(test_index)), direction_indices
+        ]
+        prediction_threshold[test_index] = threshold
         fold_subjects.append(
             {
                 "train": sorted(set(groups[train_index])),
@@ -159,6 +170,39 @@ def train_and_evaluate(
         ),
     }
 
+    if oof_output is not None:
+        oof_output.parent.mkdir(parents=True, exist_ok=True)
+        motion = [estimate_fogstar_motion(window) for window in windows]
+        yaw_turn = [estimate_fogstar_yaw_turn(window) for window in windows]
+        pd.DataFrame(
+            {
+                "window_start_s": [window.start_s for window in windows],
+                "window_end_s": [window.end_s for window in windows],
+                "subject_id": [window.subject_id for window in windows],
+                "session_id": [window.session_id for window in windows],
+                "task_id": [window.task_id for window in windows],
+                "fog_probability": fog_probability,
+                "fog_threshold": prediction_threshold,
+                "is_fog": fog_prediction.astype(bool),
+                "direction": direction_prediction,
+                "direction_confidence": direction_confidence,
+                "state": np.where(fog_prediction == 1, "fog", direction_prediction),
+                "motion_state": [estimate.state.value for estimate in motion],
+                "motion_confidence": [estimate.confidence for estimate in motion],
+                "dynamic_accel_rms_mps2": [
+                    estimate.dynamic_accel_rms_mps2 for estimate in motion
+                ],
+                "yaw_turn": [estimate.direction.value for estimate in yaw_turn],
+                "yaw_turn_confidence": [estimate.confidence for estimate in yaw_turn],
+                "truth_fog_label": y_fog,
+                "truth_turn_label": y_direction,
+                "truth_activity_label": [window.activity_label for window in windows],
+                "truth_fog_fraction": [window.fog_fraction for window in windows],
+                "truth_turn_fraction": [window.direction_fraction for window in windows],
+                "truth_activity_fraction": [window.activity_fraction for window in windows],
+            }
+        ).to_csv(oof_output, index=False)
+
     fog_model, direction_model = create_baseline_classifiers(
         n_estimators=n_estimators,
         random_state=random_state,
@@ -197,6 +241,12 @@ def main() -> None:
         type=Path,
         default=Path("reports/fogstar_multitask_baseline.json"),
     )
+    parser.add_argument(
+        "--oof-output",
+        type=Path,
+        default=Path("reports/fogstar_oof_predictions.csv"),
+        help="Subject-held-out window predictions for downstream temporal evaluation.",
+    )
     args = parser.parse_args()
     sensors = tuple(args.sensors or ("ankleL", "back"))
 
@@ -206,6 +256,7 @@ def main() -> None:
         n_splits=args.folds,
         n_estimators=args.trees,
         random_state=args.random_state,
+        oof_output=args.oof_output,
     )
     model.save(args.model_output)
     args.report_output.parent.mkdir(parents=True, exist_ok=True)
@@ -215,6 +266,7 @@ def main() -> None:
     print(json.dumps({key: value["macro_f1"] for key, value in report.items() if key in {"fog", "direction", "four_state"}}, indent=2))
     print(f"Wrote model to {args.model_output}")
     print(f"Wrote report to {args.report_output}")
+    print(f"Wrote held-out predictions to {args.oof_output}")
 
 
 if __name__ == "__main__":

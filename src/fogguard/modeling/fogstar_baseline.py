@@ -104,30 +104,45 @@ class FogStarMultiTaskModel:
     fog_threshold: float = 0.5
 
     def predict_window(self, window: FogStarWindow) -> dict[str, object]:
-        if window.channel_names != self.channel_names:
-            raise ValueError(
-                f"Model expects channels {self.channel_names}, got {window.channel_names}"
-            )
-        features, names = extract_window_features(window)
+        return self.predict_windows([window])[0]
+
+    def predict_windows(self, windows: Sequence[FogStarWindow]) -> list[dict[str, object]]:
+        """Predict a batch once, avoiding per-window parallel-forest overhead."""
+        if not windows:
+            return []
+        for window in windows:
+            if window.channel_names != self.channel_names:
+                raise ValueError(
+                    f"Model expects channels {self.channel_names}, got {window.channel_names}"
+                )
+        features, names = build_feature_matrix(windows)
         if names != self.feature_names:
             raise ValueError("Window feature schema does not match the trained model")
-        row = features.reshape(1, -1)
         fog_classes = list(self.fog_classifier.classes_)
         fog_index = fog_classes.index(1)
-        fog_probability = float(
-            self.fog_classifier.predict_proba(row[:, self.fog_feature_indices])[0, fog_index]
-        )
-        direction_probabilities = self.direction_classifier.predict_proba(row)[0]
-        direction_index = int(np.argmax(direction_probabilities))
-        direction = str(self.direction_classifier.classes_[direction_index])
-        is_fog = fog_probability >= self.fog_threshold
-        return {
-            "fog_probability": fog_probability,
-            "is_fog": is_fog,
-            "direction": direction,
-            "direction_confidence": float(direction_probabilities[direction_index]),
-            "state": "fog" if is_fog else direction,
-        }
+        fog_probabilities = self.fog_classifier.predict_proba(
+            features[:, self.fog_feature_indices]
+        )[:, fog_index]
+        direction_probabilities = self.direction_classifier.predict_proba(features)
+        direction_indices = np.argmax(direction_probabilities, axis=1)
+        directions = self.direction_classifier.classes_[direction_indices]
+        confidences = direction_probabilities[
+            np.arange(len(direction_indices)), direction_indices
+        ]
+        return [
+            {
+                "fog_probability": float(fog_probability),
+                "is_fog": bool(fog_probability >= self.fog_threshold),
+                "direction": str(direction),
+                "direction_confidence": float(direction_confidence),
+                "state": (
+                    "fog" if fog_probability >= self.fog_threshold else str(direction)
+                ),
+            }
+            for fog_probability, direction, direction_confidence in zip(
+                fog_probabilities, directions, confidences, strict=True
+            )
+        ]
 
     def save(self, path: str | Path) -> None:
         destination = Path(path)
