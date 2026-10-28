@@ -1,5 +1,7 @@
 # ME5412 FoGGuard
 
+> **2026-10-29 A1 文献架构复现与误报诊断：** [结果及六张展示图说明](docs/a1/AUTHOR_CNN_RESULTS_V1.md) · [固定协议](docs/a1/AUTHOR_CNN_PROTOCOL_V1.md) · [gyro-only模型接口](docs/a1/AUTHOR_CNN_HANDOFF_V1.md)。作者CNN架构已从零训练；同gyro验证窗口误报下降但漏报增加，共同窗口F1仍低于原六秒RF，未替换默认。本轮仅TRAIN/VALIDATION研发，不是新独立测试。
+
 > **2026-10-29 A1 固定划分重训完成：** [结果与失败分析](docs/a1/FIXED_SPLIT_RESULTS_V1.md) · [预先锁定方法](docs/a1/FIXED_SPLIT_PROTOCOL_V1.md) · [新模型接口](docs/a1/FIXED_SPLIT_HANDOFF_V1.md)。14 人训练、4 人验证、4 人测试；八模型全部重训，测试前锁定。联合检测覆盖测试 20/23 事件，但 Precision 38.50%、F1 0.5307，泛化误报问题仍未解决。
 
 > **2026-10-29 A1 继续改进：** [完整结果](docs/a1/IMPROVEMENT_RESULTS_V1.md) · [接口](docs/a1/IMPROVEMENT_HANDOFF_V1.md)。训练内模型选择使同窗口 F1 0.6188→0.6317（召回略降）；加入左踝备用的实际联合评价中，事件覆盖 70→75/101、时间精确率与召回均升、误报警事件 235→232。旧队列探索性结果，尚未替换默认。
