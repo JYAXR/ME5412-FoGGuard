@@ -1,5 +1,7 @@
 # ME5412 FoGGuard
 
+> **2026-10-28 算法改进前置核查：** [A1 开工入口](docs/algorithm_readiness/START_HERE.md) · [本轮实测结果](docs/algorithm_readiness/RESULTS_2026-10-28.md)。包含原基线重训、全量数据支持审计、转弯前标签可行性、接口样例与 PPT 图表；新迈步反馈与意图模型尚未实现。
+
 > **自动化 2 新交付（2026-10-23，待组内评审）：** [从这里开始](AUTOMATION2_START_HERE.md) · [AI 接手说明](docs/automation2/AI_HANDOFF.md) · [机器可读状态](docs/automation2/status.json)。
 > 包含策略比较、可选踏步仿真、真实数据识别与缺测分析。依赖 PR #24；不表示已合并 main，也不表示模型已达标。
 
