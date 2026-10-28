@@ -1,0 +1,20 @@
+{
+  "experiment_id": "a1_context_v1",
+  "variants": ["baseline_2s_v1", "causal_context_6s_v1"],
+  "sensor_positions": ["ankleL", "back"],
+  "window_seconds": 2.0,
+  "step_seconds": 0.5,
+  "max_interpolation_gap_s": 0.0,
+  "history_lag_seconds": [2.0, 4.0],
+  "history_statistics": ["rms", "gait_energy", "freeze_energy"],
+  "history_features": "36 sensor statistics per lag, current-minus-lag differences, two history-available flags; 278 total",
+  "startup": "Unavailable lag copies current statistics, difference zero, flag zero; do not drop decisions",
+  "reset": "Different subject/session/task, or non-0.5-second stride",
+  "inner_folds": 3,
+  "random_state": 5412,
+  "threshold_grid": {"start": 0.05, "stop": 0.95, "count": 91},
+  "threshold_objective": ["fog_f1", "balanced_accuracy", "higher_threshold"],
+  "rf": {"n_estimators": 300, "min_samples_leaf": 2, "class_weight": "balanced_subsample"},
+  "selection_policy": "One fixed history candidate; all results kept; no outer-test tuning; original default unchanged",
+  "limitations": ["Same previously explored 22-person cohort, not fresh external validation", "Historical summaries only, no future samples or truth labels", "Six-second context is not six-second intentional startup delay", "One seed and fixed configuration; no clinical effect claim"]
+}

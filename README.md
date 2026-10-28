@@ -1,5 +1,7 @@
 # ME5412 FoGGuard
 
+> **2026-10-28 A1 因果上下文实验完成：** [实测与图表](docs/a1/CONTEXT_RESULTS_V1.md) · [固定方法](docs/a1/CONTEXT_PROTOCOL_V1.md) · [A2 接口](docs/a1/CONTEXT_HANDOFF.md)。最长六秒历史使窗口 F1 从 0.5994 提至 0.6188、误报警事件从 337 减至 235，但真实冻结事件覆盖从 77 降至 70/101；保留研究候选，原默认模型不替换。
+
 > **2026-10-28 A1 困难负样本实验完成：** [结果与图表](docs/a1/HARD_NEGATIVE_RESULTS_V1.md) · [固定方法](docs/a1/HARD_NEGATIVE_PROTOCOL_V1.md) · [A2 接口说明](docs/a1/HARD_NEGATIVE_HANDOFF.md)。训练内高分纯负样本加倍权重后，F1 从 0.5994 降至 0.5792，误报警事件增多；该候选不采用，原默认模型保持不变。
 
 > **2026-10-28 A1 多模型比较完成：** [RF/SVM/HistGB/CNN 实测](docs/a1/MULTIMODEL_RESULTS_V1.md) · [方法](docs/a1/MULTIMODEL_PROTOCOL_V1.md) · [A2 交接](docs/a1/MULTIMODEL_HANDOFF.md)。本轮固定配置中 RF 的 F1 最高，深度模型未显示升级依据，原默认模型保持不变。
