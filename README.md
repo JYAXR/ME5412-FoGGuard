@@ -1,5 +1,7 @@
 # ME5412 FoGGuard
 
+> **2026-10-28 A1 多模型比较完成：** [RF/SVM/HistGB/CNN 实测](docs/a1/MULTIMODEL_RESULTS_V1.md) · [方法](docs/a1/MULTIMODEL_PROTOCOL_V1.md) · [A2 交接](docs/a1/MULTIMODEL_HANDOFF.md)。本轮固定配置中 RF 的 F1 最高，深度模型未显示升级依据，原默认模型保持不变。
+
 > **2026-10-28 A1 首轮实验：** [方法](docs/a1/EXPERIMENT_V1.md) · [实测结论](docs/a1/RESULTS_V1.md) · [交给 A2](docs/a1/A2_HANDOFF.md)。近期特征的改善幅度小且存在事件覆盖取舍，保留原默认模型，新候选作为对照交付。
 
 > **2026-10-28 算法改进前置核查：** [A1 开工入口](docs/algorithm_readiness/START_HERE.md) · [本轮实测结果](docs/algorithm_readiness/RESULTS_2026-10-28.md)。包含原基线重训、全量数据支持审计、转弯前标签可行性、接口样例与 PPT 图表；新迈步反馈与意图模型尚未实现。
