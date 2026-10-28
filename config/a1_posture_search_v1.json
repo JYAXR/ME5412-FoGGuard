@@ -1,0 +1,24 @@
+{
+  "experiment_id": "a1_posture_search_v1",
+  "sensor_positions": ["ankleL", "back"],
+  "feature_variants": ["causal_context_6s_v1", "posture_context_v1"],
+  "features": {"causal_context_6s_v1": 278, "posture_context_v1": 438},
+  "inner_folds": 3,
+  "random_state": 5412,
+  "threshold_grid": {"start": 0.05, "stop": 0.95, "count": 91},
+  "threshold_objective": ["fog_f1", "balanced_accuracy", "higher_threshold"],
+  "candidate_objective": ["inner_selected_fog_f1", "inner_average_precision", "earlier_declared_candidate"],
+  "candidates": [
+    {"id": "context_rf", "features": "causal_context_6s_v1", "family": "rf", "params": {"n_estimators": 300, "min_samples_leaf": 2, "class_weight": "balanced_subsample"}},
+    {"id": "posture_rf", "features": "posture_context_v1", "family": "rf", "params": {"n_estimators": 300, "min_samples_leaf": 2, "class_weight": "balanced_subsample"}},
+    {"id": "posture_rf_leaf8", "features": "posture_context_v1", "family": "rf", "params": {"n_estimators": 300, "min_samples_leaf": 8, "class_weight": "balanced_subsample"}},
+    {"id": "posture_extra", "features": "posture_context_v1", "family": "extra", "params": {"n_estimators": 300, "min_samples_leaf": 2, "class_weight": "balanced"}},
+    {"id": "posture_extra_leaf8", "features": "posture_context_v1", "family": "extra", "params": {"n_estimators": 300, "min_samples_leaf": 8, "class_weight": "balanced"}},
+    {"id": "posture_hist", "features": "posture_context_v1", "family": "hist", "params": {"max_iter": 200, "learning_rate": 0.05, "max_leaf_nodes": 15, "min_samples_leaf": 20, "l2_regularization": 1.0, "early_stopping": false}}
+  ],
+  "outputs": ["context_rf", "posture_rf", "inner_selected"],
+  "hypothesis": "Raw means, gravity-direction proxies and inter-sensor coordination retain posture/slow-turn information removed by the historical high-pass features",
+  "history": "Current 32 summaries plus 2s/4s lagged summaries and differences; same nine-window causal history and startup flags",
+  "policy": "All hyperparameter/family/threshold selection inside training participant folds; no test-selected model or score ensemble",
+  "limits": ["Previously inspected cohort, exploratory", "Posture proxies are not foot position or intention measurements", "Raw axis means can encode mounting differences; subject-held-out checks required", "No activity truth or clinical attributes in features", "Default model not automatically changed"]
+}
