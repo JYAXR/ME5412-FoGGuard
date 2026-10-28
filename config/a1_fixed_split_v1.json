@@ -1,0 +1,30 @@
+{
+  "experiment_id": "a1_fixed_split_v1",
+  "date": "2026-10-29",
+  "split": {
+    "train": [2, 3, 4, 6, 8, 9, 13, 14, 15, 16, 17, 18, 19, 20],
+    "validation": [1, 5, 10, 12],
+    "test": [7, 11, 21, 22],
+    "generation": "Two stratified train_test_split operations on sorted participant IDs, stratum=any raw FoG; test_size=4 seed20261029, validation_size=4 seed20261030; one draw, no performance-based retries"
+  },
+  "random_state": 5412,
+  "models": ["rf_2s", "svm_2s", "histgb_2s", "cnn_2s", "extra_2s", "rf_context", "extra_posture", "rf_ankle"],
+  "threshold_grid": {"start": 0.05, "stop": 0.95, "count": 91},
+  "threshold_objective": ["validation_fog_f1", "validation_balanced_accuracy", "higher_threshold"],
+  "primary_objective": ["validation_fog_f1", "validation_average_precision", "earlier_declared_model"],
+  "rf": {"n_estimators": 300, "min_samples_leaf": 2, "class_weight": "balanced_subsample"},
+  "extra": {"n_estimators": 300, "min_samples_leaf": 2, "class_weight": "balanced"},
+  "svm": {"kernel": "rbf", "C": 1.0, "gamma": "scale", "class_weight": "balanced", "probability": false, "score": "sigmoid of margin, not calibrated probability"},
+  "hist_gb": {"max_iter": 200, "learning_rate": 0.05, "max_leaf_nodes": 15, "min_samples_leaf": 20, "l2_regularization": 1.0, "class_weight": "balanced", "early_stopping": false},
+  "cnn": {"epochs": 20, "batch_size": 128, "learning_rate": 0.001, "weight_decay": 0.0001, "dropout": 0.3, "cpu_threads": 2, "channels": [16, 32, 32], "kernels": [9, 5, 3]},
+  "stress_scenarios": ["clean", "noise_005", "noise_015", "rotation_15deg", "gyro_bias_3dps", "back_dropout_1s", "ankle_dropout_1s"],
+  "stress_seed": 20261029,
+  "noise_scale": "0.05 or 0.15 times per-channel finite raw TRAIN standard deviation; frozen before validation/test",
+  "rotation": "15 degrees about fixed unit (1,1,1) axis, same rigid transform for accel and gyro at both positions",
+  "gyro_bias": "Add 3 deg/s on z-axis at both positions",
+  "dropout": "Required six channels missing for [5,6) seconds and every 10s thereafter relative to each raw record start; no label-based timing",
+  "training_policy": "Fit every model from scratch on TRAIN only; CNN epochs fixed, no early stopping; scaler/CNN normalization/train noise statistics cannot use validation or test",
+  "lock_policy": "Write model hashes and validation-only thresholds/winner before separate test process; do not refit on train+validation or full22 after testing",
+  "joint_policy": "Validation-selected primary plus fixed ankle RF, routing by prediction availability only; never select using test results",
+  "limitations": ["New fixed internal split of an already inspected cohort, not untouched external validation", "Four test participants, limited and imbalanced FoG events", "Stress is artificial sensor perturbation with preserved time/labels, not new real patients or proven physiological synthesis", "Dropout changes available windows; evaluate all raw test records/events and unknown support", "Default model/controller unchanged"]
+}
