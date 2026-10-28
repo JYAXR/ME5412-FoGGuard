@@ -1,0 +1,14 @@
+{
+  "experiment_id": "a1_ankle_fallback_v1",
+  "sensor_positions": ["ankleL"],
+  "features": 140,
+  "inner_folds": 3,
+  "random_state": 5412,
+  "rf": {"n_estimators": 300, "min_samples_leaf": 2, "class_weight": "balanced_subsample"},
+  "threshold_grid": {"start": 0.05, "stop": 0.95, "count": 91},
+  "primary": "Frozen prior six-second ankle/back RF OOF, kept unchanged",
+  "routing": "Always emit primary decisions; use left ankle only when no primary decision exists in the previous half second; same-time primary wins",
+  "selection": "Ankle RF threshold from training-inner subject OOF F1, then balanced accuracy, then higher threshold",
+  "deployment": "Separate full-cohort inner selection, then full fit",
+  "limits": ["Additional decision support changes window population; compare whole-record event/time metrics, not pooled window F1 as a same-window gain", "No valid ankle window still means no prediction", "Routing reads sensor prediction availability, never truth/activity", "Same previously inspected cohort; exploratory", "Existing default model/integrator unchanged"]
+}
