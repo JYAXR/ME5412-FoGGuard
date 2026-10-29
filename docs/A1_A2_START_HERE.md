@@ -1,53 +1,44 @@
-# A2 从这里接续
+# A1到A2：三种冻结模型的交接
 
-2026-10-29。日常开发只需本页、一个推理脚本和一个模型附件。研究源码保留供复现，暂不继续追加训练。原默认模型、共享类型和控制器保持原样。
+A1只保留三种方法，详细实现与同窗对比见[a1/SELECTED_METHODS.md](a1/SELECTED_METHODS.md)。A2无需重跑研究过程。
 
-## 保留的研究基线
+| --method | 输入（60Hz） | 用途与取舍 |
+|---|---|---|
+| ankle_history_rf | 左踝acc xyz（g）和gyro xyz（deg/s） | 140维历史RF，同窗F1最高，误报较多 |
+| bilateral_rf | 左右踝gyro xyz（deg/s） | 66维RF，仅需gyro，可先用于接通A2 |
+| ankle_cnn | 左踝gyro xyz（deg/s） | 8353参数CNN，误报少、漏检更多，另需PyTorch |
 
-**66维双踝gyro随机森林**，类为`BilateralFoG`，variant=`bilateral_rf`，TRAIN按人OOF阈值0.23。它相对匹配左踝输入通过开发门槛，不代表所有历史模型中最好。
+## 运行
 
-| 范围 | Precision | Recall | FoG F1 | 原始事件任意重叠 |
-|---|---:|---:|---:|---:|
-| FoG-STAR开发验证，4人/2014窗 | 0.572 | 0.857 | 0.686 | 10/10 |
-| Stanford首次迁移，7人/10033窗 | 0.640 | 0.507 | 0.566 | 131/211 |
+Python3.12环境安装requirements.txt及项目（`python -m pip install -e .`）。CNN额外需要PyTorch，模型包记录实际测试版本。
 
-验证误报153秒/约17.8分钟观测；Stanford冻结时间Recall只有48.7%，单位/采样已适配，轴系未逐试验统一。两来源都已查看，后续复查不能称新盲测。该双踝模型无新的四人TEST成绩。10/10不等于100%准确率。
-
-## 三步运行
-
-1. 取得当前贡献分支源码，在Python 3.12环境安装`requirements.txt`，再执行`python -m pip install -e .`。
-2. 将同版本模型附件解压到`artifacts/a1-a2-handoff/`。模型不放进源码Git，附件带SHA256和测试依赖版本。
-3. 在仓库根目录运行：
+将三模型附件解压到`artifacts/fog-selected/`，在仓库根目录运行：
 
 ```powershell
-python -X utf8 scripts/predict_a1_bilateral.py --model artifacts/a1-a2-handoff/model.joblib --input artifacts/a1-a2-handoff/synthetic_input.csv --output reports/a1-a2-smoke.csv
+python -X utf8 scripts/predict_selected_fog.py --bundle artifacts/fog-selected --method bilateral_rf --input artifacts/fog-selected/synthetic_input.csv --output reports/fog_smoke.csv
 ```
 
-示例是构造的接口测试信号，含右踝断档；输出不用于证明效果。换成自己的传感器CSV即可推理。无完整窗口会报错，调用方保留未知。
+更换--method选择另两种模型。合成样例仅检查接口，不能证明实际识别效果。新数据必须与训练的单位、左右及轴向约定一致，多记录加subjectID/sessionID/taskID，timestamp为秒。缺测不补零、不插值，完整120点窗末端才输出，每30点推进；无完整窗口报错。
 
-## 输入、输出和融合
+## A2与A1的关系
 
-输入：timestamp秒，ankleL_gyro_x/y/z及ankleR_gyro_x/y/z，60Hz、deg/s、左右及安装轴与训练约定一致。多记录加subjectID/sessionID/taskID，不需fog、activity或其他真值。
+A1提供是否冻结，A2独立学习当前方向/转向，并验证其转向意图目标。A2不需要重新训练A1的FoG模型，可把自己的方向结果与以下输出对齐：
 
-输出：记录键、window_start_s/window_end_s、available_at_s、fog_probability、fog_threshold、is_fog及版本/来源。概率是模型分数，未校准为临床风险。
+- subject_id/session_id/task_id：记录键。
+- window_start_s/window_end_s：输入范围。
+- available_at_s：实际可用时刻，不可回填到起点。
+- fog_probability/fog_threshold/is_fog：未校准FoG分数、阈值和二元判断。
 
-- 完整120点窗口结束才输出，步进30点。available_at_s不可回填起点，最多保持0.5秒，超时未知。
-- 右踝缺失跳过原窗口，不补零、不插值、不重新开网格。
-- A2按记录键、窗口和实际可用时刻对齐自己的方向结果，并独立评价融合。这里没有direction字段，不能直接当完整方向融合输入。
-- 低FoG分数不证明迈步成功。转向意图、迈步反馈及原地踱步切换需要各自证据。
+融合时按同一记录和实际可用时刻取结果，各自最多保持0.5秒，过期或无输入标unknown，不能无界沿用旧预测。方向与FoG的输入窗长度可不同，但必须记录各自可用时刻，不得借用未来的方向结果。
 
-Python接口为`fogguard.modeling.a1_bilateral.BilateralFoG.load(path).predict_frame(frame)`。
+最终提示还需结合迈步反馈，才能判断向前提示后是否迈出脚、是否切换原地踱步。低FoG分数不能替代迈步成功检测，当前转向动作标签也不能自动当提前意图标签。共享types/interfaces与控制器本轮不改。
 
-## 维护与共享
-
-日常代码：`scripts/predict_a1_bilateral.py`、`src/fogguard/modeling/a1_bilateral.py`及公共特征/窗口依赖。保留历史模型类，避免删除后已保存模型无法加载。
-
-A1维护者可生成附件，A2无需重训：
+## A1维护入口
 
 ```powershell
-python -X utf8 scripts/export_a1_handoff.py --output reports/a1_handoff_NEW
+python -X utf8 scripts/train_selected_fog.py --method all --output reports/selected_train_NEW
+python -X utf8 scripts/evaluate_selected_fog.py --bundle reports/selected_train_NEW --output reports/selected_review_NEW
+python -X utf8 scripts/bundle_selected_fog.py --models reports/selected_train_NEW --output reports/selected_bundle_NEW
 ```
 
-附件仅含冻结模型、合成接口样例、依赖版本及说明，不含原始患者信号。同步GitHub使用贡献分支，模型附件通过Release或单独文件共享，不把权重/数据加入Git，不合并main。
-
-[汇报摘要](a1/PROJECT_BRIEFING.md) · [实验索引](a1/EXPERIMENT_INDEX.md) · [方法及复现](a1/BILATERAL_HANDOFF_V1.md)
+输出目录必须是新的。模型、原始信号、整批生成结果不入Git，三模型ZIP单独共享或作为Release附件。源码当前只保留这三种A1候选及公共依赖，原项目方向/控制和兼容基线保留；旧研究实现可在Git历史648bbd8找回。当前默认集成器未自动换模型。

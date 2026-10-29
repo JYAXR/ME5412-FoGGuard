@@ -1,0 +1,136 @@
+{
+  "schema": "fogguard.selected.v1",
+  "methods": [
+    "ankle_history_rf",
+    "bilateral_rf",
+    "ankle_cnn"
+  ],
+  "split": {
+    "train": [
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "validation": [
+      1,
+      5,
+      10,
+      12
+    ],
+    "test": [
+      7,
+      11,
+      21,
+      22
+    ],
+    "generation": "Two stratified train_test_split operations on sorted participant IDs, stratum=any raw FoG; test_size=4 seed20261029, validation_size=4 seed20261030; one draw, no performance-based retries"
+  },
+  "random_state": 5412,
+  "rf": {
+    "n_estimators": 300,
+    "min_samples_leaf": 2,
+    "class_weight": "balanced_subsample"
+  },
+  "cnn": {
+    "max_epochs": 120,
+    "batch_size": 64,
+    "learning_rate": 0.008,
+    "weight_decay": 0.0004,
+    "kernel_l2": 0.001,
+    "dropout": 0.4,
+    "cpu_threads": 2,
+    "patience": 10,
+    "min_delta": 0.001
+  },
+  "threshold_grid": {
+    "start": 0.05,
+    "stop": 0.95,
+    "count": 91
+  },
+  "bilateral_folds": [
+    {
+      "fold": 0,
+      "fit_people": [
+        3,
+        4,
+        6,
+        8,
+        13,
+        14,
+        15,
+        16,
+        18,
+        19
+      ],
+      "held_out_people": [
+        2,
+        9,
+        17,
+        20
+      ]
+    },
+    {
+      "fold": 1,
+      "fit_people": [
+        2,
+        3,
+        4,
+        6,
+        9,
+        14,
+        15,
+        17,
+        20
+      ],
+      "held_out_people": [
+        8,
+        13,
+        16,
+        18,
+        19
+      ]
+    },
+    {
+      "fold": 2,
+      "fit_people": [
+        2,
+        8,
+        9,
+        13,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "held_out_people": [
+        3,
+        4,
+        6,
+        14,
+        15
+      ]
+    }
+  ],
+  "threshold_policies": {
+    "ankle_history_rf": "validation_f1",
+    "bilateral_rf": "train_person_oof_f1",
+    "ankle_cnn": "validation_checkpoint_and_f1"
+  },
+  "source_paper": {
+    "url": "https://github.com/Lu1g1n0/FoG-detection-using-a-single-ankle-mounted-sensor",
+    "doi": "10.1177/1877718X241302766"
+  },
+  "raw_sha256": "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477"
+}

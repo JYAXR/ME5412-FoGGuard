@@ -3,7 +3,7 @@
 import numpy as np
 
 from fogguard.data.stanford_external import native_intervals
-from fogguard.evaluation.a1_event import merge, overlap
+from fogguard.evaluation.intervals import merge, overlap
 
 
 def intersections(first, second):

@@ -2,7 +2,7 @@
 
 Architecture: Lu1g1n0/FoG-detection-using-a-single-ankle-mounted-sensor,
 model.json; Borzi et al. DOI:10.1177/1877718X241302766. No pretrained weights.
-Training/label/split differences are listed in AUTHOR_CNN_PROTOCOL_V1.md.
+Training, labels and split scope are documented in docs/a1/SELECTED_METHODS.md.
 """
 
 import copy
@@ -14,8 +14,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from fogguard.data.fogstar import FogStarWindow, _contiguous_runs
-from fogguard.modeling.a1_fixed_split import prediction_frame
-from fogguard.modeling.a1_fog import A1FogModel, a1_matrix
+from fogguard.modeling.a1_fog import A1FogModel, prediction_frame
 
 GYRO_CHANNELS = tuple(f"ankleL_gyro_{axis}" for axis in "xyz")
 
@@ -188,10 +187,6 @@ class GyroFoG(A1FogModel):
             raise ValueError("Unexpected deployed gyro schema")
         if self.variant == "author_cnn":
             values = centered_gyro(windows)
-        elif self.variant == "rf_gyro_2s":
-            values, names = a1_matrix(windows, "baseline_2s_v1")
-            if names != self.feature_names:
-                raise ValueError("Gyro RF feature schema differs")
         else:
             raise ValueError("Unknown gyro detector variant")
         score = self.classifier.predict_proba(values)[:, 1]

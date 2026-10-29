@@ -1,12 +1,11 @@
 """Gyro-only left-anchored windows; compare identical windows with added right IMU."""
 
-from dataclasses import dataclass, replace
+from dataclasses import dataclass
 
 import numpy as np
 
 from fogguard.data.fogstar import FogStarWindow, _activity_target, _contiguous_runs
-from fogguard.modeling.a1_fixed_split import prediction_frame
-from fogguard.modeling.a1_fog import A1FogModel, a1_matrix
+from fogguard.modeling.a1_fog import A1FogModel, a1_matrix, prediction_frame
 
 LEFT = tuple(f"ankleL_gyro_{a}" for a in "xyz")
 RIGHT = tuple(f"ankleR_gyro_{a}" for a in "xyz")
@@ -51,26 +50,13 @@ def anchored_gyro_windows(frame, *, require_right):
     return result
 
 
-def left_view(windows):
-    if any(w.channel_names != DUAL for w in windows):
-        raise ValueError("Expected ordered bilateral gyro windows")
-    return [replace(w, samples=w.samples[:, :3], channel_names=LEFT) for w in windows]
-
-
-def matched_features(windows):
-    values, names = a1_matrix(windows, "baseline_2s_v1")
-    if len(names) != 66 or any(w.channel_names != DUAL for w in windows):
-        raise ValueError("Expected 66 bilateral features")
-    return {"left_rf": (values[:, :33], names[:33]), "bilateral_rf": (values, names)}
-
-
 @dataclass
 class BilateralFoG(A1FogModel):
     fit_participants: tuple[int, ...] = ()
     threshold_participants: tuple[int, ...] = ()
 
     def predict_windows(self, windows):
-        if self.variant not in ("left_rf", "bilateral_rf"):
+        if self.variant != "bilateral_rf":
             raise ValueError("Unknown ankle model")
         if not windows or any(w.channel_names != self.channel_names for w in windows):
             raise ValueError("No complete aligned gyro windows or wrong channel schema")
@@ -85,4 +71,4 @@ class BilateralFoG(A1FogModel):
 
     def predict_frame(self, frame):
         sensors = frame.drop(columns=[c for c in ("fog", "activity", "fog_severity") if c in frame])
-        return self.predict_windows(anchored_gyro_windows(sensors, require_right=self.variant == "bilateral_rf"))
+        return self.predict_windows(anchored_gyro_windows(sensors, require_right=True))

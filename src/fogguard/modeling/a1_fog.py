@@ -10,21 +10,15 @@ from typing import Any
 import joblib
 import numpy as np
 import pandas as pd
-from scipy.signal import butter, sosfiltfilt
 
 from fogguard.data.fogstar import FogStarWindow, iter_fogstar_windows
 from fogguard.modeling.fogstar_baseline import extract_window_features
 
-VARIANTS = ("baseline_2s_v1", "recent_trend_v1")
+VARIANTS = ("baseline_2s_v1",)
 
 
 def a1_features(window: FogStarWindow, variant: str) -> tuple[np.ndarray, tuple[str, ...]]:
-    """132 historical FoG features, optionally plus 60 recent/trend features.
-
-    The old and recent halves are statistics of a completed, filtered 2s window;
-    neither half is presented as an independently available earlier decision.
-    No labels, identifiers or samples after window end enter the feature vector.
-    """
+    """Eleven shared statistics per channel of a completed, filtered 2s window."""
     if variant not in VARIANTS:
         raise ValueError(f"Unknown A1 feature variant: {variant}")
     if window.sample_rate_hz != 60 or len(window.samples) != 120:
@@ -34,22 +28,6 @@ def a1_features(window: FogStarWindow, variant: str) -> tuple[np.ndarray, tuple[
             if not name.endswith(("__raw_mean", "__raw_median"))]
     values = list(full[keep])
     result_names = [names[i] for i in keep]
-    if variant == "recent_trend_v1":
-        sos = butter(4, (0.5, 20), btype="bandpass", fs=60, output="sos")
-        dynamic = sosfiltfilt(sos, window.samples, axis=0)
-        previous, recent = dynamic[:60], dynamic[60:]
-        for i, channel in enumerate(window.channel_names):
-            old, new = previous[:, i], recent[:, i]
-            rms = float(np.sqrt(np.mean(new**2)))
-            extra = {
-                "recent_std": float(np.std(new)),
-                "recent_rms": rms,
-                "recent_range": float(np.ptp(new)),
-                "recent_mean_abs_diff": float(np.abs(np.diff(new)).mean()),
-                "rms_recent_minus_previous": rms - float(np.sqrt(np.mean(old**2))),
-            }
-            values.extend(extra.values())
-            result_names.extend(f"{channel}__{name}" for name in extra)
     return np.asarray(values, dtype=float), tuple(result_names)
 
 
@@ -78,28 +56,7 @@ class A1FogModel:
     threshold: float
 
     def predict_windows(self, windows: Sequence[FogStarWindow]) -> pd.DataFrame:
-        if not windows:
-            raise ValueError("No complete valid windows")
-        if any(window.channel_names != self.channel_names for window in windows):
-            raise ValueError("Input channel ordering differs from trained model")
-        features, names = a1_matrix(windows, self.variant)
-        if names != self.feature_names:
-            raise ValueError("Input feature schema differs from trained model")
-        classes = list(self.classifier.classes_)
-        if classes != [0, 1]:
-            raise ValueError("FoG model must have both binary classes")
-        probability = self.classifier.predict_proba(features)[:, classes.index(1)]
-        return pd.DataFrame({
-            "subject_id": [w.subject_id for w in windows],
-            "session_id": [w.session_id for w in windows],
-            "task_id": [w.task_id for w in windows],
-            "window_start_s": [w.start_s for w in windows],
-            "window_end_s": [w.end_s for w in windows],
-            "available_at_s": [w.end_s for w in windows],
-            "fog_probability": probability, "fog_threshold": self.threshold,
-            "is_fog": probability >= self.threshold, "feature_version": self.variant,
-            "model_version": "a1_fog_v1", "prediction_source": "full_fit_new_input",
-        })
+        raise NotImplementedError("Use one of the three selected concrete detectors")
 
     def predict_frame(self, frame: pd.DataFrame) -> pd.DataFrame:
         positions = tuple(dict.fromkeys(name.split("_", 1)[0] for name in self.channel_names))
@@ -120,3 +77,13 @@ class A1FogModel:
         if not isinstance(model, cls):
             raise TypeError("Not an A1FogModel")
         return model
+
+
+def prediction_frame(windows, score, threshold, model_id):
+    """Shared FoG-only output; time availability is never backdated."""
+    return pd.DataFrame({
+        "subject_id": [w.subject_id for w in windows], "session_id": [w.session_id for w in windows],
+        "task_id": [w.task_id for w in windows], "window_start_s": [w.start_s for w in windows],
+        "window_end_s": [w.end_s for w in windows], "available_at_s": [w.end_s for w in windows],
+        "fog_probability": score, "fog_threshold": threshold, "is_fog": np.asarray(score) >= threshold,
+        "model_version": f"fog_selected_v1/{model_id}", "prediction_source": "train_fit_new_input"})

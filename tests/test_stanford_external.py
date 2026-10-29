@@ -99,7 +99,7 @@ def test_sensor_xlsx_reader_does_not_decode_target_data_cells(tmp_path):
 
 
 def test_external_evaluation_has_no_fit_or_threshold_selection():
-    path = Path(__file__).parents[1] / "scripts/evaluate_stanford_external.py"
+    path = Path(__file__).parents[1] / "scripts/evaluate_selected_fog.py"
     source = path.read_text("utf-8")
     calls = [n for n in ast.walk(ast.parse(source)) if isinstance(n, ast.Call)]
     assert not [n for n in calls if isinstance(n.func, ast.Attribute) and n.func.attr in {"fit", "partial_fit", "fit_transform"}]
