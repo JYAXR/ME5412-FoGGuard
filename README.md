@@ -1,5 +1,7 @@
 # ME5412 FoGGuard
 
+> **2026-10-29 A1 因果CNN＋GRU对照：** [完整取舍与图表](docs/a1/TEMPORAL_CNN_RESULTS_V1.md) · [预定方法](docs/a1/TEMPORAL_CNN_PROTOCOL_V1.md) · [流式接口](docs/a1/TEMPORAL_CNN_HANDOFF_V1.md)。TRAIN内部按人选择epoch/阈值后锁定，验证F1相较本轮CNN从0.5471升至0.6571，但误报时长增加17.7%，未达到升级条件，也未胜过既有参考；原默认未替换，无新候选TEST成绩。
+
 > **2026-10-29 A1 文献架构复现与误报诊断：** [结果及六张展示图说明](docs/a1/AUTHOR_CNN_RESULTS_V1.md) · [固定协议](docs/a1/AUTHOR_CNN_PROTOCOL_V1.md) · [gyro-only模型接口](docs/a1/AUTHOR_CNN_HANDOFF_V1.md)。作者CNN架构已从零训练；同gyro验证窗口误报下降但漏报增加，共同窗口F1仍低于原六秒RF，未替换默认。本轮仅TRAIN/VALIDATION研发，不是新独立测试。
 
 > **2026-10-29 A1 固定划分重训完成：** [结果与失败分析](docs/a1/FIXED_SPLIT_RESULTS_V1.md) · [预先锁定方法](docs/a1/FIXED_SPLIT_PROTOCOL_V1.md) · [新模型接口](docs/a1/FIXED_SPLIT_HANDOFF_V1.md)。14 人训练、4 人验证、4 人测试；八模型全部重训，测试前锁定。联合检测覆盖测试 20/23 事件，但 Precision 38.50%、F1 0.5307，泛化误报问题仍未解决。
