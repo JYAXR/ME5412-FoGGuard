@@ -2,7 +2,7 @@
 
 ## 分支与职责
 
-分工以 [角色与交付顺序](ROLES_AND_ROADMAP.md) 为准，完成状态以 [项目状态](PROJECT_STATUS.json) 为准。当前交接分支为 `feat/algorithm-readiness-a1`，功能开发使用个人贡献分支，合并前由接收模块负责人审查。
+分工以 [角色与交付顺序](ROLES_AND_ROADMAP.md) 为准，完成状态以 [项目状态](PROJECT_STATUS.json) 为准。整合基线为 `main`，当前 A1+A2 感知交接贡献分支为 `feat/a2-perception-fusion`。功能开发使用个人贡献分支，合并前由接收模块负责人审查。
 
 每项任务应有明确负责人、输入输出、配置和验收结果。A1 已完成冻结算法交付；A2、B1、B2 的后续开发分别按任务书进行，工业设计消费保存结果。
 

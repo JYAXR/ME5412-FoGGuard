@@ -2,9 +2,9 @@
   "schema": "fogguard.project.v1",
   "date": "2026-10-30",
   "project": "FoGGuard",
-  "source_branch": "feat/algorithm-readiness-a1",
+  "source_branch": "feat/a2-perception-fusion",
   "summary": "IMU freezing and direction perception with response-aware visual/audio cueing",
-  "project_state": "A1_delivered_downstream_implementation_and_joint_acceptance_pending",
+  "project_state": "A1_A2_development_perception_available_B1_B2_joint_acceptance_pending",
   "scope": {
     "real_data": "FoG-STAR",
     "signal_rate_hz": 60,
@@ -21,7 +21,8 @@
     "interfaces": "docs/INTERFACE_CONTRACT.md",
     "quickstart": "docs/QUICKSTART.md",
     "a1": "docs/A1_A2_START_HERE.md",
-    "a2": "docs/a2/RESULTS.md"
+    "a2": "docs/a2/RESULTS.md",
+    "perception": "docs/a2/fusion/README.md"
   },
   "roles": {
     "A1": {
@@ -40,7 +41,7 @@
     },
     "A2": {
       "responsibility": "direction and perception fusion",
-      "status": "direction_development_evaluated_preturn_ineffective_fusion_pending",
+      "status": "direction_and_causal_fusion_development_replayed_receiver_acceptance_pending",
       "task": "docs/tasks/A2.md",
       "results": "docs/a2/results.json",
       "presentation": "docs/a2/presentation/README.md",
@@ -51,10 +52,12 @@
       "preturn_binary_status": "TRAIN-subject OOF selected; development event recall 0/41 at 0.5s and 2/41 at 1.0s; zero joint direction recall; not operational",
       "evaluation_scope": "14 TRAIN and 4 development-validation people; TEST not scored",
       "remaining": [
-        "independent direction acceptance; preturn retained as completed feasibility study",
-        "A1 availability-aware adapter",
-        "perception runtime export"
-      ]
+        "independent direction acceptance",
+        "B1/B2 receiver acceptance",
+        "measure live computation latency before online deployment"
+      ],
+      "fusion": "docs/a2/fusion/README.md",
+      "fusion_evidence": "docs/a2/fusion/results.json"
     },
     "B1": {
       "responsibility": "motion feedback and cue control",
@@ -92,12 +95,14 @@
     "three selected FoG methods",
     "direction rules and temporal event integration",
     "simulated response cueing and marching",
-    "engineering audits and saved-output playback"
+    "engineering audits and saved-output playback",
+    "current-direction RF development evaluation",
+    "availability-aware A1+A2 perception export"
   ],
   "not_yet_accepted": [
-    "new direction/preturn algorithms",
+    "independent direction acceptance",
     "real IMU response feedback",
-    "selected-model and direction adapter",
+    "B1/B2 receiver acceptance",
     "four-module real-data pipeline",
     "final visualization"
   ],
@@ -112,14 +117,16 @@
     "scope": "code, tests, engineering fixtures; optional raw audit",
     "meaning": "passing engineering checks does not complete pending module tasks",
     "verified": {
-      "tests_and_recognition": 274,
+      "tests_and_recognition": 311,
       "ruff": "PASS",
       "engineering_paired_strategy_runs": 560,
       "critical_engineering_audit_failures": 0,
-      "compatibility_real_data_audit": "PASS",
+      "compatibility_real_data_audit": "NOT_RUN in current full check",
       "documentation_links_and_role_tasks": "PASS",
-      "algorithm_source_hashes": "unchanged",
-      "scope": "Engineering fixture acceptance and compatibility raw audit, not completion of pending algorithms"
+      "algorithm_source_hashes": "A1 and A2 training implementations unchanged",
+      "scope": "Engineering fixtures plus sensor-only A1+A2 development replay; independent direction/feedback acceptance pending",
+      "perception_behavior_tests": 21,
+      "selected_perception_development_replay": "PASS: 20 records; no truth"
     }
   }
 }

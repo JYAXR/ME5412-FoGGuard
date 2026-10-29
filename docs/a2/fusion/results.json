@@ -1,0 +1,190 @@
+{
+  "schema": "fogguard.perception.evidence.v1",
+  "date": "2026-10-30",
+  "scope": "Fixed development validation only; independent receiver acceptance pending",
+  "a2_training": {
+    "task": "current",
+    "feature_set": "gravity_rotation",
+    "features": 12,
+    "trees": 300,
+    "rejection_threshold": 0.0,
+    "primary_known_targets": {
+      "windows": 1130,
+      "accuracy": 0.6699115044247788,
+      "macro_f1": 0.7197309824304418,
+      "classes": [
+        "straight",
+        "left",
+        "right",
+        "unknown"
+      ],
+      "confusion_matrix": [
+        [
+          448,
+          4,
+          11,
+          36
+        ],
+        [
+          45,
+          162,
+          7,
+          60
+        ],
+        [
+          29,
+          11,
+          147,
+          170
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "per_class": {
+        "straight": {
+          "precision": 0.8582375478927203,
+          "recall": 0.8977955911823647,
+          "f1": 0.8775710088148874,
+          "support": 499
+        },
+        "left": {
+          "precision": 0.9152542372881356,
+          "recall": 0.5912408759124088,
+          "f1": 0.7184035476718403,
+          "support": 274
+        },
+        "right": {
+          "precision": 0.8909090909090909,
+          "recall": 0.4117647058823529,
+          "f1": 0.5632183908045977,
+          "support": 357
+        },
+        "unknown": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "prediction_coverage": 0.7646017699115044,
+      "accepted_accuracy": 0.8761574074074074
+    },
+    "same_primary_metrics_as_committed_report": true,
+    "training_manifest_sha256": "f8a055d8ca216e82711e24939f53d81da2c92a6781777660bc9b7cf1de850ef0",
+    "model_sha256": "a612c8d8eeed2ab76addecbdd67848d57a18e0f32bef3f8512ed72737a14f8bd",
+    "test_scored": false
+  },
+  "replay": {
+    "schema": "fogguard.perception.v1",
+    "config": {
+      "source_max_hold_s": 0.5,
+      "events": {
+        "confirmation_windows": 2,
+        "recovery_windows": 3,
+        "direction_confirmation_windows": 2,
+        "minimum_direction_confidence": 0.6,
+        "minimum_fallback_confidence": 0.6,
+        "use_yaw_agreement_fallback": false,
+        "suppress_stationary_fog": false,
+        "exit_probability_margin": 0.1,
+        "maximum_input_age_s": 1.0,
+        "maximum_window_gap_s": 0.75,
+        "turn_horizon_s": 0.0
+      }
+    },
+    "records": 20,
+    "decision_rows": 2130,
+    "new_fog_observations": 2014,
+    "new_direction_observations": 1921,
+    "confirmed_events": 42,
+    "fog_status_rows": {
+      "fresh": 2033,
+      "stale": 77,
+      "missing": 20
+    },
+    "direction_status_rows": {
+      "fresh": 1939,
+      "invalid": 153,
+      "missing": 20,
+      "stale": 18
+    },
+    "turn_rows": {
+      "unknown": 1539,
+      "straight": 359,
+      "right": 141,
+      "left": 91
+    },
+    "scope": "Unweighted decision-tick behavior counts; not accuracy or clinical efficacy",
+    "partition": "development_validation",
+    "participants": [
+      1,
+      5,
+      10,
+      12
+    ],
+    "test_scored": false,
+    "truth_loaded": false,
+    "fog_method": "bilateral_rf",
+    "feedback_implemented": false,
+    "receiver_acceptance": "pending",
+    "availability_assumption": "Offline model outputs use window-end availability; live computation latency is not measured"
+  },
+  "verification": {
+    "independent_causal_source_row_checks": 4260,
+    "source_availability_and_expiry": "PASS",
+    "runtime_hashes": "PASS",
+    "a1_predictions_equal_delivered_reference": "PASS",
+    "a2_sensor_only_predictions_equal_retrained_validation": "PASS",
+    "pytest": {
+      "passed": 311,
+      "new_perception_tests": 21
+    },
+    "ruff": "PASS",
+    "engineering_pairs": 560,
+    "critical_engineering_failures": 0,
+    "generic_real_data_audit": "NOT_RUN (inputs omitted from full check command)",
+    "independent_direction_test": "NOT_RUN",
+    "live_latency": "NOT_MEASURED",
+    "real_feedback_and_four_module_acceptance": "PENDING"
+  },
+  "replay_manifest": {
+    "schema": "fogguard.perception.validation.v1",
+    "partition": "development_validation",
+    "participants": [
+      1,
+      5,
+      10,
+      12
+    ],
+    "raw_sha256": "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477",
+    "config_sha256": "a091c9f58a42a0bd36d71c692325f4c1939d4c9a7f9ccb34fe32e3f2df38c40a",
+    "model_sha256": {
+      "fog": "72c396fd322339542bcb5fbbd5e34de4fefb1b05c1fb5df8a16efdbc0e23dffc",
+      "direction": "a612c8d8eeed2ab76addecbdd67848d57a18e0f32bef3f8512ed72737a14f8bd"
+    },
+    "a2_training_manifest_sha256": "f8a055d8ca216e82711e24939f53d81da2c92a6781777660bc9b7cf1de850ef0",
+    "base_commit": "8fa2e98268a87d9dd8ec0cba979801fe107ef00c",
+    "source_sha256": {
+      "scripts/validate_perception.py": "6b717d0ac1c2d362bc23f39b17563aaa859437499e2ba5097a2030795b140963",
+      "src/fogguard/perception.py": "73052c55c72478aaa388784dc4befc1c726211e08925cf366292e8fcbe8f9ff6",
+      "src/fogguard/context/fogstar.py": "b034bd436f1e45fb429b975fa0c6bc3fb7aad8f6312449243545ba682dd91151",
+      "src/fogguard/turning/learned.py": "05499f5f6dc8e0f53de4749a37ae03d45cab1f0691dc6c4c1af0bdc457c66e3e",
+      "src/fogguard/selected_fog.py": "0d1da43ab13cf049188c3ebef33ab45569aa64e08ef31aeafcabf714ea97371f",
+      "src/fogguard/modeling/a1_fog.py": "78c1cd49ba262561f495e9fcefe9ffce95ce2084b9906102b19fda4ab2bbba2e",
+      "src/fogguard/modeling/a1_bilateral.py": "4cd469be54f22d73f6957c2e0f322ecca91536086a06bf2fe405c42a62e21d2e",
+      "src/fogguard/data/fogstar.py": "f0a54f6aa59e770e51ce772c36464120a0d8de593975e4b4f0fe43fefa31b3ad"
+    },
+    "files": {
+      "clock.csv": "9c4d24427862cebda40a03eb67cd17e6b89a93baa8db015b13eb8cd8556d3c75",
+      "direction_runtime.csv": "6ac241ccad8598340728d29e5d3a6a57b214928fa4e961e991dbd822ec4318a1",
+      "fog_runtime.csv": "a7c2c5eebb192dc1824ba2461633be03145d73c0ecc08c08159b2666444f4be8",
+      "perception_runtime.csv": "226ee306d609754bf11348d4f1837bd99a6f0a7f4f57141533d70ca420e69330",
+      "summary.json": "1531d9f318b79e79a4b3ddf591b281fa3343fffaa04722be02126e32c4416842"
+    },
+    "scope": "Real-IMU development inference and causal fusion; no accuracy or feedback claims"
+  }
+}

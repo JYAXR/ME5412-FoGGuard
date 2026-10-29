@@ -22,9 +22,15 @@
 
 ## A2：方向输出和事件适配
 
-目标输出包含记录键、输入时间、可用时刻、`direction / direction_confidence / direction_task`。方向为 `straight / left / right / unknown`；当前动作分类和提前方向预测分开标记，提前任务另有 `horizon_s`。
+方向输出包含记录键、输入时间、可用时刻、`direction / direction_confidence / direction_task`。方向为 `straight / left / right / unknown`；当前动作分类和提前方向预测分开标记，提前任务另有 `horizon_s`。正式融合只接收 `direction_task=current`、`horizon_s=0`。
 
-现有 `FogStarTemporalIntegrator` 接收的最小列为记录键、`window_start_s / window_end_s / fog_probability / fog_threshold / is_fog / direction / direction_confidence`。`other` 映射为未知。该模块目前依赖 `window_end_s`，因此 A2 在交给它之前必须完成来源对齐、0.5 秒有效期检查，并拒绝尚不可用的结果；延迟产生的预测不得伪装成准时结果。
+`perception.fuse_perception` 接收两个独立运行表，按三个记录键和实际可用时刻对齐，并复用现有事件状态规则。每个来源有效条件为 `available_at_s <= now < source_window_end_s + 0.5`；只在该来源的新观测上累计确认。重复保持、另一路更新和计时行均不增加观测数。缺测或过期撤销对应状态；未知方向不抹掉仍有效的冻结事件。
+
+融合表 `available_at_s` 为决策时间，兼容字段 `window_end_s` 也指决策时间；原始范围另存为 `fog_window_start_s / fog_window_end_s / fog_available_at_s` 和对应 `direction_*`。这使现有 B1 CSV 入口按真实可用时刻运行，不把输入起止时间误作控制时间。来源模型、来源类型、年龄、状态、有效性和新观测标志均独立保存。
+
+缺失冻结输出 `fog_state=unknown`，分数、阈值和 `is_fog` 留空；`stable_fog_detected=false` 此时不代表模型阴性。`input_fresh` 表示两路来源有效且未过期，方向是否被接受还需检查 `turn / turn_confidence`。融合不输出提示命令。完整字段和入口见 [感知交接](a2/fusion/README.md)。
+
+通用兼容入口 `FogStarTemporalIntegrator.process` 仍接收完整合并窗口表并依赖 `window_end_s`；不要把它直接用于来源异步、重复保持的预测表。
 
 事件输出提供 `event_id / event_phase / stable_fog_detected / turn / turn_confidence / input_fresh / integration_reason`。当前事件层的恢复状态不代表真实迈步完成。
 

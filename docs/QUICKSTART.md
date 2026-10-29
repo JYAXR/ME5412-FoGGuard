@@ -2,10 +2,10 @@
 
 ## 获取代码和环境
 
-当前交接分支为 `feat/algorithm-readiness-a1`，请克隆到新目录：
+当前 A1+A2 感知交接贡献分支为 `feat/a2-perception-fusion`，请克隆到新目录；合并以接收方审查为准：
 
 ```bash
-git clone --branch feat/algorithm-readiness-a1 --single-branch https://github.com/JYAXR/ME5412-FoGGuard.git FoGGuard
+git clone --branch feat/a2-perception-fusion --single-branch https://github.com/JYAXR/ME5412-FoGGuard.git FoGGuard
 cd FoGGuard
 python -m venv .venv
 ```
@@ -30,6 +30,8 @@ python -X utf8 scripts/predict_selected_fog.py --bundle artifacts/fog-selected -
 `--method` 可选 `ankle_history_rf / bilateral_rf / ankle_cnn`。合成样例用于验证接口；真实效果见 [A1 结果](a1/SELECTED_METHODS.md)。输出只有冻结结果，方向与反馈由对应模块提供。
 
 ## 工程演示
+
+真实 A1+A2 感知的训练重建、联合回放和英文图表入口见 [感知交接](a2/fusion/README.md)。它需要单独提供 A1 模型包和原始数据；下面的工程演示使用构造输入。
 
 ```bash
 python -X utf8 scripts/run_complete_demo.py --output-dir reports/project_demo_NEW

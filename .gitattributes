@@ -14,3 +14,6 @@ config/a2_*.json text eol=lf
 scripts/*a2*.py text eol=lf
 src/fogguard/turning/learned.py text eol=lf
 src/fogguard/turning/preturn_binary.py text eol=lf
+# Preserve the new perception implementation hashes across operating systems.
+scripts/*perception.py text eol=lf
+src/fogguard/perception.py text eol=lf
