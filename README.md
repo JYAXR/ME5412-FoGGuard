@@ -1,5 +1,7 @@
 # ME5412 FoGGuard
 
+> **2026-10-29 A1 Stanford外部零样本迁移已跑完：** [结果与图表](docs/a1/STANFORD_EXTERNAL_RESULTS_V1.md) · [固定协议](docs/a1/STANFORD_EXTERNAL_PROTOCOL_V1.md) · [适配/复现接口](docs/a1/STANFORD_EXTERNAL_HANDOFF_V1.md)。60条/7人、10033窗口；固定双踝RF的P 0.6401、R 0.5068、F1 0.5657，原始事件重叠131/211、FoG时间Recall 0.4874。单位/因果采样已适配，轴系未核实统一；无目标训练/校准，漏检与跨人差异仍明显，默认未替换。
+
 > **2026-10-29 A1 连续事件分歧回放：** [结果与回放入口](docs/a1/DISAGREEMENT_RESULTS_V1.md) · [外部验证准备](docs/a1/EXTERNAL_VALIDATION_READINESS_V1.md)。全部20条验证记录/10个事件；协调方案丢失17.10秒原FoG覆盖、补回0.50秒，约80.3%的损失在事件内部。已交付同步真实波形/概率/报警回放及四张图；Stanford双踝gyro样本表头/时钟/文件哈希已核对，尚无外部模型成绩。
 
 > **2026-10-29 A1 左右协调摘要消融：** [完整取舍与展示图](docs/a1/COORDINATION_RESULTS_V1.md) · [固定公式](docs/a1/COORDINATION_PROTOCOL_V1.md) · [接口](docs/a1/COORDINATION_HANDOFF_V1.md)。66维双踝对照与追加12项协调摘要的78维候选，验证误报时间减少15.5%，但Recall 0.8574→0.7915、F1 0.6860→0.6801；预定开发门槛失败，未替换默认，无新模型TEST成绩。
