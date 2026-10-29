@@ -1,38 +1,12 @@
 # ME5412 FoGGuard
 
-> **2026-10-29 A1 旋转不变表征对照已完成：** [结果与七组展示图](docs/a1/INVARIANT_RESULTS_V1.md) · [固定协议](docs/a1/INVARIANT_PROTOCOL_V1.md) · [模型及复现接口](docs/a1/INVARIANT_HANDOFF_V1.md)。66维逐轴换为10维不变摘要，验证F1 0.6860→0.6234；已查看Stanford研发复查F1 0.5657→0.5154。误报时长减少但冻结时间漏检增加，开发门槛失败，不采用替换。368项测试及完整项目检查通过，无新TEST成绩。
+## A1阶段交付与A2接续
 
-> **2026-10-29 A1 外部漏检诊断完成：** [发现、六张展示图及复现](docs/a1/EXTERNAL_FAILURE_DIAGNOSTIC_RESULTS_V1.md) · [固定诊断规则](docs/a1/EXTERNAL_FAILURE_DIAGNOSTIC_PROTOCOL_V1.md)。80次完全漏检中78次已有及时的事件自身多数窗口；P6/P7纯FoG分数仍低，旋转不变摘要也有分布差异。轴系仅得到图示条件推断，未逐试验校准；未训练/旋转重评分/调阈值，原外部F1仍为0.5657。363项测试及完整项目检查通过。
+- **A2开始开发**：[唯一交接入口](docs/A1_A2_START_HERE.md)，使用保留的双踝RF推理及独立模型附件，无需重跑全部训练。
+- **项目汇报**：[精简摘要与讲稿](docs/a1/PROJECT_BRIEFING.md)，配套10页正文及2页实验附录。
+- **研究复现**：[全部实验索引及保留决定](docs/a1/EXPERIMENT_INDEX.md)。研究源码和失败证据保留，不再逐轮堆叠首页。
 
-> **2026-10-29 A1 Stanford外部零样本迁移已跑完：** [结果与图表](docs/a1/STANFORD_EXTERNAL_RESULTS_V1.md) · [固定协议](docs/a1/STANFORD_EXTERNAL_PROTOCOL_V1.md) · [适配/复现接口](docs/a1/STANFORD_EXTERNAL_HANDOFF_V1.md)。60条/7人、10033窗口；固定双踝RF的P 0.6401、R 0.5068、F1 0.5657，原始事件重叠131/211、FoG时间Recall 0.4874。单位/因果采样已适配，轴系未核实统一；无目标训练/校准，漏检与跨人差异仍明显，默认未替换。
-
-> **2026-10-29 A1 连续事件分歧回放：** [结果与回放入口](docs/a1/DISAGREEMENT_RESULTS_V1.md) · [外部验证准备](docs/a1/EXTERNAL_VALIDATION_READINESS_V1.md)。全部20条验证记录/10个事件；协调方案丢失17.10秒原FoG覆盖、补回0.50秒，约80.3%的损失在事件内部。已交付同步真实波形/概率/报警回放及四张图；Stanford双踝gyro样本表头/时钟/文件哈希已核对，尚无外部模型成绩。
-
-> **2026-10-29 A1 左右协调摘要消融：** [完整取舍与展示图](docs/a1/COORDINATION_RESULTS_V1.md) · [固定公式](docs/a1/COORDINATION_PROTOCOL_V1.md) · [接口](docs/a1/COORDINATION_HANDOFF_V1.md)。66维双踝对照与追加12项协调摘要的78维候选，验证误报时间减少15.5%，但Recall 0.8574→0.7915、F1 0.6860→0.6801；预定开发门槛失败，未替换默认，无新模型TEST成绩。
-
-> **2026-10-29 A1 真实失败信号与双踝对照：** [结果及八张展示图](docs/a1/BILATERAL_RESULTS_V1.md) · [预定方法](docs/a1/BILATERAL_PROTOCOL_V1.md) · [gyro-only接口](docs/a1/BILATERAL_HANDOFF_V1.md)。相同窗口/流程的左33维与双66维RF，验证F1 0.6234→0.6860、误报时间减少15.8%，达到本轮开发门槛；TRAIN双踝要求损失部分支持，且未全面胜过历史模型，默认未替换，无新候选TEST成绩。
-
-> **2026-10-29 A1 参与者均衡与活动辅助对照：** [完整结果及八张展示图](docs/a1/CONTEXT_LEARNING_RESULTS_V1.md) · [预定方法](docs/a1/CONTEXT_LEARNING_PROTOCOL_V1.md) · [接口](docs/a1/CONTEXT_LEARNING_HANDOFF_V1.md)。三组同参数、输入与TRAIN内选择流程；均衡验证F1 0.6476→0.6717但误报时间增加14.9%，活动辅助F1 0.6438，两候选均未通过升级条件，原默认未替换；没有新候选TEST成绩。
-
-> **2026-10-29 A1 因果CNN＋GRU对照：** [完整取舍与图表](docs/a1/TEMPORAL_CNN_RESULTS_V1.md) · [预定方法](docs/a1/TEMPORAL_CNN_PROTOCOL_V1.md) · [流式接口](docs/a1/TEMPORAL_CNN_HANDOFF_V1.md)。TRAIN内部按人选择epoch/阈值后锁定，验证F1相较本轮CNN从0.5471升至0.6571，但误报时长增加17.7%，未达到升级条件，也未胜过既有参考；原默认未替换，无新候选TEST成绩。
-
-> **2026-10-29 A1 文献架构复现与误报诊断：** [结果及六张展示图说明](docs/a1/AUTHOR_CNN_RESULTS_V1.md) · [固定协议](docs/a1/AUTHOR_CNN_PROTOCOL_V1.md) · [gyro-only模型接口](docs/a1/AUTHOR_CNN_HANDOFF_V1.md)。作者CNN架构已从零训练；同gyro验证窗口误报下降但漏报增加，共同窗口F1仍低于原六秒RF，未替换默认。本轮仅TRAIN/VALIDATION研发，不是新独立测试。
-
-> **2026-10-29 A1 固定划分重训完成：** [结果与失败分析](docs/a1/FIXED_SPLIT_RESULTS_V1.md) · [预先锁定方法](docs/a1/FIXED_SPLIT_PROTOCOL_V1.md) · [新模型接口](docs/a1/FIXED_SPLIT_HANDOFF_V1.md)。14 人训练、4 人验证、4 人测试；八模型全部重训，测试前锁定。联合检测覆盖测试 20/23 事件，但 Precision 38.50%、F1 0.5307，泛化误报问题仍未解决。
-
-> **2026-10-29 A1 继续改进：** [完整结果](docs/a1/IMPROVEMENT_RESULTS_V1.md) · [接口](docs/a1/IMPROVEMENT_HANDOFF_V1.md)。训练内模型选择使同窗口 F1 0.6188→0.6317（召回略降）；加入左踝备用的实际联合评价中，事件覆盖 70→75/101、时间精确率与召回均升、误报警事件 235→232。旧队列探索性结果，尚未替换默认。
-
-> **2026-10-29 A1 事件目标实验完成：** [A1 交付总览](docs/a1/A1_DELIVERY_SUMMARY.md) · [最新实测](docs/a1/EVENT_RESULTS_V1.md) · [A2 接口](docs/a1/EVENT_HANDOFF.md)。事件覆盖从 70 增至 71/101，但误报警时长增加 14.5%、F1 下降；新规则不采用，原默认保持不变。
-
-> **2026-10-28 A1 因果上下文实验完成：** [实测与图表](docs/a1/CONTEXT_RESULTS_V1.md) · [固定方法](docs/a1/CONTEXT_PROTOCOL_V1.md) · [A2 接口](docs/a1/CONTEXT_HANDOFF.md)。最长六秒历史使窗口 F1 从 0.5994 提至 0.6188、误报警事件从 337 减至 235，但真实冻结事件覆盖从 77 降至 70/101；保留研究候选，原默认模型不替换。
-
-> **2026-10-28 A1 困难负样本实验完成：** [结果与图表](docs/a1/HARD_NEGATIVE_RESULTS_V1.md) · [固定方法](docs/a1/HARD_NEGATIVE_PROTOCOL_V1.md) · [A2 接口说明](docs/a1/HARD_NEGATIVE_HANDOFF.md)。训练内高分纯负样本加倍权重后，F1 从 0.5994 降至 0.5792，误报警事件增多；该候选不采用，原默认模型保持不变。
-
-> **2026-10-28 A1 多模型比较完成：** [RF/SVM/HistGB/CNN 实测](docs/a1/MULTIMODEL_RESULTS_V1.md) · [方法](docs/a1/MULTIMODEL_PROTOCOL_V1.md) · [A2 交接](docs/a1/MULTIMODEL_HANDOFF.md)。本轮固定配置中 RF 的 F1 最高，深度模型未显示升级依据，原默认模型保持不变。
-
-> **2026-10-28 A1 首轮实验：** [方法](docs/a1/EXPERIMENT_V1.md) · [实测结论](docs/a1/RESULTS_V1.md) · [交给 A2](docs/a1/A2_HANDOFF.md)。近期特征的改善幅度小且存在事件覆盖取舍，保留原默认模型，新候选作为对照交付。
-
-> **2026-10-28 算法改进前置核查：** [A1 开工入口](docs/algorithm_readiness/START_HERE.md) · [本轮实测结果](docs/algorithm_readiness/RESULTS_2026-10-28.md)。包含原基线重训、全量数据支持审计、转弯前标签可行性、接口样例与 PPT 图表；新迈步反馈与意图模型尚未实现。
+当前双踝研究基线：开发验证P 0.572、R 0.857、F1 0.686；Stanford首次迁移F1 0.566、冻结时间Recall 48.7%。有局部改善，泛化仍不足。原默认模型、共享接口及控制器不变，转向意图/迈步成功需独立验证。
 
 > **自动化 2 新交付（2026-10-23，待组内评审）：** [从这里开始](AUTOMATION2_START_HERE.md) · [AI 接手说明](docs/automation2/AI_HANDOFF.md) · [机器可读状态](docs/automation2/status.json)。
 > 包含策略比较、可选踏步仿真、真实数据识别与缺测分析。依赖 PR #24；不表示已合并 main，也不表示模型已达标。
