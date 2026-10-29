@@ -97,7 +97,9 @@ remain B1/B2 work. B1 must not use arbitrary held/timer rows as new sensor evide
 
 ## Evidence
 
-See [English figures and bounded results](presentation/README.md). Module scores
-refer to development selection, not a blind test. Fusion behavior counts have no
-accuracy interpretation. Live latency and independent direction acceptance are
-still pending.
+See [development figures and bounded results](presentation/README.md). Their
+module scores refer to development selection, and their behavior counts are not
+accuracy. The separate [locked held-out TEST report](../../a_group/README.md)
+scores raw and fused outputs independently and documents coverage losses. It
+provides the final English effect tables; live latency and receiver review remain
+pending.

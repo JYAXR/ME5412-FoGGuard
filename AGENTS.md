@@ -28,7 +28,9 @@ Use `docs/ARCHITECTURE.md` and `docs/INTERFACE_CONTRACT.md` for module boundarie
   forward displacement; simulated response evidence is not clinical efficacy.
 - The engineering demo uses constructed candidates and simulated responses.
   Do not describe it as the completed four-module real-data pipeline. The
-  A1 table is development validation, not a new blind test or clinical score.
+  legacy A1 tables remain development validation. The separate locked report in
+  `docs/a_group/` is participant-held-out TEST, not a clinical score. TEST is now
+  consumed for selection: never retune on it and claim a fresh independent test.
 - Do not commit raw datasets, model weights, credentials, clinical metadata,
   local absolute paths or generated run directories. Stage explicit paths.
 - Preserve dated verification evidence and release assets. Use fresh output

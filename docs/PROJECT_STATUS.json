@@ -4,7 +4,7 @@
   "project": "FoGGuard",
   "source_branch": "feat/a2-perception-fusion",
   "summary": "IMU freezing and direction perception with response-aware visual/audio cueing",
-  "project_state": "A1_A2_development_perception_available_B1_B2_joint_acceptance_pending",
+  "project_state": "A_group_locked_TEST_evaluated_performance_limits_documented",
   "scope": {
     "real_data": "FoG-STAR",
     "signal_rate_hz": 60,
@@ -12,7 +12,8 @@
     "fog_step_samples": 30,
     "source_max_hold_s": 0.5,
     "final_visualization_owner": "industrial_design",
-    "clinical_efficacy_validated": false
+    "clinical_efficacy_validated": false,
+    "a_group_test_consumed_for_selection": true
   },
   "entrypoints": {
     "overview": "docs/PROJECT_OVERVIEW.md",
@@ -22,12 +23,13 @@
     "quickstart": "docs/QUICKSTART.md",
     "a1": "docs/A1_A2_START_HERE.md",
     "a2": "docs/a2/RESULTS.md",
-    "perception": "docs/a2/fusion/README.md"
+    "perception": "docs/a2/fusion/README.md",
+    "a_group_test": "docs/a_group/README.md"
   },
   "roles": {
     "A1": {
       "responsibility": "FoG models and evidence",
-      "status": "algorithm_delivery_complete",
+      "status": "algorithm_delivery_and_locked_TEST_evaluation_complete",
       "methods": [
         "ankle_history_rf",
         "bilateral_rf",
@@ -37,27 +39,30 @@
       "details": "docs/a1/selected_status.json",
       "remaining": [
         "receiver support and model package maintenance"
-      ]
+      ],
+      "test_results": "docs/a_group/results.json"
     },
     "A2": {
       "responsibility": "direction and perception fusion",
-      "status": "direction_and_causal_fusion_development_replayed_receiver_acceptance_pending",
+      "status": "direction_and_fusion_locked_TEST_evaluated_performance_review_pending",
       "task": "docs/tasks/A2.md",
       "results": "docs/a2/results.json",
       "presentation": "docs/a2/presentation/README.md",
       "delivery_focus": "Current direction recognition as main result; preturn retained as evidence-backed feasibility research",
-      "direction_accuracy": 0.6699115044247788,
       "preturn_status": "Implemented and evaluated; both horizons have zero left/right recall",
       "preturn_binary_results": "docs/a2/binary_results.json",
       "preturn_binary_status": "TRAIN-subject OOF selected; development event recall 0/41 at 0.5s and 2/41 at 1.0s; zero joint direction recall; not operational",
-      "evaluation_scope": "14 TRAIN and 4 development-validation people; TEST not scored",
+      "evaluation_scope": "14 TRAIN, 4 development, 4 locked participant-held-out TEST; no refitting on TEST",
       "remaining": [
-        "independent direction acceptance",
-        "B1/B2 receiver acceptance",
+        "receiver review of rejection/coverage and false-alarm tradeoffs",
         "measure live computation latency before online deployment"
       ],
       "fusion": "docs/a2/fusion/README.md",
-      "fusion_evidence": "docs/a2/fusion/results.json"
+      "fusion_evidence": "docs/a2/fusion/results.json",
+      "direction_development_accuracy": 0.6699115044247788,
+      "direction_test_accuracy_known_valid_windows": 0.8106508875739645,
+      "fused_direction_test_accuracy_known_valid_windows": 0.5177514792899408,
+      "test_results": "docs/a_group/results.json"
     },
     "B1": {
       "responsibility": "motion feedback and cue control",
@@ -97,12 +102,12 @@
     "simulated response cueing and marching",
     "engineering audits and saved-output playback",
     "current-direction RF development evaluation",
-    "availability-aware A1+A2 perception export"
+    "availability-aware A1+A2 perception export",
+    "locked A-group held-out evaluation and English TEST figures"
   ],
   "not_yet_accepted": [
-    "independent direction acceptance",
+    "perception operating-point suitability and receiver review",
     "real IMU response feedback",
-    "B1/B2 receiver acceptance",
     "four-module real-data pipeline",
     "final visualization"
   ],
@@ -117,16 +122,19 @@
     "scope": "code, tests, engineering fixtures; optional raw audit",
     "meaning": "passing engineering checks does not complete pending module tasks",
     "verified": {
-      "tests_and_recognition": 311,
+      "tests_and_recognition": 321,
       "ruff": "PASS",
       "engineering_paired_strategy_runs": 560,
       "critical_engineering_audit_failures": 0,
       "compatibility_real_data_audit": "NOT_RUN in current full check",
       "documentation_links_and_role_tasks": "PASS",
       "algorithm_source_hashes": "A1 and A2 training implementations unchanged",
-      "scope": "Engineering fixtures plus sensor-only A1+A2 development replay; independent direction/feedback acceptance pending",
+      "scope": "Engineering checks and locked TEST integrity; scores do not imply performance acceptance",
       "perception_behavior_tests": 21,
-      "selected_perception_development_replay": "PASS: 20 records; no truth"
+      "selected_perception_development_replay": "PASS: 20 records; no truth",
+      "heldout_scoring_behavior_tests": 10,
+      "selected_perception_TEST_replay": "PASS integrity: 16 records; performance reported separately",
+      "test_label_recount": "PASS: 4815 FoG + 1605 direction window labels"
     }
   }
 }

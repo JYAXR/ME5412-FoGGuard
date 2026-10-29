@@ -1,0 +1,20 @@
+{
+  "schema": "fogguard.a_group.test_figures.v1",
+  "source_sha256": "64d3569c8c507c2a39911bd84a930a99d8d1ccdc947eb982dd2149cc5349102e",
+  "test_results_sha256": "23a824d3060fb02681c41d0a8e8eb57f14f46a0f1679a697f70338501de564ed",
+  "independent_verification_sha256": "a9d941d8bbfe3cf8032d522b9811d50617bab4bd13e6d90d1835685b91cbd94f",
+  "selection": "First TEST record by sorted identity; first 30 seconds from record start",
+  "files": {
+    "01_fog_test.png": "e394d430566fc30e0fe91ef8b25d95c69136c6e5c359907144327c0bcd948a0b",
+    "01_fog_test.svg": "072afa812ad8cbba7e1aaf929506570d716ef06387d0a920075482db4b84ac58",
+    "02_fog_confusion.png": "aaaaff5d4dc31db98dada7902f438fa4efb2c9cdeedf65793803fdf2269aea4a",
+    "02_fog_confusion.svg": "3a111f5c03a87b145f41c60298a81cf0d902eaaaa7d9f51cd90523df21829caf",
+    "03_direction_test.png": "389c0244af7443f8a197990c8ba1b88dab8f9834f2e93b0d2f2a210a409421b7",
+    "03_direction_test.svg": "2c2c3aa9744edf3d895bd0c2c37744d81f8a2611becde5e3f4ab4e9c1dd409c2",
+    "04_test_timeline.png": "b4c0024ce424a59706c34173f812882351fecdf846a3d1f541a48154779ef0dc",
+    "04_test_timeline.svg": "884a2393ac7a592739ce4b672791a93fef6f11d48151939816eba3d581b661f4",
+    "direction_test_metrics.csv": "ebd51c53c5c9fdc66dad8effa05e35db1da3d9f91f98dc0df31401d5ca77a9cd",
+    "fog_test_metrics.csv": "ba7287765c5a39ae4567d2b891d20f09011a06249e127b8796aa5345aab5254f",
+    "index.html": "d261da307d4f8be5ff135b35002825a6050b51f002cae2015d34b5aed9d76695"
+  }
+}

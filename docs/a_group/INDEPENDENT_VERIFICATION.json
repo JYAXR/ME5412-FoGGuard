@@ -1,0 +1,14 @@
+{
+  "schema": "fogguard.a_group.independent_verification.v1",
+  "status": "PASS",
+  "run_manifest_sha256": "3569b09d8f2eb6c9c14701eb4748d34258a73688699e4296de59f5fb496f6f4f",
+  "lock_sha256": "e8ef5b5eaf32ec64a03be157c00dd2edd0d75c3c706b274a8de82f1d0ba7ec36",
+  "source_sha256": "6d464dcaa4006783a69853750baaad80cdda97dd6a145ec2e5dfb9a48c9b05dd",
+  "artifact_hashes_checked": 14,
+  "raw_fog_window_label_checks": 4815,
+  "raw_direction_window_label_checks": 1605,
+  "matched_windows": 1605,
+  "confusion_counts_and_metrics": "PASS",
+  "runtime_truth_separation": "PASS",
+  "scope": "Independent hash/label/confusion recount; no model retraining or retuning"
+}
