@@ -1,5 +1,7 @@
 # ME5412 FoGGuard
 
+> **2026-10-29 A1 参与者均衡与活动辅助对照：** [完整结果及八张展示图](docs/a1/CONTEXT_LEARNING_RESULTS_V1.md) · [预定方法](docs/a1/CONTEXT_LEARNING_PROTOCOL_V1.md) · [接口](docs/a1/CONTEXT_LEARNING_HANDOFF_V1.md)。三组同参数、输入与TRAIN内选择流程；均衡验证F1 0.6476→0.6717但误报时间增加14.9%，活动辅助F1 0.6438，两候选均未通过升级条件，原默认未替换；没有新候选TEST成绩。
+
 > **2026-10-29 A1 因果CNN＋GRU对照：** [完整取舍与图表](docs/a1/TEMPORAL_CNN_RESULTS_V1.md) · [预定方法](docs/a1/TEMPORAL_CNN_PROTOCOL_V1.md) · [流式接口](docs/a1/TEMPORAL_CNN_HANDOFF_V1.md)。TRAIN内部按人选择epoch/阈值后锁定，验证F1相较本轮CNN从0.5471升至0.6571，但误报时长增加17.7%，未达到升级条件，也未胜过既有参考；原默认未替换，无新候选TEST成绩。
 
 > **2026-10-29 A1 文献架构复现与误报诊断：** [结果及六张展示图说明](docs/a1/AUTHOR_CNN_RESULTS_V1.md) · [固定协议](docs/a1/AUTHOR_CNN_PROTOCOL_V1.md) · [gyro-only模型接口](docs/a1/AUTHOR_CNN_HANDOFF_V1.md)。作者CNN架构已从零训练；同gyro验证窗口误报下降但漏报增加，共同窗口F1仍低于原六秒RF，未替换默认。本轮仅TRAIN/VALIDATION研发，不是新独立测试。
