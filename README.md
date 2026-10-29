@@ -1,5 +1,7 @@
 # ME5412 FoGGuard
 
+> **2026-10-29 A1 旋转不变表征对照已完成：** [结果与七组展示图](docs/a1/INVARIANT_RESULTS_V1.md) · [固定协议](docs/a1/INVARIANT_PROTOCOL_V1.md) · [模型及复现接口](docs/a1/INVARIANT_HANDOFF_V1.md)。66维逐轴换为10维不变摘要，验证F1 0.6860→0.6234；已查看Stanford研发复查F1 0.5657→0.5154。误报时长减少但冻结时间漏检增加，开发门槛失败，不采用替换。368项测试及完整项目检查通过，无新TEST成绩。
+
 > **2026-10-29 A1 外部漏检诊断完成：** [发现、六张展示图及复现](docs/a1/EXTERNAL_FAILURE_DIAGNOSTIC_RESULTS_V1.md) · [固定诊断规则](docs/a1/EXTERNAL_FAILURE_DIAGNOSTIC_PROTOCOL_V1.md)。80次完全漏检中78次已有及时的事件自身多数窗口；P6/P7纯FoG分数仍低，旋转不变摘要也有分布差异。轴系仅得到图示条件推断，未逐试验校准；未训练/旋转重评分/调阈值，原外部F1仍为0.5657。363项测试及完整项目检查通过。
 
 > **2026-10-29 A1 Stanford外部零样本迁移已跑完：** [结果与图表](docs/a1/STANFORD_EXTERNAL_RESULTS_V1.md) · [固定协议](docs/a1/STANFORD_EXTERNAL_PROTOCOL_V1.md) · [适配/复现接口](docs/a1/STANFORD_EXTERNAL_HANDOFF_V1.md)。60条/7人、10033窗口；固定双踝RF的P 0.6401、R 0.5068、F1 0.5657，原始事件重叠131/211、FoG时间Recall 0.4874。单位/因果采样已适配，轴系未核实统一；无目标训练/校准，漏检与跨人差异仍明显，默认未替换。
