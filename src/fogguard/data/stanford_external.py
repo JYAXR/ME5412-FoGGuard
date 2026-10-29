@@ -74,8 +74,8 @@ def canonical_clock(time):
     canonical, blocks = time.copy(), []
     for a, b in pairwise(cuts):
         expected = time[a] + np.arange(b - a) / 128
-        if np.max(abs(time[a:b] - expected)) > 2e-6:
-            raise ValueError("Source clock is not 128Hz within fixed quantization tolerance")
+        if len(expected) > 1 and np.max(abs(np.diff(time[a:b]) - 1 / 128)) > 2e-6:
+            raise ValueError("Source clock is not 128Hz within fixed per-step quantization tolerance")
         canonical[a:b] = expected
         blocks.append((int(a), int(b)))
     return canonical, blocks

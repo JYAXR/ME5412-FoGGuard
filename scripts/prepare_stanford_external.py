@@ -64,6 +64,7 @@ def main():
         rows.append({"record_id": i + 1, "filename": name, "source_person": person, "source_visit": visit,
             "subject_id": ids[0], "session_id": ids[1], "task_id": ids[2], "source_sha256": sha(path),
             "native_samples": len(time), "clock_blocks": len(blocks), "resampled_rows": len(frame),
+            "max_clock_reconstruction_s": float(np.max(abs(time - data["time"]))),
             "finite_left_rows": int(np.isfinite(frame[list(LEFT)].to_numpy(float)).all(axis=1).sum()),
             "finite_bilateral_rows": int(np.isfinite(frame[list(DUAL)].to_numpy(float)).all(axis=1).sum()), "windows": len(windows)})
         print(f"Sensors only {i + 1}/{len(manifest['files'])}: {name}, windows={len(windows)}", flush=True)

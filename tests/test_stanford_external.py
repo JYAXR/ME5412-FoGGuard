@@ -56,6 +56,11 @@ def test_clock_gaps_split_and_non128_clock_is_rejected():
     assert not output.timestamp.between(1, 3).any()
     with pytest.raises(ValueError, match="128Hz"):
         canonical_clock(np.arange(128) / 100)
+    # Source record 45 stores a rounded interval, accumulating clock rounding error.
+    rounded = 206.11962 + np.arange(3751) * 0.007812
+    canonical, _ = canonical_clock(rounded)
+    np.testing.assert_allclose(canonical, rounded[0] + np.arange(3751) / 128, atol=1e-12)
+    assert max(abs(canonical - rounded)) == pytest.approx(0.001875)
 
 
 def test_labels_are_previous_native_cell_not_filtered_or_interpolated():
