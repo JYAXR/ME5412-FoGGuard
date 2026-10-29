@@ -1,0 +1,14 @@
+{
+  "experiment_id": "a1_invariant_v1",
+  "reference_run": "reports/a1_bilateral_v1_20261029",
+  "external_reference": "reports/a1_stanford_external_v1r1_20261029",
+  "split_config": "config/a1_fixed_split_v1.json",
+  "models": ["axis_control", "invariant_rf"],
+  "random_state": 5412,
+  "rf": {"n_estimators": 300, "min_samples_leaf": 2, "class_weight": "balanced_subsample"},
+  "threshold_grid": {"start": 0.05, "stop": 0.95, "count": 91},
+  "invariant_features_per_ankle": ["vector_rms", "gait_power", "freeze_power", "freeze_ratio", "gait_peak_hz"],
+  "epsilon": 1e-12,
+  "development_gate": "Higher matched FoG F1; no more false alarm seconds; no lower FoG-time recall or input support. No automatic default replacement.",
+  "external_scope": "Already inspected Stanford development recheck, not independent zero-shot validation. No target fitting, threshold calibration, rotation search or model selection."
+}
