@@ -1,5 +1,7 @@
 # ME5412 FoGGuard
 
+> **2026-10-29 A1 连续事件分歧回放：** [结果与回放入口](docs/a1/DISAGREEMENT_RESULTS_V1.md) · [外部验证准备](docs/a1/EXTERNAL_VALIDATION_READINESS_V1.md)。全部20条验证记录/10个事件；协调方案丢失17.10秒原FoG覆盖、补回0.50秒，约80.3%的损失在事件内部。已交付同步真实波形/概率/报警回放及四张图；Stanford双踝gyro样本表头/时钟/文件哈希已核对，尚无外部模型成绩。
+
 > **2026-10-29 A1 左右协调摘要消融：** [完整取舍与展示图](docs/a1/COORDINATION_RESULTS_V1.md) · [固定公式](docs/a1/COORDINATION_PROTOCOL_V1.md) · [接口](docs/a1/COORDINATION_HANDOFF_V1.md)。66维双踝对照与追加12项协调摘要的78维候选，验证误报时间减少15.5%，但Recall 0.8574→0.7915、F1 0.6860→0.6801；预定开发门槛失败，未替换默认，无新模型TEST成绩。
 
 > **2026-10-29 A1 真实失败信号与双踝对照：** [结果及八张展示图](docs/a1/BILATERAL_RESULTS_V1.md) · [预定方法](docs/a1/BILATERAL_PROTOCOL_V1.md) · [gyro-only接口](docs/a1/BILATERAL_HANDOFF_V1.md)。相同窗口/流程的左33维与双66维RF，验证F1 0.6234→0.6860、误报时间减少15.8%，达到本轮开发门槛；TRAIN双踝要求损失部分支持，且未全面胜过历史模型，默认未替换，无新候选TEST成绩。

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A1 连续事件分歧回放</title>
+<style>
+:root{color-scheme:light;--ink:#18334c;--muted:#546879;--line:#d3dfe6;--base:#287da0;--candidate:#c07832;--truth:#8c7aa5}*{box-sizing:border-box}body{margin:0;background:#f4f7fa;color:var(--ink);font:15px/1.7 "Microsoft YaHei","Segoe UI",sans-serif}main{max-width:1300px;margin:0 auto;padding:26px}h1{font-size:29px;margin:0}p{margin:8px 0 16px}.note{font-size:13px;color:var(--muted)}.controls{display:flex;gap:15px;flex-wrap:wrap;align-items:end;margin:16px 0}label{display:flex;flex-direction:column;font-size:13px;gap:4px}button,select,input{font:inherit;color:inherit}select,button{padding:8px 10px;border:1px solid var(--line);background:white;border-radius:5px}button{cursor:pointer}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--candidate);outline-offset:2px}canvas{display:block;width:100%;height:510px;background:white;border:1px solid var(--line);border-radius:7px}.seek{width:100%;margin:18px 0 0}.legend{display:flex;flex-wrap:wrap;gap:18px;font-size:13px}.legend i{display:inline-block;width:18px;height:4px;vertical-align:middle;margin-right:5px}.live{min-height:28px;font-variant-numeric:tabular-nums;margin:12px 0}.tablewrap{overflow:auto;margin-top:20px}table{width:100%;border-collapse:collapse;background:white;font-size:13px}td,th{text-align:left;padding:9px;border-bottom:1px solid var(--line);white-space:nowrap}h2{font-size:19px;margin:24px 0 7px}@media(max-width:650px){main{padding:14px}h1{font-size:23px}canvas{height:480px}.controls label{width:100%}select{max-width:100%}.legend{gap:9px}}
+</style></head><body><main>
+<h1>A1 · 连续冻结事件与模型分歧</h1>
+<p>真实 FoG-STAR 信号与已锁定的 66 维双踝 / 78 维协调模型结果。</p>
+<p class="note">已开发的 VALIDATION4 队列，包含全部 20 条记录及 10 个原始冻结事件。本页不重新预测、不调阈值，不是新的独立测试。概率从窗口结束才可用，最多保持 0.5 秒；未知不当正常。信号模长仅为绘图抽样至 15Hz，统计使用原始 60Hz。</p>
+<div class="controls">
+<label>真实记录<select id="record" aria-label="真实记录"></select></label>
+<label>事件 / 固定分歧案例<select id="case" aria-label="事件或分歧案例"><option value="">选择片段</option></select></label>
+<label>可见时间跨度<select id="span"><option value="20">20 秒</option><option value="60">60 秒</option><option value="0">整条记录</option></select></label>
+<button type="button" id="play">播放</button><button type="button" id="restart">回到片段起点</button>
+</div>
+<div class="legend"><span><i style="background:var(--base)"></i>66 维双踝</span><span><i style="background:var(--candidate)"></i>78 维协调</span><span><i style="background:var(--truth)"></i>原始 FoG 真值</span><span>灰色底条＝有支持但未报警；空白＝未知</span></div>
+<p class="live" id="live" aria-live="polite"></p>
+<canvas id="chart" role="img" aria-label="同步真实信号、分段概率、真值与两模型报警区间"></canvas>
+<input class="seek" id="seek" type="range" step="0.016666666667" aria-label="原始记录时间游标">
+<p class="note">蓝色 / 橙色虚线为各自 TRAIN-OOF 固定阈值。概率线按实际可用区间分段显示，缺口不连接；没有提前预测、足部位置、提示响应或临床效果。</p>
+<h2>全部原始冻结事件</h2>
+<p class="note">“两模型均有事件重叠”不等于整段检出。覆盖比例＝事件内报警秒数 / 原始事件秒数。</p>
+<div class="tablewrap"><table><thead><tr><th>记录 P/S/T</th><th>事件起点</th><th>时长</th><th>66维覆盖</th><th>78维覆盖</th><th>净少覆盖</th><th></th></tr></thead><tbody id="events"></tbody></table></div>
+<p class="note" id="totals"></p>
+</main><script id="payload" type="application/json">__REPLAY_DATA__</script>
+<script>
+(()=>{'use strict';
+const data=JSON.parse(document.getElementById('payload').textContent),byId=id=>document.getElementById(id);
+const recordSelect=byId('record'),caseSelect=byId('case'),spanSelect=byId('span'),seek=byId('seek'),canvas=byId('chart');
+let current=0,cursor=0,anchor=0,playing=false,last=0,lastAnnouncement=0;
+const option=(parent,value,text)=>{const o=document.createElement('option');o.value=value;o.textContent=text;parent.append(o);};
+data.records.forEach((r,i)=>option(recordSelect,i,'P/S/T '+r.key+' · '+(r.stop-r.start).toFixed(1)+'s'));
+const caseLabels={largest_fog_time_loss:'冻结覆盖时间损失最多',largest_other_recall_drop:'另一覆盖比例下降事件',longest_removed_false_alarm:'消除误报最长片段',longest_new_false_alarm:'新增误报最长片段'};
+const choices=data.cases.map(c=>({...c,label:caseLabels[c.case]}));
+data.events.forEach((e,i)=>choices.push({...e,label:'冻结事件 '+(i+1)+' · P/S/T '+[e.subject_id,e.session_id,e.task_id].join('/')}));
+choices.forEach((c,i)=>option(caseSelect,i,c.label));
+function setRecord(i,time){playing=false;byId('play').textContent='播放';current=Number(i);recordSelect.value=String(i);const r=data.records[current];cursor=Math.max(r.start,Math.min(time??r.start,r.stop));anchor=cursor;seek.min=r.start;seek.max=r.stop;seek.value=cursor;draw(true);}
+function gotoCase(i){const c=choices[i],key=[c.subject_id,c.session_id,c.task_id].join('/'),index=data.records.findIndex(r=>r.key===key);if(index<0)return;spanSelect.value=(c.end_s-c.start_s>40)?'0':'20';setRecord(index,Math.max(data.records[index].start,c.start_s-3));anchor=cursor;}
+function draw(announce=false){const r=data.records[current];if(!r)return;const w=canvas.getBoundingClientRect().width,h=canvas.getBoundingClientRect().height,dpr=window.devicePixelRatio||1;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);ctx.font='12px "Microsoft YaHei",sans-serif';
+const margin=w<500?72:100,right=w-18,requested=Number(spanSelect.value),duration=requested||r.stop-r.start;
+const left=Math.max(r.start,Math.min(cursor-duration*0.3,r.stop-duration)),end=Math.min(r.stop,left+duration),x=t=>margin+(t-left)/(end-left||1)*(right-margin);
+const ys=[{a:25,b:155},{a:195,b:325},{a:370,b:465}],colors={base:'#287da0',candidate:'#c07832'};
+ctx.fillStyle='#18334c';ctx.fillText('gyro 模长',5,30);ctx.fillText('(deg/s)',5,47);ctx.fillText('FoG 概率',5,200);
+for(const y of ys){ctx.strokeStyle='#d3dfe6';ctx.beginPath();ctx.moveTo(margin,y.b);ctx.lineTo(right,y.b);ctx.stroke();for(const[a,b]of r.truth){const lo=Math.max(a,left),hi=Math.min(b,end);if(hi>lo){ctx.fillStyle='rgba(140,122,165,0.10)';ctx.fillRect(x(lo),y.a,x(hi)-x(lo),y.b-y.a);}}}
+const signal=r.signals.filter(p=>p[0]>=left&&p[0]<=end);const maximum=Math.max(1,...signal.flatMap(p=>p.slice(1).filter(Number.isFinite)));
+for(let k=1;k<=2;k++){ctx.strokeStyle=k===1?'#287da0':'#c07832';ctx.lineWidth=1;ctx.beginPath();let pen=false,prev=-Infinity;for(const p of signal){if(p[k]===null){pen=false;continue;}const xx=x(p[0]),yy=ys[0].b-p[k]/maximum*(ys[0].b-ys[0].a);if(!pen||p[0]-prev>0.11)ctx.moveTo(xx,yy);else ctx.lineTo(xx,yy);pen=true;prev=p[0];}ctx.stroke();}
+ctx.fillStyle='#546879';ctx.fillText(maximum.toFixed(0),margin-38,ys[0].a+10);ctx.fillText('0',margin-14,ys[0].b);
+for(const name of ['base','candidate']){const m=r[name];ctx.strokeStyle=colors[name];ctx.lineWidth=1.4;for(const[a,b,p]of m.decisions){const lo=Math.max(a,left),hi=Math.min(b,end);if(hi<=lo)continue;ctx.beginPath();ctx.moveTo(x(lo),ys[1].b-p*130);ctx.lineTo(x(hi),ys[1].b-p*130);ctx.stroke();}if(m.threshold!==null){ctx.setLineDash([5,4]);ctx.beginPath();ctx.moveTo(margin,ys[1].b-m.threshold*130);ctx.lineTo(right,ys[1].b-m.threshold*130);ctx.stroke();ctx.setLineDash([]);}}
+ctx.fillStyle='#546879';ctx.fillText('1',margin-15,ys[1].a+8);ctx.fillText('0',margin-15,ys[1].b);
+const lanes=[['原始 FoG',r.truth,'#8c7aa5',null],['66维报警',r.base.alarms,colors.base,r.base.support],['78维报警',r.candidate.alarms,colors.candidate,r.candidate.support]];
+lanes.forEach(([label,intervals,color,support],i)=>{const y=378+i*30;ctx.fillStyle='#18334c';ctx.fillText(label,5,y+12);const bars=(segments,fill)=>{ctx.fillStyle=fill;for(const[a,b]of segments){const lo=Math.max(a,left),hi=Math.min(b,end);if(hi>lo)ctx.fillRect(x(lo),y,Math.max(1,x(hi)-x(lo)),16);}};if(support)bars(support,'#e6e6e6');bars(intervals,color);});
+const ticks=w<500?3:6;ctx.fillStyle='#546879';for(let i=0;i<=ticks;i++){const t=left+(end-left)*i/ticks;ctx.fillText(t.toFixed(1),Math.max(margin-5,Math.min(right-30,x(t)-15)),h-15);}ctx.fillText('原始时间 (s)',5,h-15);
+ctx.strokeStyle='#18334c';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x(cursor),15);ctx.lineTo(x(cursor),465);ctx.stroke();seek.value=cursor;
+const describe=name=>{const m=r[name],d=m.decisions.find(p=>p[0]-1e-7<=cursor&&cursor<p[1]-1e-7);return d?d[2].toFixed(3)+(d[2]>=m.threshold?' · 报警':' · 未报警'):'未知';};
+if(announce||performance.now()-lastAnnouncement>800){byId('live').textContent='P/S/T '+r.key+' · '+cursor.toFixed(2)+'s ｜66维 '+describe('base')+' ｜78维 '+describe('candidate');lastAnnouncement=performance.now();}}
+recordSelect.addEventListener('change',()=>{caseSelect.value='';setRecord(recordSelect.value);});caseSelect.addEventListener('change',()=>{if(caseSelect.value!=='')gotoCase(Number(caseSelect.value));});spanSelect.addEventListener('change',()=>draw(true));seek.addEventListener('input',()=>{cursor=Number(seek.value);draw(true);});
+byId('play').addEventListener('click',()=>{playing=!playing;last=0;byId('play').textContent=playing?'暂停':'播放';});byId('restart').addEventListener('click',()=>{cursor=anchor;draw(true);});
+data.events.forEach((e,i)=>{const tr=document.createElement('tr');const cells=[[e.subject_id,e.session_id,e.task_id].join('/'),e.start_s.toFixed(2)+'s',e.duration_s.toFixed(2)+'s',(e.base_recall*100).toFixed(1)+'%',(e.candidate_recall*100).toFixed(1)+'%',(e.base_alarm_s-e.candidate_alarm_s).toFixed(2)+'s'];cells.forEach(text=>{const td=document.createElement('td');td.textContent=text;tr.append(td);});const td=document.createElement('td'),button=document.createElement('button');button.type='button';button.textContent='查看';button.addEventListener('click',()=>{caseSelect.value=String(data.cases.length+i);gotoCase(data.cases.length+i);canvas.scrollIntoView({block:'center',behavior:'smooth'});});td.append(button);tr.append(td);byId('events').append(tr);});
+const s=data.summary;byId('totals').textContent=s.raw_records+' 条原始记录 · '+s.truth_events+' 个事件 · 两模型事件任意重叠均为 '+s.truth_events+'/'+s.truth_events+'；冻结报警覆盖 '+s.base_true_s.toFixed(2)+'→'+s.candidate_true_s.toFixed(2)+' 秒，非FoG报警 '+s.base_false_s.toFixed(2)+'→'+s.candidate_false_s.toFixed(2)+' 秒。';
+window.addEventListener('resize',()=>draw());function tick(now){if(playing){if(last)cursor+=Math.min((now-last)/1000,0.2);if(cursor>=data.records[current].stop){cursor=data.records[current].stop;playing=false;byId('play').textContent='播放';}draw();}last=now;requestAnimationFrame(tick);}setRecord(0);if(choices.length){caseSelect.value='0';gotoCase(0);}requestAnimationFrame(tick);
+})();
+</script></body></html>
