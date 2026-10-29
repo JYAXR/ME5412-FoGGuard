@@ -20,7 +20,8 @@
     "architecture": "docs/ARCHITECTURE.md",
     "interfaces": "docs/INTERFACE_CONTRACT.md",
     "quickstart": "docs/QUICKSTART.md",
-    "a1": "docs/A1_A2_START_HERE.md"
+    "a1": "docs/A1_A2_START_HERE.md",
+    "a2": "docs/a2/RESULTS.md"
   },
   "roles": {
     "A1": {
@@ -39,11 +40,18 @@
     },
     "A2": {
       "responsibility": "direction and perception fusion",
-      "status": "foundation_available_delivery_pending",
+      "status": "direction_development_evaluated_preturn_ineffective_fusion_pending",
       "task": "docs/tasks/A2.md",
+      "results": "docs/a2/results.json",
+      "presentation": "docs/a2/presentation/README.md",
+      "delivery_focus": "Current direction recognition as main result; preturn retained as evidence-backed feasibility research",
+      "direction_accuracy": 0.6699115044247788,
+      "preturn_status": "Implemented and evaluated; both horizons have zero left/right recall",
+      "preturn_binary_results": "docs/a2/binary_results.json",
+      "preturn_binary_status": "TRAIN-subject OOF selected; development event recall 0/41 at 0.5s and 2/41 at 1.0s; zero joint direction recall; not operational",
+      "evaluation_scope": "14 TRAIN and 4 development-validation people; TEST not scored",
       "remaining": [
-        "direction model evaluation",
-        "separate preturn task evaluation",
+        "independent direction acceptance; preturn retained as completed feasibility study",
         "A1 availability-aware adapter",
         "perception runtime export"
       ]

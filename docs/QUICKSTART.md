@@ -47,6 +47,12 @@ python -X utf8 scripts/run_fogstar_end_to_end.py --predictions docs/examples/rob
 
 ## 开发检查
 
+完整检查包含 A2 评价测试，先安装其绘图依赖：
+
+```bash
+python -m pip install -r requirements-a2.txt
+```
+
 ```bash
 python -X utf8 scripts/run_automation2_delivery_checks.py
 ```

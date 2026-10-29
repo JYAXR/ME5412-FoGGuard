@@ -1,0 +1,7 @@
+﻿metric,value,denominator_windows,scope
+primary_accuracy,0.6699115044247788,1130,明确方向真值；预测拒识计错
+primary_macro_f1,0.7197309824304418,1130,直走/左转/右转三类等权
+prediction_coverage,0.7646017699115044,1130,明确方向中未拒识比例
+accepted_accuracy,0.8761574074074074,864,仅未拒识样本；不能替代主准确率
+full_stream_accuracy,0.6866215512753774,1921,包含791个不确定真值
+full_stream_macro_f1,0.655788881565265,1921,包含unknown的四类等权

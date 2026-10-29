@@ -12,6 +12,7 @@ FoGGuard 是 ME5412 课程项目，研究如何利用可穿戴 IMU 识别冻结�
 | A1 / A2 / B1 / B2 与工业设计的职责 | [分工与交付顺序](docs/ROLES_AND_ROADMAP.md) |
 | 模块关系、状态和验收要求 | [系统架构](docs/ARCHITECTURE.md) |
 | 当前完成状态 | [项目状态](docs/PROJECT_STATUS.json) |
+| A2 展示图表、准确率数据与图注 | [A2 展示结果包](docs/a2/presentation/README.md) |
 | 环境、模型推理与工程演示 | [快速开始](docs/QUICKSTART.md) |
 | 字段、单位和时序约定 | [接口约定](docs/INTERFACE_CONTRACT.md) · [数据格式](docs/DATA_SCHEMA.md) |
 
@@ -51,7 +52,7 @@ A 组负责感知，B 组负责反馈、决策和验证。最终可视化读取�
 | 成员 | 当前基础 | 要完成的交付 |
 |---|---|---|
 | A1 | 三种冻结模型和评估已交付 | 维护模型包与接口，支持 A2 接入 |
-| A2 | 有方向规则、数据适配和事件聚合模块 | [转向模型、提前转向任务验证、A1 融合时间线](docs/tasks/A2.md) |
+| A2 | [方向模型已开发验证；提前预测未达到可用水平](docs/a2/RESULTS.md) | [独立验收、A1 融合时间线](docs/tasks/A2.md) |
 | B1 | 有脚印声音控制、模拟响应与踱步状态机 | [真实信号运动代理、响应判据、提示切换与控制验证](docs/tasks/B1.md) |
 | B2 | 有指标审计、工程场景和策略对照工具 | [四模块联调、统一验收、对比报告和展示数据包](docs/tasks/B2.md) |
 | 工业设计 | 有保存时间线的回放页面 | [PPT、最终可视化与演示视频](docs/tasks/DESIGN.md) |

@@ -1,0 +1,59 @@
+{
+  "schema": "fogguard.a2.presentation.v1",
+  "language": "zh-CN",
+  "scope": "14 人训练 · 4 人开发验证 · 最终 TEST 未评分",
+  "metrics_verified_against_saved_predictions": true,
+  "raw_sha256": "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477",
+  "source_sha256": {
+    "docs/a2/results.json": "ebe147434741cc32ee6c12c28622fa02b23724c70cce4342fb099e268a699dc3",
+    "docs/a2/binary_results.json": "e3e3c8ac471b41f6eaa19be294475efb8bc4ace0deed1b90f41172117b78e182",
+    "docs/a2/binary_threshold_audit.json": "b9f3a18285ff52bd5d70f17ca3d8d8a10cdea0a509d3ab0e2e2e10213b6e1867",
+    "reports/a2_final_20261030/current/direction_runtime.csv": "d3684787c1786b565c402dd54ae8daffa0dc25f383113f29b339f02ff71f1513",
+    "reports/a2_final_20261030/current/evaluation_truth.csv": "c0c49a6a7dc76e70ab5f58101c81718cb1547908fafc38c151a08532a51b2f17"
+  },
+  "build_script_sha256": "253748ad849f6e77062d794d79e4339c988904306ea677feb44a3297f76b17f7",
+  "timeline": {
+    "record_key": {
+      "subject_id": 1,
+      "session_id": 1,
+      "task_id": 1
+    },
+    "selection": "First sorted validation record with valid straight and left/right targets; no prediction-quality filtering",
+    "shown_duration_s": 44.8166666666667,
+    "hold_limit_s": 0.5,
+    "raw_values_or_per_window_outputs_in_pack": false
+  },
+  "captions": {
+    "01_overview": "在 1130 个方向明确的有效窗口上，重力投影随机森林准确率为 66.99%，三类 macro-F1 为 71.97%。拒识计为错误；这些是开发验证结果。",
+    "02_confusion_main": "主评价混淆矩阵：行是真实方向，列为预测，格内为窗口数及行百分比。右转有 170/357 个窗口被拒识，是主要限制之一。",
+    "02b_confusion_full": "补充评价包含 791 个不确定真值，共 1921 个有效窗口。四类准确率为 68.66%，四类 macro-F1 为 65.58%，与主三类评价范围不同。",
+    "03_class_and_people": "直走、左转和右转召回率分别为 89.78%、59.12% 和 41.18%。四名验证参与者准确率差异明显，不能将窗口数等同于独立受试者数。",
+    "04_real_timeline": "固定规则选取首条包含直走与转向的验证记录，未按成绩筛选。预测从输入窗口末点才可用，最多保持 0.5 秒；图中保留拒识、错误与边界滞后。",
+    "05_preturn_feasibility": "提前预测作为可行性研究：训练内选定阈值后，0.5 秒与 1 秒模型仅检出 0/41 与 2/41 个转向事件；降低阈值提高召回伴随约 8 次/分钟误报。"
+  },
+  "files_sha256": {
+    "01_overview.png": "fd8ae52ffce9c535e6e7175ee1d5b02083a92be9f9b0ebbdb8f5031f1e3d75b2",
+    "01_overview.svg": "dff5094eb71a3d16c067fd402526d78d2e3967bf7f65d117e056bad3e585f957",
+    "02_confusion_main.png": "ef12d8e8e687f88c7f9bb88e30db8095fd6a2c6d3194d13fcbe120571d169756",
+    "02_confusion_main.svg": "87cc73552b4807633062bd88798d1b1fc3096e42ab4c1e73ec46393a9f84d836",
+    "02b_confusion_full.png": "4489f47c7cdfbf326e3ea168295e044e974ae3a75ca970af5a1da426b19ff360",
+    "02b_confusion_full.svg": "c30b9b6f626f6db9d485b4f64d358ed9dd9514e037177dffcb00ef4053364a2c",
+    "03_class_and_people.png": "6e47c4ee365c44ca341d7394b3cc79d609858410eba6de582afde51e7572cf38",
+    "03_class_and_people.svg": "9d10e8f8c53f9e116fba257c65c0211f2ae1b35952445b1cb4f971cf0692f3fd",
+    "04_real_timeline.png": "c0ebb7b5b467068dfc0f6a3e1aaaafb74c49f1d514c9f7e0057df2813004adcd",
+    "04_real_timeline.svg": "765dec347660ac6d4fa5c05695d4ee8ad5762ecc57b11846aed5d5fb24078c87",
+    "05_preturn_feasibility.png": "bd7ca57eb81ada66a15005e69d08754989fce27108c770f175b86fbf524b2713",
+    "05_preturn_feasibility.svg": "8cffc603e2188a742818172e0694a9e45dd4b85de4733e77801b96cf77b52875",
+    "A2展示报告.html": "4b09d7ddda32036fd8b24f1541204f76dbd4b2c869687fe0682ac110e57f31dc",
+    "data/confusion_full.csv": "7637e8476b60f031fe0fb0aaeae8b9319f37c53e47a77b02dc65d3253029c945",
+    "data/confusion_main.csv": "1131b52fe850163543448dd8e074a686295d627437cc8a6d94b5da25807f332f",
+    "data/headline_metrics.csv": "c0dfa9381b9a65edff9bf2ff4ae5bff214ddf57135bb0488f35e53d10c71ecc9",
+    "data/method_comparison.csv": "d6d0f495d5d32bc96ba182e0e12bb8cc514356d2add16f9a5b8279f3ef8087a3",
+    "data/per_class.csv": "20188e1e66d6c23da46dca52a0d541741f873263b45b68d35bd331ecb279db93",
+    "data/per_subject.csv": "5377e912533dc0236bcbce7ae8d959d5e2cc9bd42e1e1a07c618175ea038b951",
+    "data/preturn_feasibility.csv": "6f812c6697cbf128e19c3f6b7d91031ea4f4ccbb164be41526ccea6a930b3c88",
+    "data/preturn_threshold_diagnostic.csv": "81d7c526dc01abe26d1386395d433185eb000bc59e18a7f8d13ef3ec4095ca6c",
+    "data/README.md": "c2b0c6b117e693d43e1bd84b5fc5bb7cbc55fc240af437f3ebe0f5f22c9e359d",
+    "README.md": "b26c8ba59c83cd0b7c845c69e98fd3c448763252f90c05912b27f578833bc685"
+  }
+}

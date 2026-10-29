@@ -4,3 +4,13 @@ docs/a1/figures/*.svg text eol=lf
 docs/a1/figures/*.csv text eol=lf
 docs/a1/figures/*.json text eol=lf
 docs/a1/figures/*.md text eol=lf
+
+# A2 manifests record exact exported bytes, including Windows CSV/JSON newlines.
+docs/a2/** -text whitespace=cr-at-eol
+# Matplotlib SVG path attributes contain valid, intentional trailing spaces.
+docs/a2/**/*.svg whitespace=cr-at-eol,-blank-at-eol
+# Keep the hashed A2 implementation and configurations portable across checkouts.
+config/a2_*.json text eol=lf
+scripts/*a2*.py text eol=lf
+src/fogguard/turning/learned.py text eol=lf
+src/fogguard/turning/preturn_binary.py text eol=lf
