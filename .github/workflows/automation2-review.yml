@@ -33,5 +33,9 @@ jobs:
         run: |
           python -m pip install -r requirements.txt -c docs/automation2/tested-constraints.txt
           python -m pip install -e .
+      - name: Install CPU PyTorch for selected CNN checks
+        run: |
+          python -m pip install -r requirements-a1-deep.txt
+          python -c "import torch; print(torch.__version__)"
       - name: Tests, lint, baseline audit and complete demo
         run: python -X utf8 scripts/run_automation2_delivery_checks.py

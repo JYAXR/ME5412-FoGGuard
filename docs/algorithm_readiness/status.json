@@ -1,0 +1,12 @@
+{
+  "schema": "fogguard.data-feasibility.v1",
+  "role": "data and adapter verification utilities",
+  "project_status": "docs/PROJECT_STATUS.json",
+  "entrypoint": "docs/algorithm_readiness/START_HERE.md",
+  "a1_algorithm_delivery": "complete",
+  "preturn_model": "assigned_to_A2",
+  "motion_feedback_estimator": "assigned_to_B1",
+  "joint_acceptance": "assigned_to_B2",
+  "independent_forward_step_truth_available": false,
+  "shared_interface_change": "requires receiver review"
+}
