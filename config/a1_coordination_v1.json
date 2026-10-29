@@ -1,0 +1,16 @@
+{
+  "experiment_id": "a1_coordination_v1",
+  "reference_run": "reports/a1_bilateral_v1_20261029",
+  "split_config": "config/a1_fixed_split_v1.json",
+  "models": ["bilateral_control", "coordination_rf"],
+  "random_state": 5412,
+  "rf": {"n_estimators": 300, "min_samples_leaf": 2, "class_weight": "balanced_subsample"},
+  "threshold_grid": {"start": 0.05, "stop": 0.95, "count": 91},
+  "additional_features": ["energy_asymmetry", "absolute_energy_asymmetry", "envelope_difference", "envelope_correlation", "peak_correlation", "peak_abs_lag_s", "correlation_025s", "correlation_050s", "gait_power_asymmetry", "freeze_power_asymmetry", "gait_spectral_cosine", "gait_peak_frequency_difference"],
+  "epsilon": 1e-12,
+  "max_lag_samples": 30,
+  "alignment": "Reuse left-anchored complete bilateral 120-point/30-step 60Hz windows; skip incomplete right inputs, no interpolation or re-anchoring.",
+  "fitting": "Same fixed TRAIN14 participant folds as bilateral v1; same RF configuration and TRAIN pooled OOF threshold rule. Fresh matched 66-feature control and 78-feature candidate. No new loss, history, hyperparameter search, gating or postprocessing.",
+  "lock_policy": "Lock feature definitions, models, thresholds and source before separate readonly VALIDATION4 evaluation; no new TEST windows or scores.",
+  "development_gate": "Candidate must have higher matched-window F1, no greater raw false alarm seconds, no lower raw FoG-time recall and no lower decision support than matched control. Passing is development evidence only, not automatic default adoption or independent generalization."
+}
