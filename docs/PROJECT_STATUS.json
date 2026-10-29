@@ -1,0 +1,117 @@
+{
+  "schema": "fogguard.project.v1",
+  "date": "2026-10-29",
+  "project": "FoGGuard",
+  "source_branch": "feat/algorithm-readiness-a1",
+  "summary": "IMU freezing and direction perception with response-aware visual/audio cueing",
+  "project_state": "A1_delivered_downstream_implementation_and_joint_acceptance_pending",
+  "scope": {
+    "real_data": "FoG-STAR",
+    "signal_rate_hz": 60,
+    "fog_window_samples": 120,
+    "fog_step_samples": 30,
+    "source_max_hold_s": 0.5,
+    "final_visualization_owner": "industrial_design",
+    "clinical_efficacy_validated": false
+  },
+  "entrypoints": {
+    "overview": "docs/PROJECT_OVERVIEW.md",
+    "roles": "docs/ROLES_AND_ROADMAP.md",
+    "architecture": "docs/ARCHITECTURE.md",
+    "interfaces": "docs/INTERFACE_CONTRACT.md",
+    "quickstart": "docs/QUICKSTART.md",
+    "a1": "docs/A1_A2_START_HERE.md"
+  },
+  "roles": {
+    "A1": {
+      "responsibility": "FoG models and evidence",
+      "status": "algorithm_delivery_complete",
+      "methods": [
+        "ankle_history_rf",
+        "bilateral_rf",
+        "ankle_cnn"
+      ],
+      "model_selection": "explicit method argument; bilateral_rf as integration reference",
+      "details": "docs/a1/selected_status.json",
+      "remaining": [
+        "receiver support and model package maintenance"
+      ]
+    },
+    "A2": {
+      "responsibility": "direction and perception fusion",
+      "status": "foundation_available_delivery_pending",
+      "task": "docs/tasks/A2.md",
+      "remaining": [
+        "direction model evaluation",
+        "separate preturn task evaluation",
+        "A1 availability-aware adapter",
+        "perception runtime export"
+      ]
+    },
+    "B1": {
+      "responsibility": "motion feedback and cue control",
+      "status": "simulation_foundation_available_real_feedback_pending",
+      "task": "docs/tasks/B1.md",
+      "remaining": [
+        "IMU motion proxy",
+        "source-preserving feedback adapter",
+        "valid-observation no-response timing",
+        "cue/march parameter consistency and acceptance"
+      ]
+    },
+    "B2": {
+      "responsibility": "evaluation and joint integration",
+      "status": "tools_available_joint_acceptance_pending",
+      "task": "docs/tasks/B2.md",
+      "remaining": [
+        "four-module integration",
+        "same-input strategy evaluation",
+        "final export package and failure cases"
+      ]
+    },
+    "industrial_design": {
+      "responsibility": "PPT and final visualization",
+      "status": "final_delivery_pending",
+      "task": "docs/tasks/DESIGN.md",
+      "remaining": [
+        "visual design",
+        "validated playback integration",
+        "final slides and demonstration video"
+      ]
+    }
+  },
+  "implemented_foundation": [
+    "three selected FoG methods",
+    "direction rules and temporal event integration",
+    "simulated response cueing and marching",
+    "engineering audits and saved-output playback"
+  ],
+  "not_yet_accepted": [
+    "new direction/preturn algorithms",
+    "real IMU response feedback",
+    "selected-model and direction adapter",
+    "four-module real-data pipeline",
+    "final visualization"
+  ],
+  "evidence_rules": [
+    "runtime truth separation",
+    "missing and stale remain unknown",
+    "motion proxy is not measured forward displacement",
+    "simulated strategies do not establish clinical efficacy"
+  ],
+  "checks": {
+    "command": "python -X utf8 scripts/run_automation2_delivery_checks.py",
+    "scope": "code, tests, engineering fixtures; optional raw audit",
+    "meaning": "passing engineering checks does not complete pending module tasks",
+    "verified": {
+      "tests_and_recognition": 263,
+      "ruff": "PASS",
+      "engineering_paired_strategy_runs": 560,
+      "critical_engineering_audit_failures": 0,
+      "compatibility_real_data_audit": "PASS",
+      "documentation_links_and_role_tasks": "PASS",
+      "algorithm_source_hashes": "unchanged",
+      "scope": "Engineering fixture acceptance and compatibility raw audit, not completion of pending algorithms"
+    }
+  }
+}

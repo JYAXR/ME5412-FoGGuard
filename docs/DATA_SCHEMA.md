@@ -1,75 +1,44 @@
-# 标准回放数据格式
+# 数据格式与来源
 
-每一行表示一个已经同步的 IMU 采样点。
+## FoG-STAR 原始信号
 
-| 字段 | 单位 | 是否必需 | 含义 |
-|---|---|---:|---|
-| `timestamp_s` | s | 是 | 从回放开始计算的单调时间 |
-| `ax`, `ay`, `az` | m/s² | 是 | 三轴加速度 |
-| `gx`, `gy`, `gz` | deg/s | 是 | 三轴角速度 |
-| `fog_label` | 0/1 | 评估时 | FoG 真值标签 |
-| `turn_label` | 文本 | 评估时 | `left`、`right`、`straight` 或 `unknown` |
-| `scenario_id` | 文本 | 可选 | 场景分组标识 |
+正式感知任务采用 60 Hz 同步 IMU，保存于 `data/raw/fogstar/sensor_data.csv`。下载入口为 `scripts/download_fogstar.py`，人员划分及数据哈希见 `config/fog_selected.json`。
 
-仓库中只允许保存合成数据或许可清楚、经过批准并去除身份信息的公开数据。不得提交可识别参与者身份的数据；公开原始数据也保存在 Git 忽略的 `data/raw/`，通过下载脚本复现。每个数据集的说明文件中应记录来源、许可、传感器放置位置、单位、采样率和标签生成假设。
-
-加载和回放时执行以下最低质量检查：
-
-- 必需传感器列和时间戳必须为有限数值，不接受 NaN 或 Inf。
-- `timestamp_s` 必须严格递增，不能重复或倒退。
-- 回放声明的采样率须与时间戳中位采样间隔一致，默认允许 5% 相对误差。
-- `fog_label` 只能为 0/1；`turn_label` 只能为 `left`、`right`、`straight` 或 `unknown`。
-- `scenario_id` 存在时不得为空。
-
-## 窗口级 FoG 标签
-
-`WindowReplay` 将采样点标签聚合到每个回放窗口，并通过 `SensorWindow.metadata` 提供：
-
-- `fog_fraction`：窗口内 `fog_label=1` 的采样点比例。
-- `fog_label`：当 `fog_fraction >= 0.5` 时为 `"1"`，否则为 `"0"`。
-
-默认的 0.5 比例可以通过 `WindowReplay.fog_positive_fraction` 调整。元数据值保持为字符串，以遵守共享的 `SensorWindow` 接口；评估代码读取时应显式转换为 `float` 或 `int`。没有 `fog_label` 列的回放数据仍可用于演示，但窗口元数据不会包含上述字段。
-
-## 窗口级转向标签
-
-存在 `turn_label` 时，`WindowReplay` 将窗口内占比最高的方向写入元数据：
-
-- `turn_fraction`：占比最高方向的样本比例。
-- `turn_label`：当最高占比达到默认 0.5 且没有并列时，使用该方向；否则为 `unknown`。
-
-存在 `scenario_id` 时，同一窗口内值一致则原样保留；混合来源窗口标为 `mixed`。这些标签只用于评估，不得作为自动识别或提示决策输入。
-
-## Daphnet 公开真实数据导入
-
-`fogguard.data.load_daphnet_recordings` 将 UCI Daphnet 数据映射到上述格式。导入约束如下：
-
-- 官方标签 `0/1/2` 映射为“协议外/非 FoG/FoG”；协议外数据先被移除，并按连续区段分别回放，窗口不得跨越协议外间隙。
-- 64 Hz、单位为 `mg` 的加速度转换为 `m/s²`；传感器位置必须显式选择为 `ankle`、`thigh` 或 `trunk`。
-- 窗口元数据保留 `subject_id`、`recording_id`、`sensor_position`、`source_dataset`、`source_license` 和 `gyro_available`，以便参与者级划分和来源审计。
-- Daphnet 没有陀螺仪。兼容格式中的 `gx/gy/gz=0` 是占位值，必须同时标记 `gyro_available=false`。转向模块遇到该标记会报错，不能用占位零值判断为直走。
-- 参与者必须作为不可拆分的评估单元；同一参与者的数据不能同时进入阈值选择和留出测试。
-
-下载、映射和参与者留一实验见 [Daphnet 真实数据验证记录](DAPHNET_VALIDATION.md)。
-
-## FoG 事件证据
-
-事件评估将样本级连续 `fog_label=1` 区间视为一个 FoG 事件。事件开始和结束来自样本时间戳；检测时间使用检测窗口最后一个样本的时间，即该窗口输出可用的时间。默认允许一个窗口长度的事件后匹配宽限，以保留由窗口造成的延迟输出。
-
-事件报告包含事件开始、结束、首次检测时间、检测延迟和漏检状态。无事件场景中的阳性窗口单独记为事件外阳性窗口。
-
-## 模拟落脚与响应输入
-
-`data/demo/simulated_step_responses.csv` 与 IMU 数据分开保存，仅用于 P1 策略仿真：
-
-| 字段 | 含义 |
+| 列 | 单位/含义 |
 |---|---|
-| `scenario_id` | 模拟响应场景 |
-| `timestamp_s` | 模拟事件时间 |
-| `foot` | `left`、`right` 或 `none` |
-| `forward_m`, `lateral_m` | 成功/延迟落脚时的示意坐标 |
-| `response_status` | `success`、`delayed`、`unable`、`no_response` 或 `missing_input` |
-| `delay_s` | 成功响应的模拟延迟 |
-| `reliability` | 0–1 的输入可靠性配置，不代表临床概率 |
-| `source` | 必须为 `simulated` |
+| `subjectID / sessionID / taskID` | 记录身份；窗口不能跨记录 |
+| `timestamp` | 秒，记录内严格递增 |
+| `<position>_acc_x/y/z` | 加速度，g |
+| `<position>_gyro_x/y/z` | 角速度，deg/s |
+| `fog` | 训练/评价用二值冻结标签 |
+| `activity` | 训练/评价用活动标签 |
 
-成功或延迟落脚必须提供有限坐标和非负延迟。无响应、无法完成及缺失输入不得伪装成真实落脚，也不能用于证明提示产生治疗效果。
+位置包括 `ankleL / ankleR / back / wrist`。标签不进入运行控制；活动 1、6、7 分别映射直行、右转、左转，其他活动和不明确边界保留拒识语义。
+
+## A1 输入
+
+| 方法 | 所需列（另需 timestamp） |
+|---|---|
+| `ankle_history_rf` | 左踝三轴 acc 与三轴 gyro |
+| `bilateral_rf` | 左踝和右踝三轴 gyro |
+| `ankle_cnn` | 左踝三轴 gyro |
+
+采样率 60 Hz，窗口 120 点、步长 30 点，输入轴向须与训练一致。窗口末端为最后一个采样点，即起点加 `119/60` 秒；完整两秒采样窗不等于首尾时间差恰好两秒。冻结样本占比至少 50% 才为窗口阳性标签。
+
+A1 推理不插值缺测。双踝模型在左踝连续段固定网格上切窗，右踝缺失跳过对应窗口；历史特征在断档或记录切换时重置。缺失时段保留未知。
+
+## 通用工程回放
+
+通用 `SensorWindow`/演示 CSV 使用 `timestamp_s`、`ax/ay/az`（m/s²）和 `gx/gy/gz`（deg/s）。原始 g 转 m/s² 时必须显式乘以适配器采用的标准重力常数，禁止将两种格式直接拼接。
+
+可选 `fog_label / turn_label / scenario_id` 用于评价或案例标识。真值输出单独保存，不能作为模型或控制器的输入特征。
+
+## 反馈与模拟响应
+
+B1 反馈目标字段和来源见 [接口约定](INTERFACE_CONTRACT.md)。真实 IMU 可以生成带来源的动作代理；公开数据不提供独立逐步向前位移真值。
+
+工程模拟响应独立保存，主要字段为 `scenario_id / timestamp_s / foot / forward_m / lateral_m / response_status / delay_s / reliability / source`。当前加载器要求 `source=simulated`，成功/延迟响应要有脚别、有限坐标与非负延迟；缺失输入、无响应和无法完成不能伪装为成功落脚。
+
+## 保存与共享
+
+Git 只存代码、配置、合成接口样例与汇总指标。原始数据、模型、逐窗运行输出放在忽略目录。B2 的最终结果包分别记录真实信号、模型输出、运动代理、构造候选和模拟响应来源。

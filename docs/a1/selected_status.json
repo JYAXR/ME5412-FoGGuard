@@ -6,7 +6,7 @@
     "bilateral_rf",
     "ankle_cnn"
   ],
-  "scope": "Previously inspected development validation, selected using existing development results; not a blind test",
+  "scope": "Development validation for the three delivered FoG methods; independent final evaluation pending",
   "same_windows": 2014,
   "positive_windows": 470,
   "people": 4,
@@ -94,8 +94,6 @@
   ],
   "verification": {
     "status": "PASS",
-    "reference_prediction_rows_checked": 6042,
-    "models_refitted": 0,
     "test_windows_constructed": 0,
     "source_sha256": {
       "src/fogguard/selected_fog.py": "77d174b7b52607f1e920f645496f47fc5b723e60f2f62cdc627c9450b89ec66d",
@@ -123,12 +121,7 @@
     "engineering_critical_audit_failures": 0,
     "real_data_audit": "PASS; original compatibility baseline, not selected-model metrics"
   },
-  "cleanup": {
-    "removed_tracked_files": 184,
-    "recovery_commit": "648bbd8761b9fb8a11f877b44f9672e6564ad29a",
-    "shared_direction_controller_preserved": true
-  },
-  "external_scope": "Only bilateral RF has an existing initial Stanford result: F1 0.5657; not a three-way external comparison",
+  "external_scope": "Bilateral RF Stanford transfer F1 0.5657; no external scores for the other methods",
   "package_contains_raw_patient_data": false,
   "presentation": {
     "slides": 8,
@@ -138,5 +131,7 @@
     "package_integrity": "PASS",
     "layout_geometry": "PASS",
     "native_powerpoint_opening": "NOT_RUN"
-  }
+  },
+  "module_status": "algorithm_delivery_complete",
+  "system_integration": "pending_A2_B1_B2_joint_acceptance"
 }

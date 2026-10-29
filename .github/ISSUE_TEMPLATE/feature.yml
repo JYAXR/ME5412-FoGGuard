@@ -1,5 +1,5 @@
 name: 项目任务
-description: 一个范围清晰的三周冲刺交付物
+description: FoGGuard 模块交付与验收任务
 title: "[任务] "
 labels: []
 body:
@@ -20,13 +20,27 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: week
+    id: owner_role
     attributes:
-      label: 目标周次
+      label: 负责模块
       options:
-        - 第 1 周
-        - 第 2 周
-        - 第 3 周
+        - A1 冻结识别
+        - A2 转向与感知融合
+        - B1 运动反馈与提示控制
+        - B2 评估与联调
+        - 工业设计 PPT与最终展示
+    validations:
+      required: true
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: 交付里程碑
+      options:
+        - M1 冻结算法交付
+        - M2 感知与反馈分别可用
+        - M3 四模块联调
+        - M4 统一评估
+        - M5 最终展示
     validations:
       required: true
   - type: textarea

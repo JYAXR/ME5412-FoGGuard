@@ -1,32 +1,69 @@
 {
   "schema": "fogguard.algorithm-handoff-proposal.v1",
-  "status": "local adapter proposal; shared types unchanged; team review pending",
-  "identity": ["subject_id", "session_id", "task_id"],
+  "status": "module adapter target; A2 and B1 implementation and receiver review required",
+  "identity": [
+    "subject_id",
+    "session_id",
+    "task_id"
+  ],
   "time_unit": "seconds",
   "availability": "available_at_s = window_end_s for completed offline windows; do not backdate",
   "perception_fields": [
-    "window_start_s", "window_end_s", "available_at_s",
-    "fog_probability", "fog_threshold", "is_fog",
-    "event_id", "event_phase", "stable_fog_detected",
-    "direction", "direction_confidence", "turn", "turn_confidence",
-    "direction_task", "input_fresh", "prediction_source", "held_out_fold"
+    "window_start_s",
+    "window_end_s",
+    "available_at_s",
+    "fog_probability",
+    "fog_threshold",
+    "is_fog",
+    "event_id",
+    "event_phase",
+    "stable_fog_detected",
+    "direction",
+    "direction_confidence",
+    "turn",
+    "turn_confidence",
+    "direction_task",
+    "input_fresh",
+    "prediction_source",
+    "held_out_fold"
   ],
-  "direction_task": {"current": "current turn classification", "preturn": "separate future-turn task; not implemented here"},
-  "feedback_fields": ["feedback_state", "feedback_valid", "feedback_source"],
-  "feedback_prework_defaults": {
-    "feedback_state": "not_estimated",
-    "feedback_valid": false,
-    "feedback_source": "unavailable"
+  "direction_task": {
+    "current": "current turn classification",
+    "preturn": "separate future-turn task; not implemented here"
   },
-  "future_feedback_states": ["step_evidence", "no_step_evidence", "unknown"],
-  "feedback_sources": ["measured", "derived_proxy", "simulated", "unavailable"],
+  "feedback_fields": [
+    "feedback_state",
+    "feedback_valid",
+    "feedback_source",
+    "feedback_kind",
+    "feedback_available_at_s",
+    "feedback_reason"
+  ],
+  "future_feedback_states": [
+    "step_evidence",
+    "no_step_evidence",
+    "unknown"
+  ],
+  "feedback_sources": [
+    "measured",
+    "derived_proxy",
+    "simulated",
+    "unavailable"
+  ],
   "rules": [
-    "Current prework does not implement a real step-response estimator.",
+    "The IMU motion feedback estimator is assigned to B1 and is not yet implemented.",
     "Unknown/missing observation must not advance a no-step timeout.",
     "Alternating movement is not evidence of forward displacement.",
     "Raw sensor records must be handed over alongside window predictions.",
     "truth_* fields belong only in evaluation_truth.csv, never runtime input.",
     "Existing guidance_* fields retain their existing cueing contract meanings.",
     "Target coordinates remain configured illustrations, not measured foot pose."
-  ]
+  ],
+  "feedback_unavailable": {
+    "feedback_state": "unknown",
+    "feedback_valid": false,
+    "feedback_source": "unavailable"
+  },
+  "source_max_hold_s": 0.5,
+  "human_contract": "docs/INTERFACE_CONTRACT.md"
 }
