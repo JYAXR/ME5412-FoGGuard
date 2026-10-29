@@ -7,6 +7,8 @@
 ## 输入
 
 - A1 三模型实现与比较图表。
+
+  A1 图表、图注和数据的英文材料见 [English presentation figures and data](../a1/figures/README.md)。
 - A2 原始信号、冻结/方向结果及时间线。
 - B1 运动反馈、状态切换原因与脚印/声音命令。
 - B2 验收结果、失败案例、来源说明和保存的展示包。

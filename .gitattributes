@@ -1,0 +1,6 @@
+# Preserve published figure hashes across Windows and Unix checkouts.
+docs/a1/figures/*.png -text
+docs/a1/figures/*.svg text eol=lf
+docs/a1/figures/*.csv text eol=lf
+docs/a1/figures/*.json text eol=lf
+docs/a1/figures/*.md text eol=lf

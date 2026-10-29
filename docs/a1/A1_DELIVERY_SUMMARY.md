@@ -9,6 +9,8 @@
 - 固定人员划分、输入与阈值配置、模型文件哈希和运行样例。
 - 三方法效果表、过程说明与汇报材料。
 
+[English presentation figures and data](figures/README.md) 提供四张英文 PNG/SVG 图、英文图注、汇总数据和字段说明。
+
 同一 2014 个开发验证窗口的 F1 为 0.6912、0.6860、0.6772。三模型各有输入与误报漏检取舍，独立最终评价另行验收。
 
 详细实现和效果见 [方法说明](SELECTED_METHODS.md)，接入见 [A1 模型入口](../A1_A2_START_HERE.md)，A2 后续任务见 [任务书](../tasks/A2.md)。

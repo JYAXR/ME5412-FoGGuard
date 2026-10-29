@@ -34,6 +34,8 @@ A 组负责感知，B 组负责反馈、决策和验证。最终可视化读取�
 
 ## A1：已完成冻结识别交付
 
+**[English presentation figures and data](docs/a1/figures/README.md)**：四张英文 PNG/SVG 图、英文图注、汇总 CSV 和字段说明，可直接用于课程汇报。
+
 提供三种可运行的冻结 / 非冻结模型、统一推理入口、训练配置、效果对比和交接包。对比使用 FoG-STAR 的同一组开发验证数据：4 人、20 条记录、2014 个窗口，其中 470 个冻结窗口。
 
 | 方法 | 输入与表征 | Precision | Recall | FoG F1 |

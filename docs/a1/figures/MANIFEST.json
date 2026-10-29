@@ -1,0 +1,35 @@
+{
+  "scope": "FoG-STAR development validation; no new training or threshold tuning",
+  "windows": 2014,
+  "positive_windows": 470,
+  "people": 4,
+  "records": 20,
+  "comparison_metrics_recomputed_from_saved_predictions": true,
+  "timeline_selection": "First record with positive raw FoG by sorted validation record key; no prediction-based selection",
+  "timeline_example_is_anonymized": true,
+  "timeline_prediction_rows": {
+    "ankle_history_rf": 159,
+    "bilateral_rf": 159,
+    "ankle_cnn": 159
+  },
+  "source_files_sha256": {
+    "comparison.csv": "5b1260823197236ddf4a9ad056da405177420d839303e503201e607ef6cd8fb1",
+    "ankle_history_rf/predictions.csv": "6724462d4390af987e32eb6b91ae4f4ae00a6423af20e33923090d78242d7120",
+    "bilateral_rf/predictions.csv": "7d384a5429f21f2db76c872c1b943d0bab4342ed375142ec7a9c67487e6987d1",
+    "ankle_cnn/predictions.csv": "4f3e4c3cfcedf561b0127a8429c31c6b6ffec89c5c3ee4861fc4b63b680654bc",
+    "raw": "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477"
+  },
+  "files": {
+    "01_model_comparison.png": "b925baf64c5fe00bed880c9accaaf220c69256cae5609dbca53dfa5bb6b46fc9",
+    "01_model_comparison.svg": "d3a5e051b2f26060405f89cc65f5e6c20c5e22f73b76b39ab496f8738e42f7a7",
+    "02_confusion_matrices.png": "cfc7a6a49fee2a552151f179b1dcbd8876804307043e07f8b2510cd02afb89fe",
+    "02_confusion_matrices.svg": "63751ae031b76d7aea4d670eb8ad7d71e529b219008c8a0a932fda05e4610703",
+    "03_alarm_coverage_tradeoff.png": "a15c4b2d2eeee53a2e9fc5b120c04556b1e4e708529f220b185f032e3c9fc6a2",
+    "03_alarm_coverage_tradeoff.svg": "852e159d6aa6b23182a309fd7b6b7af0939bb311db2295adf58373038894d4bd",
+    "04_real_signal_timeline.png": "9e2563d7e8da5e0dd30cf0b679dd31fb93ce2c8fc24bfb06b6d49608f8564557",
+    "04_real_signal_timeline.svg": "71e3e1e31bb56a1c327153707a61fb04483744b07b71a88524e6687cda73c4f9",
+    "DATA_DICTIONARY.md": "e26a2ae9e849c6b76feca65ba3922c8dea953e22249604c650242a45d60ba8b8",
+    "model_comparison.csv": "9a4059ffeaf41f2ce328b1fc5ae355a3356a531c4c3a8440a2ab568a35e8656b",
+    "README.md": "67cbbe0dcf90c98c2d3e02276f085db8aa183776ddca6e660680b9a184318059"
+  }
+}

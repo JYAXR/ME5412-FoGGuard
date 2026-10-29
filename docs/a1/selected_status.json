@@ -133,5 +133,17 @@
     "native_powerpoint_opening": "NOT_RUN"
   },
   "module_status": "algorithm_delivery_complete",
-  "system_integration": "pending_A2_B1_B2_joint_acceptance"
+  "system_integration": "pending_A2_B1_B2_joint_acceptance",
+  "presentation_figures": {
+    "language": "en",
+    "entrypoint": "docs/a1/figures/README.md",
+    "count": 4,
+    "formats": [
+      "png",
+      "svg"
+    ],
+    "data": "docs/a1/figures/model_comparison.csv",
+    "dictionary": "docs/a1/figures/DATA_DICTIONARY.md",
+    "scope": "matched development-validation results and one illustrative real-signal timeline"
+  }
 }
