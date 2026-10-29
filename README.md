@@ -1,5 +1,7 @@
 # ME5412 FoGGuard
 
+> **2026-10-29 A1 左右协调摘要消融：** [完整取舍与展示图](docs/a1/COORDINATION_RESULTS_V1.md) · [固定公式](docs/a1/COORDINATION_PROTOCOL_V1.md) · [接口](docs/a1/COORDINATION_HANDOFF_V1.md)。66维双踝对照与追加12项协调摘要的78维候选，验证误报时间减少15.5%，但Recall 0.8574→0.7915、F1 0.6860→0.6801；预定开发门槛失败，未替换默认，无新模型TEST成绩。
+
 > **2026-10-29 A1 真实失败信号与双踝对照：** [结果及八张展示图](docs/a1/BILATERAL_RESULTS_V1.md) · [预定方法](docs/a1/BILATERAL_PROTOCOL_V1.md) · [gyro-only接口](docs/a1/BILATERAL_HANDOFF_V1.md)。相同窗口/流程的左33维与双66维RF，验证F1 0.6234→0.6860、误报时间减少15.8%，达到本轮开发门槛；TRAIN双踝要求损失部分支持，且未全面胜过历史模型，默认未替换，无新候选TEST成绩。
 
 > **2026-10-29 A1 参与者均衡与活动辅助对照：** [完整结果及八张展示图](docs/a1/CONTEXT_LEARNING_RESULTS_V1.md) · [预定方法](docs/a1/CONTEXT_LEARNING_PROTOCOL_V1.md) · [接口](docs/a1/CONTEXT_LEARNING_HANDOFF_V1.md)。三组同参数、输入与TRAIN内选择流程；均衡验证F1 0.6476→0.6717但误报时间增加14.9%，活动辅助F1 0.6438，两候选均未通过升级条件，原默认未替换；没有新候选TEST成绩。
