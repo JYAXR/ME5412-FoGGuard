@@ -1,0 +1,308 @@
+{
+  "schema": "fogguard.stanford.source.v1",
+  "repository": "https://github.com/stanfordnmbl/imu-fog-detection",
+  "commit": "e95687842801ca3565463486a50d562fff44d182",
+  "directory": "data/raw/imus6_subjects7",
+  "files": [
+    {
+      "path": "data/raw/imus6_subjects7/pt1_visit_24_tbc_walklr_0_trial_2.xlsx",
+      "size": 6106211,
+      "git_blob_sha1": "a3f5dfa9862c4ab35815305c4346c84accac9291"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt1_visit_24_tbc_walklr_0_trial_4.xlsx",
+      "size": 6719524,
+      "git_blob_sha1": "4983e3673ea5f9c4717d64e9b48748a178373fe7"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt1_visit_24_tbc_walklr_1_trial_1.xlsx",
+      "size": 5870103,
+      "git_blob_sha1": "646d8293c759fe36513084a3b0b2ed01cfbbaedb"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt1_visit_24_tbc_walklr_1_trial_3.xlsx",
+      "size": 6319473,
+      "git_blob_sha1": "5502cc06311d99f5861bcd26abe459cbbaaee555"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt1_visit_34_tbc_walklr_0_trial_2.xlsx",
+      "size": 7591352,
+      "git_blob_sha1": "b2e3a06b5c7ea7f13bdb3ebb9dd5f30021021d0c"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt1_visit_34_tbc_walklr_1_trial_1.xlsx",
+      "size": 6132521,
+      "git_blob_sha1": "a49b3edc4970932c6d86a41bcf331bf79d41ce5f"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt1_visit_50_tbc_walklr_0_trial_1.xlsx",
+      "size": 4930586,
+      "git_blob_sha1": "3e992d419d7110911c8ae9b6cafb6698c0bb3950"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt2_visit_25_tbc_walklr_1_trial_1.xlsx",
+      "size": 11694510,
+      "git_blob_sha1": "8c147a9e076e23626f00f501b565c6f0dd92cfce"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt2_visit_32.2_tbc_walklr_0_trial_1.xlsx",
+      "size": 5907765,
+      "git_blob_sha1": "b3b0c960652c39d79d5e6debce71a63da2f98072"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt2_visit_32.2_tbc_walklr_1_trial_2.xlsx",
+      "size": 6256480,
+      "git_blob_sha1": "7111d429d4c83f006aa7e2bfc4b2f85e5cb4a087"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt2_visit_48_tbc_walklr_0_trial_2.xlsx",
+      "size": 11042757,
+      "git_blob_sha1": "124cb61d9d360735551c57883c4d6ebe56afaeb7"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt2_visit_48_tbc_walklr_1_trial_1.xlsx",
+      "size": 11573778,
+      "git_blob_sha1": "c7f18311b9e80d03e355862694bfb0a5ef279438"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt3_visit_12.1_tbc_walklr_0_trial_1.xlsx",
+      "size": 4055747,
+      "git_blob_sha1": "770db58670e043c1ddd80cc46c2b3246dc44cb10"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt3_visit_12.1_tbc_walklr_0_trial_3.xlsx",
+      "size": 3954896,
+      "git_blob_sha1": "f12c4a5b283cc6bac8802bd8b749c6258262f4cd"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt3_visit_12.1_tbc_walklr_1_trial_2.xlsx",
+      "size": 3172122,
+      "git_blob_sha1": "8d90661ff66b3731a627212e3ba871f90aef4f6b"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt3_visit_12_tbc_walklr_0_trial_2.xlsx",
+      "size": 6339621,
+      "git_blob_sha1": "c65e6f590f04b9dd072d8b0927ef30c09e5945a6"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt3_visit_12_tbc_walklr_0_trial_4.xlsx",
+      "size": 5408277,
+      "git_blob_sha1": "0ccb453c04340608c68d4efc9cb2d1d501924dc8"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt3_visit_12_tbc_walklr_1_trial_1.xlsx",
+      "size": 6100496,
+      "git_blob_sha1": "daefa8417d3820768085a19a00d03ad17bcd1361"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt3_visit_12_tbc_walklr_1_trial_3.xlsx",
+      "size": 5415663,
+      "git_blob_sha1": "58da8b50d3f990e04a2db05efe111c69e978a693"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt3_visit_31_tbc_walklr_0_trial_2.xlsx",
+      "size": 10726889,
+      "git_blob_sha1": "9377ec6084ecd58186bd87480b655a934104f5bb"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt3_visit_31_tbc_walklr_1_trial_1.xlsx",
+      "size": 12610891,
+      "git_blob_sha1": "cc8ce74a89435fddb259949ba3329d4f9805e37b"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt4_visit_12_tbc_walklr_0_trial_1.xlsx",
+      "size": 7277373,
+      "git_blob_sha1": "388d94a3515f74e7d5321508c94d8abc93521b9a"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt4_visit_12_tbc_walklr_1_trial_2.xlsx",
+      "size": 19331935,
+      "git_blob_sha1": "13d6069c3a18268b3a9f0e3196471493eb3b4b24"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt4_visit_24_tbc_walklr_0_trial_2.xlsx",
+      "size": 8852412,
+      "git_blob_sha1": "72c3ad58397301c251f32ac242c8352c8f7db957"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt4_visit_24_tbc_walklr_1_trial_1.xlsx",
+      "size": 4801599,
+      "git_blob_sha1": "ca0b0fadb8c028a722c33826d02a8e1d096030f1"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt4_visit_9_tbc_walklr_0_trial_2.xlsx",
+      "size": 8004099,
+      "git_blob_sha1": "9184f1429242e0d0ffdde08ce7b929d82788a076"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt4_visit_9_tbc_walklr_1_trial_1.xlsx",
+      "size": 6821692,
+      "git_blob_sha1": "7966c7a809df4a6ee19a21f2929183b6fe5d3a14"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt5_visit_21_tbc_walklr_0_trial_1.xlsx",
+      "size": 7936944,
+      "git_blob_sha1": "550623ca5dc5b2ac801907aa16c06c2ed4110dfa"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt5_visit_21_tbc_walklr_1_trial_2.xlsx",
+      "size": 7327835,
+      "git_blob_sha1": "d25a183c21614adab12a3d26f198f6abe54ecb05"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt5_visit_27.1_tbc_walklr_1_trial_1.xlsx",
+      "size": 3527757,
+      "git_blob_sha1": "10e67d5080e3f00db1f10909012b67b87a938ddc"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt5_visit_27_tbc_walklr_0_trial_2.xlsx",
+      "size": 10591687,
+      "git_blob_sha1": "bb7a8a2acb18cf8f3408c9ec2bdd8df3c0034ba8"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt5_visit_27_tbc_walklr_1_trial_1.xlsx",
+      "size": 9271188,
+      "git_blob_sha1": "a4263d7026cffddc3f0e4bb60d8380388ad9b973"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt5_visit_6_tbc_walklr_0_trial_1.xlsx",
+      "size": 3287748,
+      "git_blob_sha1": "9e5622e1faa237ef804a54d2cb264695c8ee49d0"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt5_visit_6_tbc_walklr_0_trial_3.xlsx",
+      "size": 3370925,
+      "git_blob_sha1": "f5af30279fc847e3443bf7d3ae79b39e68d703fc"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt5_visit_6_tbc_walklr_1_trial_2.xlsx",
+      "size": 3381514,
+      "git_blob_sha1": "6d0bcac8bac1523baba3ba01038d047ec52b25b8"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt5_visit_6_tbc_walklr_1_trial_4.xlsx",
+      "size": 3407469,
+      "git_blob_sha1": "82b326f42c76157028bb49e7eaf0c6fd32d979f0"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_19_tbc_walklr_0_trial_2.xlsx",
+      "size": 4838329,
+      "git_blob_sha1": "863de872cbd862be1078ff61cbf530f9b717d8b3"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_19_tbc_walklr_1_trial_1.xlsx",
+      "size": 3757356,
+      "git_blob_sha1": "7f786eb3bbec9aa7e3a881e632bb076ac54981f5"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_27_tbc_walklr_0_trial_2.xlsx",
+      "size": 4384280,
+      "git_blob_sha1": "6219546db8886cd0323467538ccc9d01dd067e68"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_27_tbc_walklr_1_trial_1.xlsx",
+      "size": 4180120,
+      "git_blob_sha1": "6a807b5def26f84553de6b44a280c325ef3ca7ec"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_33_tbc_walklr_0_trial_2.xlsx",
+      "size": 2716108,
+      "git_blob_sha1": "de2c1cde703d8699a7f99139de1f57977d7cece8"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_33_tbc_walklr_1_trial_1.xlsx",
+      "size": 2699363,
+      "git_blob_sha1": "7931935183865168e38bde7aa0bb1840b0594e44"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_41_tbc_walklr_0_trial_1.xlsx",
+      "size": 7693649,
+      "git_blob_sha1": "53b92841fb0e1c5eb8adb12fcd1a672e40e27aea"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_41_tbc_walklr_1_trial_2.xlsx",
+      "size": 7577085,
+      "git_blob_sha1": "1648dc65d482342a6815ca02316b4731611eb0d4"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_50_tbc_walklr_0_trial_1.xlsx",
+      "size": 3172856,
+      "git_blob_sha1": "5271713ad8641f15ff9a4e0128ba2acd710c8c63"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_50_tbc_walklr_1_trial_2.xlsx",
+      "size": 6858397,
+      "git_blob_sha1": "4e70ea953b72294909921acf815836db3ed85cdd"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_6_tbc_walklr_0_trial_1.xlsx",
+      "size": 4058004,
+      "git_blob_sha1": "b3c001cac53b7a42f5d745602530d14be86d321b"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_6_tbc_walklr_0_trial_3.xlsx",
+      "size": 3763114,
+      "git_blob_sha1": "c11aad0735ecf2d2d1e37797630b263b4f0c367a"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_6_tbc_walklr_1_trial_2.xlsx",
+      "size": 3965291,
+      "git_blob_sha1": "d093ed5e21f41fad4ed8c79d1004a7ac2c96123a"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt6_visit_6_tbc_walklr_1_trial_4.xlsx",
+      "size": 3866759,
+      "git_blob_sha1": "6e823ed828b392523394cc2c9467e30c13561e92"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt7_visit_0_tbc_walklr_0_trial_1.xlsx",
+      "size": 4340832,
+      "git_blob_sha1": "6c25cb0b2847b5f33d7f18f53724f0c2a500a75a"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt7_visit_0_tbc_walklr_1_trial_2.xlsx",
+      "size": 3980974,
+      "git_blob_sha1": "dd908321d08aeff2061242d138eff9c697792649"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt7_visit_12_tbc_walklr_0_trial_1.xlsx",
+      "size": 6818132,
+      "git_blob_sha1": "f88f989e7b3e3bb82312215cae034aa9a1c126a1"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt7_visit_12_tbc_walklr_0_trial_2.xlsx",
+      "size": 7339799,
+      "git_blob_sha1": "0acf65ed3c08439c818bc46003df58160405139a"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt7_visit_12_tbc_walklr_1_trial_2.xlsx",
+      "size": 5393215,
+      "git_blob_sha1": "2b6049643b6c39e36c7d60c9998c109f043a9acd"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt7_visit_12_tbc_walklr_1_trial_3.xlsx",
+      "size": 8370546,
+      "git_blob_sha1": "7509d4b1a5e80abf4563a9f2c48777b398069da4"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt7_visit_4_tbc_walklr_0_trial_1.xlsx",
+      "size": 10417631,
+      "git_blob_sha1": "cf7c3efe86994f1e2022898148c28220a06381b1"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt7_visit_4_tbc_walklr_1_trial_2.xlsx",
+      "size": 12883220,
+      "git_blob_sha1": "992ecc4da5e468bd764aa80642882561e4d57658"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt7_visit_6_tbc_walklr_0_trial_2.xlsx",
+      "size": 8065912,
+      "git_blob_sha1": "ab62b03b9fe64adb8c30ec4bc506726e9f9b4e36"
+    },
+    {
+      "path": "data/raw/imus6_subjects7/pt7_visit_6_tbc_walklr_1_trial_1.xlsx",
+      "size": 6670914,
+      "git_blob_sha1": "92d4092453232be3e1f04c174707e6805fc4fc0b"
+    }
+  ]
+}
