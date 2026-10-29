@@ -1,0 +1,11 @@
+partition,measure,value
+train,participants,14
+validation,participants,4
+test,participants,4
+test,records,16
+test,fog_matched_windows,1605
+test,fog_positive_windows,253
+test,direction_grid_windows,1605
+test,direction_known_valid_windows,676
+test,direction_unknown_target_windows,531
+test,direction_invalid_sensor_windows,398

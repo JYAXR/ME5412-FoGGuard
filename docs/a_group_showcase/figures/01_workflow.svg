@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="374.4pt" viewBox="0 0 864 374.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-30T02:28:11.694304</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 374.4 
+L 864 374.4 
+L 864 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="text_1">
+    <g id="patch_2">
+     <path d="M 52.855 204.637969 
+L 165.305 204.637969 
+Q 172.305 204.637969 172.305 197.637969 
+L 172.305 176.762031 
+Q 172.305 169.762031 165.305 169.762031 
+L 52.855 169.762031 
+Q 45.855 169.762031 45.855 176.762031 
+L 45.855 197.637969 
+Q 45.855 204.637969 52.855 204.637969 
+z
+" style="fill: #eef4fa; stroke: #3f6c90; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(83.706562 184.360469)">60 Hz IMU</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(52.855 195.558281)">Complete 2 s windows</text>
+   </g>
+   <g id="text_2">
+    <g id="patch_3">
+     <path d="M 276.882969 134.077969 
+L 334.397031 134.077969 
+Q 341.397031 134.077969 341.397031 127.077969 
+L 341.397031 106.202031 
+Q 341.397031 99.202031 334.397031 99.202031 
+L 276.882969 99.202031 
+Q 269.882969 99.202031 269.882969 106.202031 
+L 269.882969 127.077969 
+Q 269.882969 134.077969 276.882969 134.077969 
+z
+" style="fill: #eef4fa; stroke: #3f6c90; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(286.136875 113.800469)">A1: FoG</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(276.882969 124.998281)">Bilateral RF</text>
+   </g>
+   <g id="text_3">
+    <g id="patch_4">
+     <path d="M 252.467344 275.197969 
+L 358.812656 275.197969 
+Q 365.812656 275.197969 365.812656 268.197969 
+L 365.812656 247.322031 
+Q 365.812656 240.322031 358.812656 240.322031 
+L 252.467344 240.322031 
+Q 245.467344 240.322031 245.467344 247.322031 
+L 245.467344 268.197969 
+Q 245.467344 275.197969 252.467344 275.197969 
+z
+" style="fill: #eef4fa; stroke: #3f6c90; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(254.232188 254.920469)">A2: current direction</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(252.467344 266.118281)">Gravity + rotation RF</text>
+   </g>
+   <g id="text_4">
+    <g id="patch_5">
+     <path d="M 467.129531 210.236875 
+L 579.390469 210.236875 
+Q 586.390469 210.236875 586.390469 203.236875 
+L 586.390469 171.163125 
+Q 586.390469 164.163125 579.390469 164.163125 
+L 467.129531 164.163125 
+Q 460.129531 164.163125 460.129531 171.163125 
+L 460.129531 203.236875 
+Q 460.129531 210.236875 467.129531 210.236875 
+z
+" style="fill: #eef4fa; stroke: #3f6c90; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(467.129531 178.761563)">Causal source adapter</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(471.424844 189.959375)">Record + availability</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(479.249062 201.157188)">Lifetime &lt;= 0.5 s</text>
+   </g>
+   <g id="text_5">
+    <g id="patch_6">
+     <path d="M 679.284688 210.375938 
+L 802.475312 210.375938 
+Q 809.475312 210.375938 809.475312 203.375938 
+L 809.475312 171.302188 
+Q 809.475312 164.302188 802.475312 164.302188 
+L 679.284688 164.302188 
+Q 672.284688 164.302188 672.284688 171.302188 
+L 672.284688 203.375938 
+Q 672.284688 210.375938 679.284688 210.375938 
+z
+" style="fill: #eef4fa; stroke: #3f6c90; stroke-linejoin: miter"/>
+    </g>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(696.014375 178.6225)">Perception events</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(679.284688 189.820313)">Confirmation + recovery</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(687.329219 201.018125)">Unknown / safe_none</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 187.71137 164.613393 
+Q 207.361284 144.862709 226.222654 125.904614 
+" style="fill: none; stroke: #3f6c90; stroke-linecap: round"/>
+    <path d="M 221.983644 127.329674 
+L 226.222654 125.904614 
+L 224.819296 130.150858 
+" style="fill: none; stroke: #3f6c90; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 187.71137 209.786607 
+Q 207.361284 229.537291 226.222654 248.495386 
+" style="fill: none; stroke: #3f6c90; stroke-linecap: round"/>
+    <path d="M 224.819296 244.249142 
+L 226.222654 248.495386 
+L 221.983644 247.070326 
+" style="fill: none; stroke: #3f6c90; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 384.453896 124.897553 
+Q 410.939305 144.863476 436.531938 164.156384 
+" style="fill: none; stroke: #3f6c90; stroke-linecap: round"/>
+    <path d="M 434.541772 160.151482 
+L 436.531938 164.156384 
+L 432.133917 163.345576 
+" style="fill: none; stroke: #3f6c90; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 384.453896 249.502447 
+Q 410.939305 229.536524 436.531938 210.243616 
+" style="fill: none; stroke: #3f6c90; stroke-linecap: round"/>
+    <path d="M 432.133917 211.054424 
+L 436.531938 210.243616 
+L 434.541772 214.248518 
+" style="fill: none; stroke: #3f6c90; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 609.497512 187.2 
+Q 628.557163 187.2 646.49878 187.2 
+" style="fill: none; stroke: #3f6c90; stroke-linecap: round"/>
+    <path d="M 642.49878 185.2 
+L 646.49878 187.2 
+L 642.49878 189.2 
+" style="fill: none; stroke: #3f6c90; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle" x="432" y="39.024" transform="rotate(-0 432 39.024)">A1 + A2: from independent predictions to a causal timeline</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(256.915625 320.650188)">Only new observations advance confirmation. Expiry withdraws state.</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(237.676563 331.848)">B1 consumes saved events; feedback and cue decisions remain downstream.</text>
+   </g>
+  </g>
+ </g>
+</svg>

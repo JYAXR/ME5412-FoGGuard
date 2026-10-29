@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FoGGuard | A-group charts &amp; data</title>
+  <link rel="stylesheet" href="showcase.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#top">FoGGuard <span>A-group evidence</span></a>
+  <nav aria-label="Sections">
+    <a href="#workflow">Methods</a><a href="#scope">Data</a><a href="#fog">FoG</a>
+    <a href="#direction">Direction</a><a href="#fusion">Fusion</a>
+    <a href="#timeline">Replay</a><a href="#downloads">Downloads</a>
+  </nav>
+</header>
+<main id="top">
+  <section class="hero">
+    <p class="eyebrow">CHARTS · DATA · SHORT EXPLANATIONS</p>
+    <h1>Freezing &amp; direction perception</h1>
+    <p class="lead">One collection for explaining the methods, reading the locked-test results,
+      and preparing presentation figures.</p>
+    <div class="badges"><span>English figures</span><span>PNG + editable SVG</span>
+      <span>CSV data</span><span>Offline access</span></div>
+    <div class="stats"><div class="stat"><strong>4 / 16</strong><span>TEST people / records</span><small>Participant-held-out evaluation</small></div><div class="stat"><strong>1,605</strong><span>Matched FoG windows</span><small>253 positive windows</small></div><div class="stat"><strong>676</strong><span>Known valid direction windows</span><small>Of 1,605 grid windows</small></div></div>
+    <p class="scope-note">Existing models and thresholds were fixed before TEST scoring.
+      Raw model results and fused outputs are reported separately.</p>
+  </section>
+
+  <section id="workflow">
+    <div class="section-heading"><span class="number">01</span><div>
+      <p class="eyebrow">IMPLEMENTATION</p><h2>From IMU windows to one perception timeline</h2></div></div>
+    <p class="intro">Three FoG methods are compared. The preselected bilateral RF and the current-direction
+      RF feed the fusion adapter; results from all three FoG methods are not combined into an ensemble.</p>
+    <figure><img src="figures/01_workflow.png" alt="Workflow and model roles" loading="lazy"><figcaption><b>Implementation</b> · Complete IMU windows feed independent FoG and current-direction models. The bilateral RF is the fixed fusion reference.<div class="figure-links"><a href="figures/01_workflow.png" download>PNG</a><a href="figures/01_workflow.svg" download>Editable SVG</a><a href="data/methods.csv" download>Data CSV</a></div></figcaption></figure>
+    <h3>Methods at a glance</h3><div class="table-wrap"><table><thead><tr><th>Method</th><th>Input</th><th>Representation</th><th>Model</th><th>Decision rule</th></tr></thead><tbody><tr><td>Ankle-history RF</td><td>Left ankle: acceleration + gyro</td><td>140 current/history features</td><td>300-tree RF</td><td>FoG threshold 0.18</td></tr><tr><td>Bilateral RF</td><td>Both ankles: gyro</td><td>66 window features</td><td>300-tree RF; fusion reference</td><td>FoG threshold 0.23</td></tr><tr><td>Ankle CNN</td><td>Left ankle: gyro</td><td>120 x 3 centered waveform</td><td>4 convolution layers; 8,353 parameters</td><td>FoG threshold 0.50</td></tr><tr><td>Current-direction RF</td><td>Left ankle + back: acceleration + gyro</td><td>12 gravity/rotation features</td><td>300-tree RF</td><td>Learned unknown class; fusion confidence gate 0.60</td></tr></tbody></table></div>
+    <p class="small">RF = random forest. Scores use complete 120-sample windows at 60 Hz, updated every 30 samples.
+      Current direction means the observed action, not future turning intention.</p>
+  </section>
+
+  <section id="scope">
+    <div class="section-heading"><span class="number">02</span><div>
+      <p class="eyebrow">EVALUATION SCOPE</p><h2>Same held-out people, explicit scoring pools</h2></div></div>
+    <figure><img src="figures/02_evaluation_scope.png" alt="Participants and scoring pools" loading="lazy"><figcaption><b>TEST scope</b> · The same held-out people support both tasks. FoG and direction use explicitly different scoring pools.<div class="figure-links"><a href="figures/02_evaluation_scope.png" download>PNG</a><a href="figures/02_evaluation_scope.svg" download>Editable SVG</a><a href="data/evaluation_scope.csv" download>Data CSV</a></div></figcaption></figure>
+    <p class="insight">FoG scores use all matched supported windows. Primary direction scores use valid windows
+      with a known direction target. Invalid sensors and unknown targets are counted separately.</p>
+  </section>
+
+  <section id="fog">
+    <div class="section-heading"><span class="number">03</span><div>
+      <p class="eyebrow">FROZEN MODELS · TEST</p><h2>FoG detection: recall versus false alarms</h2></div></div>
+    <figure><img src="figures/03_fog_test.png" alt="Three FoG methods" loading="lazy"><figcaption><b>TEST</b> · Higher RF recall comes with more false alarms. The CNN reduces false positives but misses more FoG windows.<div class="figure-links"><a href="figures/03_fog_test.png" download>PNG</a><a href="figures/03_fog_test.svg" download>Editable SVG</a><a href="data/fog_test.csv" download>Data CSV</a></div></figcaption></figure>
+    <div class="table-wrap"><table><thead><tr><th>FoG method</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>FoG F1</th></tr></thead><tbody><tr><td>Ankle-history RF</td><td>72.96%</td><td>0.346</td><td>0.806</td><td>0.485</td></tr><tr><td>Bilateral RF</td><td>78.69%</td><td>0.413</td><td>0.838</td><td>0.554</td></tr><tr><td>Ankle CNN</td><td>85.42%</td><td>0.535</td><td>0.581</td><td>0.557</td></tr></tbody></table></div>
+    <p class="insight">Always predicting non-FoG gives 84.24% accuracy and zero FoG recall/F1. Read precision, recall and F1 together. The bilateral RF remains the fusion reference selected before TEST.</p>
+    <details><summary>Show FoG confusion counts</summary><figure><img src="figures/07_fog_confusion.png" alt="FoG confusion matrices" loading="lazy"><figcaption><b>TEST</b> · The same supported windows expose true positives, false alarms and missed FoG for all three methods.<div class="figure-links"><a href="figures/07_fog_confusion.png" download>PNG</a><a href="figures/07_fog_confusion.svg" download>Editable SVG</a><a href="data/fog_test.csv" download>Data CSV</a></div></figcaption></figure></details>
+  </section>
+
+  <section id="direction">
+    <div class="section-heading"><span class="number">04</span><div>
+      <p class="eyebrow">CURRENT DIRECTION · TEST</p><h2>Recognition and rejection need separate numbers</h2></div></div>
+    <figure><img src="figures/04_direction_test.png" alt="Current direction and fusion" loading="lazy"><figcaption><b>TEST</b> · Unknown predictions count as errors on known targets. Fixed fusion rejects more windows and reduces overall accuracy.<div class="figure-links"><a href="figures/04_direction_test.png" download>PNG</a><a href="figures/04_direction_test.svg" download>Editable SVG</a><a href="data/direction_test.csv" download>Data CSV</a></div></figcaption></figure>
+    <div class="table-wrap"><table><thead><tr><th>Stage</th><th>Accuracy</th><th>Macro-F1</th><th>Accepted coverage</th><th>Accepted-only accuracy</th></tr></thead><tbody><tr><td>Raw current-direction RF</td><td>81.07%</td><td>0.844</td><td>86.69%</td><td>93.52%</td></tr><tr><td>Fixed fusion</td><td>51.78%</td><td>0.592</td><td>54.73%</td><td>94.59%</td></tr></tbody></table></div>
+    <p class="insight">Both rows use 676 known-target windows. Always-straight accuracy is 56.66%. Accepted-only accuracy excludes rejected windows, so it cannot replace overall accuracy. Fusion does not improve overall accuracy.</p>
+  </section>
+
+  <section id="fusion">
+    <div class="section-heading"><span class="number">05</span><div>
+      <p class="eyebrow">FIXED TEMPORAL RULES · TEST</p><h2>What changes after FoG event confirmation?</h2></div></div>
+    <figure><img src="figures/05_fog_fusion.png" alt="FoG before and after event confirmation" loading="lazy"><figcaption><b>TEST</b> · Fixed confirmation and hysteresis do not improve FoG F1 here; positive state can persist through score dips.<div class="figure-links"><a href="figures/05_fog_fusion.png" download>PNG</a><a href="figures/05_fog_fusion.svg" download>Editable SVG</a><a href="data/fusion_test.csv" download>Data CSV</a></div></figcaption></figure>
+    <div class="table-wrap"><table><thead><tr><th>Stage</th><th>Precision</th><th>Recall</th><th>FoG F1</th><th>False alarm time</th><th>FoG time recall</th></tr></thead><tbody><tr><td>raw bilateral rf</td><td>0.413</td><td>0.838</td><td>0.554</td><td>158.4 s</td><td>75.20%</td></tr><tr><td>stable fog event</td><td>0.382</td><td>0.830</td><td>0.523</td><td>183.8 s</td><td>69.37%</td></tr></tbody></table></div>
+    <p class="insight">Two distinct positive observations confirm FoG. Three negative observations support
+      recovery, with a 0.10 score margin. Hysteresis can retain false positives; this is not a measured
+      step-recovery result. The fixed adapter does not improve FoG F1 on this test.</p>
+  </section>
+
+  <section id="timeline">
+    <div class="section-heading"><span class="number">06</span><div>
+      <p class="eyebrow">REAL-IMU PROCESS EXAMPLE · TEST</p><h2>FoG, direction and state on the same clock</h2></div></div>
+    <figure><img src="figures/06_joint_timeline.png" alt="Synchronized TEST replay" loading="lazy"><figcaption><b>TEST example</b> · The first TEST record and its first 30 seconds are shown. False alarms and unknown direction remain visible.<div class="figure-links"><a href="figures/06_joint_timeline.png" download>PNG</a><a href="figures/06_joint_timeline.svg" download>Editable SVG</a><a href="data/figure_selection.csv" download>Selection rule CSV</a></div></figcaption></figure>
+    <p class="insight">The first TEST record and its first 30 seconds were specified before scoring.
+      This example retains false alarms and unknown direction. Targets describe completed windows;
+      a result becomes usable only at its availability time.</p>
+  </section>
+
+  <section id="downloads">
+    <div class="section-heading"><span class="number">07</span><div>
+      <p class="eyebrow">FIGURE LIBRARY</p><h2>Take the figures and their data</h2></div></div>
+    <p class="intro">PNG files are ready to insert into slides. SVG files remain editable.
+      CSV files contain aggregate data; no raw IMU or per-window patient CSV is included.</p>
+    <div class="table-wrap"><table class="catalog"><thead><tr><th>Figure</th><th>Scope</th><th>Downloads</th></tr></thead><tbody><tr><td>Workflow and model roles</td><td>Implementation</td><td><a href="figures/01_workflow.png" download>PNG</a> · <a href="figures/01_workflow.svg" download>SVG</a> · <a href="data/methods.csv" download>CSV</a></td></tr><tr><td>Participants and scoring pools</td><td>TEST scope</td><td><a href="figures/02_evaluation_scope.png" download>PNG</a> · <a href="figures/02_evaluation_scope.svg" download>SVG</a> · <a href="data/evaluation_scope.csv" download>CSV</a></td></tr><tr><td>Three FoG methods</td><td>TEST</td><td><a href="figures/03_fog_test.png" download>PNG</a> · <a href="figures/03_fog_test.svg" download>SVG</a> · <a href="data/fog_test.csv" download>CSV</a></td></tr><tr><td>Current direction and fusion</td><td>TEST</td><td><a href="figures/04_direction_test.png" download>PNG</a> · <a href="figures/04_direction_test.svg" download>SVG</a> · <a href="data/direction_test.csv" download>CSV</a></td></tr><tr><td>FoG before and after event confirmation</td><td>TEST</td><td><a href="figures/05_fog_fusion.png" download>PNG</a> · <a href="figures/05_fog_fusion.svg" download>SVG</a> · <a href="data/fusion_test.csv" download>CSV</a></td></tr><tr><td>Synchronized TEST replay</td><td>TEST example</td><td><a href="figures/06_joint_timeline.png" download>PNG</a> · <a href="figures/06_joint_timeline.svg" download>SVG</a> · <a href="data/figure_selection.csv" download>CSV</a></td></tr><tr><td>FoG confusion matrices</td><td>TEST</td><td><a href="figures/07_fog_confusion.png" download>PNG</a> · <a href="figures/07_fog_confusion.svg" download>SVG</a> · <a href="data/fog_test.csv" download>CSV</a></td></tr></tbody></table></div>
+    <div class="download-grid"><a href="data/all_metrics.csv" download>All TEST metrics</a><a href="data/direction_per_class.csv" download>Direction by class</a><a href="data/development_vs_test.csv" download>Development vs TEST</a><a href="data/methods.csv" download>Method specification</a><a href="data/DATA_DICTIONARY.md" download>Data dictionary</a></div>
+    <details class="appendix"><summary>Development validation: method-selection context</summary>
+      <p>These values belong to development validation. TEST is the main result above.
+        Different people and class balance mean the differences are not an optimization gain.</p>
+      <div class="table-wrap"><table><thead><tr><th>Task / model</th><th>Metric</th><th>Development n</th><th>Development</th><th>TEST n</th><th>TEST</th></tr></thead><tbody><tr><td>Ankle-history RF</td><td>FoG F1</td><td>2014</td><td>0.691</td><td>1605</td><td>0.485</td></tr><tr><td>Bilateral RF</td><td>FoG F1</td><td>2014</td><td>0.686</td><td>1605</td><td>0.554</td></tr><tr><td>Ankle CNN</td><td>FoG F1</td><td>2014</td><td>0.677</td><td>1605</td><td>0.557</td></tr><tr><td>Raw current-direction RF</td><td>Accuracy</td><td>1130</td><td>0.670</td><td>676</td><td>0.811</td></tr></tbody></table></div>
+    </details>
+    <p class="small">Frozen outputs are reorganized for display; no model was retrained, threshold changed,
+      or test case selected by prediction quality. Four held-out participants provide a course-project
+      generalization check; clinical efficacy and live computation latency are not evaluated.</p>
+    <p class="small"><a href="MANIFEST.json">Source and file hashes</a> ·
+      <a href="README.md">Figure guide</a> · <a href="data/summary.json">Machine-readable summary</a></p>
+  </section>
+</main>
+<footer>FoGGuard · A1 + A2 perception · Saved evidence for presentation preparation</footer>
+</body>
+</html>

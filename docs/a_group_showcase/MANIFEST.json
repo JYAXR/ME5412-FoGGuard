@@ -1,0 +1,92 @@
+{
+  "schema": "fogguard.a_group.showcase.v1",
+  "source_sha256": {
+    "scripts/build_a_group_showcase.py": "bf7eaedda1d3cdaf4e39f3bd73938ff81f2f6a8d6aafcc24e51097940d701618",
+    "src/fogguard/presentation/a_group_showcase.html": "17f519bbb975a7847b36e8a8bd8c140c2dd52d98f8631e21b8b383621845cc0e",
+    "src/fogguard/presentation/a_group_showcase.css": "3bf6815cf0347513732975e42074903c994b689ff71948eef018f77e113e5787"
+  },
+  "evidence_sha256": {
+    "docs/a_group/results.json": "23a824d3060fb02681c41d0a8e8eb57f14f46a0f1679a697f70338501de564ed",
+    "docs/a_group/TEST_LOCK.json": "e8ef5b5eaf32ec64a03be157c00dd2edd0d75c3c706b274a8de82f1d0ba7ec36",
+    "docs/a_group/MANIFEST.json": "b1638165fa7543fb5337054b18cba430bb783ec57e44e7fc90ac0bffad2f0397",
+    "docs/a1/figures/model_comparison.csv": "9a4059ffeaf41f2ce328b1fc5ae355a3356a531c4c3a8440a2ab568a35e8656b",
+    "docs/a2/results.json": "ebe147434741cc32ee6c12c28622fa02b23724c70cce4342fb099e268a699dc3",
+    "docs/a2/fusion/presentation/MANIFEST.json": "3904a65648748a459931863029f7f7bb287192df5d5c23f09eb8a55bf27a71cc"
+  },
+  "reused_figures": {
+    "figures/01_workflow.png": {
+      "source": "docs/a2/fusion/presentation/pipeline.png",
+      "sha256": "8345f77fb9e1cc50b1bfc0d5361fdc53562164f75ed7a0d8890da87d041c54cf"
+    },
+    "figures/01_workflow.svg": {
+      "source": "docs/a2/fusion/presentation/pipeline.svg",
+      "sha256": "061159c2e6016ecc300920f18873c07c6d5dcc5740896fe1d712ef1b20b25d8c"
+    },
+    "figures/03_fog_test.png": {
+      "source": "docs/a_group/presentation/01_fog_test.png",
+      "sha256": "e394d430566fc30e0fe91ef8b25d95c69136c6e5c359907144327c0bcd948a0b"
+    },
+    "figures/03_fog_test.svg": {
+      "source": "docs/a_group/presentation/01_fog_test.svg",
+      "sha256": "072afa812ad8cbba7e1aaf929506570d716ef06387d0a920075482db4b84ac58"
+    },
+    "figures/04_direction_test.png": {
+      "source": "docs/a_group/presentation/03_direction_test.png",
+      "sha256": "389c0244af7443f8a197990c8ba1b88dab8f9834f2e93b0d2f2a210a409421b7"
+    },
+    "figures/04_direction_test.svg": {
+      "source": "docs/a_group/presentation/03_direction_test.svg",
+      "sha256": "2c2c3aa9744edf3d895bd0c2c37744d81f8a2611becde5e3f4ab4e9c1dd409c2"
+    },
+    "figures/06_joint_timeline.png": {
+      "source": "docs/a_group/presentation/04_test_timeline.png",
+      "sha256": "b4c0024ce424a59706c34173f812882351fecdf846a3d1f541a48154779ef0dc"
+    },
+    "figures/06_joint_timeline.svg": {
+      "source": "docs/a_group/presentation/04_test_timeline.svg",
+      "sha256": "884a2393ac7a592739ce4b672791a93fef6f11d48151939816eba3d581b661f4"
+    },
+    "figures/07_fog_confusion.png": {
+      "source": "docs/a_group/presentation/02_fog_confusion.png",
+      "sha256": "aaaaff5d4dc31db98dada7902f438fa4efb2c9cdeedf65793803fdf2269aea4a"
+    },
+    "figures/07_fog_confusion.svg": {
+      "source": "docs/a_group/presentation/02_fog_confusion.svg",
+      "sha256": "3a111f5c03a87b145f41c60298a81cf0d902eaaaa7d9f51cd90523df21829caf"
+    }
+  },
+  "inputs_unchanged": true,
+  "models_refitted": 0,
+  "test_scores_recomputed": false,
+  "files": {
+    "FIGURE_CATALOG.csv": "20b928855593fa5a32043f27c674d98d941f04bdb5ea93364318ce4c866544ed",
+    "index.html": "970db36b22ff68a7b01f116f60503189c896c35d50f9491fbf753b5c09cd634d",
+    "README.md": "7296060347ab97721f982a20448eba5eaa61863a74ed957441c19f8205714794",
+    "showcase.css": "3bf6815cf0347513732975e42074903c994b689ff71948eef018f77e113e5787",
+    "data/all_metrics.csv": "6dede8aa3755d11568f5522024a9d20a27aa83fd0853583995d0b12fd822ce25",
+    "data/DATA_DICTIONARY.md": "2f037da554dcd6215f08ac2bb7ad0f76d3eb996d50031c91a9c445c1cbf642e0",
+    "data/development_vs_test.csv": "ca62b6f62fc42ada7c87a57b976684af48908727c70cb34f2e61b88f692eb629",
+    "data/direction_per_class.csv": "a919d79a0311fca8b7151c21cbab5a5d3ba97a7d12ec39b153604726875813a8",
+    "data/direction_test.csv": "dec495f766240bc673ee463b60627bea6c88913e426ecba378b609d58087de79",
+    "data/evaluation_scope.csv": "a0c729221f46102d968b2d68c90dc5610a539d553b2ffe650fbed75cf2b59b6b",
+    "data/figure_selection.csv": "83a65d12265976b198b0a51108b98368054cf1e36b9493ae95fab043e0c3fd20",
+    "data/fog_test.csv": "e81eba7b69e9cf55d3e0d10d9051c9b538d15c0ca9b5d1a4580b5d2fd5b1a05e",
+    "data/fusion_test.csv": "cbca35fb7b1e659dea4a5a9001a321012f71839008fe232a546bc29d4259c141",
+    "data/methods.csv": "5068165dc6c82202be078f5764d085d8153b01f2de97973acc11e1d0bef9392f",
+    "data/summary.json": "6bd89b516dee44abdc06914e63ceb8af63c6d353a939e1a67b5e70bcce4b6798",
+    "figures/01_workflow.png": "8345f77fb9e1cc50b1bfc0d5361fdc53562164f75ed7a0d8890da87d041c54cf",
+    "figures/01_workflow.svg": "061159c2e6016ecc300920f18873c07c6d5dcc5740896fe1d712ef1b20b25d8c",
+    "figures/02_evaluation_scope.png": "cdc310b179367820a5d4bb77772211b63a72cfd4b6443ccc424949c0d8b846a9",
+    "figures/02_evaluation_scope.svg": "0f2bc0e5ff60ae291420c7676d4b254e4110b638fb3678be567dc230fc1fca15",
+    "figures/03_fog_test.png": "e394d430566fc30e0fe91ef8b25d95c69136c6e5c359907144327c0bcd948a0b",
+    "figures/03_fog_test.svg": "072afa812ad8cbba7e1aaf929506570d716ef06387d0a920075482db4b84ac58",
+    "figures/04_direction_test.png": "389c0244af7443f8a197990c8ba1b88dab8f9834f2e93b0d2f2a210a409421b7",
+    "figures/04_direction_test.svg": "2c2c3aa9744edf3d895bd0c2c37744d81f8a2611becde5e3f4ab4e9c1dd409c2",
+    "figures/05_fog_fusion.png": "8092b385cd804a392ea29c99c7a424e34162be4a4ad2761328b968986d5e2e36",
+    "figures/05_fog_fusion.svg": "fefcf3100f27c05774987bab33df71b842ed824307e7e8a05d521c8ad85c7524",
+    "figures/06_joint_timeline.png": "b4c0024ce424a59706c34173f812882351fecdf846a3d1f541a48154779ef0dc",
+    "figures/06_joint_timeline.svg": "884a2393ac7a592739ce4b672791a93fef6f11d48151939816eba3d581b661f4",
+    "figures/07_fog_confusion.png": "aaaaff5d4dc31db98dada7902f438fa4efb2c9cdeedf65793803fdf2269aea4a",
+    "figures/07_fog_confusion.svg": "3a111f5c03a87b145f41c60298a81cf0d902eaaaa7d9f51cd90523df21829caf"
+  }
+}

@@ -12,9 +12,8 @@ FoGGuard 是 ME5412 课程项目，研究如何利用可穿戴 IMU 识别冻结�
 | A1 / A2 / B1 / B2 与工业设计的职责 | [分工与交付顺序](docs/ROLES_AND_ROADMAP.md) |
 | 模块关系、状态和验收要求 | [系统架构](docs/ARCHITECTURE.md) |
 | 当前完成状态 | [项目状态](docs/PROJECT_STATUS.json) |
-| A 组独立测试成绩与英文汇报图 | [固定测试报告](docs/a_group/README.md) · [图表包](docs/a_group/presentation/README.md) |
-| A2 展示图表、准确率数据与图注 | [A2 展示结果包](docs/a2/presentation/README.md) |
-| A1+A2 联合感知与英文过程图 | [感知交接入口](docs/a2/fusion/README.md) · [英文图表](docs/a2/fusion/presentation/README.md) |
+| A 组统一图表与数据展示（英文） | **[打开统一页面](docs/a_group_showcase/index.html)** · [图表及数据索引](docs/a_group_showcase/FIGURE_CATALOG.csv) |
+| A 组测试来源与算法复现 | [固定测试报告](docs/a_group/README.md) · [感知接入](docs/a2/fusion/README.md) |
 | 环境、模型推理与工程演示 | [快速开始](docs/QUICKSTART.md) |
 | 字段、单位和时序约定 | [接口约定](docs/INTERFACE_CONTRACT.md) · [数据格式](docs/DATA_SCHEMA.md) |
 
@@ -37,7 +36,7 @@ A 组负责感知，B 组负责反馈、决策和验证。最终可视化读取�
 
 ## A1：已完成冻结识别交付
 
-**[English TEST figures and data](docs/a_group/presentation/README.md)**：英文 PNG/SVG、混淆矩阵、汇总 CSV 和真实测试时间线，可用于正式效果汇报。[开发验证图表](docs/a1/figures/README.md) 用于解释方案选择。
+**[Unified English charts and data](docs/a_group_showcase/index.html)**：流程与方法、数据范围、冻结、方向、融合影响和联合时间线集中展示；每图有简短说明及 PNG/SVG/CSV。正式测试为主线，开发验证集中在页面附录，用于解释方案选择。
 
 提供三种可运行的冻结 / 非冻结模型、统一推理入口、训练配置、效果对比和交接包。下表使用冻结权重和阈值后的独立 TEST：4 人、16 条记录、1605 个共同窗口，其中 253 个冻结窗口。
 

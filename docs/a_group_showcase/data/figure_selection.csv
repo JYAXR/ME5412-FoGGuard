@@ -1,0 +1,2 @@
+partition,rule,selection_fixed_before_scoring,per_window_patient_csv_included
+test,First TEST record by sorted identity; first 30 seconds,True,False

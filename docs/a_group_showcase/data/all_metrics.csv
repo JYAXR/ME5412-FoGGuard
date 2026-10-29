@@ -1,0 +1,33 @@
+task,partition,method_or_stage,denominator,windows,metric,value,unit
+FoG,test,ankle_history_rf,matched_windows,1605,accuracy,0.729595015576324,fraction
+FoG,test,ankle_history_rf,matched_windows,1605,precision,0.3463497453310696,fraction
+FoG,test,ankle_history_rf,matched_windows,1605,recall,0.8063241106719368,fraction
+FoG,test,ankle_history_rf,matched_windows,1605,fog_f1,0.4845605700712589,fraction
+FoG,test,bilateral_rf,matched_windows,1605,accuracy,0.7869158878504673,fraction
+FoG,test,bilateral_rf,matched_windows,1605,precision,0.41325536062378165,fraction
+FoG,test,bilateral_rf,matched_windows,1605,recall,0.8379446640316206,fraction
+FoG,test,bilateral_rf,matched_windows,1605,fog_f1,0.5535248041775457,fraction
+FoG,test,ankle_cnn,matched_windows,1605,accuracy,0.8542056074766355,fraction
+FoG,test,ankle_cnn,matched_windows,1605,precision,0.5345454545454545,fraction
+FoG,test,ankle_cnn,matched_windows,1605,recall,0.5810276679841897,fraction
+FoG,test,ankle_cnn,matched_windows,1605,fog_f1,0.5568181818181818,fraction
+Direction,test,raw_current_direction,known_valid_windows,676,accuracy,0.8106508875739645,fraction
+Direction,test,raw_current_direction,known_valid_windows,676,macro_f1,0.8437585021820487,fraction
+Direction,test,raw_current_direction,known_valid_windows,676,prediction_coverage,0.8668639053254438,fraction
+Direction,test,raw_current_direction,known_valid_windows,676,accepted_accuracy,0.9351535836177475,fraction
+Direction,test,fused_direction,known_valid_windows,676,accuracy,0.5177514792899408,fraction
+Direction,test,fused_direction,known_valid_windows,676,macro_f1,0.5918478662448193,fraction
+Direction,test,fused_direction,known_valid_windows,676,prediction_coverage,0.5473372781065089,fraction
+Direction,test,fused_direction,known_valid_windows,676,accepted_accuracy,0.9459459459459459,fraction
+FoG fusion,test,raw_bilateral_rf,source_arrival_windows,1605,accuracy,0.7869158878504673,fraction
+FoG fusion,test,raw_bilateral_rf,source_arrival_windows,1605,precision,0.41325536062378165,fraction
+FoG fusion,test,raw_bilateral_rf,source_arrival_windows,1605,recall,0.8379446640316206,fraction
+FoG fusion,test,raw_bilateral_rf,source_arrival_windows,1605,fog_f1,0.5535248041775457,fraction
+FoG fusion,test,raw_bilateral_rf,source_arrival_windows,1605,false_alarm_s,158.4166666666722,seconds
+FoG fusion,test,raw_bilateral_rf,source_arrival_windows,1605,time_recall,0.7519833528419295,fraction
+FoG fusion,test,stable_fog_event,source_arrival_windows,1605,accuracy,0.7613707165109034,fraction
+FoG fusion,test,stable_fog_event,source_arrival_windows,1605,precision,0.38181818181818183,fraction
+FoG fusion,test,stable_fog_event,source_arrival_windows,1605,recall,0.8300395256916996,fraction
+FoG fusion,test,stable_fog_event,source_arrival_windows,1605,fog_f1,0.523038605230386,fraction
+FoG fusion,test,stable_fog_event,source_arrival_windows,1605,false_alarm_s,183.8000000000136,seconds
+FoG fusion,test,stable_fog_event,source_arrival_windows,1605,time_recall,0.6937182988686751,fraction

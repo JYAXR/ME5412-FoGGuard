@@ -13,7 +13,8 @@
     "source_max_hold_s": 0.5,
     "final_visualization_owner": "industrial_design",
     "clinical_efficacy_validated": false,
-    "a_group_test_consumed_for_selection": true
+    "a_group_test_consumed_for_selection": true,
+    "a_group_display": "Unified English charts/data/explanations; no PPT or 3D"
   },
   "entrypoints": {
     "overview": "docs/PROJECT_OVERVIEW.md",
@@ -24,7 +25,8 @@
     "a1": "docs/A1_A2_START_HERE.md",
     "a2": "docs/a2/RESULTS.md",
     "perception": "docs/a2/fusion/README.md",
-    "a_group_test": "docs/a_group/README.md"
+    "a_group_test": "docs/a_group/README.md",
+    "a_group_showcase": "docs/a_group_showcase/index.html"
   },
   "roles": {
     "A1": {
@@ -40,14 +42,15 @@
       "remaining": [
         "receiver support and model package maintenance"
       ],
-      "test_results": "docs/a_group/results.json"
+      "test_results": "docs/a_group/results.json",
+      "presentation": "docs/a_group_showcase/index.html"
     },
     "A2": {
       "responsibility": "direction and perception fusion",
       "status": "direction_and_fusion_locked_TEST_evaluated_performance_review_pending",
       "task": "docs/tasks/A2.md",
       "results": "docs/a2/results.json",
-      "presentation": "docs/a2/presentation/README.md",
+      "presentation": "docs/a_group_showcase/index.html",
       "delivery_focus": "Current direction recognition as main result; preturn retained as evidence-backed feasibility research",
       "preturn_status": "Implemented and evaluated; both horizons have zero left/right recall",
       "preturn_binary_results": "docs/a2/binary_results.json",
@@ -134,7 +137,16 @@
       "selected_perception_development_replay": "PASS: 20 records; no truth",
       "heldout_scoring_behavior_tests": 10,
       "selected_perception_TEST_replay": "PASS integrity: 16 records; performance reported separately",
-      "test_label_recount": "PASS: 4815 FoG + 1605 direction window labels"
+      "test_label_recount": "PASS: 4815 FoG + 1605 direction window labels",
+      "unified_chart_showcase": {
+        "figures": 7,
+        "csv_tables": 9,
+        "local_links_checked": 59,
+        "artifact_hashes_checked": 29,
+        "source_results_unchanged": true,
+        "browser_render_check": "NOT_RUN: browser tool blocks local file:// URLs",
+        "scope": "Static HTML references, image decoding, exact data comparison and file hashes"
+      }
     }
   }
 }
