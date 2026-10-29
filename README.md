@@ -1,5 +1,7 @@
 # ME5412 FoGGuard
 
+> **2026-10-29 A1 外部漏检诊断完成：** [发现、六张展示图及复现](docs/a1/EXTERNAL_FAILURE_DIAGNOSTIC_RESULTS_V1.md) · [固定诊断规则](docs/a1/EXTERNAL_FAILURE_DIAGNOSTIC_PROTOCOL_V1.md)。80次完全漏检中78次已有及时的事件自身多数窗口；P6/P7纯FoG分数仍低，旋转不变摘要也有分布差异。轴系仅得到图示条件推断，未逐试验校准；未训练/旋转重评分/调阈值，原外部F1仍为0.5657。363项测试及完整项目检查通过。
+
 > **2026-10-29 A1 Stanford外部零样本迁移已跑完：** [结果与图表](docs/a1/STANFORD_EXTERNAL_RESULTS_V1.md) · [固定协议](docs/a1/STANFORD_EXTERNAL_PROTOCOL_V1.md) · [适配/复现接口](docs/a1/STANFORD_EXTERNAL_HANDOFF_V1.md)。60条/7人、10033窗口；固定双踝RF的P 0.6401、R 0.5068、F1 0.5657，原始事件重叠131/211、FoG时间Recall 0.4874。单位/因果采样已适配，轴系未核实统一；无目标训练/校准，漏检与跨人差异仍明显，默认未替换。
 
 > **2026-10-29 A1 连续事件分歧回放：** [结果与回放入口](docs/a1/DISAGREEMENT_RESULTS_V1.md) · [外部验证准备](docs/a1/EXTERNAL_VALIDATION_READINESS_V1.md)。全部20条验证记录/10个事件；协调方案丢失17.10秒原FoG覆盖、补回0.50秒，约80.3%的损失在事件内部。已交付同步真实波形/概率/报警回放及四张图；Stanford双踝gyro样本表头/时钟/文件哈希已核对，尚无外部模型成绩。
