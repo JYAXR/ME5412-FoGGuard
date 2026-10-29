@@ -1,0 +1,18 @@
+{
+  "schema": "fogguard.a_group.test_protocol.v1",
+  "partition": "test",
+  "fog_methods": ["ankle_history_rf", "bilateral_rf", "ankle_cnn"],
+  "fusion_fog_method": "bilateral_rf",
+  "direction_task": "current",
+  "primary_fog_comparison": "Intersection of exact record/window keys across all three methods",
+  "additional_fog_metrics": "Native supported windows and causal raw-time/event overlap per method",
+  "fog_target": "At least 50 percent annotated FoG samples in the completed 120-sample window",
+  "direction_target": "Existing 80 percent current-direction purity and endpoint agreement",
+  "direction_primary": "Known targets on valid windows; unknown predictions count as errors",
+  "direction_additional": "Full four-class stream, accepted coverage and accepted-only accuracy",
+  "fusion_evaluation": "Score at the corresponding source arrival grid; never weight arbitrary timer ticks as samples",
+  "timeline_selection": "First TEST record by sorted keys; first 30 seconds from record start",
+  "refitting_allowed": false,
+  "test_threshold_selection_allowed": false,
+  "post_test_method_selection_allowed": false
+}

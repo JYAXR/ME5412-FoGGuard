@@ -17,3 +17,9 @@ src/fogguard/turning/preturn_binary.py text eol=lf
 # Preserve the new perception implementation hashes across operating systems.
 scripts/*perception.py text eol=lf
 src/fogguard/perception.py text eol=lf
+# Held-out evaluation and its pre-score lock use portable source bytes.
+config/a_group_test.json text eol=lf
+src/fogguard/evaluation/heldout.py text eol=lf
+scripts/*a_group_test*.py text eol=lf
+docs/a_group/** -text whitespace=cr-at-eol
+docs/a_group/**/*.svg whitespace=cr-at-eol,-blank-at-eol
