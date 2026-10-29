@@ -69,8 +69,8 @@ def main():
         "matched_windows": len(first), "positive_windows": int(first.truth_fog_label.sum()),
         "reference_prediction_rows_checked": checked, "models_refitted": 0, "test_windows_constructed": 0,
         "config_sha256": sha(args.config), "bundle_manifest_sha256": sha(args.bundle / "MANIFEST.json"),
-        "source_sha256": {str(p.relative_to(root)): sha(p) for p in sources},
-        "files": {str(p.relative_to(args.output)): sha(p) for p in args.output.rglob("*") if p.is_file()}})
+        "source_sha256": {p.relative_to(root).as_posix(): sha(p) for p in sources},
+        "files": {p.relative_to(args.output).as_posix(): sha(p) for p in args.output.rglob("*") if p.is_file()}})
     print(table[["method", "precision", "recall", "fog_f1", "false_alarm_s", "time_recall", "covered_raw_events"]].to_string(index=False), flush=True)
 
 

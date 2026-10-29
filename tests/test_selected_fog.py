@@ -1,6 +1,11 @@
 """Contracts for the retained methods, not tests for removed experiments."""
 
 import ast
+import hashlib
+import json
+import subprocess
+import sys
+import zipfile
 from dataclasses import replace
 from pathlib import Path
 
@@ -12,7 +17,14 @@ from sklearn.ensemble import RandomForestClassifier
 from fogguard.data.fogstar import sensor_columns
 from fogguard.modeling.a1_ankle_history import ankle_matrix, history_links
 from fogguard.modeling.a1_bilateral import DUAL, anchored_gyro_windows
-from fogguard.selected_fog import METHODS, load_selected, matrix_for, windows_for, wrap_classifier
+from fogguard.selected_fog import (
+    METHODS,
+    check_lock,
+    load_selected,
+    matrix_for,
+    windows_for,
+    wrap_classifier,
+)
 
 
 def signal(n=420):
@@ -87,3 +99,86 @@ def test_only_three_methods_and_readonly_evaluation():
     source = (Path(__file__).parents[1] / "scripts/evaluate_selected_fog.py").read_text("utf-8")
     calls = [n for n in ast.walk(ast.parse(source)) if isinstance(n, ast.Call)]
     assert not [n for n in calls if isinstance(n.func, ast.Attribute) and n.func.attr in {"fit", "fit_transform", "partial_fit"}]
+
+
+@pytest.mark.parametrize("sample_rate", [50, 64, 128])
+def test_cnn_rejects_wrong_sample_clock(sample_rate):
+    pytest.importorskip("torch")
+    frame = signal(180).assign(timestamp=np.arange(180) / sample_rate)
+    with pytest.raises(ValueError, match="60Hz"):
+        windows_for(frame, "ankle_cnn")
+
+
+def test_cnn_rejects_internal_jitter_even_with_correct_window_span():
+    pytest.importorskip("torch")
+    frame = signal(180)
+    frame.loc[20, "timestamp"] += 0.002
+    with pytest.raises(ValueError, match="60Hz"):
+        windows_for(frame, "ankle_cnn")
+
+
+def test_cnn_checks_direct_window_span_and_accepts_offset_timestamps():
+    pytest.importorskip("torch")
+    from fogguard.modeling.a1_author_cnn import centered_gyro
+
+    frame = signal(180)
+    shifted = frame.assign(timestamp=frame.timestamp + 100.25)
+    plain, offset = [windows_for(f, "ankle_cnn") for f in (frame, shifted)]
+    np.testing.assert_array_equal(centered_gyro(plain), centered_gyro(offset))
+    assert offset[0].end_s == pytest.approx(100.25 + 119 / 60)
+    invalid = replace(plain[0], end_s=plain[0].start_s + 119 / 128)
+    with pytest.raises(ValueError, match="60Hz"):
+        centered_gyro([invalid])
+
+
+@pytest.mark.parametrize("relative", ["model/weights.bin", "model\\weights.bin"])
+def test_manifest_separators_and_tamper_detection(tmp_path, relative):
+    weight = tmp_path / "model/weights.bin"
+    weight.parent.mkdir()
+    weight.write_bytes(b"original payload")
+    lock = {"files": {relative: hashlib.sha256(weight.read_bytes()).hexdigest()}}
+    check_lock(tmp_path, lock)
+    weight.write_bytes(b"modified payload")
+    with pytest.raises(ValueError, match="Changed artifact"):
+        check_lock(tmp_path, lock)
+
+
+@pytest.mark.parametrize("relative", ["../weights.bin", "/weights.bin", "C:\\weights.bin"])
+def test_manifest_requires_bundle_relative_paths(tmp_path, relative):
+    with pytest.raises(ValueError, match="relative to its bundle"):
+        check_lock(tmp_path, {"files": {relative: "unused"}})
+
+
+def test_bundle_cli_from_windows_manifest_is_portable(tmp_path):
+    pytest.importorskip("torch")
+    from fogguard.modeling.a1_author_cnn import AuthorCNNClassifier, AuthorFoGCNN
+
+    root = Path(__file__).parents[1]
+    models = tmp_path / "models"
+    for method in METHODS:
+        windows = windows_for(signal(), method)
+        values, names = matrix_for(windows, method)
+        if method == "ankle_cnn":
+            classifier = AuthorCNNClassifier({"batch_size": 64}, 5412)
+            classifier.network_, classifier.classes_ = AuthorFoGCNN(), np.array([0, 1])
+        else:
+            classifier = RandomForestClassifier(n_estimators=3, random_state=8).fit(
+                values, np.arange(len(values)) % 2)
+        wrap_classifier(classifier, method, windows[0].channel_names, names, 0.5, [1], [1]).save(
+            models / method / "model.joblib")
+    # A Windows-authored bundle must load on Ubuntu as well as Windows.
+    files = {str(p.relative_to(models)).replace("/", "\\"): hashlib.sha256(p.read_bytes()).hexdigest()
+             for p in models.rglob("*.joblib")}
+    (models / "MANIFEST.json").write_text(json.dumps({"files": files}), encoding="utf-8")
+    output = tmp_path / "output"
+    process = subprocess.run([sys.executable, "-X", "utf8", "scripts/bundle_selected_fog.py",
+                              "--models", str(models), "--output", str(output)], cwd=root,
+                             capture_output=True, text=True, encoding="utf-8", check=False)
+    assert process.returncode == 0, process.stdout + process.stderr
+    with zipfile.ZipFile(output / "FoGGuard-Selected-3-Models.zip") as archive:
+        manifest = json.loads(archive.read("fog-selected/MANIFEST.json"))
+        assert all("\\" not in name for name in manifest["files"])
+        for name, digest in manifest["files"].items():
+            assert hashlib.sha256(archive.read("fog-selected/" + name)).hexdigest() == digest
+        archive.extractall(tmp_path / "unpacked")
+    check_lock(tmp_path / "unpacked/fog-selected", manifest)

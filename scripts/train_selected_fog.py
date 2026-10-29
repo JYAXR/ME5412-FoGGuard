@@ -88,7 +88,7 @@ def main():
     write_json(args.output / "MANIFEST.json", {"methods": list(METHODS if args.method == "all" else (args.method,)),
         "scope": "Development reproduction, differing declared threshold policies retained; no TEST",
         "test_windows_constructed": 0, "raw_sha256": sha(args.raw), "config_sha256": sha(args.config),
-        "files": {str(p.relative_to(args.output)): sha(p) for p in args.output.rglob("*") if p.is_file()}})
+        "files": {p.relative_to(args.output).as_posix(): sha(p) for p in args.output.rglob("*") if p.is_file()}})
 
 
 if __name__ == "__main__":

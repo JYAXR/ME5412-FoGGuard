@@ -40,6 +40,8 @@ def gyro_windows(frame):
             run = record.iloc[section]
             for start in range(0, len(run) - 120 + 1, 30):
                 chunk = run.iloc[start:start + 120]
+                if not np.allclose(np.diff(chunk.timestamp), 1 / 60, atol=1e-6, rtol=0):
+                    raise ValueError("Expected regular 60Hz gyro samples")
                 fraction = float(chunk.fog.mean()) if "fog" in chunk else None
                 activity, activity_fraction = None, None
                 if "activity" in chunk:
@@ -66,7 +68,9 @@ def centered_gyro(windows):
     values = []
     for window in windows:
         window.validate()
-        if window.channel_names != GYRO_CHANNELS or window.sample_rate_hz != 60 or len(window.samples) != 120:
+        if (window.channel_names != GYRO_CHANNELS or window.sample_rate_hz != 60
+                or len(window.samples) != 120
+                or not np.isclose(window.end_s - window.start_s, 119 / 60, atol=1e-6, rtol=0)):
             raise ValueError("Author architecture requires 120 x 3 left ankle gyro at 60Hz")
         values.append((window.samples - window.samples.mean(axis=0)).T)
     return np.asarray(values, dtype=np.float32)

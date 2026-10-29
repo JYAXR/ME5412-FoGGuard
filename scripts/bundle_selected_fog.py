@@ -57,7 +57,7 @@ def main():
     write_json(folder / "MANIFEST.json", {"schema": "fog-selected.v1", "methods": metadata,
         "sample_rate_hz": 60, "window_samples": 120, "step_samples": 30, "max_hold_s": 0.5,
         "raw_patient_data_included": False, "example_source": "synthetic_interface_smoke_not_performance",
-        "files": {str(p.relative_to(folder)): sha(p) for p in folder.rglob("*") if p.is_file()}})
+        "files": {p.relative_to(folder).as_posix(): sha(p) for p in folder.rglob("*") if p.is_file()}})
     archive = args.output / "FoGGuard-Selected-3-Models.zip"
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as z:
         for p in sorted(folder.rglob("*")):

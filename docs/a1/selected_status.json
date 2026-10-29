@@ -1,6 +1,6 @@
 {
   "schema": "fog-selected.v1",
-  "date": "2026-10-29",
+  "date": "2026-10-30",
   "methods": [
     "ankle_history_rf",
     "bilateral_rf",
@@ -96,24 +96,29 @@
     "status": "PASS",
     "test_windows_constructed": 0,
     "source_sha256": {
-      "src/fogguard/selected_fog.py": "77d174b7b52607f1e920f645496f47fc5b723e60f2f62cdc627c9450b89ec66d",
+      "src/fogguard/selected_fog.py": "0d1da43ab13cf049188c3ebef33ab45569aa64e08ef31aeafcabf714ea97371f",
       "src/fogguard/modeling/a1_ankle_history.py": "7a7c3e2b872104803f6c951133af63c0bb400686d8da36067604008583e79d54",
-      "src/fogguard/modeling/a1_author_cnn.py": "49b09b3ec938a3f6dbd28527c31fa4ad4c8ccfb5ac01aae78d7a62161b4e574a",
+      "src/fogguard/modeling/a1_author_cnn.py": "172e40c6a51a6465fb1fd3923d7f4a00f718de29af0fa008693a9f9b065822f7",
       "src/fogguard/modeling/a1_bilateral.py": "4cd469be54f22d73f6957c2e0f322ecca91536086a06bf2fe405c42a62e21d2e",
       "src/fogguard/modeling/a1_fog.py": "78c1cd49ba262561f495e9fcefe9ffce95ce2084b9906102b19fda4ab2bbba2e",
       "src/fogguard/evaluation/intervals.py": "4c0462f7bbb156b9a8c6cc8178d395b55d89bcb9043ce7cc5ddf566c7a854428",
       "src/fogguard/evaluation/selected_fog.py": "4cba111895a2f23636bbcc25b384ac1e98a7ebfadc1bb6cc3c1f167483daf792",
-      "scripts/evaluate_selected_fog.py": "297ce0dcc4563eaec63ac557b4a205c2a5b27ddd9c7842a4a8cc13fdd454ef3e"
+      "scripts/evaluate_selected_fog.py": "f112f633f54e27ae7c9c0db64604d8ae63b668b667953dc38180c4e4c8331a6f"
     },
     "config_sha256": "a091c9f58a42a0bd36d71c692325f4c1939d4c9a7f9ccb34fe32e3f2df38c40a",
     "packaged_cli_smoke_rows": {
       "bilateral_rf": 7,
       "ankle_history_rf": 11,
       "ankle_cnn": 11
+    },
+    "input_contract": {
+      "sample_rate_hz": 60,
+      "regular_timestamp_spacing_required": true,
+      "manifest_paths": "portable slash separators; Windows-authored v1 paths accepted"
     }
   },
   "project_checks": {
-    "tests_and_recognition": "263 passed",
+    "tests_and_recognition": "274 passed",
     "ruff": "PASS",
     "baseline_cases": 112,
     "engineering_cases": 112,

@@ -2,7 +2,7 @@
 
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 
 from fogguard.data.fogstar import iter_fogstar_windows
 from fogguard.modeling.a1_bilateral import BilateralFoG, anchored_gyro_windows
@@ -20,8 +20,13 @@ def write_json(path, value):
 
 
 def check_lock(folder, lock):
+    """Read portable paths and Windows-authored v1 manifests on either platform."""
     for path, digest in lock["files"].items():
-        if sha(Path(folder) / path) != digest:
+        relative = PurePosixPath(path.replace("\\", "/"))
+        if (not relative.parts or relative.is_absolute() or ".." in relative.parts
+                or PureWindowsPath(path).drive):
+            raise ValueError(f"Artifact path must be relative to its bundle: {path}")
+        if sha(Path(folder).joinpath(*relative.parts)) != digest:
             raise ValueError(f"Changed artifact: {path}")
 
 
