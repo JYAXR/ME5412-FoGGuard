@@ -1,0 +1,22 @@
+{
+  "experiment_id": "a1_context_learning_v1",
+  "split_config": "config/a1_fixed_split_v1.json",
+  "reference_run": "reports/a1_temporal_cnn_v1_20261029",
+  "models": ["control", "person_balanced", "activity_aux"],
+  "arms": {
+    "control": {"person_balance": false, "activity_weight": 0.0},
+    "person_balanced": {"person_balance": true, "activity_weight": 0.0},
+    "activity_aux": {"person_balance": false, "activity_weight": 0.2}
+  },
+  "random_state": 5412,
+  "threshold_grid": {"start": 0.05, "stop": 0.95, "count": 91},
+  "optimization": {"max_epochs": 40, "batch_size": 128, "learning_rate": 0.001, "weight_decay": 0.0004, "kernel_l2": 0.001, "dropout": 0.4, "cpu_threads": 2, "patience": 6, "min_delta": 0.001},
+  "architecture": "Identical shared CNN-GRU32 network in all arms, plus Linear32->7 auxiliary activity head present even in control (weight zero), 14536 parameters; same initialization and shuffle seeds across arms.",
+  "person_weight_policy": "For each actual fit subset only, per-window weight=N/(P*n_person), mean1, exactly equal total N/P contribution per person. Uniform shuffled minibatches; only FoG BCE weighted. No class balancing, clipping, resampling or activity weighting.",
+  "activity_policy": "TRAIN current-window majority activity 1..7 -> target0..6; unlabeled0/mixed ignored. CrossEntropy(valid targets)*0.2 added only in activity_aux. No activity truth as input or runtime veto; outputs remain binary FoG. Checkpoint people supply only FoG targets, not activity targets.",
+  "checkpoint_policy": "Reuse previous frozen TRAIN14 nested personnel plans. All arms checkpoint on unweighted FoG BCE plus existing kernel L2 only; excludes person weights and auxiliary loss. Reinitialize on all outer fit people for selected epochs, score outer held-out people.",
+  "deployment_policy": "Median three inner best epochs, fresh TRAIN14 fit; threshold uses TRAIN pooled OOF F1/BA/higher cutoff. MODEL_LOCK before separate VALIDATION evaluation. No VALIDATION refit or tuning; no new TEST windows/scores.",
+  "development_success_gate": "Each candidate vs freshly retrained control on same VALIDATION windows: higher F1, no greater false alarm seconds, no lower FoG-time recall. No automatic default replacement even if a gate passes.",
+  "replay_policy": "Reuse author CNN reference report/selected_cases.json validation case, no favorable case reselection.",
+  "search_budget": "Three isolated arms, one optimizer setting/seed per fold. Do not combine balancing+auxiliary, search lambda, retry seeds, tune on VALIDATION, alter default model/controller or implement A2 direction/intent."
+}
