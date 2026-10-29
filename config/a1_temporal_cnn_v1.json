@@ -2,6 +2,7 @@
   "experiment_id": "a1_temporal_cnn_v1",
   "split_config": "config/a1_fixed_split_v1.json",
   "reference_run": "reports/a1_author_cnn_v1_20261029",
+  "replay_policy": "Reuse the previous reference_run/report/selected_cases.json VALIDATION case; do not select a new favorable case using new scores",
   "models": ["cnn_control", "cnn_gru"],
   "random_state": 5412,
   "history_lag_steps": [8, 4, 0],
