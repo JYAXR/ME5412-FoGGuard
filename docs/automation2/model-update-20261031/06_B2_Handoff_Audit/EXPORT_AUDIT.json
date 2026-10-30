@@ -1,0 +1,21 @@
+{
+  "status": "PASS_WITH_EXPLICIT_SCOPE_LIMITS",
+  "cases": 48,
+  "strategy_runs": 240,
+  "command_rows": 69147,
+  "start_stop_pairs": 170,
+  "valid_new_postcue_timer_increments": 1056,
+  "bundle_files_verified": 513,
+  "bundle_manifest_sha256": "7d45eb6f44cf9004f247976175e53992e808e497d8f964bca49bdf7c6f85add8",
+  "original_run_manifest_sha256": "a40322227e5349397c0cd9b5f60de1e0cf6d8424d0b9c6748a63cb06549c7f31",
+  "scope": "Saved engineering outputs and private standard export, not complete project acceptance",
+  "original_runtime_rows_rewritten": false,
+  "weights_or_raw_sensor_data_exported": false,
+  "real_record_identity_in_public_tables": false,
+  "acceptance_counts": {
+    "PASS": 16,
+    "NOT_RUN": 2,
+    "NOT_IMPLEMENTED": 1,
+    "NOT_EVALUABLE": 1
+  }
+}

@@ -1,0 +1,16 @@
+time_from_clip_start_s,guidance_action,guidance_control_state,guidance_reason,guidance_visual_enabled,proxy_feedback_state,proxy_no_motion_valid_s
+0.0,none,SAFE_NONE,perception_unavailable,False,unavailable,0.0
+2.5,none,SAFE_NONE,waiting_two_new_fog_observations,False,no_movement_evidence,0.0
+3.0,none,SAFE_NONE,waiting_fresh_reconfirmation,False,no_movement_evidence,0.0
+3.1,start,GUIDING,confirmed_event_started,True,no_movement_evidence,0.0
+3.2,hold,GUIDING,same_event_maintained,True,no_movement_evidence,0.0
+5.483333333,stop,SAFE_NONE,feedback_unavailable,False,unknown,0.0
+7.983333333,none,SAFE_NONE,waiting_two_new_fog_observations,False,no_movement_evidence,0.0
+8.5,none,SAFE_NONE,waiting_fresh_reconfirmation,False,no_movement_evidence,0.0
+8.6,start,GUIDING,confirmed_event_started,True,no_movement_evidence,0.0
+8.7,hold,GUIDING,same_event_maintained,True,no_movement_evidence,0.0
+12.483333333,update,MARCH_FALLBACK,valid_no_motion_enter_march,True,no_movement_evidence,3.3833333333333275
+12.5,hold,MARCH_FALLBACK,same_event_maintained,True,no_movement_evidence,3.3833333333333275
+15.483333333,update,GUIDING,fallback_timeout_return_forward_unverified,True,no_movement_evidence,6.283333333333323
+15.5,hold,GUIDING,same_event_maintained,True,no_movement_evidence,6.283333333333323
+21.983333333,stop,IDLE,replay_ended,False,no_movement_evidence,12.566666666666666

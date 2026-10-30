@@ -47,3 +47,7 @@ python scripts/run_automation2_delivery_checks.py --output-dir <new-check-run>
 ```
 
 省略通用 OOF 审计输入时，那一项为 NOT_RUN，不是 PASS。运行得到的完整真实数据派生文件应保留在本地实验目录，图表和交接包只使用明确范围的汇总或构造样例。
+
+## 保存结果的标准导出
+
+无需重新推理模型即可整理已有新版运行。见 [B2 导出命令及核对范围](06_B2_Handoff_Audit/README.md)。标准导出包含真实记录派生表，仅保存在团队本地，不提交 GitHub。

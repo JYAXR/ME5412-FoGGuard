@@ -1,0 +1,42 @@
+{
+  "schema": "fogguard.b2.handoff.v1",
+  "source_manifest_sha256": "a40322227e5349397c0cd9b5f60de1e0cf6d8424d0b9c6748a63cb06549c7f31",
+  "source_files_verified": 340,
+  "model_hashes": {
+    "ankle_history_rf": "40604108d72e0e360cb25a873020acb9316bd1264a0d1f4e44efc075ecb738f3",
+    "bilateral_rf": "72c396fd322339542bcb5fbbd5e34de4fefb1b05c1fb5df8a16efdbc0e23dffc",
+    "ankle_cnn": "2234ff21b65f5c566ed60065f6615f69cab939bbcaead227a011bebe70c88e82",
+    "current_direction": "a612c8d8eeed2ab76addecbdd67848d57a18e0f32bef3f8512ed72737a14f8bd"
+  },
+  "source_sha256": {
+    "scripts/run_updated_cue_comparison.py": "17b39c381ea588973c8a07602ead78efc05a6a0c572c2fda2c3093f98f0079fd",
+    "scripts/run_b1_b2_joint_review.py": "cb2b6d0ba8b0df5947f19504d36dff52a1ec9725081e932ae4d526ad3c7df0d3",
+    "src/fogguard/cueing/proxy_replay.py": "caf9d00364c3c4cf6490bdadc467b781c9fac998ec98f7bdb1776646be656609",
+    "src/fogguard/motion/proxy_feedback.py": "1e5ddf135837a73536a7fdd149b107a6c38d5bbf7be4be440caffc064e490688",
+    "config/b1_motion_feedback.json": "1dbd2079e05e27b66472c3b88c15262107560d640243a6b1d299fddd2685ebd9",
+    "src/fogguard/perception.py": "73052c55c72478aaa388784dc4befc1c726211e08925cf366292e8fcbe8f9ff6",
+    "src/fogguard/context/fogstar.py": "b034bd436f1e45fb429b975fa0c6bc3fb7aad8f6312449243545ba682dd91151",
+    "src/fogguard/cueing/guidance.py": "9f61af2675a28c42ded53f76ff4f49c00c6ec07e925a4bc26d5a1a8c4c6e0598",
+    "src/fogguard/cueing/contracts.py": "4a0b806d929e895c3f6c2e084e041623ebf77545a5fb08e648b0c1eebd55a3f6",
+    "src/fogguard/cueing/targets.py": "924db743dc74a1520f8b1bf66f110d7648c2be679ac1bcdfedcab6e10a71a900",
+    "src/fogguard/evaluation/automation2.py": "57ef72b13b302639a589fb4e6e0d44debb7ce5bfb667c7454d1c7e2656202019",
+    "src/fogguard/evaluation/randomized_receiver.py": "ae105f40994b7b09f7ae781cdfe253a04e5f3d5f277debc27064e69f4604bf00"
+  },
+  "plan_sha256": "9656e98df95d4d9971017750375c779f4791ea3b72745e5fb38d10895ee5767a",
+  "exporter_sha256": "79a9f5066bd551814b333bb86d0f11596888a8cb1ebc9bf14c2c2afd15df712b",
+  "cases": 48,
+  "runs": 240,
+  "scope": "Private derived records; do not commit patient-level exports",
+  "not_implemented": [
+    "independently observed alternating footstep completion"
+  ],
+  "not_evaluable": [
+    "step accuracy",
+    "forward displacement success",
+    "clinical benefit"
+  ],
+  "not_run": [
+    "final industrial-design playback acceptance",
+    "new-machine reproduction"
+  ]
+}
