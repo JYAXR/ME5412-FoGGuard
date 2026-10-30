@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "manifest_files_verified": 340,
+  "source_files_verified": 12,
+  "constructed_branch_checks": 90,
+  "case_strategy_runs": 240,
+  "command_rows_checked": 69147,
+  "valid_counter_increases_checked": 1056,
+  "unchanged_prior_real_timelines_verified": 72,
+  "pair_rows_recomputed": 40,
+  "spacing_accuracy_unavailable": true,
+  "scope": "Engineering replay checks; no patient response or treatment validation",
+  "verification_script_sha256": "9fbea73a52f7243aa510c0db56ccff623904a4f27cc2c71d041323e0891d27f7"
+}

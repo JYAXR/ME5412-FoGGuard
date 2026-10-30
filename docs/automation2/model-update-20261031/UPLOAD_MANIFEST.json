@@ -1,0 +1,356 @@
+{
+  "schema": "fogguard.github.additions.v1",
+  "base_commit": "23cfac37a42b0efc1e07711feca87d0a467c3d79",
+  "scope": "model-update task 3/4 contribution",
+  "files": {
+    ".gitattributes": {
+      "sha256": "1dafda34eadcf528e44e96fefce8fa6d1adb53af33b54f227c85ba5b422459cb",
+      "bytes": 3162
+    },
+    "config/b1_motion_feedback.json": {
+      "sha256": "1dbd2079e05e27b66472c3b88c15262107560d640243a6b1d299fddd2685ebd9",
+      "bytes": 441
+    },
+    "config/b2_randomized_evaluation.json": {
+      "sha256": "a549845364cd5a30da835ed5538b9d03e6f91fbb8aa316e506ae56b68f487fea",
+      "bytes": 1047
+    },
+    "docs/automation2/model-update-20261031/02_Results/01_Updated_Pipeline/paired_comparisons.csv": {
+      "sha256": "06a141e0fb7c3d6c298aea9760c6cba9dbbb55df2b9f477d7f1e72f5f1d76015",
+      "bytes": 4186
+    },
+    "docs/automation2/model-update-20261031/02_Results/01_Updated_Pipeline/README.md": {
+      "sha256": "00525c527c3ade2babf437b5778cb418cb81c9fbb340f0c1470cc85fbc0a425a",
+      "bytes": 1755
+    },
+    "docs/automation2/model-update-20261031/02_Results/01_Updated_Pipeline/RESULTS.json": {
+      "sha256": "43bfada6ad8b4925d5029eedea037f0f992d5300458e6b9b264afe19cdc7b943",
+      "bytes": 18418
+    },
+    "docs/automation2/model-update-20261031/02_Results/01_Updated_Pipeline/runs.csv": {
+      "sha256": "0931844a81a247376e8c238c21cdcbe2a2c91aa263754427984ecea2473de79d",
+      "bytes": 31575
+    },
+    "docs/automation2/model-update-20261031/02_Results/01_Updated_Pipeline/summary.csv": {
+      "sha256": "61641321b7b169a028840fd7f3dea55771c057d2dbdb8c502dd48e0f0b9d7fc4",
+      "bytes": 1388
+    },
+    "docs/automation2/model-update-20261031/02_Results/02_Generated_Variants/independent_check.json": {
+      "sha256": "6ad37bf53e5aacaa83507245bec198f060daf1e8d60aee2fcc3673d79d5c5fbe",
+      "bytes": 166
+    },
+    "docs/automation2/model-update-20261031/02_Results/02_Generated_Variants/README.md": {
+      "sha256": "a681f05d5a2cd9410c9a688e9e5ae8d9768e7368f29b5dda5126a15b57d5fdca",
+      "bytes": 1347
+    },
+    "docs/automation2/model-update-20261031/02_Results/02_Generated_Variants/RESULTS.json": {
+      "sha256": "c6c8fc1a0b021df047dbfe6e83b71250805d20371323a834436375ae9feb3dc0",
+      "bytes": 8384
+    },
+    "docs/automation2/model-update-20261031/02_Results/03_Model_Validation/event_coverage.csv": {
+      "sha256": "ed6e3f63030f3da273cecab65ddeb36f937b0f60398fffb405301f4f4fcd1abf",
+      "bytes": 735
+    },
+    "docs/automation2/model-update-20261031/02_Results/03_Model_Validation/fog_model_comparison.csv": {
+      "sha256": "049e7e1cd8fe16f8ed9a34a8d84947d75954fce516ea394a430976c88de702d2",
+      "bytes": 395
+    },
+    "docs/automation2/model-update-20261031/02_Results/03_Model_Validation/independent_verification.json": {
+      "sha256": "116ecdcb88cc9f03527de4bc6e0b4299b29336efab1d72df480cff97ea64362a",
+      "bytes": 3211
+    },
+    "docs/automation2/model-update-20261031/02_Results/03_Model_Validation/invalid_input_checks.csv": {
+      "sha256": "867cd2240692c0f82ecbd390e8829d214e0defef9226d5be8bfb6501f50bb21e",
+      "bytes": 1984
+    },
+    "docs/automation2/model-update-20261031/02_Results/03_Model_Validation/paired_noise_missingness.csv": {
+      "sha256": "7a3585539209d9784f43b17ac7628ffbcb50844a351c4686651af7815ff7b120",
+      "bytes": 954
+    },
+    "docs/automation2/model-update-20261031/02_Results/03_Model_Validation/README.md": {
+      "sha256": "1a2401dd501b5989348b5f0b628083f4f7c799ed7d24291923d622c46afb0938",
+      "bytes": 1767
+    },
+    "docs/automation2/model-update-20261031/02_Results/03_Model_Validation/RESULTS.json": {
+      "sha256": "e5a7860e04e9b9e16fe77a87479f885ef0c6cae014e285cf1225eafd3507a7f1",
+      "bytes": 13918
+    },
+    "docs/automation2/model-update-20261031/02_Results/03_Model_Validation/source_provenance.json": {
+      "sha256": "9fac1ccaddbb6e346b7b1c149b0973672cd88827cf5c9bc51c79f1735478d15c",
+      "bytes": 5532
+    },
+    "docs/automation2/model-update-20261031/02_Results/04_Interface_Checks/README.md": {
+      "sha256": "691043d654750680c66e2da842052e4f4902c1b33d5a159b0b76f57d1356f25d",
+      "bytes": 534
+    },
+    "docs/automation2/model-update-20261031/02_Results/04_Interface_Checks/receiver_summary.json": {
+      "sha256": "290825b19fd981b0515c4e4354cafdec8e495c5d9cd3e05f17f1a882a0c1c429",
+      "bytes": 227
+    },
+    "docs/automation2/model-update-20261031/03_UI/Examples/01_fallback/timeline.json": {
+      "sha256": "8749c6001071dc20cbad0800df3d26de5324cbc655d28e0cf2fb7d721a0ec05f",
+      "bytes": 123267
+    },
+    "docs/automation2/model-update-20261031/03_UI/Examples/02_fading/timeline.json": {
+      "sha256": "65a4fae07c40f6bf29e85aca37f115f883ebc1c630478b4d55f4c206a192c753",
+      "bytes": 89559
+    },
+    "docs/automation2/model-update-20261031/03_UI/Examples/03_left_turn/timeline.json": {
+      "sha256": "0adcfd2501f28e4108c901b51d80b45da024066371d97fa13ba1d87bc741c760",
+      "bytes": 144432
+    },
+    "docs/automation2/model-update-20261031/03_UI/Examples/04_right_turn/timeline.json": {
+      "sha256": "a1e3ac7fc0edbaf15a5e6989d0168a78c4681e81588237ab516e8ccb2e8e7644",
+      "bytes": 145434
+    },
+    "docs/automation2/model-update-20261031/03_UI/Examples/05_refreeze/timeline.json": {
+      "sha256": "05a4bff48c42fd6c2ec1eec01daee28e082b709273361abc3931904448805be6",
+      "bytes": 129100
+    },
+    "docs/automation2/model-update-20261031/03_UI/Examples/06_feedback_gap/timeline.json": {
+      "sha256": "34f3d6e4dd8580a4be911eadd37280da57f871ed1f8632d028deaf2b012ca365",
+      "bytes": 126614
+    },
+    "docs/automation2/model-update-20261031/03_UI/Examples/07_real_output_replay/timeline.json": {
+      "sha256": "dcd2eb6edfb02cf65b40626c3a4ef3d7090c3bbf3f2c25debe76d8db8cbea4a2",
+      "bytes": 122756
+    },
+    "docs/automation2/model-update-20261031/03_UI/EXAMPLES.json": {
+      "sha256": "f0a649f50a161d9e60cce7cd02156a2ce73cd96f9279403788c60c7386333535",
+      "bytes": 1385
+    },
+    "docs/automation2/model-update-20261031/03_UI/README.md": {
+      "sha256": "707e0bf3f40d58dd564a2e1590d408c41415d5842aebcd88e7a15ace8046b5d3",
+      "bytes": 3148
+    },
+    "docs/automation2/model-update-20261031/05_Verification/delivery_checks.json": {
+      "sha256": "fb67c9cb0e32cce17bcdd6a71e694d14eaf332bfc3ea1d234bdd4b49d6e16806",
+      "bytes": 552
+    },
+    "docs/automation2/model-update-20261031/05_Verification/generated_data_check.json": {
+      "sha256": "6ad37bf53e5aacaa83507245bec198f060daf1e8d60aee2fcc3673d79d5c5fbe",
+      "bytes": 166
+    },
+    "docs/automation2/model-update-20261031/05_Verification/README.md": {
+      "sha256": "e9fae69f432638642583e14c52e073657c2e4e227093b9c9fe4fbe7ee14f5db9",
+      "bytes": 1161
+    },
+    "docs/automation2/model-update-20261031/05_Verification/UI_SOURCE_ALIGNMENT.json": {
+      "sha256": "798c4608d5a870f25ee7efb2ca5a052a6ba8d215532d929bb8a674173d3b74e4",
+      "bytes": 199
+    },
+    "docs/automation2/model-update-20261031/05_Verification/updated_pipeline_independent.json": {
+      "sha256": "1e85e54d02f070f93124156cf6ad5d4115fe37652e9daf25225469f879717e44",
+      "bytes": 544
+    },
+    "docs/automation2/model-update-20261031/figures/01_original_vs_generated_signal.png": {
+      "sha256": "07b86e245c43ed685e5f7e48fa40ff8d037ae5909eec952b08d8275c9459800d",
+      "bytes": 219103
+    },
+    "docs/automation2/model-update-20261031/figures/02_generated_data_accuracy.png": {
+      "sha256": "755d4946a2790f12922d175c2432eb69b86e97b0fbd034c9027f50283b2d2317",
+      "bytes": 113563
+    },
+    "docs/automation2/model-update-20261031/figures/03_validation_accuracy_and_recall.png": {
+      "sha256": "09f8cc8d3d415a88e51f80c0ec29aab9bfff041005a4fb9a80a7742106bdc0b9",
+      "bytes": 113735
+    },
+    "docs/automation2/model-update-20261031/figures/04_validation_errors.png": {
+      "sha256": "a32114bef46f8b5bdbcf7e2823a7820528b60f80e0e43142234a110a6c98dbbf",
+      "bytes": 109115
+    },
+    "docs/automation2/model-update-20261031/figures/05_noise_robustness.png": {
+      "sha256": "75539b71bf7d2fef4d2ad3ab1e8c7384d5f775e4833deb3180f73a85472f0da8",
+      "bytes": 153942
+    },
+    "docs/automation2/model-update-20261031/figures/README.md": {
+      "sha256": "4705c1e0b646fd03626d34f45ca2a05e4ca5df17e420d37295c1b3bc5b97df93",
+      "bytes": 931
+    },
+    "docs/automation2/model-update-20261031/README.md": {
+      "sha256": "0f233fa15c7cbdeb30d296309c8afb84847740a8c203f5b7e1c2c9ebd9785a59",
+      "bytes": 3670
+    },
+    "docs/automation2/model-update-20261031/REPRODUCE.md": {
+      "sha256": "0d25f59f1102264f4dfd37151ba1f072f75c6fa41bd51096780220a8851df6fe",
+      "bytes": 3576
+    },
+    "docs/automation2/model-update-20261031/WORK_COMPLETED.md": {
+      "sha256": "fdfaa283f92ad7edf37ebbffde664a2ea07c30f73f3658d360cb1fc8309cb640",
+      "bytes": 7996
+    },
+    "MODEL_UPDATE_START_HERE.md": {
+      "sha256": "3e3028fe5b9f5ed05cf9113c2572702b4c70a33902cf7d37287a4dcc0296d0b8",
+      "bytes": 713
+    },
+    "scripts/analyze_b1_b2_clips.py": {
+      "sha256": "bd1d6ae29c7a815016a7c10812a9b7e782526eb8181be97a3612522e6b7bd468",
+      "bytes": 6732
+    },
+    "scripts/evaluate_b2_randomized_models.py": {
+      "sha256": "5eb0171f24d99b8596014002992887e23e19391d9c1617a3ef07ac28d4251db4",
+      "bytes": 15955
+    },
+    "scripts/evaluate_sensor_variants.py": {
+      "sha256": "367514e7bd9a972d0691f7b3ae7cc78867e07d7d710e135434477da14f333ebb",
+      "bytes": 6782
+    },
+    "scripts/run_b1_b2_joint_review.py": {
+      "sha256": "cb2b6d0ba8b0df5947f19504d36dff52a1ec9725081e932ae4d526ad3c7df0d3",
+      "bytes": 14106
+    },
+    "scripts/run_b2_randomized_checks.py": {
+      "sha256": "a80232045c8586861c105e3011eddf111920c84cbe5ac687c1eb78de0ceb8364",
+      "bytes": 3207
+    },
+    "scripts/run_updated_cue_comparison.py": {
+      "sha256": "17b39c381ea588973c8a07602ead78efc05a6a0c572c2fda2c3093f98f0079fd",
+      "bytes": 13832
+    },
+    "scripts/verify_updated_cue_comparison.py": {
+      "sha256": "9fbea73a52f7243aa510c0db56ccff623904a4f27cc2c71d041323e0891d27f7",
+      "bytes": 8224
+    },
+    "src/fogguard/cueing/proxy_replay.py": {
+      "sha256": "caf9d00364c3c4cf6490bdadc467b781c9fac998ec98f7bdb1776646be656609",
+      "bytes": 15871
+    },
+    "src/fogguard/evaluation/randomized_model_scoring.py": {
+      "sha256": "f38bb497945f18c10848cd669acacd4e4a96fd4b002a60fe473238acac691f72",
+      "bytes": 6817
+    },
+    "src/fogguard/evaluation/randomized_plan.py": {
+      "sha256": "05e3a370485f52cbd2bb557aedf0c3ec1a723d899f9785a50b7d7be670699ac8",
+      "bytes": 7604
+    },
+    "src/fogguard/evaluation/randomized_receiver.py": {
+      "sha256": "ae105f40994b7b09f7ae781cdfe253a04e5f3d5f277debc27064e69f4604bf00",
+      "bytes": 10957
+    },
+    "src/fogguard/evaluation/sensor_variants.py": {
+      "sha256": "2149ecebcb4243df73cdca51d0c71cf334d12d2febdcf8c42ba3888b4a3d0952",
+      "bytes": 1462
+    },
+    "src/fogguard/motion/candidate_peaks.py": {
+      "sha256": "03ac980078cfe3e7f1496daa297e830d05464a2706586169ea5bf770cd626344",
+      "bytes": 2389
+    },
+    "src/fogguard/motion/proxy_feedback.py": {
+      "sha256": "1e5ddf135837a73536a7fdd149b107a6c38d5bbf7be4be440caffc064e490688",
+      "bytes": 5864
+    },
+    "tests/test_b1_candidate_peaks.py": {
+      "sha256": "f10c68254b39cce86967e9f7813287595fd3d0525adb1f9b0aa6084f3ccace5e",
+      "bytes": 1402
+    },
+    "tests/test_b1_motion_proxy.py": {
+      "sha256": "21ee248558a50301d2ca7c2955726e389fc6391910c249213748d57f59d6821d",
+      "bytes": 2466
+    },
+    "tests/test_b1_proxy_replay.py": {
+      "sha256": "7737124157541cee246e401261834105c700dcb151a45f37d5e44e963aac0204",
+      "bytes": 9732
+    },
+    "tests/test_b2_randomized_checks.py": {
+      "sha256": "75cf180cee0217e53113511bcaf0805b968e12480bae86e6e2cae12dd44c8284",
+      "bytes": 4881
+    },
+    "tests/test_b2_randomized_model_scoring.py": {
+      "sha256": "a6076eba415add1db2b9418ca1ae1cd23ae2ef9fa197d6d3fd7fa4f483eb3af2",
+      "bytes": 3932
+    },
+    "tests/test_sensor_variants.py": {
+      "sha256": "119e8de5f099c5ad4f7d2f17f965862f68ac5d170f1ca82f8343c575a887ef35",
+      "bytes": 991
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/01_real_process.png": {
+      "sha256": "6482c691036c980add906cb585b66e3d06b6e2b154253b18991366a0c23cf436",
+      "bytes": 232161
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/01_real_process_events.csv": {
+      "sha256": "28531fa507bc3d303e340d96fb6f011a683e27049b759032b83b889aa77ef980",
+      "bytes": 1838
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/02_constructed_fallback.png": {
+      "sha256": "fe7fc122f727a0e1f0e9d1abf6fd8191cfab1b8a09d0db765727a9792ffa7586",
+      "bytes": 154668
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/02_constructed_fallback_events.csv": {
+      "sha256": "32de09211d2089565e52359e2c034a09fc8d8853e21684540677be0758de9d70",
+      "bytes": 1060
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/03_feedback_gap.png": {
+      "sha256": "02c1a8b30c5014d1b2a136a8dd367dcc54d54fe530ab266a64557f414797d9b4",
+      "bytes": 161048
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/03_feedback_gap_events.csv": {
+      "sha256": "171fac43c6f5fc4454d2863b08a5b2df65cd0aa4d6b9157894143eb1c781e28c",
+      "bytes": 1388
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/ACCEPTANCE_MATRIX.csv": {
+      "sha256": "70d728a701de4a5d2b065361465cd42e56d557a5fd173717eb288e75d61f0fa5",
+      "bytes": 2723
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/ACCEPTANCE_TESTS.csv": {
+      "sha256": "7b02b4fe16ba5014f8acb658add8961713b20d458f64daf508cdb4203361827d",
+      "bytes": 2148
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/BUNDLE_PROVENANCE.json": {
+      "sha256": "3a1cde8cc365071b71af9b1145e3646ee490fe7a77a6050d09ab3385963b48eb",
+      "bytes": 2512
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/CASE_AUDIT.csv": {
+      "sha256": "4fef8b4957abad911b764c11d0b7f5cfcb27aca0b3b4acf63143ff9dfd65fb24",
+      "bytes": 61306
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/EVIDENCE_CHECK.json": {
+      "sha256": "1c8bb99e08889ff7354e1bc1d8122820b903979a72d82484002dd2cb28cacce8",
+      "bytes": 1949
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/EXPORT_AUDIT.json": {
+      "sha256": "44140722d2f66a4670aff9782c553b2b0d77471bb5e940e705e1d96e532a36c4",
+      "bytes": 794
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/EXPORT_INVENTORY.csv": {
+      "sha256": "76f654d04a642aab2ded3dc03639aa8183e95f67fd320160ceff96c02eb2d10a",
+      "bytes": 2646
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/EXPORT_METRICS.json": {
+      "sha256": "4484e66ef212350190789a22c5a2806dad51d12274163adb885be8f6e153843e",
+      "bytes": 466
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/FIELD_CATALOG.csv": {
+      "sha256": "63fa87dbc1d882960495822f6ce60cef87aa292139ccc6a72fc605cfec9eb62d",
+      "bytes": 6334
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/README.md": {
+      "sha256": "278be3ff335e3d5598f052882c75202833921c7ab16fd40086590abefdb1416f",
+      "bytes": 6645
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/STANDARD_FILE_CHECKS.csv": {
+      "sha256": "125e2b8285596ab2c2696f5d9deaa95f9496a68a2fbd6c79e612a04942906037",
+      "bytes": 5173
+    },
+    "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/TEST_CHECK.json": {
+      "sha256": "6f8f4daa0c0e85a4b5e76426d43590fc7b6ff26a3b586f3a998a0bd639cf252e",
+      "bytes": 1118
+    },
+    "scripts/build_b2_handoff.py": {
+      "sha256": "cc76c5890a4ae5e349285231d82861fd6a804e34cf2854228432934541b3ce11",
+      "bytes": 871
+    },
+    "scripts/render_b2_handoff_evidence.py": {
+      "sha256": "17cd5d5c133816af9457f2fc5de149372a4c4a25243988a4d8ae0112ec0c578a",
+      "bytes": 13254
+    },
+    "src/fogguard/evaluation/handoff_bundle.py": {
+      "sha256": "79a9f5066bd551814b333bb86d0f11596888a8cb1ebc9bf14c2c2afd15df712b",
+      "bytes": 14848
+    },
+    "tests/test_b2_handoff_bundle.py": {
+      "sha256": "baf648f1024c36e8a9de35a50cbdaecf7049234dad0a1afe20eb9b7cc85f7568",
+      "bytes": 4369
+    }
+  },
+  "supplement": "B2 standard export audit, explicit acceptance gaps, English process evidence"
+}

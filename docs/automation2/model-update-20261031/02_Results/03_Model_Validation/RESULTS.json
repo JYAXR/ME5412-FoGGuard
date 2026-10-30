@@ -1,0 +1,478 @@
+{
+  "schema": "fogguard.b2.randomized_model_evaluation.v1",
+  "scope": "Previously inspected development participants; no retraining; not independent TEST",
+  "model_hashes": {
+    "ankle_history_rf": "40604108d72e0e360cb25a873020acb9316bd1264a0d1f4e44efc075ecb738f3",
+    "bilateral_rf": "72c396fd322339542bcb5fbbd5e34de4fefb1b05c1fb5df8a16efdbc0e23dffc",
+    "ankle_cnn": "2234ff21b65f5c566ed60065f6615f69cab939bbcaead227a011bebe70c88e82",
+    "current_direction": "a612c8d8eeed2ab76addecbdd67848d57a18e0f32bef3f8512ed72737a14f8bd"
+  },
+  "sample_plan_sha256": "9656e98df95d4d9971017750375c779f4791ea3b72745e5fb38d10895ee5767a",
+  "seed": 20261030,
+  "sample_clips": 24,
+  "planned_windows": 960,
+  "truth_runtime_separated": true,
+  "synthetic_example_check": [
+    {
+      "model": "ankle_history_rf",
+      "rows": 11,
+      "status": "PASS"
+    },
+    {
+      "model": "bilateral_rf",
+      "rows": 11,
+      "status": "PASS"
+    },
+    {
+      "model": "ankle_cnn",
+      "rows": 11,
+      "status": "PASS"
+    },
+    {
+      "model": "current_direction",
+      "rows": 11,
+      "status": "PASS"
+    }
+  ],
+  "python": "3.12.1",
+  "numpy": "2.5.4",
+  "pandas": "2.3.3",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "joblib": "1.6.0",
+  "torch": "2.15.0+cpu",
+  "abnormal_input_accepted_or_invalid_output_runs": 24,
+  "invalid_emitted_windows": 0,
+  "no_runtime_rows_in_clean_or_noise_runs": 0,
+  "no_scored_output_in_clean_or_noise_runs": 15,
+  "out_of_grid_scored_predictions": 0,
+  "metrics": [
+    {
+      "model": "ankle_cnn",
+      "condition": "clean",
+      "planned_windows": 960,
+      "supported_windows": 920,
+      "coverage": 0.9583333333333334,
+      "unsupported_positive_windows": 0,
+      "TP": 113,
+      "FP": 65,
+      "FN": 76,
+      "TN": 666,
+      "precision": 0.6348314606741573,
+      "recall": 0.5978835978835979,
+      "f1": 0.6158038147138964,
+      "accuracy": 0.8467391304347827
+    },
+    {
+      "model": "ankle_cnn",
+      "condition": "noise_high",
+      "planned_windows": 960,
+      "supported_windows": 920,
+      "coverage": 0.9583333333333334,
+      "unsupported_positive_windows": 0,
+      "TP": 137,
+      "FP": 186,
+      "FN": 52,
+      "TN": 545,
+      "precision": 0.4241486068111455,
+      "recall": 0.7248677248677249,
+      "f1": 0.53515625,
+      "accuracy": 0.741304347826087
+    },
+    {
+      "model": "ankle_cnn",
+      "condition": "noise_low",
+      "planned_windows": 960,
+      "supported_windows": 920,
+      "coverage": 0.9583333333333334,
+      "unsupported_positive_windows": 0,
+      "TP": 115,
+      "FP": 79,
+      "FN": 74,
+      "TN": 652,
+      "precision": 0.5927835051546392,
+      "recall": 0.6084656084656085,
+      "f1": 0.6005221932114883,
+      "accuracy": 0.8336956521739131
+    },
+    {
+      "model": "ankle_cnn",
+      "condition": "right_gyro_gap",
+      "planned_windows": 960,
+      "supported_windows": 920,
+      "coverage": 0.9583333333333334,
+      "unsupported_positive_windows": 0,
+      "TP": 113,
+      "FP": 65,
+      "FN": 76,
+      "TN": 666,
+      "precision": 0.6348314606741573,
+      "recall": 0.5978835978835979,
+      "f1": 0.6158038147138964,
+      "accuracy": 0.8467391304347827
+    },
+    {
+      "model": "ankle_history_rf",
+      "condition": "clean",
+      "planned_windows": 960,
+      "supported_windows": 920,
+      "coverage": 0.9583333333333334,
+      "unsupported_positive_windows": 0,
+      "TP": 173,
+      "FP": 138,
+      "FN": 16,
+      "TN": 593,
+      "precision": 0.5562700964630225,
+      "recall": 0.9153439153439153,
+      "f1": 0.692,
+      "accuracy": 0.8326086956521739
+    },
+    {
+      "model": "ankle_history_rf",
+      "condition": "noise_high",
+      "planned_windows": 960,
+      "supported_windows": 920,
+      "coverage": 0.9583333333333334,
+      "unsupported_positive_windows": 0,
+      "TP": 182,
+      "FP": 233,
+      "FN": 7,
+      "TN": 498,
+      "precision": 0.43855421686746987,
+      "recall": 0.9629629629629629,
+      "f1": 0.6026490066225165,
+      "accuracy": 0.7391304347826086
+    },
+    {
+      "model": "ankle_history_rf",
+      "condition": "noise_low",
+      "planned_windows": 960,
+      "supported_windows": 920,
+      "coverage": 0.9583333333333334,
+      "unsupported_positive_windows": 0,
+      "TP": 166,
+      "FP": 178,
+      "FN": 23,
+      "TN": 553,
+      "precision": 0.48255813953488375,
+      "recall": 0.8783068783068783,
+      "f1": 0.6228893058161351,
+      "accuracy": 0.7815217391304348
+    },
+    {
+      "model": "ankle_history_rf",
+      "condition": "right_gyro_gap",
+      "planned_windows": 960,
+      "supported_windows": 920,
+      "coverage": 0.9583333333333334,
+      "unsupported_positive_windows": 0,
+      "TP": 173,
+      "FP": 138,
+      "FN": 16,
+      "TN": 593,
+      "precision": 0.5562700964630225,
+      "recall": 0.9153439153439153,
+      "f1": 0.692,
+      "accuracy": 0.8326086956521739
+    },
+    {
+      "model": "bilateral_rf",
+      "condition": "clean",
+      "planned_windows": 960,
+      "supported_windows": 920,
+      "coverage": 0.9583333333333334,
+      "unsupported_positive_windows": 0,
+      "TP": 160,
+      "FP": 121,
+      "FN": 29,
+      "TN": 610,
+      "precision": 0.5693950177935944,
+      "recall": 0.8465608465608465,
+      "f1": 0.6808510638297872,
+      "accuracy": 0.8369565217391305
+    },
+    {
+      "model": "bilateral_rf",
+      "condition": "noise_high",
+      "planned_windows": 960,
+      "supported_windows": 920,
+      "coverage": 0.9583333333333334,
+      "unsupported_positive_windows": 0,
+      "TP": 157,
+      "FP": 215,
+      "FN": 32,
+      "TN": 516,
+      "precision": 0.4220430107526882,
+      "recall": 0.8306878306878307,
+      "f1": 0.5597147950089126,
+      "accuracy": 0.7315217391304348
+    },
+    {
+      "model": "bilateral_rf",
+      "condition": "noise_low",
+      "planned_windows": 960,
+      "supported_windows": 920,
+      "coverage": 0.9583333333333334,
+      "unsupported_positive_windows": 0,
+      "TP": 160,
+      "FP": 204,
+      "FN": 29,
+      "TN": 527,
+      "precision": 0.43956043956043955,
+      "recall": 0.8465608465608465,
+      "f1": 0.5786618444846293,
+      "accuracy": 0.7467391304347826
+    },
+    {
+      "model": "bilateral_rf",
+      "condition": "right_gyro_gap",
+      "planned_windows": 960,
+      "supported_windows": 759,
+      "coverage": 0.790625,
+      "unsupported_positive_windows": 29,
+      "TP": 143,
+      "FP": 99,
+      "FN": 17,
+      "TN": 500,
+      "precision": 0.5909090909090909,
+      "recall": 0.89375,
+      "f1": 0.7114427860696517,
+      "accuracy": 0.847167325428195
+    },
+    {
+      "model": "current_direction",
+      "condition": "clean",
+      "planned_windows": 960,
+      "supported_windows": 880,
+      "input_coverage": 0.9166666666666666,
+      "known_target_windows": 514,
+      "accepted_known_windows": 411,
+      "known_accuracy_including_rejection": 0.6809338521400778,
+      "known_accepted_coverage": 0.7996108949416343,
+      "accepted_only_accuracy": 0.851581508515815,
+      "per_class": {
+        "straight": {
+          "n": 238,
+          "recall": 0.9495798319327731
+        },
+        "left": {
+          "n": 120,
+          "recall": 0.5916666666666667
+        },
+        "right": {
+          "n": 156,
+          "recall": 0.33974358974358976
+        }
+      }
+    },
+    {
+      "model": "current_direction",
+      "condition": "noise_high",
+      "planned_windows": 960,
+      "supported_windows": 880,
+      "input_coverage": 0.9166666666666666,
+      "known_target_windows": 514,
+      "accepted_known_windows": 410,
+      "known_accuracy_including_rejection": 0.6673151750972762,
+      "known_accepted_coverage": 0.7976653696498055,
+      "accepted_only_accuracy": 0.8365853658536585,
+      "per_class": {
+        "straight": {
+          "n": 238,
+          "recall": 0.9453781512605042
+        },
+        "left": {
+          "n": 120,
+          "recall": 0.5666666666666667
+        },
+        "right": {
+          "n": 156,
+          "recall": 0.32051282051282054
+        }
+      }
+    },
+    {
+      "model": "current_direction",
+      "condition": "noise_low",
+      "planned_windows": 960,
+      "supported_windows": 880,
+      "input_coverage": 0.9166666666666666,
+      "known_target_windows": 514,
+      "accepted_known_windows": 412,
+      "known_accuracy_including_rejection": 0.6828793774319066,
+      "known_accepted_coverage": 0.8015564202334631,
+      "accepted_only_accuracy": 0.8519417475728155,
+      "per_class": {
+        "straight": {
+          "n": 238,
+          "recall": 0.9495798319327731
+        },
+        "left": {
+          "n": 120,
+          "recall": 0.6
+        },
+        "right": {
+          "n": 156,
+          "recall": 0.33974358974358976
+        }
+      }
+    },
+    {
+      "model": "current_direction",
+      "condition": "right_gyro_gap",
+      "planned_windows": 960,
+      "supported_windows": 880,
+      "input_coverage": 0.9166666666666666,
+      "known_target_windows": 514,
+      "accepted_known_windows": 411,
+      "known_accuracy_including_rejection": 0.6809338521400778,
+      "known_accepted_coverage": 0.7996108949416343,
+      "accepted_only_accuracy": 0.851581508515815,
+      "per_class": {
+        "straight": {
+          "n": 238,
+          "recall": 0.9495798319327731
+        },
+        "left": {
+          "n": 120,
+          "recall": 0.5916666666666667
+        },
+        "right": {
+          "n": 156,
+          "recall": 0.33974358974358976
+        }
+      }
+    },
+    {
+      "model": "fused_direction",
+      "condition": "clean",
+      "planned_windows": 960,
+      "supported_windows": 880,
+      "input_coverage": 0.9166666666666666,
+      "known_target_windows": 514,
+      "accepted_known_windows": 255,
+      "known_accuracy_including_rejection": 0.44357976653696496,
+      "known_accepted_coverage": 0.4961089494163424,
+      "accepted_only_accuracy": 0.8941176470588236,
+      "per_class": {
+        "straight": {
+          "n": 238,
+          "recall": 0.6596638655462185
+        },
+        "left": {
+          "n": 120,
+          "recall": 0.24166666666666667
+        },
+        "right": {
+          "n": 156,
+          "recall": 0.2692307692307692
+        }
+      }
+    }
+  ],
+  "paired": [
+    {
+      "model": "ankle_cnn",
+      "condition": "noise_low",
+      "paired_windows": 920,
+      "changed_predictions": 24,
+      "clean_accuracy": 0.8467391304347827,
+      "perturbed_accuracy": 0.8336956521739131
+    },
+    {
+      "model": "ankle_cnn",
+      "condition": "noise_high",
+      "paired_windows": 920,
+      "changed_predictions": 155,
+      "clean_accuracy": 0.8467391304347827,
+      "perturbed_accuracy": 0.741304347826087
+    },
+    {
+      "model": "ankle_cnn",
+      "condition": "right_gyro_gap",
+      "paired_windows": 920,
+      "changed_predictions": 0,
+      "clean_accuracy": 0.8467391304347827,
+      "perturbed_accuracy": 0.8467391304347827
+    },
+    {
+      "model": "ankle_history_rf",
+      "condition": "noise_low",
+      "paired_windows": 920,
+      "changed_predictions": 51,
+      "clean_accuracy": 0.8326086956521739,
+      "perturbed_accuracy": 0.7815217391304348
+    },
+    {
+      "model": "ankle_history_rf",
+      "condition": "noise_high",
+      "paired_windows": 920,
+      "changed_predictions": 104,
+      "clean_accuracy": 0.8326086956521739,
+      "perturbed_accuracy": 0.7391304347826086
+    },
+    {
+      "model": "ankle_history_rf",
+      "condition": "right_gyro_gap",
+      "paired_windows": 920,
+      "changed_predictions": 0,
+      "clean_accuracy": 0.8326086956521739,
+      "perturbed_accuracy": 0.8326086956521739
+    },
+    {
+      "model": "bilateral_rf",
+      "condition": "noise_low",
+      "paired_windows": 920,
+      "changed_predictions": 87,
+      "clean_accuracy": 0.8369565217391305,
+      "perturbed_accuracy": 0.7467391304347826
+    },
+    {
+      "model": "bilateral_rf",
+      "condition": "noise_high",
+      "paired_windows": 920,
+      "changed_predictions": 115,
+      "clean_accuracy": 0.8369565217391305,
+      "perturbed_accuracy": 0.7315217391304348
+    },
+    {
+      "model": "bilateral_rf",
+      "condition": "right_gyro_gap",
+      "paired_windows": 759,
+      "changed_predictions": 0,
+      "clean_accuracy": 0.847167325428195,
+      "perturbed_accuracy": 0.847167325428195
+    },
+    {
+      "model": "current_direction",
+      "condition": "noise_low",
+      "paired_windows": 514,
+      "changed_predictions": 6,
+      "clean_accuracy": 0.6809338521400778,
+      "perturbed_accuracy": 0.6828793774319066
+    },
+    {
+      "model": "current_direction",
+      "condition": "noise_high",
+      "paired_windows": 514,
+      "changed_predictions": 14,
+      "clean_accuracy": 0.6809338521400778,
+      "perturbed_accuracy": 0.6673151750972762
+    },
+    {
+      "model": "current_direction",
+      "condition": "right_gyro_gap",
+      "paired_windows": 514,
+      "changed_predictions": 0,
+      "clean_accuracy": 0.6809338521400778,
+      "perturbed_accuracy": 0.6809338521400778
+    }
+  ],
+  "limitations": [
+    "Development sample selected after prior model development; not fresh blind test",
+    "Windows are correlated and clips are not population-representative",
+    "Time latency is offline convention, not measured processing or hardware latency",
+    "Noise levels are engineering perturbations, not validated real sensor noise",
+    "Model accuracy is not cue effectiveness or patient treatment efficacy"
+  ]
+}

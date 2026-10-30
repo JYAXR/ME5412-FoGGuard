@@ -1,0 +1,44 @@
+{
+  "latest_full_pytest": {
+    "tests": 368,
+    "passed": 368,
+    "failed": 0,
+    "junit_sha256": "0621ec677e2d296d892d7cdd4cd1405683ed6c62e3f7b1b2cefb8eec8558d714"
+  },
+  "focused_acceptance_tests": {
+    "passed": 36,
+    "evidence": "ACCEPTANCE_TESTS.csv"
+  },
+  "full_delivery_check_before_three_additional_clock_tests": {
+    "schema": "fogguard.automation2.checks.v1",
+    "checks": {
+      "pytest": {
+        "exit_code": 0
+      },
+      "ruff": {
+        "exit_code": 0
+      },
+      "baseline_evaluation": {
+        "exit_code": 0
+      },
+      "integrated_demo": {
+        "exit_code": 0
+      },
+      "engineering_comparison": {
+        "exit_code": 0
+      },
+      "engineering_verification": {
+        "exit_code": 0
+      },
+      "real_data_audit": {
+        "status": "NOT_RUN",
+        "reason": "Raw data and OOF inputs omitted"
+      }
+    },
+    "real_data_retrained": false
+  },
+  "ruff": "PASS",
+  "clinical_or_step_accuracy_validation": "NOT_EVALUABLE",
+  "new_machine_reproduction": "NOT_RUN",
+  "industrial_design_acceptance": "NOT_RUN"
+}

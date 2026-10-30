@@ -1,0 +1,13 @@
+{
+  "cases": 48,
+  "strategy_runs": 240,
+  "command_rows": 69147,
+  "engineering_audit": "PASS",
+  "model_classification": "Use the separate locked A-group report and model-update evaluation",
+  "new_independent_test": false,
+  "step_accuracy": null,
+  "forward_success_rate": null,
+  "clinical_benefit": null,
+  "not_implemented": "Observed alternating footstep completion",
+  "per_case_metrics": "real/*/metrics.json and constructed/*/metrics.json"
+}

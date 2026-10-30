@@ -1,0 +1,10 @@
+{
+  "scope": "constructed source predictions; no trained model accuracy measured",
+  "seed": 20261030,
+  "trials": 32,
+  "records_per_trial": 2,
+  "checks": 320,
+  "pass": 320,
+  "fail": 0,
+  "perception_rows": 10560
+}

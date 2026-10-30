@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "generated_clips_reproduced": 72,
+  "metrics_recounted": 12,
+  "planned_model_runs": 288,
+  "source_labels_in_generated_inputs": false
+}

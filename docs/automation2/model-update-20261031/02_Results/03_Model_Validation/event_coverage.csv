@@ -1,0 +1,13 @@
+﻿model,condition,events,overlapped,left_censored,preexisting_alarm,delay_count,median_delay_s
+ankle_cnn,clean,9,7,7,0,2,0.358333333333519
+ankle_cnn,noise_high,9,7,7,0,2,0.358333333333519
+ankle_cnn,noise_low,9,7,7,0,2,0.358333333333519
+ankle_cnn,right_gyro_gap,9,7,7,0,2,0.358333333333519
+ankle_history_rf,clean,9,9,7,1,1,0.4833333333340306
+ankle_history_rf,noise_high,9,9,7,1,1,0.4833333333340306
+ankle_history_rf,noise_low,9,9,7,1,1,0.4833333333340306
+ankle_history_rf,right_gyro_gap,9,9,7,1,1,0.4833333333340306
+bilateral_rf,clean,9,9,7,0,2,0.608333333333519
+bilateral_rf,noise_high,9,9,7,0,2,0.608333333333519
+bilateral_rf,noise_low,9,9,7,0,2,0.608333333333519
+bilateral_rf,right_gyro_gap,9,9,7,0,2,1.108333333333519

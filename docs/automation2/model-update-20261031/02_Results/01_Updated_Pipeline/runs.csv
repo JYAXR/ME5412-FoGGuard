@@ -1,0 +1,241 @@
+case,origin,strategy,starts,stops,active_s,visual_intensity_s,audio_volume_s,fade_entries,fallback_entries,fallback_timeout_returns,post_last_fog_active_s,nonfog_active_s,unclosed_commands,lifecycle_errors,unsafe_active_rows,actual_steps_claimed,spacing_outside_range_rows,measured_spacing_error_m,stop_reasons,receiver_errors
+clip_000,real_model_outputs_and_imu_proxy,fixed,1,1,0.48333333299999914,0.48333333299999914,0.28999999979999946,0,0,0,,0.48333333299999914,0,0,0,0,0,,"{""perception_unavailable"": 1}",0
+clip_000,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_000,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_000,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_000,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_001,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_001,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_001,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_001,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_001,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_002,real_model_outputs_and_imu_proxy,fixed,3,3,2.4666666659999805,2.4666666659999805,1.4799999995999884,0,0,0,0.48333333299999026,0.48333333299999026,0,0,0,0,0,,"{""perception_unavailable"": 3}",0
+clip_002,real_model_outputs_and_imu_proxy,feedback,1,1,0.48333333299999026,0.48333333299999026,0.28999999979999413,0,0,0,0.0,0.0,0,0,0,0,0,,"{""perception_unavailable"": 1}",0
+clip_002,real_model_outputs_and_imu_proxy,countdown,1,1,0.48333333299999026,0.48333333299999026,0.28999999979999413,0,0,0,0.0,0.0,0,0,0,0,0,,"{""perception_unavailable"": 1}",0
+clip_002,real_model_outputs_and_imu_proxy,march,1,1,0.48333333299999026,0.48333333299999026,0.28999999979999413,0,0,0,0.0,0.0,0,0,0,0,0,,"{""perception_unavailable"": 1}",0
+clip_002,real_model_outputs_and_imu_proxy,no_fade,1,1,0.48333333299999026,0.48333333299999026,0.28999999979999413,0,0,0,0.0,0.0,0,0,0,0,0,,"{""perception_unavailable"": 1}",0
+clip_003,real_model_outputs_and_imu_proxy,fixed,1,1,1.4833333330000187,1.4833333330000187,0.8899999998000111,0,0,0,1.4833333330000187,1.4833333330000187,0,0,0,0,0,,"{""perception_unavailable"": 1}",0
+clip_003,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0,0,0,0,,{},0
+clip_003,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0,0,0,0,,{},0
+clip_003,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0,0,0,0,,{},0
+clip_003,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0,0,0,0,,{},0
+clip_004,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_004,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_004,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_004,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_004,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_005,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_005,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_005,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_005,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_005,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_006,real_model_outputs_and_imu_proxy,fixed,1,1,1.483333334000008,1.483333334000008,0.8900000004000048,0,0,0,0.0,0.0,0,0,0,0,0,,"{""perception_unavailable"": 1}",0
+clip_006,real_model_outputs_and_imu_proxy,feedback,1,1,0.9833333340000081,0.9833333340000081,0.5900000004000048,0,0,0,0.0,0.0,0,0,0,0,0,,"{""perception_unavailable"": 1}",0
+clip_006,real_model_outputs_and_imu_proxy,countdown,1,1,0.9833333340000081,0.9833333340000081,0.5900000004000048,0,0,0,0.0,0.0,0,0,0,0,0,,"{""perception_unavailable"": 1}",0
+clip_006,real_model_outputs_and_imu_proxy,march,1,1,0.9833333340000081,0.9833333340000081,0.5900000004000048,0,0,0,0.0,0.0,0,0,0,0,0,,"{""perception_unavailable"": 1}",0
+clip_006,real_model_outputs_and_imu_proxy,no_fade,1,1,0.9833333340000081,0.9833333340000081,0.5900000004000048,0,0,0,0.0,0.0,0,0,0,0,0,,"{""perception_unavailable"": 1}",0
+clip_007,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_007,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_007,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_007,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_007,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_008,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_008,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_008,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_008,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_008,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_009,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_009,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_009,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_009,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_009,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_010,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_010,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_010,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_010,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_010,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_011,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_011,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_011,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_011,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_011,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_012,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_012,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_012,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_012,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_012,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_013,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_013,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_013,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_013,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_013,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_014,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_014,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_014,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_014,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_014,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_015,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_015,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_015,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_015,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_015,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_016,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_016,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_016,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_016,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_016,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_017,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_017,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_017,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_017,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_017,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_018,real_model_outputs_and_imu_proxy,fixed,2,2,5.966666665999583,5.966666665999583,3.5799999995997496,0,0,0,5.066666665999492,5.066666665999492,0,0,0,0,0,,"{""perception_unavailable"": 2}",0
+clip_018,real_model_outputs_and_imu_proxy,feedback,2,2,4.966666665999583,4.412499999266212,2.6474999995597273,2,0,0,4.566666665999492,4.566666665999492,0,0,0,0,0,,"{""perception_unavailable"": 2}",0
+clip_018,real_model_outputs_and_imu_proxy,countdown,2,2,4.966666665999583,4.412499999266212,2.6474999995597273,2,0,0,4.566666665999492,4.566666665999492,0,0,0,0,0,,"{""perception_unavailable"": 2}",0
+clip_018,real_model_outputs_and_imu_proxy,march,2,2,4.966666665999583,4.412499999266212,2.6474999995597273,2,0,0,4.566666665999492,4.566666665999492,0,0,0,0,0,,"{""perception_unavailable"": 2}",0
+clip_018,real_model_outputs_and_imu_proxy,no_fade,2,2,4.966666665999583,4.966666665999583,2.9799999995997495,0,0,0,4.566666665999492,4.566666665999492,0,0,0,0,0,,"{""perception_unavailable"": 2}",0
+clip_019,real_model_outputs_and_imu_proxy,fixed,2,2,3.466666668000471,3.466666668000471,2.0800000008002826,0,0,0,,3.466666668000471,0,0,0,0,0,,"{""perception_unavailable"": 2}",0
+clip_019,real_model_outputs_and_imu_proxy,feedback,1,1,1.9833333340002355,1.9833333340002355,1.1900000004001414,0,0,0,,1.9833333340002355,0,0,0,0,0,,"{""feedback_unavailable"": 1}",0
+clip_019,real_model_outputs_and_imu_proxy,countdown,1,1,1.9833333340002355,1.9833333340002355,1.1900000004001414,0,0,0,,1.9833333340002355,0,0,0,0,0,,"{""feedback_unavailable"": 1}",0
+clip_019,real_model_outputs_and_imu_proxy,march,1,1,1.9833333340002355,1.9833333340002355,1.1900000004001414,0,0,0,,1.9833333340002355,0,0,0,0,0,,"{""feedback_unavailable"": 1}",0
+clip_019,real_model_outputs_and_imu_proxy,no_fade,1,1,1.9833333340002355,1.9833333340002355,1.1900000004001414,0,0,0,,1.9833333340002355,0,0,0,0,0,,"{""feedback_unavailable"": 1}",0
+clip_020,real_model_outputs_and_imu_proxy,fixed,2,2,8.0,8.0,4.8,0,0,0,3.7833333339999626,3.7833333339999626,0,0,0,0,0,,"{""perception_unavailable"": 2}",0
+clip_020,real_model_outputs_and_imu_proxy,feedback,2,2,7.0,6.898611111155573,4.1391666666933435,1,0,0,2.7833333339999626,2.7833333339999626,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""perception_unavailable"": 1}",0
+clip_020,real_model_outputs_and_imu_proxy,countdown,2,2,7.0,6.898611111155573,4.1391666666933435,1,0,0,2.7833333339999626,2.7833333339999626,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""perception_unavailable"": 1}",0
+clip_020,real_model_outputs_and_imu_proxy,march,2,2,7.0,6.898611111155573,4.1391666666933435,1,0,0,2.7833333339999626,2.7833333339999626,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""perception_unavailable"": 1}",0
+clip_020,real_model_outputs_and_imu_proxy,no_fade,2,2,7.0,7.0,4.2,0,0,0,2.7833333339999626,2.7833333339999626,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""perception_unavailable"": 1}",0
+clip_021,real_model_outputs_and_imu_proxy,fixed,2,2,7.5,7.5,4.5,0,0,0,5.283333332999973,5.283333332999973,0,0,0,0,0,,"{""detection_recovery_completed"": 2}",0
+clip_021,real_model_outputs_and_imu_proxy,feedback,2,2,7.5,6.594444444355506,3.9566666666133035,2,0,0,5.283333332999973,5.283333332999973,0,0,0,0,0,,"{""detection_recovery_completed"": 2}",0
+clip_021,real_model_outputs_and_imu_proxy,countdown,2,2,7.5,6.594444444355506,3.9566666666133035,2,0,0,5.283333332999973,5.283333332999973,0,0,0,0,0,,"{""detection_recovery_completed"": 2}",0
+clip_021,real_model_outputs_and_imu_proxy,march,2,2,7.5,6.594444444355506,3.9566666666133035,2,0,0,5.283333332999973,5.283333332999973,0,0,0,0,0,,"{""detection_recovery_completed"": 2}",0
+clip_021,real_model_outputs_and_imu_proxy,no_fade,2,2,7.5,7.5,4.5,0,0,0,5.283333332999973,5.283333332999973,0,0,0,0,0,,"{""detection_recovery_completed"": 2}",0
+clip_022,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_022,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_022,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_022,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_022,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_023,real_model_outputs_and_imu_proxy,fixed,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_023,real_model_outputs_and_imu_proxy,feedback,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_023,real_model_outputs_and_imu_proxy,countdown,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_023,real_model_outputs_and_imu_proxy,march,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+clip_023,real_model_outputs_and_imu_proxy,no_fade,0,0,0.0,0.0,0.0,0,0,0,,0.0,0,0,0,0,0,,{},0
+low_motion_straight,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_straight,constructed_rule_fixture,feedback,1,1,15.000000000000002,15.000000000000002,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_straight,constructed_rule_fixture,countdown,1,1,15.000000000000002,15.000000000000002,9.0,0,1,1,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_straight,constructed_rule_fixture,march,1,1,15.000000000000002,15.000000000000002,9.0,0,1,1,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_straight,constructed_rule_fixture,no_fade,1,1,15.000000000000002,15.000000000000002,9.0,0,1,1,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_left,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_left,constructed_rule_fixture,feedback,1,1,15.000000000000002,15.000000000000002,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_left,constructed_rule_fixture,countdown,1,1,15.000000000000002,15.000000000000002,9.0,0,1,1,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_left,constructed_rule_fixture,march,1,1,15.000000000000002,15.000000000000002,9.0,0,1,1,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_left,constructed_rule_fixture,no_fade,1,1,15.000000000000002,15.000000000000002,9.0,0,1,1,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_right,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_right,constructed_rule_fixture,feedback,1,1,15.000000000000002,15.000000000000002,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_right,constructed_rule_fixture,countdown,1,1,15.000000000000002,15.000000000000002,9.0,0,1,1,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_right,constructed_rule_fixture,march,1,1,15.000000000000002,15.000000000000002,9.0,0,1,1,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+low_motion_right,constructed_rule_fixture,no_fade,1,1,15.000000000000002,15.000000000000002,9.0,0,1,1,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+recovery_early_straight,constructed_rule_fixture,fixed,1,1,6.4,6.4,3.84,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_straight,constructed_rule_fixture,feedback,1,1,5.9,5.447222222177778,3.2683333333066664,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_straight,constructed_rule_fixture,countdown,1,1,5.9,5.447222222177778,3.2683333333066664,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_straight,constructed_rule_fixture,march,1,1,5.9,5.447222222177778,3.2683333333066664,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_straight,constructed_rule_fixture,no_fade,1,1,5.9,5.9,3.54,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_left,constructed_rule_fixture,fixed,1,1,6.4,6.4,3.84,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_left,constructed_rule_fixture,feedback,1,1,5.9,5.447222222177778,3.2683333333066664,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_left,constructed_rule_fixture,countdown,1,1,5.9,5.447222222177778,3.2683333333066664,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_left,constructed_rule_fixture,march,1,1,5.9,5.447222222177778,3.2683333333066664,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_left,constructed_rule_fixture,no_fade,1,1,5.9,5.9,3.54,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_right,constructed_rule_fixture,fixed,1,1,6.4,6.4,3.84,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_right,constructed_rule_fixture,feedback,1,1,5.9,5.447222222177778,3.2683333333066664,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_right,constructed_rule_fixture,countdown,1,1,5.9,5.447222222177778,3.2683333333066664,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_right,constructed_rule_fixture,march,1,1,5.9,5.447222222177778,3.2683333333066664,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_early_right,constructed_rule_fixture,no_fade,1,1,5.9,5.9,3.54,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_straight,constructed_rule_fixture,fixed,1,1,10.399999999999999,10.399999999999999,6.24,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_straight,constructed_rule_fixture,feedback,1,1,9.9,9.447222222177778,5.668333333306666,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_straight,constructed_rule_fixture,countdown,1,1,9.9,9.447222222177778,5.668333333306666,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_straight,constructed_rule_fixture,march,1,1,9.9,9.447222222177778,5.668333333306666,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_straight,constructed_rule_fixture,no_fade,1,1,9.9,9.9,5.9399999999999995,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_left,constructed_rule_fixture,fixed,1,1,10.399999999999999,10.399999999999999,6.24,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_left,constructed_rule_fixture,feedback,1,1,9.9,9.447222222177778,5.668333333306666,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_left,constructed_rule_fixture,countdown,1,1,9.9,9.447222222177778,5.668333333306666,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_left,constructed_rule_fixture,march,1,1,9.9,9.447222222177778,5.668333333306666,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_left,constructed_rule_fixture,no_fade,1,1,9.9,9.9,5.9399999999999995,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_right,constructed_rule_fixture,fixed,1,1,10.399999999999999,10.399999999999999,6.24,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_right,constructed_rule_fixture,feedback,1,1,9.9,9.447222222177778,5.668333333306666,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_right,constructed_rule_fixture,countdown,1,1,9.9,9.447222222177778,5.668333333306666,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_right,constructed_rule_fixture,march,1,1,9.9,9.447222222177778,5.668333333306666,1,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+recovery_late_right,constructed_rule_fixture,no_fade,1,1,9.9,9.9,5.9399999999999995,0,0,0,,,0,0,0,0,0,,"{""detection_recovery_completed"": 1}",0
+feedback_gap_straight,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+feedback_gap_straight,constructed_rule_fixture,feedback,2,2,15.766666666,15.766666666,9.4599999996,0,0,0,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+feedback_gap_straight,constructed_rule_fixture,countdown,2,2,15.766666666,15.766666666,9.4599999996,0,1,1,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+feedback_gap_straight,constructed_rule_fixture,march,2,2,15.766666666,15.766666666,9.4599999996,0,1,1,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+feedback_gap_straight,constructed_rule_fixture,no_fade,2,2,15.766666666,15.766666666,9.4599999996,0,1,1,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+feedback_gap_left,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+feedback_gap_left,constructed_rule_fixture,feedback,2,2,15.766666666,15.766666666,9.4599999996,0,0,0,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+feedback_gap_left,constructed_rule_fixture,countdown,2,2,15.766666666,15.766666666,9.4599999996,0,1,1,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+feedback_gap_left,constructed_rule_fixture,march,2,2,15.766666666,15.766666666,9.4599999996,0,1,1,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+feedback_gap_left,constructed_rule_fixture,no_fade,2,2,15.766666666,15.766666666,9.4599999996,0,1,1,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+feedback_gap_right,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+feedback_gap_right,constructed_rule_fixture,feedback,2,2,15.766666666,15.766666666,9.4599999996,0,0,0,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+feedback_gap_right,constructed_rule_fixture,countdown,2,2,15.766666666,15.766666666,9.4599999996,0,1,1,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+feedback_gap_right,constructed_rule_fixture,march,2,2,15.766666666,15.766666666,9.4599999996,0,1,1,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+feedback_gap_right,constructed_rule_fixture,no_fade,2,2,15.766666666,15.766666666,9.4599999996,0,1,1,,,0,0,0,0,0,,"{""feedback_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_straight,constructed_rule_fixture,fixed,2,2,16.783333333,16.783333333,10.0699999998,0,0,0,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_straight,constructed_rule_fixture,feedback,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,0,0,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_straight,constructed_rule_fixture,countdown,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,1,1,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_straight,constructed_rule_fixture,march,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,1,1,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_straight,constructed_rule_fixture,no_fade,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,1,1,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_left,constructed_rule_fixture,fixed,2,2,16.783333333,16.783333333,10.0699999998,0,0,0,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_left,constructed_rule_fixture,feedback,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,0,0,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_left,constructed_rule_fixture,countdown,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,1,1,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_left,constructed_rule_fixture,march,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,1,1,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_left,constructed_rule_fixture,no_fade,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,1,1,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_right,constructed_rule_fixture,fixed,2,2,16.783333333,16.783333333,10.0699999998,0,0,0,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_right,constructed_rule_fixture,feedback,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,0,0,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_right,constructed_rule_fixture,countdown,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,1,1,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_right,constructed_rule_fixture,march,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,1,1,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+unknown_direction_right,constructed_rule_fixture,no_fade,2,2,15.783333333000002,15.783333333000002,9.469999999799999,0,1,1,,,0,0,0,0,0,,"{""perception_unavailable"": 1, ""replay_ended"": 1}",0
+uncertain_motion_straight,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+uncertain_motion_straight,constructed_rule_fixture,feedback,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+uncertain_motion_straight,constructed_rule_fixture,countdown,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+uncertain_motion_straight,constructed_rule_fixture,march,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+uncertain_motion_straight,constructed_rule_fixture,no_fade,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+uncertain_motion_left,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+uncertain_motion_left,constructed_rule_fixture,feedback,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+uncertain_motion_left,constructed_rule_fixture,countdown,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+uncertain_motion_left,constructed_rule_fixture,march,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+uncertain_motion_left,constructed_rule_fixture,no_fade,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+uncertain_motion_right,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+uncertain_motion_right,constructed_rule_fixture,feedback,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+uncertain_motion_right,constructed_rule_fixture,countdown,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+uncertain_motion_right,constructed_rule_fixture,march,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+uncertain_motion_right,constructed_rule_fixture,no_fade,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_straight,constructed_rule_fixture,fixed,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_straight,constructed_rule_fixture,feedback,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_straight,constructed_rule_fixture,countdown,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_straight,constructed_rule_fixture,march,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_straight,constructed_rule_fixture,no_fade,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_left,constructed_rule_fixture,fixed,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_left,constructed_rule_fixture,feedback,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_left,constructed_rule_fixture,countdown,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_left,constructed_rule_fixture,march,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_left,constructed_rule_fixture,no_fade,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_right,constructed_rule_fixture,fixed,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_right,constructed_rule_fixture,feedback,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_right,constructed_rule_fixture,countdown,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_right,constructed_rule_fixture,march,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+normal_right,constructed_rule_fixture,no_fade,0,0,0.0,0.0,0.0,0,0,0,,,0,0,0,0,0,,{},0
+refreeze_straight,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_straight,constructed_rule_fixture,feedback,1,1,15.000000000000002,14.89861111108889,8.939166666653334,1,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_straight,constructed_rule_fixture,countdown,1,1,15.000000000000002,14.89861111108889,8.939166666653334,1,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_straight,constructed_rule_fixture,march,1,1,15.000000000000002,14.89861111108889,8.939166666653334,1,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_straight,constructed_rule_fixture,no_fade,1,1,15.000000000000002,15.000000000000002,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_left,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_left,constructed_rule_fixture,feedback,1,1,15.000000000000002,14.89861111108889,8.939166666653334,1,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_left,constructed_rule_fixture,countdown,1,1,15.000000000000002,14.89861111108889,8.939166666653334,1,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_left,constructed_rule_fixture,march,1,1,15.000000000000002,14.89861111108889,8.939166666653334,1,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_left,constructed_rule_fixture,no_fade,1,1,15.000000000000002,15.000000000000002,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_right,constructed_rule_fixture,fixed,1,1,15.0,15.0,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_right,constructed_rule_fixture,feedback,1,1,15.000000000000002,14.89861111108889,8.939166666653334,1,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_right,constructed_rule_fixture,countdown,1,1,15.000000000000002,14.89861111108889,8.939166666653334,1,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_right,constructed_rule_fixture,march,1,1,15.000000000000002,14.89861111108889,8.939166666653334,1,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
+refreeze_right,constructed_rule_fixture,no_fade,1,1,15.000000000000002,15.000000000000002,9.0,0,0,0,,,0,0,0,0,0,,"{""episode_timeout"": 1}",0
