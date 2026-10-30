@@ -1,0 +1,74 @@
+{
+  "schema": "fogguard.a2.current.bundle.v1",
+  "task": "current_direction",
+  "model_file": "model.joblib",
+  "model_sha256": "a612c8d8eeed2ab76addecbdd67848d57a18e0f32bef3f8512ed72737a14f8bd",
+  "model_bytes": 50713064,
+  "code_commit": "8fa2e98268a87d9dd8ec0cba979801fe107ef00c",
+  "code_files_git_blob_sha256": {
+    "src/fogguard/turning/learned.py": "05499f5f6dc8e0f53de4749a37ae03d45cab1f0691dc6c4c1af0bdc457c66e3e",
+    "src/fogguard/data/fogstar.py": "8bc43318d25122ba5cb3481666f76d68e13137ba1f95448ce085cce57702510b"
+  },
+  "bundle_script_sha256": "2bca50e92a7950b98a0b03819324e6c8a5822f807fd4d69c816007e6455b3b5d",
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "features": 12,
+  "trees": 300,
+  "feature_indices": [
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215
+  ],
+  "rejection_threshold": 0.0,
+  "channels": [
+    "ankleL_acc_x",
+    "ankleL_acc_y",
+    "ankleL_acc_z",
+    "ankleL_gyro_x",
+    "ankleL_gyro_y",
+    "ankleL_gyro_z",
+    "back_acc_x",
+    "back_acc_y",
+    "back_acc_z",
+    "back_gyro_x",
+    "back_gyro_y",
+    "back_gyro_z"
+  ],
+  "classes": [
+    "left",
+    "right",
+    "straight",
+    "unknown"
+  ],
+  "sample_rate_hz": 60,
+  "window_samples": 120,
+  "step_samples": 30,
+  "synthetic_sample_only": true,
+  "synthetic_smoke_check": "PASS",
+  "evaluation_scope": "TRAIN14 / development validation4; TEST not scored",
+  "known_direction_accuracy": 0.6699115044247788,
+  "known_direction_macro_f1": 0.7197309824304418,
+  "publication_exception": "User explicitly requested this current-direction model in Git",
+  "files_sha256": {
+    "model.joblib": "a612c8d8eeed2ab76addecbdd67848d57a18e0f32bef3f8512ed72737a14f8bd",
+    "training_config.json": "9ce9af3d1ac8c83418d5a733eb10a3f13bdba1d07791e5b58adb0512cf5455f6",
+    "requirements.txt": "206d67283c6ca584e147aaeb094436bfac2f8d4c953bc531979837010e06fead",
+    "synthetic_input.csv": "f58c0710c741dffcf8ab711820ba1b75c3813c2206c092820da1f90019105323",
+    "synthetic_expected.csv": "d92920b21e74d3aec8d45107a6b64f538aed2a37379f28fef64b8b37ffc376f8"
+  }
+}

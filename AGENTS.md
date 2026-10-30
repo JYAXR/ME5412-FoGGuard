@@ -31,6 +31,10 @@ Use `docs/ARCHITECTURE.md` and `docs/INTERFACE_CONTRACT.md` for module boundarie
   A1 table is development validation, not a new blind test or clinical score.
 - Do not commit raw datasets, model weights, credentials, clinical metadata,
   local absolute paths or generated run directories. Stage explicit paths.
+  Explicit user-approved exception: `models/a2/current/model.joblib` is the
+  published A2 current-direction model, accompanied by its hash, configuration,
+  tested dependencies and synthetic interface sample. This exception does not
+  authorize other weights, raw data or generated run directories.
 - Preserve dated verification evidence and release assets. Use fresh output
   directories and input/config/code hashes for new runs. Current project
   status is `docs/PROJECT_STATUS.json`; check manifests describe their own

@@ -1,0 +1,6 @@
+subject_id,session_id,task_id,window_start_s,window_end_s,available_at_s,input_valid,input_reason,task_prediction,task_confidence,direction,direction_confidence,direction_task,horizon_s,target_band_s,model_version,prediction_source
+0,0,0,0.0,1.9833333333333332,1.9833333333333332,True,valid,unknown,0.9968531460574955,unknown,0.0,current,0.0,0.0,a2-rf-v1,real_imu
+0,0,0,0.5,2.4833333333333334,2.4833333333333334,True,valid,unknown,0.9968531460574955,unknown,0.0,current,0.0,0.0,a2-rf-v1,real_imu
+0,0,0,1.0,2.9833333333333334,2.9833333333333334,True,valid,unknown,0.9968531460574955,unknown,0.0,current,0.0,0.0,a2-rf-v1,real_imu
+0,0,0,1.5,3.4833333333333334,3.4833333333333334,True,valid,unknown,0.9968531460574955,unknown,0.0,current,0.0,0.0,a2-rf-v1,real_imu
+0,0,0,2.0,3.983333333333333,3.983333333333333,True,valid,unknown,0.9968531460574955,unknown,0.0,current,0.0,0.0,a2-rf-v1,real_imu

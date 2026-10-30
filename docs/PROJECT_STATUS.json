@@ -44,6 +44,8 @@
       "task": "docs/tasks/A2.md",
       "results": "docs/a2/results.json",
       "presentation": "docs/a2/presentation/README.md",
+      "published_current_model": "models/a2/current/model.joblib",
+      "model_handoff": "models/a2/current/README.md",
       "delivery_focus": "Current direction recognition as main result; preturn retained as evidence-backed feasibility research",
       "direction_accuracy": 0.6699115044247788,
       "preturn_status": "Implemented and evaluated; both horizons have zero left/right recall",

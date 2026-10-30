@@ -13,6 +13,7 @@ FoGGuard 是 ME5412 课程项目，研究如何利用可穿戴 IMU 识别冻结�
 | 模块关系、状态和验收要求 | [系统架构](docs/ARCHITECTURE.md) |
 | 当前完成状态 | [项目状态](docs/PROJECT_STATUS.json) |
 | A2 展示图表、准确率数据与图注 | [A2 展示结果包](docs/a2/presentation/README.md) |
+| A2 已训练的当前方向模型下载与运行 | [A2 当前方向模型](models/a2/current/README.md) |
 | 环境、模型推理与工程演示 | [快速开始](docs/QUICKSTART.md) |
 | 字段、单位和时序约定 | [接口约定](docs/INTERFACE_CONTRACT.md) · [数据格式](docs/DATA_SCHEMA.md) |
 
@@ -73,4 +74,4 @@ python -X utf8 scripts/run_complete_demo.py --output-dir reports/project_demo_NE
 
 FoG-STAR 用于真实冻结识别与转向任务；运动响应代理、预设模拟响应和真实位置反馈分别记录来源。公开数据没有独立逐步前进位移真值，运动代理只能支持相应的动作判断。工程演示展示切换过程，不能作为患者恢复效果。
 
-原始数据、模型权重及生成目录不提交 Git。共享类型的变更按 [协作规则](docs/COLLABORATION.md) 评审；各模块的新适配器完成接线前，现有演示不代表四个正式算法已经全部集成。
+原始数据和生成目录不提交 Git。用户明确批准发布的 A2 当前方向模型见 `models/a2/current/`；其余权重通过交接包单独分发。共享类型的变更按 [协作规则](docs/COLLABORATION.md) 评审；各模块的新适配器完成接线前，现有演示不代表四个正式算法已经全部集成。
