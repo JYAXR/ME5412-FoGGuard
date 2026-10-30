@@ -1,0 +1,131 @@
+{
+  "schema": "fogguard.model_release.v1",
+  "date": "2026-10-30",
+  "release_url": "https://github.com/JYAXR/ME5412-FoGGuard/releases/tag/a-group-models-2026-10-30",
+  "tag": "a-group-models-2026-10-30",
+  "source_commit": "b04ea8618e155d62891ca2970fc7c028ce3b1f06",
+  "archive": "FoGGuard-A-Group-Models-20261030.zip",
+  "archive_bytes": 25118467,
+  "archive_sha256": "b3a6a69c2c9860a2dd992f1dd0169e39514f7fa4f44a6272a7fc47be1a9770bf",
+  "assets": [
+    {
+      "name": "FoGGuard-A-Group-Models-20261030.zip",
+      "size": 25118467,
+      "browser_download_url": "https://github.com/JYAXR/ME5412-FoGGuard/releases/download/a-group-models-2026-10-30/FoGGuard-A-Group-Models-20261030.zip",
+      "digest": "sha256:b3a6a69c2c9860a2dd992f1dd0169e39514f7fa4f44a6272a7fc47be1a9770bf"
+    },
+    {
+      "name": "MANIFEST.json",
+      "size": 2599,
+      "browser_download_url": "https://github.com/JYAXR/ME5412-FoGGuard/releases/download/a-group-models-2026-10-30/MANIFEST.json",
+      "digest": "sha256:56f803fc115dd335fb5557452c883ba4b3e7888d831026fb0e1c2fcdf018e52f"
+    },
+    {
+      "name": "README.md",
+      "size": 3131,
+      "browser_download_url": "https://github.com/JYAXR/ME5412-FoGGuard/releases/download/a-group-models-2026-10-30/README.md",
+      "digest": "sha256:8e64cb4d580ba1ecda1a7ef7f80cff027fef8b879533f9ae795e5a5e8eae293d"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 103,
+      "browser_download_url": "https://github.com/JYAXR/ME5412-FoGGuard/releases/download/a-group-models-2026-10-30/SHA256SUMS.txt",
+      "digest": "sha256:260aa975dab4d26285ef799cb28aceacbdc9ce036f71b9ef1c799e82d3a2d47e"
+    }
+  ],
+  "model_files_sha256": {
+    "fog-selected/ankle_history_rf/model.joblib": "40604108d72e0e360cb25a873020acb9316bd1264a0d1f4e44efc075ecb738f3",
+    "fog-selected/bilateral_rf/model.joblib": "72c396fd322339542bcb5fbbd5e34de4fefb1b05c1fb5df8a16efdbc0e23dffc",
+    "fog-selected/ankle_cnn/model.joblib": "2234ff21b65f5c566ed60065f6615f69cab939bbcaead227a011bebe70c88e82",
+    "a2-current/current/model.joblib": "a612c8d8eeed2ab76addecbdd67848d57a18e0f32bef3f8512ed72737a14f8bd"
+  },
+  "raw_patient_data_included": false,
+  "personalized_study_models_included": false,
+  "verification": {
+    "status": "PASS",
+    "original_TEST_locked_inputs_checked": 23,
+    "model_hashes_match_original_TEST_lock": true,
+    "packaged_vs_source_predictions": "exactly_equal",
+    "synthetic_prediction_rows": {
+      "ankle_history_rf": 11,
+      "bilateral_rf": 11,
+      "ankle_cnn": 11
+    },
+    "direction_rows": 11,
+    "fused_rows": 12,
+    "raw_patient_data_included": false,
+    "scope": "Synthetic interface roundtrip, not a new performance or clinical evaluation",
+    "extracted_command_checks": {
+      "status": "PASS",
+      "zip_extracted": true,
+      "file_manifest_verified": true,
+      "A1_cli_models_checked": 3,
+      "A2_current_cli_checked": true,
+      "fusion_cli_checked": true,
+      "all_outputs_match_packaged_expectations": true,
+      "input_source": "synthetic_only"
+    },
+    "anonymous_download_and_hashes": {
+      "status": "PASS",
+      "release_url": "https://github.com/JYAXR/ME5412-FoGGuard/releases/tag/a-group-models-2026-10-30",
+      "assets": [
+        {
+          "name": "FoGGuard-A-Group-Models-20261030.zip",
+          "bytes": 25118467,
+          "sha256": "b3a6a69c2c9860a2dd992f1dd0169e39514f7fa4f44a6272a7fc47be1a9770bf",
+          "anonymous_download": "PASS"
+        },
+        {
+          "name": "MANIFEST.json",
+          "bytes": 2599,
+          "sha256": "56f803fc115dd335fb5557452c883ba4b3e7888d831026fb0e1c2fcdf018e52f",
+          "anonymous_download": "PASS"
+        },
+        {
+          "name": "README.md",
+          "bytes": 3131,
+          "sha256": "8e64cb4d580ba1ecda1a7ef7f80cff027fef8b879533f9ae795e5a5e8eae293d",
+          "anonymous_download": "PASS"
+        },
+        {
+          "name": "SHA256SUMS.txt",
+          "bytes": 103,
+          "sha256": "260aa975dab4d26285ef799cb28aceacbdc9ce036f71b9ef1c799e82d3a2d47e",
+          "anonymous_download": "PASS"
+        }
+      ]
+    },
+    "original_published_evidence_hashes_unchanged": 88,
+    "documentation_local_links_checked": 51,
+    "regression": {
+      "tests_passed": 321,
+      "ruff": "PASS",
+      "engineering_paired_strategy_runs": 560,
+      "critical_engineering_audit_failures": 0,
+      "checks": {
+        "pytest": {
+          "exit_code": 0
+        },
+        "ruff": {
+          "exit_code": 0
+        },
+        "baseline_evaluation": {
+          "exit_code": 0
+        },
+        "integrated_demo": {
+          "exit_code": 0
+        },
+        "engineering_comparison": {
+          "exit_code": 0
+        },
+        "engineering_verification": {
+          "exit_code": 0
+        },
+        "real_data_audit": {
+          "status": "NOT_RUN",
+          "reason": "Raw data and OOF inputs omitted"
+        }
+      }
+    }
+  }
+}

@@ -3,9 +3,12 @@
 The adapter combines A1 FoG predictions with A2 **current-direction** predictions.
 It exports a label-free `perception_runtime.csv` for B1 control and B2 integration.
 The current-direction model can be rebuilt from the checked-in training source;
-the weights are shared separately and are not stored in Git.
+the weights are available as [GitHub Release assets](https://github.com/JYAXR/ME5412-FoGGuard/releases/tag/a-group-models-2026-10-30)
+and are not stored in Git source history. **[Download and run the four-model package](../../MODEL_DOWNLOADS.md)**
+to use the official A1/A2 weights without retraining. Its A1 bundle is
+`artifacts/a-group-models/fog-selected`; its A2 run is `artifacts/a-group-models/a2-current`.
 
-## Rebuild the direction model
+## Optional: rebuild the direction model
 
 Use Python 3.12 and the repository root. Keep the original FoG-STAR file and
 `config/fog_selected.json` unchanged; the trainer checks the dataset hash and

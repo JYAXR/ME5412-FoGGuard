@@ -29,7 +29,8 @@
     "perception": "docs/a2/fusion/README.md",
     "a_group_test": "docs/a_group/README.md",
     "a_group_showcase": "docs/a_group_showcase/index.html",
-    "a_group_inference": "docs/A1_A2_START_HERE.md"
+    "a_group_inference": "docs/A1_A2_START_HERE.md",
+    "pretrained_models": "docs/MODEL_DOWNLOADS.md"
   },
   "roles": {
     "A1": {
@@ -160,6 +161,17 @@
         "D-04"
       ]
     }
+  },
+  "model_distribution": {
+    "storage": "GitHub Release assets; separate from Git source history",
+    "release": "https://github.com/JYAXR/ME5412-FoGGuard/releases/tag/a-group-models-2026-10-30",
+    "download": "https://github.com/JYAXR/ME5412-FoGGuard/releases/download/a-group-models-2026-10-30/FoGGuard-A-Group-Models-20261030.zip",
+    "manifest": "docs/models/RELEASE_MANIFEST.json",
+    "models": ["ankle_history_rf", "bilateral_rf", "ankle_cnn", "current_direction"],
+    "retraining_required": false,
+    "raw_patient_data_included": false,
+    "personalized_study_models_included": false,
+    "weights_match_original_TEST_lock": true
   },
   "implemented_foundation": [
     "three selected FoG methods",

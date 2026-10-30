@@ -14,10 +14,12 @@ A1/A2 已完成并合并感知交付：三种冻结方法、当前方向、因�
 
 ## 运行
 
-安装依赖及项目，将模型解压到 `artifacts/fog-selected/`：
+预训练权重现可从 **[GitHub Release](https://github.com/JYAXR/ME5412-FoGGuard/releases/tag/a-group-models-2026-10-30)** 下载；[完整安装与运行说明](MODEL_DOWNLOADS.md)包含 A1 三模型和 A2 当前方向，无需重新训练。解压后 A1 路径为 `artifacts/a-group-models/fog-selected/`，A2 路径为 `artifacts/a-group-models/a2-current/`。`git clone` 不会自动下载 Release 附件。
+
+安装依赖及项目后：
 
 ```bash
-python -X utf8 scripts/predict_selected_fog.py --bundle artifacts/fog-selected --method bilateral_rf --input artifacts/fog-selected/synthetic_input.csv --output reports/fog_interface_NEW.csv
+python -X utf8 scripts/predict_selected_fog.py --bundle artifacts/a-group-models/fog-selected --method bilateral_rf --input artifacts/a-group-models/examples/synthetic_imu.csv --output reports/fog_interface_NEW.csv
 ```
 
 CNN 另外安装 `requirements-a1-deep.txt`。示例只用于接口检查；真实数据采用相同单位、轴向和采样率，多记录提供身份键。缺测不补零、不插值；没有完整窗口时不产生有效预测。
@@ -42,4 +44,4 @@ python -X utf8 scripts/evaluate_selected_fog.py --bundle reports/selected_train_
 python -X utf8 scripts/bundle_selected_fog.py --models reports/selected_train_NEW --output reports/selected_bundle_NEW
 ```
 
-模型、原始数据和生成目录不提交 Git；权重通过交接包单独传递。来源与完成状态按仓库内 `docs/PROJECT_STATUS.json` 记录。
+模型权重通过 GitHub Release 下载，不进入 Git 源码历史；原始数据和生成目录不提交 Git。来源与完成状态按仓库内 `docs/PROJECT_STATUS.json` 记录。
