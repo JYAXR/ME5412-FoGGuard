@@ -14,6 +14,7 @@ FoGGuard 是 ME5412 课程项目，研究如何利用可穿戴 IMU 识别冻结�
 | 当前完成状态 | [项目状态](docs/PROJECT_STATUS.json) |
 | A 组统一图表与数据展示（英文） | **[打开统一页面](docs/a_group_showcase/index.html)** · [图表及数据索引](docs/a_group_showcase/FIGURE_CATALOG.csv) |
 | A 组测试来源与算法复现 | [固定测试报告](docs/a_group/README.md) · [感知接入](docs/a2/fusion/README.md) |
+| 可选研究：个人化冻结识别 | [实现与结果](docs/personalized_fog/README.md) · [英文图表与数据](docs/personalized_fog/presentation/index.html)（TRAIN 内分组交叉验证） |
 | 环境、模型推理与工程演示 | [快速开始](docs/QUICKSTART.md) |
 | 字段、单位和时序约定 | [接口约定](docs/INTERFACE_CONTRACT.md) · [数据格式](docs/DATA_SCHEMA.md) |
 
@@ -60,7 +61,9 @@ A1/A2 的算法、固定独立测试和统一图表已合并到 `main`。A 组�
 | B2 | 指标审计、工程场景及策略对照工具；可直接消费感知时间线 | [核对接入、联合验证、同输入策略对照和最终展示数据包](docs/tasks/B2.md) |
 | 工业设计 | 7 张英文图表、9 张数据表、简单说明及回放页面基础 | [制作 PPT、接入最终命令回放、完成可视化与演示视频](docs/tasks/DESIGN.md) |
 
-执行顺序与里程碑见 [分工与交付顺序](docs/ROLES_AND_ROADMAP.md)。冻结误报、方向融合覆盖损失和提前预测不可用属于已记录的能力边界；本轮交付不安排 A 组继续训练或重新选择测试阈值。
+执行顺序与里程碑见 [分工与交付顺序](docs/ROLES_AND_ROADMAP.md)。冻结误报、方向融合覆盖损失和提前预测不可用属于已记录的能力边界；既有交付不重新选择测试阈值。
+
+另有已完成的[个人化冻结识别探索](docs/personalized_fog/README.md)：仅在原 TRAIN 池内，比较排除目标人的通用 RF、个人 RF 和个人阈值校准。8 人同批保留记录上，个人模型 F1 为 0.735，通用基线为 0.689，但误报率升至 24.0%，且仅 4/8 人获益。该研究独立于正式测试，原三模型、A2 融合和后续任务不变。
 
 ## 最小运行
 

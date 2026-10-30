@@ -9,6 +9,10 @@ Use `docs/ARCHITECTURE.md` and `docs/INTERFACE_CONTRACT.md` for module boundarie
   `predict_selected_fog.py`, `train_selected_fog.py`, `evaluate_selected_fog.py`
   and `bundle_selected_fog.py`. A2 owns direction and perception fusion; B1
   owns motion feedback and cueing; B2 owns evaluation and joint integration.
+- The optional personalized FoG study is separate from that delivery. Its fixed
+  protocol uses TRAIN14 only; preserve its pre-fit lock, report false alarms,
+  exclusions and person/split results, and do not replace the main pipeline or
+  treat its blocked-CV scores as a new blind TEST.
 - A1/A2 perception, locked TEST and the unified chart/data showcase are delivered
   on main. Current A-group tasks are maintenance and concrete handoff support;
   real feedback/control belongs to B1, receiver/joint acceptance to B2, and

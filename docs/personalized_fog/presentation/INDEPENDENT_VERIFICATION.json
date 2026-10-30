@@ -1,0 +1,13 @@
+{
+  "schema": "fogguard.personalized_fog.verification.v1",
+  "status": "PASS",
+  "paired_folds": 31,
+  "saved_model_predictions_replayed": 12270,
+  "model_target_exclusion": "PASS",
+  "adaptation_evaluation_block_separation": "PASS",
+  "adaptation_only_threshold_search": "PASS",
+  "independent_metric_recount": "PASS",
+  "original_TEST_and_showcase_hashes_checked": 48,
+  "source_sha256": "214b037f506d3a9ee6e84c88c53dbaf36afa88b62fd12c59e5555e9b69d4f00b",
+  "run_manifest_sha256": "31ce2c4c9a238af2e4a2ba4bd4ec73af0645af1eb960f397487ea9c58c186f3d"
+}

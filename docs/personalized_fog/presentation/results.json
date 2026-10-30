@@ -1,0 +1,1323 @@
+{
+  "schema": "fogguard.personalized_fog.results.v1",
+  "scope": "Exploratory blocked cross-validation within TRAIN14, not a new blind TEST or prospective next-day trial",
+  "original_TEST_scored": false,
+  "original_validation_scored": false,
+  "cohort_participants": 14,
+  "cohort_records": 70,
+  "cohort_supported_windows": 6383,
+  "paired_participants": 8,
+  "paired_records": 31,
+  "paired_windows": 4090,
+  "paired_positive_windows": 1298,
+  "fold_status": {
+    "eligible": 31,
+    "insufficient_adaptation_positive_windows": 19,
+    "no_supported_evaluation_windows": 8
+  },
+  "eligible_folds": 31,
+  "planned_folds": 58,
+  "pooled": {
+    "population": {
+      "windows": 4090,
+      "positive_windows": 1298,
+      "TP": 938,
+      "FP": 486,
+      "FN": 360,
+      "TN": 2306,
+      "precision": 0.6587078651685393,
+      "recall": 0.7226502311248074,
+      "fog_f1": 0.6891991182953711,
+      "average_precision": 0.7173331533947525,
+      "accuracy": 0.7931540342298289,
+      "always_non_fog_accuracy": 0.682640586797066,
+      "specificity": 0.8259312320916905,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          2306,
+          486
+        ],
+        [
+          360,
+          938
+        ]
+      ],
+      "false_positive_rate": 0.17406876790830947,
+      "truth_events": 52,
+      "covered_raw_events": 49,
+      "supported_events": 52,
+      "true_alarm_s": 454.54999999999836,
+      "false_alarm_s": 254.76666666666688,
+      "time_recall": 0.7014660493827325,
+      "time_precision": 0.640828026974317,
+      "observed_s": 2097.7833333333483,
+      "false_alarm_s_per_observed_minute": 7.286739177067812
+    },
+    "personal": {
+      "windows": 4090,
+      "positive_windows": 1298,
+      "TP": 1144,
+      "FP": 669,
+      "FN": 154,
+      "TN": 2123,
+      "precision": 0.6309983452840596,
+      "recall": 0.8813559322033898,
+      "fog_f1": 0.735454837672774,
+      "average_precision": 0.7779084613808135,
+      "accuracy": 0.7987775061124694,
+      "always_non_fog_accuracy": 0.682640586797066,
+      "specificity": 0.7603868194842407,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          2123,
+          669
+        ],
+        [
+          154,
+          1144
+        ]
+      ],
+      "false_positive_rate": 0.2396131805157593,
+      "truth_events": 52,
+      "covered_raw_events": 51,
+      "supported_events": 52,
+      "true_alarm_s": 556.0499999999968,
+      "false_alarm_s": 347.699999999995,
+      "time_recall": 0.85810185185187,
+      "time_precision": 0.6152697095435705,
+      "observed_s": 2097.7833333333483,
+      "false_alarm_s_per_observed_minute": 9.944782985214337
+    },
+    "population_calibrated": {
+      "windows": 4090,
+      "positive_windows": 1298,
+      "TP": 992,
+      "FP": 774,
+      "FN": 306,
+      "TN": 2018,
+      "precision": 0.5617214043035108,
+      "recall": 0.7642526964560863,
+      "fog_f1": 0.6475195822454308,
+      "average_precision": 0.7173331533947525,
+      "accuracy": 0.7359413202933985,
+      "always_non_fog_accuracy": 0.682640586797066,
+      "specificity": 0.7227793696275072,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          2018,
+          774
+        ],
+        [
+          306,
+          992
+        ]
+      ],
+      "false_positive_rate": 0.27722063037249284,
+      "truth_events": 52,
+      "covered_raw_events": 49,
+      "supported_events": 52,
+      "true_alarm_s": 484.45000000000033,
+      "false_alarm_s": 394.4166666666544,
+      "time_recall": 0.7476080246913788,
+      "time_precision": 0.5512212698171967,
+      "observed_s": 2097.7833333333483,
+      "false_alarm_s_per_observed_minute": 11.280955294079828
+    }
+  },
+  "participant_macro": {
+    "population": {
+      "positive_participants": 8,
+      "mean_participant_fog_f1": 0.474473361906634,
+      "mean_participant_recall": 0.658414003230116,
+      "mean_participant_false_positive_rate": 0.18438213297001088
+    },
+    "personal": {
+      "positive_participants": 8,
+      "mean_participant_fog_f1": 0.5256068276205847,
+      "mean_participant_recall": 0.6214465441044674,
+      "mean_participant_false_positive_rate": 0.1968052724437489
+    },
+    "population_calibrated": {
+      "positive_participants": 8,
+      "mean_participant_fog_f1": 0.4463079116757989,
+      "mean_participant_recall": 0.6146845356145864,
+      "mean_participant_false_positive_rate": 0.2566984988923582
+    }
+  },
+  "per_person": [
+    {
+      "subject": "S01",
+      "strategy": "population",
+      "split_kind": "record_held_out",
+      "windows": 1127,
+      "positive_windows": 605,
+      "TP": 391,
+      "FP": 94,
+      "FN": 214,
+      "TN": 428,
+      "precision": 0.8061855670103093,
+      "recall": 0.6462809917355372,
+      "fog_f1": 0.7174311926605504,
+      "average_precision": 0.8170423656450594,
+      "accuracy": 0.7267080745341615,
+      "always_non_fog_accuracy": 0.4631765749778172,
+      "specificity": 0.8199233716475096,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          428,
+          94
+        ],
+        [
+          214,
+          391
+        ]
+      ],
+      "false_positive_rate": 0.18007662835249041
+    },
+    {
+      "subject": "S02",
+      "strategy": "population",
+      "split_kind": "record_held_out",
+      "windows": 663,
+      "positive_windows": 175,
+      "TP": 153,
+      "FP": 103,
+      "FN": 22,
+      "TN": 385,
+      "precision": 0.59765625,
+      "recall": 0.8742857142857143,
+      "fog_f1": 0.7099767981438515,
+      "average_precision": 0.7739216654338782,
+      "accuracy": 0.8114630467571644,
+      "always_non_fog_accuracy": 0.7360482654600302,
+      "specificity": 0.7889344262295082,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          385,
+          103
+        ],
+        [
+          22,
+          153
+        ]
+      ],
+      "false_positive_rate": 0.21106557377049182
+    },
+    {
+      "subject": "S03",
+      "strategy": "population",
+      "split_kind": "session_held_out",
+      "windows": 98,
+      "positive_windows": 9,
+      "TP": 9,
+      "FP": 24,
+      "FN": 0,
+      "TN": 65,
+      "precision": 0.2727272727272727,
+      "recall": 1.0,
+      "fog_f1": 0.42857142857142855,
+      "average_precision": 0.5994520367069387,
+      "accuracy": 0.7551020408163265,
+      "always_non_fog_accuracy": 0.9081632653061225,
+      "specificity": 0.7303370786516854,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          65,
+          24
+        ],
+        [
+          0,
+          9
+        ]
+      ],
+      "false_positive_rate": 0.2696629213483146
+    },
+    {
+      "subject": "S06",
+      "strategy": "population",
+      "split_kind": "record_held_out",
+      "windows": 480,
+      "positive_windows": 49,
+      "TP": 20,
+      "FP": 19,
+      "FN": 29,
+      "TN": 412,
+      "precision": 0.5128205128205128,
+      "recall": 0.40816326530612246,
+      "fog_f1": 0.45454545454545453,
+      "average_precision": 0.4600376852670188,
+      "accuracy": 0.9,
+      "always_non_fog_accuracy": 0.8979166666666667,
+      "specificity": 0.9559164733178654,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          412,
+          19
+        ],
+        [
+          29,
+          20
+        ]
+      ],
+      "false_positive_rate": 0.04408352668213457
+    },
+    {
+      "subject": "S07",
+      "strategy": "population",
+      "split_kind": "record_held_out",
+      "windows": 304,
+      "positive_windows": 5,
+      "TP": 1,
+      "FP": 46,
+      "FN": 4,
+      "TN": 253,
+      "precision": 0.02127659574468085,
+      "recall": 0.2,
+      "fog_f1": 0.038461538461538464,
+      "average_precision": 0.02676047799507202,
+      "accuracy": 0.8355263157894737,
+      "always_non_fog_accuracy": 0.9835526315789473,
+      "specificity": 0.8461538461538461,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          253,
+          46
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "false_positive_rate": 0.15384615384615385
+    },
+    {
+      "subject": "S09",
+      "strategy": "population",
+      "split_kind": "record_held_out",
+      "windows": 477,
+      "positive_windows": 123,
+      "TP": 73,
+      "FP": 77,
+      "FN": 50,
+      "TN": 277,
+      "precision": 0.4866666666666667,
+      "recall": 0.5934959349593496,
+      "fog_f1": 0.5347985347985348,
+      "average_precision": 0.4331669888740993,
+      "accuracy": 0.7337526205450734,
+      "always_non_fog_accuracy": 0.7421383647798742,
+      "specificity": 0.7824858757062146,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          277,
+          77
+        ],
+        [
+          50,
+          73
+        ]
+      ],
+      "false_positive_rate": 0.2175141242937853
+    },
+    {
+      "subject": "S13",
+      "strategy": "population",
+      "split_kind": "record_held_out",
+      "windows": 717,
+      "positive_windows": 329,
+      "TP": 289,
+      "FP": 81,
+      "FN": 40,
+      "TN": 307,
+      "precision": 0.7810810810810811,
+      "recall": 0.878419452887538,
+      "fog_f1": 0.82689556509299,
+      "average_precision": 0.8902777823928933,
+      "accuracy": 0.8312412831241283,
+      "always_non_fog_accuracy": 0.5411436541143654,
+      "specificity": 0.7912371134020618,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          307,
+          81
+        ],
+        [
+          40,
+          289
+        ]
+      ],
+      "false_positive_rate": 0.20876288659793815
+    },
+    {
+      "subject": "S14",
+      "strategy": "population",
+      "split_kind": "record_held_out",
+      "windows": 224,
+      "positive_windows": 3,
+      "TP": 2,
+      "FP": 42,
+      "FN": 1,
+      "TN": 179,
+      "precision": 0.045454545454545456,
+      "recall": 0.6666666666666666,
+      "fog_f1": 0.0851063829787234,
+      "average_precision": 0.04788573999100315,
+      "accuracy": 0.8080357142857143,
+      "always_non_fog_accuracy": 0.9866071428571429,
+      "specificity": 0.8099547511312217,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          179,
+          42
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "false_positive_rate": 0.19004524886877827
+    },
+    {
+      "subject": "S01",
+      "strategy": "personal",
+      "split_kind": "record_held_out",
+      "windows": 1127,
+      "positive_windows": 605,
+      "TP": 525,
+      "FP": 254,
+      "FN": 80,
+      "TN": 268,
+      "precision": 0.6739409499358151,
+      "recall": 0.8677685950413223,
+      "fog_f1": 0.7586705202312138,
+      "average_precision": 0.7751237688104903,
+      "accuracy": 0.7036379769299024,
+      "always_non_fog_accuracy": 0.4631765749778172,
+      "specificity": 0.5134099616858238,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          268,
+          254
+        ],
+        [
+          80,
+          525
+        ]
+      ],
+      "false_positive_rate": 0.48659003831417624
+    },
+    {
+      "subject": "S02",
+      "strategy": "personal",
+      "split_kind": "record_held_out",
+      "windows": 663,
+      "positive_windows": 175,
+      "TP": 154,
+      "FP": 124,
+      "FN": 21,
+      "TN": 364,
+      "precision": 0.5539568345323741,
+      "recall": 0.88,
+      "fog_f1": 0.6799116997792495,
+      "average_precision": 0.8302722328612514,
+      "accuracy": 0.7812971342383107,
+      "always_non_fog_accuracy": 0.7360482654600302,
+      "specificity": 0.7459016393442623,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          364,
+          124
+        ],
+        [
+          21,
+          154
+        ]
+      ],
+      "false_positive_rate": 0.2540983606557377
+    },
+    {
+      "subject": "S03",
+      "strategy": "personal",
+      "split_kind": "session_held_out",
+      "windows": 98,
+      "positive_windows": 9,
+      "TP": 2,
+      "FP": 0,
+      "FN": 7,
+      "TN": 89,
+      "precision": 1.0,
+      "recall": 0.2222222222222222,
+      "fog_f1": 0.36363636363636365,
+      "average_precision": 0.6095112559398274,
+      "accuracy": 0.9285714285714286,
+      "always_non_fog_accuracy": 0.9081632653061225,
+      "specificity": 1.0,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          89,
+          0
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "false_positive_rate": 0.0
+    },
+    {
+      "subject": "S06",
+      "strategy": "personal",
+      "split_kind": "record_held_out",
+      "windows": 480,
+      "positive_windows": 49,
+      "TP": 42,
+      "FP": 26,
+      "FN": 7,
+      "TN": 405,
+      "precision": 0.6176470588235294,
+      "recall": 0.8571428571428571,
+      "fog_f1": 0.717948717948718,
+      "average_precision": 0.6868028959824982,
+      "accuracy": 0.93125,
+      "always_non_fog_accuracy": 0.8979166666666667,
+      "specificity": 0.9396751740139211,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          405,
+          26
+        ],
+        [
+          7,
+          42
+        ]
+      ],
+      "false_positive_rate": 0.060324825986078884
+    },
+    {
+      "subject": "S07",
+      "strategy": "personal",
+      "split_kind": "record_held_out",
+      "windows": 304,
+      "positive_windows": 5,
+      "TP": 0,
+      "FP": 70,
+      "FN": 5,
+      "TN": 229,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fog_f1": 0.0,
+      "average_precision": 0.013507035567643749,
+      "accuracy": 0.7532894736842105,
+      "always_non_fog_accuracy": 0.9835526315789473,
+      "specificity": 0.7658862876254181,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          229,
+          70
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "false_positive_rate": 0.23411371237458195
+    },
+    {
+      "subject": "S09",
+      "strategy": "personal",
+      "split_kind": "record_held_out",
+      "windows": 477,
+      "positive_windows": 123,
+      "TP": 105,
+      "FP": 54,
+      "FN": 18,
+      "TN": 300,
+      "precision": 0.660377358490566,
+      "recall": 0.8536585365853658,
+      "fog_f1": 0.7446808510638298,
+      "average_precision": 0.8335296491421453,
+      "accuracy": 0.8490566037735849,
+      "always_non_fog_accuracy": 0.7421383647798742,
+      "specificity": 0.847457627118644,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          300,
+          54
+        ],
+        [
+          18,
+          105
+        ]
+      ],
+      "false_positive_rate": 0.15254237288135594
+    },
+    {
+      "subject": "S13",
+      "strategy": "personal",
+      "split_kind": "record_held_out",
+      "windows": 717,
+      "positive_windows": 329,
+      "TP": 315,
+      "FP": 129,
+      "FN": 14,
+      "TN": 259,
+      "precision": 0.7094594594594594,
+      "recall": 0.9574468085106383,
+      "fog_f1": 0.815006468305304,
+      "average_precision": 0.7925720809941038,
+      "accuracy": 0.800557880055788,
+      "always_non_fog_accuracy": 0.5411436541143654,
+      "specificity": 0.6675257731958762,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          259,
+          129
+        ],
+        [
+          14,
+          315
+        ]
+      ],
+      "false_positive_rate": 0.3324742268041237
+    },
+    {
+      "subject": "S14",
+      "strategy": "personal",
+      "split_kind": "record_held_out",
+      "windows": 224,
+      "positive_windows": 3,
+      "TP": 1,
+      "FP": 12,
+      "FN": 2,
+      "TN": 209,
+      "precision": 0.07692307692307693,
+      "recall": 0.3333333333333333,
+      "fog_f1": 0.125,
+      "average_precision": 0.07717081630125108,
+      "accuracy": 0.9375,
+      "always_non_fog_accuracy": 0.9866071428571429,
+      "specificity": 0.9457013574660633,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          209,
+          12
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "false_positive_rate": 0.05429864253393665
+    },
+    {
+      "subject": "S01",
+      "strategy": "population_calibrated",
+      "split_kind": "record_held_out",
+      "windows": 1127,
+      "positive_windows": 605,
+      "TP": 456,
+      "FP": 301,
+      "FN": 149,
+      "TN": 221,
+      "precision": 0.6023778071334214,
+      "recall": 0.7537190082644628,
+      "fog_f1": 0.6696035242290749,
+      "average_precision": 0.8170423656450594,
+      "accuracy": 0.6007098491570542,
+      "always_non_fog_accuracy": 0.4631765749778172,
+      "specificity": 0.42337164750957856,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          221,
+          301
+        ],
+        [
+          149,
+          456
+        ]
+      ],
+      "false_positive_rate": 0.5766283524904214
+    },
+    {
+      "subject": "S02",
+      "strategy": "population_calibrated",
+      "split_kind": "record_held_out",
+      "windows": 663,
+      "positive_windows": 175,
+      "TP": 127,
+      "FP": 50,
+      "FN": 48,
+      "TN": 438,
+      "precision": 0.7175141242937854,
+      "recall": 0.7257142857142858,
+      "fog_f1": 0.7215909090909091,
+      "average_precision": 0.7739216654338782,
+      "accuracy": 0.8521870286576169,
+      "always_non_fog_accuracy": 0.7360482654600302,
+      "specificity": 0.8975409836065574,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          438,
+          50
+        ],
+        [
+          48,
+          127
+        ]
+      ],
+      "false_positive_rate": 0.10245901639344263
+    },
+    {
+      "subject": "S03",
+      "strategy": "population_calibrated",
+      "split_kind": "session_held_out",
+      "windows": 98,
+      "positive_windows": 9,
+      "TP": 3,
+      "FP": 5,
+      "FN": 6,
+      "TN": 84,
+      "precision": 0.375,
+      "recall": 0.3333333333333333,
+      "fog_f1": 0.35294117647058826,
+      "average_precision": 0.5994520367069387,
+      "accuracy": 0.8877551020408163,
+      "always_non_fog_accuracy": 0.9081632653061225,
+      "specificity": 0.9438202247191011,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          84,
+          5
+        ],
+        [
+          6,
+          3
+        ]
+      ],
+      "false_positive_rate": 0.056179775280898875
+    },
+    {
+      "subject": "S06",
+      "strategy": "population_calibrated",
+      "split_kind": "record_held_out",
+      "windows": 480,
+      "positive_windows": 49,
+      "TP": 19,
+      "FP": 32,
+      "FN": 30,
+      "TN": 399,
+      "precision": 0.37254901960784315,
+      "recall": 0.3877551020408163,
+      "fog_f1": 0.38,
+      "average_precision": 0.4600376852670188,
+      "accuracy": 0.8708333333333333,
+      "always_non_fog_accuracy": 0.8979166666666667,
+      "specificity": 0.925754060324826,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          399,
+          32
+        ],
+        [
+          30,
+          19
+        ]
+      ],
+      "false_positive_rate": 0.07424593967517401
+    },
+    {
+      "subject": "S07",
+      "strategy": "population_calibrated",
+      "split_kind": "record_held_out",
+      "windows": 304,
+      "positive_windows": 5,
+      "TP": 0,
+      "FP": 70,
+      "FN": 5,
+      "TN": 229,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fog_f1": 0.0,
+      "average_precision": 0.02676047799507202,
+      "accuracy": 0.7532894736842105,
+      "always_non_fog_accuracy": 0.9835526315789473,
+      "specificity": 0.7658862876254181,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          229,
+          70
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "false_positive_rate": 0.23411371237458195
+    },
+    {
+      "subject": "S09",
+      "strategy": "population_calibrated",
+      "split_kind": "record_held_out",
+      "windows": 477,
+      "positive_windows": 123,
+      "TP": 108,
+      "FP": 129,
+      "FN": 15,
+      "TN": 225,
+      "precision": 0.45569620253164556,
+      "recall": 0.8780487804878049,
+      "fog_f1": 0.6,
+      "average_precision": 0.4331669888740993,
+      "accuracy": 0.6981132075471698,
+      "always_non_fog_accuracy": 0.7421383647798742,
+      "specificity": 0.635593220338983,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          225,
+          129
+        ],
+        [
+          15,
+          108
+        ]
+      ],
+      "false_positive_rate": 0.3644067796610169
+    },
+    {
+      "subject": "S13",
+      "strategy": "population_calibrated",
+      "split_kind": "record_held_out",
+      "windows": 717,
+      "positive_windows": 329,
+      "TP": 276,
+      "FP": 103,
+      "FN": 53,
+      "TN": 285,
+      "precision": 0.7282321899736148,
+      "recall": 0.8389057750759878,
+      "fog_f1": 0.7796610169491526,
+      "average_precision": 0.8902777823928933,
+      "accuracy": 0.7824267782426778,
+      "always_non_fog_accuracy": 0.5411436541143654,
+      "specificity": 0.7345360824742269,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          285,
+          103
+        ],
+        [
+          53,
+          276
+        ]
+      ],
+      "false_positive_rate": 0.2654639175257732
+    },
+    {
+      "subject": "S14",
+      "strategy": "population_calibrated",
+      "split_kind": "record_held_out",
+      "windows": 224,
+      "positive_windows": 3,
+      "TP": 3,
+      "FP": 84,
+      "FN": 0,
+      "TN": 137,
+      "precision": 0.034482758620689655,
+      "recall": 1.0,
+      "fog_f1": 0.06666666666666667,
+      "average_precision": 0.04788573999100315,
+      "accuracy": 0.625,
+      "always_non_fog_accuracy": 0.9866071428571429,
+      "specificity": 0.6199095022624435,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          137,
+          84
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "false_positive_rate": 0.38009049773755654
+    }
+  ],
+  "per_split_kind": [
+    {
+      "split_kind": "record_held_out",
+      "strategy": "population",
+      "participants": 7,
+      "windows": 3992,
+      "positive_windows": 1289,
+      "TP": 929,
+      "FP": 462,
+      "FN": 360,
+      "TN": 2241,
+      "precision": 0.6678648454349388,
+      "recall": 0.7207137315748642,
+      "fog_f1": 0.6932835820895522,
+      "average_precision": 0.7255774958928513,
+      "accuracy": 0.7940881763527055,
+      "always_non_fog_accuracy": 0.6771042084168337,
+      "specificity": 0.8290788013318535,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          2241,
+          462
+        ],
+        [
+          360,
+          929
+        ]
+      ],
+      "false_positive_rate": 0.1709211986681465
+    },
+    {
+      "split_kind": "session_held_out",
+      "strategy": "population",
+      "participants": 1,
+      "windows": 98,
+      "positive_windows": 9,
+      "TP": 9,
+      "FP": 24,
+      "FN": 0,
+      "TN": 65,
+      "precision": 0.2727272727272727,
+      "recall": 1.0,
+      "fog_f1": 0.42857142857142855,
+      "average_precision": 0.5994520367069387,
+      "accuracy": 0.7551020408163265,
+      "always_non_fog_accuracy": 0.9081632653061225,
+      "specificity": 0.7303370786516854,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          65,
+          24
+        ],
+        [
+          0,
+          9
+        ]
+      ],
+      "false_positive_rate": 0.2696629213483146
+    },
+    {
+      "split_kind": "record_held_out",
+      "strategy": "personal",
+      "participants": 7,
+      "windows": 3992,
+      "positive_windows": 1289,
+      "TP": 1142,
+      "FP": 669,
+      "FN": 147,
+      "TN": 2034,
+      "precision": 0.6305908337934842,
+      "recall": 0.8859581070597362,
+      "fog_f1": 0.7367741935483871,
+      "average_precision": 0.7798201233813108,
+      "accuracy": 0.7955911823647295,
+      "always_non_fog_accuracy": 0.6771042084168337,
+      "specificity": 0.7524972253052165,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          2034,
+          669
+        ],
+        [
+          147,
+          1142
+        ]
+      ],
+      "false_positive_rate": 0.24750277469478357
+    },
+    {
+      "split_kind": "session_held_out",
+      "strategy": "personal",
+      "participants": 1,
+      "windows": 98,
+      "positive_windows": 9,
+      "TP": 2,
+      "FP": 0,
+      "FN": 7,
+      "TN": 89,
+      "precision": 1.0,
+      "recall": 0.2222222222222222,
+      "fog_f1": 0.36363636363636365,
+      "average_precision": 0.6095112559398274,
+      "accuracy": 0.9285714285714286,
+      "always_non_fog_accuracy": 0.9081632653061225,
+      "specificity": 1.0,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          89,
+          0
+        ],
+        [
+          7,
+          2
+        ]
+      ],
+      "false_positive_rate": 0.0
+    },
+    {
+      "split_kind": "record_held_out",
+      "strategy": "population_calibrated",
+      "participants": 7,
+      "windows": 3992,
+      "positive_windows": 1289,
+      "TP": 989,
+      "FP": 769,
+      "FN": 300,
+      "TN": 1934,
+      "precision": 0.5625711035267349,
+      "recall": 0.7672614429790535,
+      "fog_f1": 0.6491631112569741,
+      "average_precision": 0.7255774958928513,
+      "accuracy": 0.7322144288577155,
+      "always_non_fog_accuracy": 0.6771042084168337,
+      "specificity": 0.7155012948575656,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          1934,
+          769
+        ],
+        [
+          300,
+          989
+        ]
+      ],
+      "false_positive_rate": 0.2844987051424343
+    },
+    {
+      "split_kind": "session_held_out",
+      "strategy": "population_calibrated",
+      "participants": 1,
+      "windows": 98,
+      "positive_windows": 9,
+      "TP": 3,
+      "FP": 5,
+      "FN": 6,
+      "TN": 84,
+      "precision": 0.375,
+      "recall": 0.3333333333333333,
+      "fog_f1": 0.35294117647058826,
+      "average_precision": 0.5994520367069387,
+      "accuracy": 0.8877551020408163,
+      "always_non_fog_accuracy": 0.9081632653061225,
+      "specificity": 0.9438202247191011,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          84,
+          5
+        ],
+        [
+          6,
+          3
+        ]
+      ],
+      "false_positive_rate": 0.056179775280898875
+    }
+  ],
+  "negative_only_population_controls": [
+    {
+      "subject": "S08",
+      "windows": 338,
+      "positive_windows": 0,
+      "TP": 0,
+      "FP": 79,
+      "FN": 0,
+      "TN": 259,
+      "precision": 0.0,
+      "recall": null,
+      "fog_f1": null,
+      "average_precision": null,
+      "accuracy": 0.7662721893491125,
+      "always_non_fog_accuracy": 1.0,
+      "specificity": 0.7662721893491125,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          259,
+          79
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "false_positive_rate": 0.23372781065088757,
+      "positive_class_evaluation": "NOT_EVALUABLE: no positive windows"
+    },
+    {
+      "subject": "S11",
+      "windows": 30,
+      "positive_windows": 0,
+      "TP": 0,
+      "FP": 1,
+      "FN": 0,
+      "TN": 29,
+      "precision": 0.0,
+      "recall": null,
+      "fog_f1": null,
+      "average_precision": null,
+      "accuracy": 0.9666666666666667,
+      "always_non_fog_accuracy": 1.0,
+      "specificity": 0.9666666666666667,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          29,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "false_positive_rate": 0.03333333333333333,
+      "positive_class_evaluation": "NOT_EVALUABLE: no positive windows"
+    },
+    {
+      "subject": "S12",
+      "windows": 437,
+      "positive_windows": 0,
+      "TP": 0,
+      "FP": 29,
+      "FN": 0,
+      "TN": 408,
+      "precision": 0.0,
+      "recall": null,
+      "fog_f1": null,
+      "average_precision": null,
+      "accuracy": 0.9336384439359268,
+      "always_non_fog_accuracy": 1.0,
+      "specificity": 0.9336384439359268,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          408,
+          29
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "false_positive_rate": 0.06636155606407322,
+      "positive_class_evaluation": "NOT_EVALUABLE: no positive windows"
+    },
+    {
+      "subject": "S04",
+      "windows": 255,
+      "positive_windows": 0,
+      "TP": 0,
+      "FP": 45,
+      "FN": 0,
+      "TN": 210,
+      "precision": 0.0,
+      "recall": null,
+      "fog_f1": null,
+      "average_precision": null,
+      "accuracy": 0.8235294117647058,
+      "always_non_fog_accuracy": 1.0,
+      "specificity": 0.8235294117647058,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          210,
+          45
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "false_positive_rate": 0.17647058823529413,
+      "positive_class_evaluation": "NOT_EVALUABLE: no positive windows"
+    },
+    {
+      "subject": "S05",
+      "windows": 193,
+      "positive_windows": 0,
+      "TP": 0,
+      "FP": 47,
+      "FN": 0,
+      "TN": 146,
+      "precision": 0.0,
+      "recall": null,
+      "fog_f1": null,
+      "average_precision": null,
+      "accuracy": 0.7564766839378239,
+      "always_non_fog_accuracy": 1.0,
+      "specificity": 0.7564766839378239,
+      "confusion_classes": [
+        "non_fog",
+        "fog"
+      ],
+      "confusion_matrix": [
+        [
+          146,
+          47
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "false_positive_rate": 0.24352331606217617,
+      "positive_class_evaluation": "NOT_EVALUABLE: no positive windows"
+    }
+  ],
+  "limitations": [
+    "Eligibility is based only on adaptation support; excluded folds are reported",
+    "Session IDs are grouping keys, not verified dates; record holdout is within-session",
+    "Overlapping windows are not independent participants",
+    "Personal and population fits use different amounts of data; this does not prove the cause of errors",
+    "Population calibration uses labeled target data and is not zero-shot generalization",
+    "Existing TRAIN pool and prior design knowledge: not a fresh clinical or blind test"
+  ]
+}

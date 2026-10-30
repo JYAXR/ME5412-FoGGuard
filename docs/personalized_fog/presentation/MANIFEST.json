@@ -1,0 +1,24 @@
+{
+  "schema": "fogguard.personalized_fog.presentation.v1",
+  "files": {
+    "01_pooled_comparison.png": "b32fd051426dc41df131604dd729880cfa1f2658eec2a12880fcb5c1e2ad950c",
+    "01_pooled_comparison.svg": "e19b69cc1dc7bbc9a3f86f34215f8bdc2f0fa49e1bb4301ecf7986f0917fe22c",
+    "02_participant_comparison.png": "da73e2e9ec3b0e45bbf29a575d3e6e361a1a7f8a97416c90b9c78cfda210aa30",
+    "02_participant_comparison.svg": "f1a0a2088e3054c1221a53e8237211de459fc27da5dae6b1edfa7fac64e01305",
+    "03_feasibility_and_splits.png": "59abc0a123bfca774f32b89de8b20fdc9d81a8c60b2cd45f87b3c53c32cb5025",
+    "03_feasibility_and_splits.svg": "a7aa2e272bc0926ebe2661ae61ac35b8b690c680d3e5bb68be594c7cad3d2ef9",
+    "comparison.csv": "79ad753496b57d60721a6c3fbbc19084987c620d3593c9be73ae0aa39731213f",
+    "feasibility.csv": "fbbfbc7ee8b691f8994b3f193b71150957863b02be089a8de848d8c28a843f62",
+    "INDEPENDENT_VERIFICATION.json": "f10b82c9763ddf21cc252e3f3db8ca0634814c2b5a7ed0e4593b9c7b479eeff0",
+    "index.html": "8060f44b5e8861a50e8165bf0aa1ad4c625e78b29df3fbf82a17228707a98318",
+    "negative_only_controls.csv": "1fce98bdfce31251b75bfda1142ce2d98e548dc3a242f2af673e585f658cb170",
+    "per_person.csv": "45e6d6c24bde0f358e8988febbfebc4eecf6644e6624c7c16fd070313af06edc",
+    "per_split_kind.csv": "5fcd439f6162f49ebeeb3c4dd7c13b1d00089ffc5e95a57ca9012270d821ad17",
+    "PROTOCOL_LOCK.json": "8f0677d44488a7608c64d5faa1db71466fa8706d7987fd3d94b19a308560e32f",
+    "results.json": "69d9b2238a66824a27ea983cebee9ed378610136589e931ffdb97b04b77fe0f1"
+  },
+  "builder_sha256": "bca3ae9f54cedac507a1a125c3ce478de2996148a5b2969636f67462d9d28b07",
+  "source_results_sha256": "69d9b2238a66824a27ea983cebee9ed378610136589e931ffdb97b04b77fe0f1",
+  "scope": "Exploratory blocked cross-validation within TRAIN14, not a new blind TEST or prospective next-day trial",
+  "browser_render_check": "NOT_RUN; offline link/image/data verification only"
+}
