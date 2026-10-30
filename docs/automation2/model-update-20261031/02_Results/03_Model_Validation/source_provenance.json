@@ -1,0 +1,148 @@
+{
+  "source_commit": "b04ea8618e155d62891ca2970fc7c028ce3b1f06",
+  "release_url": "https://github.com/JYAXR/ME5412-FoGGuard/releases/tag/a-group-models-2026-10-30",
+  "release_archive_sha256": "b3a6a69c2c9860a2dd992f1dd0169e39514f7fa4f44a6272a7fc47be1a9770bf",
+  "locked_inputs_checked": 23,
+  "locked_inputs_exact": 19,
+  "locked_inputs_line_ending_normalized": 4,
+  "all_locked_inputs_match_exactly_or_lf_normalized": true,
+  "locked_input_details": [
+    {
+      "name": "config/a_group_test.json",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "config/fog_selected.json",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "config/a2_turning.json",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "scripts/evaluate_a_group_test.py",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/evaluation/heldout.py",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/evaluation/selected_fog.py",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/evaluation/intervals.py",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/selected_fog.py",
+      "exact_bytes": false,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/data/fogstar.py",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/modeling/fogstar_baseline.py",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/turning/learned.py",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/perception.py",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/context/fogstar.py",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/modeling/a1_ankle_history.py",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/modeling/a1_author_cnn.py",
+      "exact_bytes": false,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/modeling/a1_bilateral.py",
+      "exact_bytes": false,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "src/fogguard/modeling/a1_fog.py",
+      "exact_bytes": false,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "models/ankle_history_rf",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "models/bilateral_rf",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "models/ankle_cnn",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "models/current_direction",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "a1_bundle_manifest",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    },
+    {
+      "name": "a2_training_manifest",
+      "exact_bytes": true,
+      "matches_after_lf_normalization": true
+    }
+  ],
+  "new_code_and_protocol_sha256": {
+    "config/b2_randomized_evaluation.json": "a549845364cd5a30da835ed5538b9d03e6f91fbb8aa316e506ae56b68f487fea",
+    "scripts/run_b2_randomized_checks.py": "a80232045c8586861c105e3011eddf111920c84cbe5ac687c1eb78de0ceb8364",
+    "scripts/evaluate_b2_randomized_models.py": "5eb0171f24d99b8596014002992887e23e19391d9c1617a3ef07ac28d4251db4",
+    "src/fogguard/evaluation/randomized_plan.py": "05e3a370485f52cbd2bb557aedf0c3ec1a723d899f9785a50b7d7be670699ac8",
+    "src/fogguard/evaluation/randomized_receiver.py": "7df4897005ca84ddf7fcea3051d360ef290b526bd9bbb3fe09ac5489cb99ddff",
+    "src/fogguard/evaluation/randomized_model_scoring.py": "f38bb497945f18c10848cd669acacd4e4a96fd4b002a60fe473238acac691f72",
+    "tests/test_b2_randomized_checks.py": "f5302ded028e72b0a3724712b0db9829176ebc1f3386f0c0731e93cb250f6e54",
+    "tests/test_b2_randomized_model_scoring.py": "a6076eba415add1db2b9418ca1ae1cd23ae2ef9fa197d6d3fd7fa4f483eb3af2"
+  },
+  "result_files_sha256": {
+    "alignment.csv": "07750205780ca5088427a9a996694d17773f3f020b37ca82f7f558a161e200e2",
+    "event_details.csv": "bdb600f74f91234ae2b8da9bcf7d3c358fb5fc28c1307a4c3f65333672a44efd",
+    "metrics.json": "7a67b944b2cd360d8cf6fe4351a9b2ec3c00f03a6ba30077452854e9f060d84b",
+    "paired_perturbations.csv": "c97016770a5359f2e58a787c7930201e264839bece31b96bcc9c6585d1c54b83",
+    "RESULTS.json": "e5a7860e04e9b9e16fe77a87479f885ef0c6cae014e285cf1225eafd3507a7f1",
+    "run_status.csv": "17c7bf977be51ab0a51b37fed8eb7d965ff7622ee8319788dab9983dcece3b1a",
+    "run_status_summary.csv": "f35aaad5636ee8fcf16c1de02be62821a9ed91ea2f0d9c6bbfb4ca6a43aa389f",
+    "scored_windows.csv": "276936c9965c541278bd362711e309bcac880d2213ab96edfc5aac9bfc806b2f"
+  },
+  "inference_or_model_configuration_changed": false,
+  "meaning": "One fixed source snapshot and published weights; not a fresh independent TEST"
+}

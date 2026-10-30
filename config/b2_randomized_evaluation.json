@@ -1,0 +1,19 @@
+{
+  "schema": "fogguard.b2.randomized_protocol.v1",
+  "seed": 20261030,
+  "partition": "validation",
+  "sampling": "up to two seeded uniformly shuffled candidate clips per record; scoring intervals do not overlap",
+  "clips_per_record": 2,
+  "warmup_samples": 360,
+  "scoring_samples": 1200,
+  "anchor_step_samples": 30,
+  "receiver_trials": 32,
+  "receiver_source_observations_per_record": 28,
+  "perturbations": ["clean", "noise_low", "noise_high", "right_gyro_gap", "missing_left_gyro_column", "reversed_time", "duplicate_time"],
+  "noise_low": {"acc_g_std": 0.01, "gyro_deg_s_std": 1.0},
+  "noise_high": {"acc_g_std": 0.05, "gyro_deg_s_std": 5.0},
+  "raw_sha256": "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477",
+  "refit_or_threshold_tuning_allowed": false,
+  "model_identity": "require hashes from existing docs/a_group/TEST_LOCK.json before deserialization",
+  "interpretation": "previously inspected development robustness sample, not a new blind TEST; random receiver candidates do not measure sensor/model accuracy"
+}

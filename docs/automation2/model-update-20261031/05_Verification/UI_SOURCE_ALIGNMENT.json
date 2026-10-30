@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "source_timelines_checked": 7,
+  "frames_matched_to_saved_commands": 1897,
+  "subject_session_task_identities_removed_from_ui_json": true,
+  "source_origin_kept": true
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "fogguard.b1.motion_proxy.v1",
+  "sample_rate_hz": 60,
+  "window_samples": 30,
+  "time_tolerance_s": 0.0001,
+  "source_lifetime_s": 0.5,
+  "no_movement_max_gyro_rms_deg_s": 5.0,
+  "movement_min_gyro_rms_deg_s": 15.0,
+  "valid_no_movement_to_fallback_s": 3.0,
+  "fallback_duration_s": 3.0,
+  "interpretation": "Fixed illustrative engineering thresholds; not validated steps, position, patient response or clinical parameters"
+}

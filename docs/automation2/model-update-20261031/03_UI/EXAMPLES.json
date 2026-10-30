@@ -1,0 +1,51 @@
+[
+  {
+    "example": "01_fallback",
+    "origin": "constructed_rule_fixture",
+    "timeline": "Examples/01_fallback/timeline.json",
+    "duration_s": 21.983333333,
+    "frames": 264
+  },
+  {
+    "example": "02_fading",
+    "origin": "constructed_rule_fixture",
+    "timeline": "Examples/02_fading/timeline.json",
+    "duration_s": 21.983333333,
+    "frames": 264
+  },
+  {
+    "example": "03_left_turn",
+    "origin": "constructed_rule_fixture",
+    "timeline": "Examples/03_left_turn/timeline.json",
+    "duration_s": 21.983333333,
+    "frames": 264
+  },
+  {
+    "example": "04_right_turn",
+    "origin": "constructed_rule_fixture",
+    "timeline": "Examples/04_right_turn/timeline.json",
+    "duration_s": 21.983333333,
+    "frames": 264
+  },
+  {
+    "example": "05_refreeze",
+    "origin": "constructed_rule_fixture",
+    "timeline": "Examples/05_refreeze/timeline.json",
+    "duration_s": 21.983333333,
+    "frames": 264
+  },
+  {
+    "example": "06_feedback_gap",
+    "origin": "constructed_rule_fixture",
+    "timeline": "Examples/06_feedback_gap/timeline.json",
+    "duration_s": 21.983333333,
+    "frames": 265
+  },
+  {
+    "example": "07_real_output_replay",
+    "origin": "real_model_outputs_and_imu_proxy",
+    "timeline": "Examples/07_real_output_replay/timeline.json",
+    "duration_s": 25.983333333,
+    "frames": 312
+  }
+]

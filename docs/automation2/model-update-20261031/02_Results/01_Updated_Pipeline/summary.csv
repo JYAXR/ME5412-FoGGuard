@@ -1,0 +1,11 @@
+origin,strategy,cases,starts,stops,active_s,visual_intensity_s,audio_volume_s,fade_entries,fallback_entries,fallback_timeout_returns,lifecycle_errors,unsafe_active_rows,actual_steps_claimed,spacing_outside_range_rows,receiver_errors
+constructed_rule_fixture,countdown,24,24,24,232.04999999700001,229.02916666333334,137.417499998,9,9,9,0,0,0,0,0
+constructed_rule_fixture,feedback,24,24,24,232.04999999700001,229.02916666333334,137.417499998,9,0,0,0,0,0,0,0
+constructed_rule_fixture,fixed,24,24,24,280.749999999,280.749999999,168.4499999994,0,0,0,0,0,0,0,0
+constructed_rule_fixture,march,24,24,24,232.04999999700001,229.02916666333334,137.417499998,9,9,9,0,0,0,0,0
+constructed_rule_fixture,no_fade,24,24,24,232.04999999700001,232.04999999700001,139.2299999982,0,9,9,0,0,0,0,0
+real_model_outputs_and_imu_proxy,countdown,24,9,9,22.916666666999816,21.355555555777524,12.813333333466515,5,0,0,0,0,0,0,0
+real_model_outputs_and_imu_proxy,feedback,24,9,9,22.916666666999816,21.355555555777524,12.813333333466515,5,0,0,0,0,0,0,0
+real_model_outputs_and_imu_proxy,fixed,24,14,14,30.85000000000006,30.85000000000006,18.510000000000034,0,0,0,0,0,0,0,0
+real_model_outputs_and_imu_proxy,march,24,9,9,22.916666666999816,21.355555555777524,12.813333333466515,5,0,0,0,0,0,0,0
+real_model_outputs_and_imu_proxy,no_fade,24,9,9,22.916666666999816,22.916666666999816,13.75000000019989,0,0,0,0,0,0,0,0

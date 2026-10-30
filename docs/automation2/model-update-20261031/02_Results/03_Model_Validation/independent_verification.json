@@ -1,0 +1,149 @@
+{
+  "status": "PASS",
+  "runtime_files_checked": 384,
+  "supported_window_rows_recounted": 14399,
+  "raw_events_recounted": 108,
+  "events_with_overlap": 100,
+  "fused_direction_supported_windows_reconstructed": 880,
+  "fused_direction_known_windows": 514,
+  "fused_direction_correct": 228,
+  "scope": "Independent metrics and raw-event overlap from saved runtime and truth; no model retraining",
+  "metrics": [
+    {
+      "model": "ankle_history_rf",
+      "condition": "clean",
+      "supported": 920,
+      "TP": 173,
+      "FP": 138,
+      "FN": 16,
+      "TN": 593
+    },
+    {
+      "model": "ankle_history_rf",
+      "condition": "noise_low",
+      "supported": 920,
+      "TP": 166,
+      "FP": 178,
+      "FN": 23,
+      "TN": 553
+    },
+    {
+      "model": "ankle_history_rf",
+      "condition": "noise_high",
+      "supported": 920,
+      "TP": 182,
+      "FP": 233,
+      "FN": 7,
+      "TN": 498
+    },
+    {
+      "model": "ankle_history_rf",
+      "condition": "right_gyro_gap",
+      "supported": 920,
+      "TP": 173,
+      "FP": 138,
+      "FN": 16,
+      "TN": 593
+    },
+    {
+      "model": "bilateral_rf",
+      "condition": "clean",
+      "supported": 920,
+      "TP": 160,
+      "FP": 121,
+      "FN": 29,
+      "TN": 610
+    },
+    {
+      "model": "bilateral_rf",
+      "condition": "noise_low",
+      "supported": 920,
+      "TP": 160,
+      "FP": 204,
+      "FN": 29,
+      "TN": 527
+    },
+    {
+      "model": "bilateral_rf",
+      "condition": "noise_high",
+      "supported": 920,
+      "TP": 157,
+      "FP": 215,
+      "FN": 32,
+      "TN": 516
+    },
+    {
+      "model": "bilateral_rf",
+      "condition": "right_gyro_gap",
+      "supported": 759,
+      "TP": 143,
+      "FP": 99,
+      "FN": 17,
+      "TN": 500
+    },
+    {
+      "model": "ankle_cnn",
+      "condition": "clean",
+      "supported": 920,
+      "TP": 113,
+      "FP": 65,
+      "FN": 76,
+      "TN": 666
+    },
+    {
+      "model": "ankle_cnn",
+      "condition": "noise_low",
+      "supported": 920,
+      "TP": 115,
+      "FP": 79,
+      "FN": 74,
+      "TN": 652
+    },
+    {
+      "model": "ankle_cnn",
+      "condition": "noise_high",
+      "supported": 920,
+      "TP": 137,
+      "FP": 186,
+      "FN": 52,
+      "TN": 545
+    },
+    {
+      "model": "ankle_cnn",
+      "condition": "right_gyro_gap",
+      "supported": 920,
+      "TP": 113,
+      "FP": 65,
+      "FN": 76,
+      "TN": 666
+    },
+    {
+      "model": "current_direction",
+      "condition": "clean",
+      "supported": 880,
+      "known": 514,
+      "accuracy": 0.6809338521400778
+    },
+    {
+      "model": "current_direction",
+      "condition": "noise_low",
+      "supported": 880,
+      "known": 514,
+      "accuracy": 0.6828793774319066
+    },
+    {
+      "model": "current_direction",
+      "condition": "noise_high",
+      "supported": 880,
+      "known": 514,
+      "accuracy": 0.6673151750972762
+    },
+    {
+      "model": "current_direction",
+      "condition": "right_gyro_gap",
+      "supported": 880,
+      "known": 514,
+      "accuracy": 0.6809338521400778
+    }
+  ]
+}

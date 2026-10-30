@@ -1,0 +1,28 @@
+{
+  "schema": "fogguard.automation2.checks.v1",
+  "checks": {
+    "pytest": {
+      "exit_code": 0
+    },
+    "ruff": {
+      "exit_code": 0
+    },
+    "baseline_evaluation": {
+      "exit_code": 0
+    },
+    "integrated_demo": {
+      "exit_code": 0
+    },
+    "engineering_comparison": {
+      "exit_code": 0
+    },
+    "engineering_verification": {
+      "exit_code": 0
+    },
+    "real_data_audit": {
+      "status": "NOT_RUN",
+      "reason": "Raw data and OOF inputs omitted"
+    }
+  },
+  "real_data_retrained": false
+}
