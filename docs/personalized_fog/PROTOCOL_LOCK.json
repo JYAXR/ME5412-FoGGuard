@@ -1,0 +1,64 @@
+{
+  "schema": "fogguard.personalized_fog.plan.v1",
+  "created_at_utc": "2026-10-30T05:08:28.031951+00:00",
+  "raw_sha256": "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477",
+  "source_sha256": {
+    "config/personalized_fog.json": "c5265057e4e7503cad149dd3c55e1c71cb5322d660667f08ba750bfb195d7819",
+    "config/fog_selected.json": "a091c9f58a42a0bd36d71c692325f4c1939d4c9a7f9ccb34fe32e3f2df38c40a",
+    "scripts/run_personalized_fog.py": "f304a433b254347e21b3353df9c1e8f7191e7c52545a1e52a2ab9c8319716da0",
+    "src/fogguard/modeling/personalized_fog.py": "e4df1cd81dc1228f7763d0c46c632d65ab556f307191a885a4ec07db905a4391",
+    "src/fogguard/modeling/a1_bilateral.py": "4cd469be54f22d73f6957c2e0f322ecca91536086a06bf2fe405c42a62e21d2e",
+    "src/fogguard/modeling/a1_fog.py": "78c1cd49ba262561f495e9fcefe9ffce95ce2084b9906102b19fda4ab2bbba2e",
+    "src/fogguard/modeling/fogstar_baseline.py": "3c072cb6d3665c992ce0338aea1cdbac9b16a263fd8219ccd9f261fb436e7e40",
+    "src/fogguard/data/fogstar.py": "f0a54f6aa59e770e51ce772c36464120a0d8de593975e4b4f0fe43fefa31b3ad",
+    "src/fogguard/evaluation/heldout.py": "ca57f7d45005f7191bf1adbedbd6dfa91681fb6333186466022e333d0970f3d9",
+    "src/fogguard/evaluation/intervals.py": "4c0462f7bbb156b9a8c6cc8178d395b55d89bcb9043ce7cc5ddf566c7a854428",
+    "src/fogguard/evaluation/selected_fog.py": "4cba111895a2f23636bbcc25b384ac1e98a7ebfadc1bb6cc3c1f167483daf792"
+  },
+  "config": {
+    "schema": "fogguard.personalized_fog.protocol.v1",
+    "cohort_role": "train",
+    "original_validation_and_test_excluded": true,
+    "detector": "bilateral_rf",
+    "features": 66,
+    "rf": {
+      "n_estimators": 300,
+      "min_samples_leaf": 2,
+      "class_weight": "balanced_subsample",
+      "n_jobs": 4
+    },
+    "random_state": 5412,
+    "fixed_threshold": 0.23,
+    "outer_split": "leave_one_session_out_if_multiple_else_leave_one_record_out",
+    "minimum_adaptation_positive_windows": 10,
+    "minimum_adaptation_negative_windows": 10,
+    "calibration_grid": {
+      "start": 0.05,
+      "stop": 0.95,
+      "count": 91
+    },
+    "calibration_rule": "Adaptation-only F1, then balanced accuracy, then higher threshold",
+    "strategies": [
+      "population",
+      "personal",
+      "population_calibrated"
+    ],
+    "population": "Fit all other TRAIN-pool participants, no target-person data; fixed threshold",
+    "personal": "Fit only target-person non-held-out blocks; fixed threshold",
+    "population_calibrated": "Same population classifier; choose threshold on target adaptation blocks only",
+    "eligibility": "Based on adaptation class support and input availability only, never evaluation labels or scores",
+    "primary": "Paired pooled precision/recall/F1 and false-positive rate; per-person and split-kind results",
+    "negative_only": "Population-only negative controls retained separately; no claimed personal FoG performance",
+    "interpretation": "Exploratory blocked cross-validation within TRAIN14, not a new blind TEST or prospective next-day trial"
+  },
+  "original_cohort_role": "train",
+  "original_validation_and_test_used": false,
+  "base_commit": "7a608dc8de1fa855c71214e98137e030c7753eef",
+  "inputs": {
+    "features.npz": "ea938380092457b082370515a9957a822318d1d18e5ca321d27db6aaf6718744",
+    "window_metadata.csv": "96c2044a83e7ba5107f4ec898afeac84e48ca0fcdf8103777379846bff1c2cf4",
+    "records.json": "236e2fd8578fb7889eb3e88031fa8b9e19b50b5916c2c11409c9621fddfbff46",
+    "folds.json": "56e0fd7ca6c8166fcba0085f48a9d98c57a9cd87ac6929e5867882fd830bb432"
+  },
+  "fitted_models_at_plan_creation": 0
+}
