@@ -2,9 +2,9 @@
   "schema": "fogguard.project.v1",
   "date": "2026-10-30",
   "project": "FoGGuard",
-  "source_branch": "feat/a2-perception-fusion",
+  "source_branch": "main",
   "summary": "IMU freezing and direction perception with response-aware visual/audio cueing",
-  "project_state": "A_group_locked_TEST_evaluated_performance_limits_documented",
+  "project_state": "A_group_delivered_B1_feedback_B2_integration_and_design_next",
   "scope": {
     "real_data": "FoG-STAR",
     "signal_rate_hz": 60,
@@ -14,7 +14,9 @@
     "final_visualization_owner": "industrial_design",
     "clinical_efficacy_validated": false,
     "a_group_test_consumed_for_selection": true,
-    "a_group_display": "Unified English charts/data/explanations; no PPT or 3D"
+    "a_group_display": "Unified English charts/data/explanations; no PPT or 3D",
+    "a_group_delivery_complete": true,
+    "current_A_group_work": "maintenance_and_concrete_handoff_support_only"
   },
   "entrypoints": {
     "overview": "docs/PROJECT_OVERVIEW.md",
@@ -22,16 +24,17 @@
     "architecture": "docs/ARCHITECTURE.md",
     "interfaces": "docs/INTERFACE_CONTRACT.md",
     "quickstart": "docs/QUICKSTART.md",
-    "a1": "docs/A1_A2_START_HERE.md",
-    "a2": "docs/a2/RESULTS.md",
+    "a1": "docs/tasks/A1.md",
+    "a2": "docs/tasks/A2.md",
     "perception": "docs/a2/fusion/README.md",
     "a_group_test": "docs/a_group/README.md",
-    "a_group_showcase": "docs/a_group_showcase/index.html"
+    "a_group_showcase": "docs/a_group_showcase/index.html",
+    "a_group_inference": "docs/A1_A2_START_HERE.md"
   },
   "roles": {
     "A1": {
       "responsibility": "FoG models and evidence",
-      "status": "algorithm_delivery_and_locked_TEST_evaluation_complete",
+      "status": "delivered_on_main_maintenance_support",
       "methods": [
         "ankle_history_rf",
         "bilateral_rf",
@@ -40,62 +43,121 @@
       "model_selection": "explicit method argument; bilateral_rf as integration reference",
       "details": "docs/a1/selected_status.json",
       "remaining": [
-        "receiver support and model package maintenance"
+        "model/interface maintenance",
+        "support concrete receiver reproduction issues"
       ],
       "test_results": "docs/a_group/results.json",
-      "presentation": "docs/a_group_showcase/index.html"
+      "presentation": "docs/a_group_showcase/index.html",
+      "delivery_complete": true,
+      "new_training_required": false,
+      "task": "docs/tasks/A1.md"
     },
     "A2": {
       "responsibility": "direction and perception fusion",
-      "status": "direction_and_fusion_locked_TEST_evaluated_performance_review_pending",
+      "status": "delivered_on_main_maintenance_support",
       "task": "docs/tasks/A2.md",
-      "results": "docs/a2/results.json",
+      "results": "docs/a_group/results.json",
       "presentation": "docs/a_group_showcase/index.html",
-      "delivery_focus": "Current direction recognition as main result; preturn retained as evidence-backed feasibility research",
+      "delivery_focus": "Delivered current-direction and causal perception outputs; preturn not operational",
       "preturn_status": "Implemented and evaluated; both horizons have zero left/right recall",
       "preturn_binary_results": "docs/a2/binary_results.json",
       "preturn_binary_status": "TRAIN-subject OOF selected; development event recall 0/41 at 0.5s and 2/41 at 1.0s; zero joint direction recall; not operational",
       "evaluation_scope": "14 TRAIN, 4 development, 4 locked participant-held-out TEST; no refitting on TEST",
       "remaining": [
-        "receiver review of rejection/coverage and false-alarm tradeoffs",
-        "measure live computation latency before online deployment"
+        "model/interface maintenance",
+        "support concrete receiver reproduction issues"
       ],
       "fusion": "docs/a2/fusion/README.md",
       "fusion_evidence": "docs/a2/fusion/results.json",
       "direction_development_accuracy": 0.6699115044247788,
       "direction_test_accuracy_known_valid_windows": 0.8106508875739645,
       "fused_direction_test_accuracy_known_valid_windows": 0.5177514792899408,
-      "test_results": "docs/a_group/results.json"
+      "test_results": "docs/a_group/results.json",
+      "delivery_complete": true,
+      "new_training_required": false,
+      "development_results": "docs/a2/results.json",
+      "known_limits": [
+        "Known-valid TEST direction: raw accuracy 81.07%; fixed fusion 51.78%, coverage 54.73%",
+        "Preturn feasibility evaluated; no operational advance-intent prediction",
+        "Offline timing convention; live computation latency not measured"
+      ]
     },
     "B1": {
       "responsibility": "motion feedback and cue control",
-      "status": "simulation_foundation_available_real_feedback_pending",
+      "status": "simulation_foundation_available_real_feedback_and_adapter_required",
       "task": "docs/tasks/B1.md",
       "remaining": [
-        "IMU motion proxy",
-        "source-preserving feedback adapter",
-        "valid-observation no-response timing",
-        "cue/march parameter consistency and acceptance"
+        "real IMU motion proxy with validity and availability",
+        "source-preserving proxy adapter; no fabricated displacement",
+        "valid-observation no-response timer",
+        "cue/march/return/exit configuration and abnormal-case evidence"
+      ],
+      "inputs": [
+        "raw synchronized IMU",
+        "perception_runtime.csv",
+        "actual cue activation records"
+      ],
+      "outputs": [
+        "feedback_runtime.csv",
+        "commands.csv",
+        "configuration and source-preserving adapter",
+        "motion-feedback figures and control-transition examples"
+      ],
+      "task_order": [
+        "B1-01",
+        "B1-02",
+        "B1-03",
+        "B1-04",
+        "B1-05"
       ]
     },
     "B2": {
       "responsibility": "evaluation and joint integration",
-      "status": "tools_available_joint_acceptance_pending",
+      "status": "tools_available_receiver_checks_and_joint_pipeline_required",
       "task": "docs/tasks/B2.md",
       "remaining": [
-        "four-module integration",
-        "same-input strategy evaluation",
-        "final export package and failure cases"
+        "receiver identity/time/source/unknown checks",
+        "B1 joint integration",
+        "fixed-input strategy evaluation and lifecycle acceptance",
+        "final export and handoff to industrial design"
+      ],
+      "inputs": [
+        "delivered A-group perception/evidence",
+        "B1 feedback/control when available"
+      ],
+      "outputs": [
+        "joint run entry point",
+        "same-input strategy comparison",
+        "acceptance matrix and failure cases",
+        "reproducible final display data package"
+      ],
+      "task_order": [
+        "B2-01",
+        "B2-02",
+        "B2-03",
+        "B2-04",
+        "B2-05"
       ]
     },
     "industrial_design": {
       "responsibility": "PPT and final visualization",
-      "status": "final_delivery_pending",
+      "status": "A_group_assets_ready_PPT_and_final_display_pending",
       "task": "docs/tasks/DESIGN.md",
       "remaining": [
         "visual design",
         "validated playback integration",
         "final slides and demonstration video"
+      ],
+      "inputs_available_now": [
+        "docs/a_group_showcase/index.html",
+        "docs/a_group_showcase/FIGURE_CATALOG.csv"
+      ],
+      "depends_on_for_final_playback": "B2 final saved command/data package",
+      "task_order": [
+        "D-01",
+        "D-02",
+        "D-03",
+        "D-04"
       ]
     }
   },
@@ -109,10 +171,11 @@
     "locked A-group held-out evaluation and English TEST figures"
   ],
   "not_yet_accepted": [
-    "perception operating-point suitability and receiver review",
-    "real IMU response feedback",
-    "four-module real-data pipeline",
-    "final visualization"
+    "B2 receiver integration checks",
+    "real IMU response-feedback adapter",
+    "feedback-driven cueing joint pipeline",
+    "same-input joint strategy evaluation and final export",
+    "final PPT/visualization/video"
   ],
   "evidence_rules": [
     "runtime truth separation",
@@ -131,8 +194,15 @@
       "critical_engineering_audit_failures": 0,
       "compatibility_real_data_audit": "NOT_RUN in current full check",
       "documentation_links_and_role_tasks": "PASS",
+      "current_planning_documents": {
+        "markdown_links_checked": 84,
+        "role_task_steps_checked": 14,
+        "immediate_next_actions": 3,
+        "published_evidence_hashes_unchanged": 88,
+        "algorithm_changes": 0
+      },
       "algorithm_source_hashes": "A1 and A2 training implementations unchanged",
-      "scope": "Engineering checks and locked TEST integrity; scores do not imply performance acceptance",
+      "scope": "Engineering checks and delivered A-group evidence integrity; B1 real-feedback and B2 joint acceptance remain pending",
       "perception_behavior_tests": 21,
       "selected_perception_development_replay": "PASS: 20 records; no truth",
       "heldout_scoring_behavior_tests": 10,
@@ -148,5 +218,82 @@
         "scope": "Static HTML references, image decoding, exact data comparison and file hashes"
       }
     }
-  }
+  },
+  "planning_baseline": {
+    "branch": "main",
+    "commit": "51baaf9dc4d87871e787032eff99ce68eff2e526",
+    "merged_pull_request": 27,
+    "merge_date": "2026-10-30",
+    "meaning": "Merged perception/evidence baseline; current plan does not imply full-system completion"
+  },
+  "known_capability_limits": [
+    "FoG TEST F1 0.485/0.554/0.557; false alarms and misses remain",
+    "Fixed direction fusion lowers known-target coverage and overall accuracy",
+    "Preturn is not operational; current direction is not subjective intention",
+    "Motion proxy is not measured forward displacement; clinical efficacy unvalidated",
+    "Live latency not measured; dedicated online-deployment verification outside current offline delivery"
+  ],
+  "milestones": [
+    {
+      "id": "M1",
+      "name": "A-group perception and chart/data delivery",
+      "owners": [
+        "A1",
+        "A2"
+      ],
+      "status": "complete_on_main",
+      "evidence": "docs/a_group_showcase/index.html"
+    },
+    {
+      "id": "M2",
+      "name": "Real motion feedback and receiver checks",
+      "owners": [
+        "B1",
+        "B2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "M3",
+      "name": "Feedback-driven cueing closed-loop integration",
+      "owners": [
+        "B1",
+        "B2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "M4",
+      "name": "Joint acceptance and final data package",
+      "owners": [
+        "B2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "M5",
+      "name": "PPT and final visual demonstration",
+      "owners": [
+        "industrial_design"
+      ],
+      "status": "preparation_can_start_final_delivery_pending"
+    }
+  ],
+  "next_actions": [
+    {
+      "task": "B1-01",
+      "action": "Implement real IMU motion feedback with validity/source/time",
+      "details": "docs/tasks/B1.md"
+    },
+    {
+      "task": "B2-01",
+      "action": "Verify delivered perception interface in parallel",
+      "details": "docs/tasks/B2.md"
+    },
+    {
+      "task": "D-01",
+      "action": "Prepare PPT story and visual style using delivered assets",
+      "details": "docs/tasks/DESIGN.md"
+    }
+  ]
 }
