@@ -8,7 +8,7 @@ Stale/unknown direction and invalid feedback withdraw cues,PASS,"All 69,147 comm
 Every started command closes; final outputs off,PASS,170 start/stop pairs; every final visual/audio flag is off,
 Constructed low-motion fallback and timeout return,PASS,27 fallback entries; 27 timeout returns,Constructed probes only; real clips did not trigger fallback
 Constructed feedback_gap branch,PASS,90 evidence rows; commands.csv,
-Constructed unknown_direction branch,PASS,180 evidence rows; commands.csv,
+Constructed unknown_direction branch,PASS,72 evidence rows; commands.csv,
 Constructed refreeze branch,PASS,3 evidence rows; commands.csv,
 "Reject reversed raw, perception and feedback clocks",PASS,test_reversed_clocks_are_rejected[raw]; test_reversed_clocks_are_rejected[perception]; test_reversed_clocks_are_rejected[feedback],Constructed unit-test inputs
 Reject duplicate raw timestamps and missing gyro,PASS,test_missing_channel_unknown_and_reversed_or_duplicate_times_rejected,Constructed unit-test inputs

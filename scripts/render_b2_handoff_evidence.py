@@ -151,6 +151,10 @@ def matrix(root, junit=None):
             hit = d.guidance_reason.eq(reason)
             if profile != "refreeze":
                 hit &= ~d.guidance_visual_enabled
+            if profile == "unknown_direction":
+                # Count the injected unknown source, not startup with no perception.
+                hit &= (d.direction_input_fresh & d.fog_input_fresh
+                        & d.direction.eq("unknown"))
             count += int(hit.sum())
         if not count:
             raise ValueError(f"Missing expected constructed branch: {profile}")

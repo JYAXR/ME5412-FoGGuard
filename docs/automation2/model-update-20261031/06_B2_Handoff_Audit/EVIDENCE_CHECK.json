@@ -2,7 +2,7 @@
   "status": "ENGINEERING_EVIDENCE_GENERATED_WITH_EXPLICIT_GAPS",
   "bundle_files_verified": 513,
   "source_manifest_sha256": "7d45eb6f44cf9004f247976175e53992e808e497d8f964bca49bdf7c6f85add8",
-  "render_script_sha256": "993c0cc0e7b63db5365225da10e19ca938d946be8bbc820d0996856d4c92321a",
+  "render_script_sha256": "17cd5d5c133816af9457f2fc5de149372a4c4a25243988a4d8ae0112ec0c578a",
   "examples": [
     {
       "example": "01_real_process",

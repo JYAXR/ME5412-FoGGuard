@@ -288,8 +288,8 @@
       "bytes": 1388
     },
     "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/ACCEPTANCE_MATRIX.csv": {
-      "sha256": "d787b2fbd3d55af61cb0d9181ac318f2ed86818c642bdc5fa73b2ebb9035acf0",
-      "bytes": 2724
+      "sha256": "70d728a701de4a5d2b065361465cd42e56d557a5fd173717eb288e75d61f0fa5",
+      "bytes": 2723
     },
     "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/ACCEPTANCE_TESTS.csv": {
       "sha256": "7b02b4fe16ba5014f8acb658add8961713b20d458f64daf508cdb4203361827d",
@@ -304,7 +304,7 @@
       "bytes": 61306
     },
     "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/EVIDENCE_CHECK.json": {
-      "sha256": "6ce3ee137979f7f3bc2f8c18b68053edeb140f195e13a43864cc45a3886fe320",
+      "sha256": "1c8bb99e08889ff7354e1bc1d8122820b903979a72d82484002dd2cb28cacce8",
       "bytes": 1949
     },
     "docs/automation2/model-update-20261031/06_B2_Handoff_Audit/EXPORT_AUDIT.json": {
@@ -340,8 +340,8 @@
       "bytes": 871
     },
     "scripts/render_b2_handoff_evidence.py": {
-      "sha256": "993c0cc0e7b63db5365225da10e19ca938d946be8bbc820d0996856d4c92321a",
-      "bytes": 13001
+      "sha256": "17cd5d5c133816af9457f2fc5de149372a4c4a25243988a4d8ae0112ec0c578a",
+      "bytes": 13254
     },
     "src/fogguard/evaluation/handoff_bundle.py": {
       "sha256": "79a9f5066bd551814b333bb86d0f11596888a8cb1ebc9bf14c2c2afd15df712b",
