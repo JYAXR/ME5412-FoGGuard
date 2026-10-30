@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FoGGuard | Personalized FoG study</title><style>
+body{font:16px/1.6 system-ui,sans-serif;background:#f4f7fb;color:#172b46;margin:0}main{max-width:1280px;margin:auto;padding:32px 24px}
+h1{font-size:34px;line-height:1.2}h2{font-size:24px}section,.box{background:white;border:1px solid #dbe3ed;border-radius:12px;padding:24px;margin:24px 0}
+img{width:100%;height:auto}a{color:#205da5}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:12px;text-align:right;border-bottom:1px solid #dbe3ed}td:first-child,th:first-child{text-align:left}.scroll{overflow-x:auto}.tag{color:#52677d}
+</style><main><p class="tag">FoGGuard · Optional A1 research · 30 October 2026</p>
+<h1>Does personal training improve FoG detection?</h1>
+<p>It improves pooled F1 in this experiment, with more false alarms and uneven benefits across people.</p>
+<div class="box"><strong>Scope: exploratory blocked cross-validation within the original TRAIN pool.</strong>
+<p>14 participants / 70 records considered. The paired comparison covers 8 participants / 31 records / 4,090 overlapping windows, including 1,298 FoG windows. Original development and TEST participants are excluded. These scores cannot be compared directly with the original locked TEST F1.</p></div>
+<section><h2>Implementation</h2><p>All strategies use the existing bilateral gyro representation: 120 samples at 60 Hz, step 30, 66 features, and a 300-tree random forest. Population RF fits other TRAIN participants, excluding the target. Personal RF fits target-person adaptation records only. Both use fixed threshold 0.23. Population + calibration retains population weights and chooses a threshold on the target adaptation records alone (grid 0.05–0.95).</p>
+<p>Participants with multiple sessions use session holdout; others use whole-record holdout. Whole, disjoint records define adaptation and evaluation; windows never cross that boundary. At least 10 positive and 10 negative adaptation windows are required; eligibility is never based on held-out labels or scores. Personal fitting and threshold calibration use the same adaptation-label budget, in different ways.</p>
+<p>Threshold 0.23 is inherited from prior TRAIN-based design. Target exclusion refers to the current population classifier fit; this is not a newly isolated benchmark with no prior knowledge of the TRAIN pool.</p></section>
+<section><img src="01_pooled_comparison.png" alt="Pooled F1 rises 0.689 to 0.735; precision falls and false-positive rate rises 17.4% to 24.0%. Calibration does not improve F1."><p>Pooled F1 rises 0.689 to 0.735; precision falls and false-positive rate rises 17.4% to 24.0%. Calibration does not improve F1.</p><p><a href="01_pooled_comparison.png">PNG</a> · <a href="01_pooled_comparison.svg">SVG</a></p></section><section><img src="02_participant_comparison.png" alt="Four participants improve and four worsen. Participant-macro recall falls from 0.658 to 0.621 despite the higher pooled recall."><p>Four participants improve and four worsen. Participant-macro recall falls from 0.658 to 0.621 despite the higher pooled recall.</p><p><a href="02_participant_comparison.png">PNG</a> · <a href="02_participant_comparison.svg">SVG</a></p></section><section><img src="03_feasibility_and_splits.png" alt="Six of fourteen participants cannot support the paired personal study. Across-session evidence is restricted to one person and nine positive windows."><p>Six of fourteen participants cannot support the paired personal study. Across-session evidence is restricted to one person and nine positive windows.</p><p><a href="03_feasibility_and_splits.png">PNG</a> · <a href="03_feasibility_and_splits.svg">SVG</a></p></section><section><h2>Exact aggregate results</h2><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Strategy</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>FoG F1</th>
+      <th>False-positive rate</th>
+      <th>Person-macro F1</th>
+      <th>Person-macro recall</th>
+      <th>False alarm s / observed min</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>population</td>
+      <td>0.659</td>
+      <td>0.723</td>
+      <td>0.689</td>
+      <td>0.174</td>
+      <td>0.474</td>
+      <td>0.658</td>
+      <td>7.287</td>
+    </tr>
+    <tr>
+      <td>personal</td>
+      <td>0.631</td>
+      <td>0.881</td>
+      <td>0.735</td>
+      <td>0.240</td>
+      <td>0.526</td>
+      <td>0.621</td>
+      <td>9.945</td>
+    </tr>
+    <tr>
+      <td>population_calibrated</td>
+      <td>0.562</td>
+      <td>0.764</td>
+      <td>0.648</td>
+      <td>0.277</td>
+      <td>0.446</td>
+      <td>0.615</td>
+      <td>11.281</td>
+    </tr>
+  </tbody>
+</table></div>
+<p>Participant macro gives each person equal weight. Pooled metrics give each window equal weight. False alarm duration uses causal prediction availability, held for at most 0.5 s; its denominator is the same 2,097.78 observed seconds. It is not alarms per walking minute or measured clinical burden.</p></section>
+<section><h2>Interpretation and limits</h2><p>Personal training is a promising optional adaptation strategy, not a universal replacement. The result does not prove that inter-person gait variation caused the original errors. Model data volume, same-session similarity and the fixed operating point also differ. No threshold retuning followed evaluation.</p>
+<p>Record holdout is within-session; session IDs are grouping keys, not verified dates. Overlapping windows are not independent subjects. Only one participant supports session holdout, where personal F1 is lower. A prospective across-day or new-person trial is still needed for deployment claims.</p>
+<p>Five participants with no positive supported windows are retained as separate population-only controls (CSV below). FoG recall/F1 are not evaluable for those controls; lack of a positive supported window does not establish that a person never freezes.</p>
+<p>The original three delivered methods, weights, locked TEST results, A2 fusion and A-group showcase are preserved. This study does not replace the main pipeline.</p></section>
+<section><h2>Data and reproducibility</h2><p>
+<a href="comparison.csv">Aggregate comparison CSV</a> · <a href="per_person.csv">Per-person CSV</a> ·
+<a href="per_split_kind.csv">Split-type CSV</a> · <a href="feasibility.csv">Feasibility CSV</a> ·
+<a href="negative_only_controls.csv">Negative-only control CSV</a> · <a href="results.json">Full aggregate JSON</a> ·
+<a href="PROTOCOL_LOCK.json">Pre-fit protocol lock</a> · <a href="INDEPENDENT_VERIFICATION.json">Independent verification</a></p>
+<p>12,270 saved-model predictions replayed; paired metric counts, target exclusion, adaptation-only threshold selection and original evidence hashes verified. Public files contain anonymous aggregates, not raw signals or model weights.</p></section></main></html>

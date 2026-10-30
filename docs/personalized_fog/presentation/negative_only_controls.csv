@@ -1,0 +1,6 @@
+subject,windows,positive_windows,TP,FP,FN,TN,precision,recall,fog_f1,average_precision,accuracy,always_non_fog_accuracy,specificity,confusion_classes,confusion_matrix,false_positive_rate,positive_class_evaluation
+S08,338,0,0,79,0,259,0.0,,,,0.7662721893491125,1.0,0.7662721893491125,"['non_fog', 'fog']","[[259, 79], [0, 0]]",0.23372781065088757,NOT_EVALUABLE: no positive windows
+S11,30,0,0,1,0,29,0.0,,,,0.9666666666666667,1.0,0.9666666666666667,"['non_fog', 'fog']","[[29, 1], [0, 0]]",0.03333333333333333,NOT_EVALUABLE: no positive windows
+S12,437,0,0,29,0,408,0.0,,,,0.9336384439359268,1.0,0.9336384439359268,"['non_fog', 'fog']","[[408, 29], [0, 0]]",0.06636155606407322,NOT_EVALUABLE: no positive windows
+S04,255,0,0,45,0,210,0.0,,,,0.8235294117647058,1.0,0.8235294117647058,"['non_fog', 'fog']","[[210, 45], [0, 0]]",0.17647058823529413,NOT_EVALUABLE: no positive windows
+S05,193,0,0,47,0,146,0.0,,,,0.7564766839378239,1.0,0.7564766839378239,"['non_fog', 'fog']","[[146, 47], [0, 0]]",0.24352331606217617,NOT_EVALUABLE: no positive windows

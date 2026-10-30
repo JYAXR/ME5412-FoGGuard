@@ -161,6 +161,25 @@
       ]
     }
   },
+  "optional_studies": {
+    "personalized_fog": {
+      "status": "completed_exploratory_comparison",
+      "owner": "A1",
+      "protocol": "config/personalized_fog.json",
+      "details": "docs/personalized_fog/README.md",
+      "presentation": "docs/personalized_fog/presentation/index.html",
+      "scope": "Original TRAIN14 only; blocked CV; 8 eligible paired participants; not a new blind TEST",
+      "paired_windows": 4090,
+      "paired_positive_windows": 1298,
+      "population_f1": 0.6891991182953711,
+      "personal_f1": 0.735454837672774,
+      "population_false_positive_rate": 0.17406876790830947,
+      "personal_false_positive_rate": 0.2396131805157593,
+      "personal_f1_improved_participants": "4/8",
+      "conclusion": "Higher pooled F1 and recall with more false positives; uneven participant benefit; no across-day benefit established",
+      "main_pipeline_replaced": false
+    }
+  },
   "implemented_foundation": [
     "three selected FoG methods",
     "direction rules and temporal event integration",

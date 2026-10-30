@@ -1,0 +1,48 @@
+{
+  "schema": "fogguard.personalized_fog.delivery_checks.v1",
+  "date": "2026-10-30",
+  "python": "3.12.10",
+  "command": "python -X utf8 scripts/run_automation2_delivery_checks.py --output-dir reports/automation2-delivery/personalized_fog_NEW",
+  "checks": {
+    "pytest": {
+      "exit_code": 0
+    },
+    "ruff": {
+      "exit_code": 0
+    },
+    "baseline_evaluation": {
+      "exit_code": 0
+    },
+    "integrated_demo": {
+      "exit_code": 0
+    },
+    "engineering_comparison": {
+      "exit_code": 0
+    },
+    "engineering_verification": {
+      "exit_code": 0
+    },
+    "real_data_audit": {
+      "status": "NOT_RUN",
+      "reason": "Raw data and OOF inputs omitted"
+    }
+  },
+  "tests_passed": 328,
+  "engineering_paired_strategy_runs": 560,
+  "critical_engineering_audit_failures": 0,
+  "presentation_and_original_evidence": {
+    "schema": "fogguard.personalized_fog.delivery.v1",
+    "status": "PASS",
+    "presentation_hashes_checked": 15,
+    "html_links_checked": 17,
+    "png_images_decoded": 3,
+    "csv_tables_checked": 5,
+    "markdown_links_checked": 55,
+    "original_published_evidence_hashes_unchanged": 88,
+    "original_TEST_locked_sources_configs_and_models_unchanged": 23,
+    "saved_model_replay": "PASS",
+    "browser_render_check": "NOT_RUN: browser tool blocks local file URLs",
+    "scope": "Offline artifact integrity, local references, image decoding and aggregate data; no browser rendering"
+  },
+  "scope": "Engineering regression checks plus separate saved-model personalization replay; generic raw/OOF compatibility audit NOT_RUN. Not clinical efficacy or a new blind TEST."
+}
