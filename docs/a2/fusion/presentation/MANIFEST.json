@@ -1,0 +1,16 @@
+{
+  "schema": "fogguard.perception.presentation.v1",
+  "runtime_sha256": "226ee306d609754bf11348d4f1837bd99a6f0a7f4f57141533d70ca420e69330",
+  "source_sha256": "455ae64ad3a382cf2e149a764c1b13277e0e9f3a738d5fd10eabca1c9bb8d34b",
+  "truth_used": false,
+  "selection": "First record by sorted keys with confirmed event and smoothed left/right; fallback first record; 30 s clip starting 5 s before first confirmation",
+  "scope": "Illustrative development predictions, not a measured recovery outcome",
+  "files": {
+    "index.html": "7c07a8a595f311d19ae9ce791a1d0cd7f826ad3a542de206f159570dd14846fa",
+    "pipeline.png": "8345f77fb9e1cc50b1bfc0d5361fdc53562164f75ed7a0d8890da87d041c54cf",
+    "pipeline.svg": "061159c2e6016ecc300920f18873c07c6d5dcc5740896fe1d712ef1b20b25d8c",
+    "real_timeline.png": "e628bae00e135a7b80dc571bd8827225e3188ada07ce844f078387a5a32b17c7",
+    "real_timeline.svg": "6fea7d5352962a209f67957d30597cb79873d7959281dda1d550ff60bf7e8da8",
+    "timeline_data.csv": "0ba875a242c832fb39eb99fa43b91a79dadeae33001ab248844aa2a2f03b9bb7"
+  }
+}

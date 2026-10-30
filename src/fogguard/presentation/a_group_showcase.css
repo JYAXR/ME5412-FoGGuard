@@ -1,0 +1,48 @@
+:root{--ink:#203249;--muted:#617188;--blue:#396b9e;--line:#dce5ed;--paper:#fff;--wash:#f3f6f9}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--wash);color:var(--ink);font:16px/1.65 "Segoe UI",Arial,sans-serif}
+a{color:#285f91;text-underline-offset:3px}a:hover{color:#173a5a}
+a:focus-visible,summary:focus-visible{outline:3px solid #d69843;outline-offset:4px}
+.site-header{position:sticky;top:0;z-index:2;background:#ffffffed;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px max(24px,calc((100vw - 1260px)/2))}
+.brand{color:var(--ink);font-size:20px;font-weight:750;text-decoration:none;white-space:nowrap}
+.brand span{font-size:12px;color:var(--muted);font-weight:500;margin-left:12px}
+nav{display:flex;flex-wrap:wrap;gap:18px}nav a{font-size:13px;text-decoration:none;font-weight:600}
+main{max-width:1260px;margin:0 auto;padding:0 24px 50px}
+.hero{padding:58px 0 30px;background:none;border:0;box-shadow:none}
+h1{font-size:clamp(32px,4vw,48px);line-height:1.15;letter-spacing:-1.5px;margin:13px 0 18px}
+h2{font-size:26px;line-height:1.25;margin:4px 0 0;letter-spacing:-.5px}
+h3{font-size:18px;margin:25px 0 12px}.lead{max-width:750px;font-size:19px;color:var(--muted)}
+.eyebrow{font-size:11px;font-weight:750;letter-spacing:1.8px;color:var(--blue);margin:0}
+.badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.badges span{border:1px solid #cddce9;
+  background:#eaf0f6;border-radius:20px;font-size:12px;font-weight:600;padding:4px 12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px 22px}
+.stat strong{display:block;font-size:30px;font-weight:650;line-height:1.2;color:var(--blue)}
+.stat span{display:block;font-size:13px;margin-top:7px}.stat small{font-size:12px;color:var(--muted)}
+.scope-note{font-size:13px;color:var(--muted);margin-top:18px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:16px;margin:22px 0;padding:32px}
+.section-heading{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+.number{font-size:13px;color:var(--blue);font-weight:750;padding:9px 11px;border:1px solid #cddce9;border-radius:9px}
+.intro{max-width:950px;color:var(--muted);margin:0 0 20px}
+figure{margin:22px 0;background:#fff}figure img{width:100%;height:auto;display:block}
+figcaption{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin-top:6px}
+.figure-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.figure-links a,.download-grid a{border:1px solid var(--line);border-radius:7px;padding:5px 11px;
+  font-size:12px;font-weight:600;text-decoration:none;background:#f8fafc}
+.table-wrap{overflow-x:auto;margin:15px 0}table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:11px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:#f0f5f9;font-size:12px;color:#49617b;font-weight:700}tbody tr:last-child td{border-bottom:0}
+.insight{border-left:3px solid var(--blue);background:#f2f6fa;padding:13px 17px;font-size:14px;margin-top:20px}
+.small{font-size:12px;color:var(--muted)}details{border-top:1px solid var(--line);padding-top:16px;margin-top:20px}
+summary{cursor:pointer;color:var(--blue);font-size:14px;font-weight:650}.appendix{margin-top:28px}
+.download-grid{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0}.catalog td{font-size:13px}
+footer{max-width:1260px;margin:0 auto;padding:0 24px 35px;font-size:12px;color:var(--muted)}
+@media(max-width:850px){.site-header{position:static;align-items:flex-start;flex-direction:column;padding:16px 20px}
+  nav{gap:10px 16px}.brand span{display:none}main{padding:0 12px 30px}.hero{padding:30px 8px 12px}
+  section{padding:20px 14px}.stats{gap:8px}.stat{padding:15px 12px}.stat strong{font-size:24px}
+  h2{font-size:22px}.section-heading{gap:11px}th,td{padding:9px 10px}html{scroll-padding-top:15px}}
+@media(max-width:480px){.stats{grid-template-columns:1fr}.stat strong{display:inline;margin-right:10px}
+  .stat span{display:inline}.stat small{display:block;margin-top:5px}.lead{font-size:17px}}
+@media print{body{background:#fff}.site-header,nav,.figure-links,.download-grid{display:none}
+  section{border:0;padding:10px 0;break-inside:avoid}main{max-width:none;padding:0}details{display:block}}

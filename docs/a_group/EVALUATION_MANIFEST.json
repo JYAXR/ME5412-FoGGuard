@@ -1,0 +1,33 @@
+{
+  "schema": "fogguard.a_group.test_run.v1",
+  "lock_sha256": "e8ef5b5eaf32ec64a03be157c00dd2edd0d75c3c706b274a8de82f1d0ba7ec36",
+  "runtime_truth_separate": true,
+  "evaluation_only_files": [
+    "ankle_history_rf/evaluation.csv",
+    "bilateral_rf/evaluation.csv",
+    "ankle_cnn/evaluation.csv",
+    "direction_evaluation.csv",
+    "direction_fused_evaluation.csv",
+    "fog_fused_evaluation.csv"
+  ],
+  "model_hashes_unchanged": true,
+  "files": {
+    "direction_evaluation.csv": "32c0c18fe6c0a2db4ead67f1921a6e89a48e4a3a05f49718ad3571e45f4de4d6",
+    "direction_fused_evaluation.csv": "9d3519c0300505ca703fa208b6f90911753935b7c6163ac3bc0be1add3bac323",
+    "direction_runtime.csv": "c12eb53048a27241fe2e7fc2ff40e29f642865546b834e10fe40504ab9fc6750",
+    "EVALUATION_STARTED.json": "f44c9aedd4437ea6957b551f58fa93515e5cc457caf5de10d1d31341110576ff",
+    "fog_comparison.csv": "3e183989443408492d8c01f7c7bc67e3a45134d84ade28d7dbb10a96f8159060",
+    "fog_fused_evaluation.csv": "2407eea161c76f6a8180f8e2765d82bbbca381767e61d296b620a7783762c86d",
+    "perception_runtime.csv": "d427dfdb6f58290d194393b2618c3f895cd70544f35199ae12c1f5bd9e85cc1d",
+    "results.json": "23a824d3060fb02681c41d0a8e8eb57f14f46a0f1679a697f70338501de564ed",
+    "ankle_cnn/evaluation.csv": "904cd60d03abff147db0082642da189a8bc46bcd4b3aaab946b3eea69d3deb00",
+    "ankle_cnn/runtime.csv": "838647c016618ece3b40b7575040bff63f9d395dc520c59639164deee16f8649",
+    "ankle_history_rf/evaluation.csv": "cef24214d8f8c529891debf3506e377fe2ecd9509670fe3e410ecaf7c5aa9ff5",
+    "ankle_history_rf/runtime.csv": "b34111ffeab34a98cac8c3225d9784386a742eb2162f8d4f1dccab2753d435a0",
+    "bilateral_rf/evaluation.csv": "6eeb9dedae1b25c9e620924af225ee310e6c230c8d8b76ff7d5622705e93065c",
+    "bilateral_rf/runtime.csv": "b57c8a2c7b616488153d3506a052bf3b36d475e6337e1457849f6a21ae4bd66e"
+  },
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "pandas": "2.3.3"
+}

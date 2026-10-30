@@ -1,0 +1,11 @@
+{
+  "tests_passed": 321,
+  "new_scoring_tests": 10,
+  "ruff": "PASS",
+  "engineering_runs": 560,
+  "critical_engineering_failures": 0,
+  "generic_optional_raw_audit": "NOT_RUN (optional inputs omitted)",
+  "locked_TEST_integrity": "PASS",
+  "scope": "Code and evidence integrity, not clinical or performance-threshold acceptance",
+  "full_check_manifest_sha256": "fb67c9cb0e32cce17bcdd6a71e694d14eaf332bfc3ea1d234bdd4b49d6e16806"
+}

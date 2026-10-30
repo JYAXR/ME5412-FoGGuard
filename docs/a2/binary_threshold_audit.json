@@ -1,0 +1,260 @@
+{
+  "purpose": "Validation diagnostic only; no refitting or threshold selection",
+  "manifest_sha256": "e3e3c8ac471b41f6eaa19be294475efb8bc4ace0deed1b90f41172117b78e182",
+  "results": {
+    "0.5": {
+      "runtime_sha256": "3ecfa7aace5ba8b550a462201d6dd61733f4ec93b5c43ca1325fa43062c2df97",
+      "truth_sha256": "2cc73dfc1ac229faeedbcbc6427f570f93ebb4eae9b850e6869a7dfcb7368389",
+      "fitted_model_threshold": 0.25,
+      "diagnostic_points": [
+        {
+          "threshold": 0.02,
+          "precision": 0.09151785714285714,
+          "recall": 1.0,
+          "f1": 0.16768916155419222,
+          "false_alarms_per_minute": 8.655097613882862,
+          "negative_alarm_fraction": 0.4067245119305857
+        },
+        {
+          "threshold": 0.05,
+          "precision": 0.09308510638297872,
+          "recall": 0.8536585365853658,
+          "f1": 0.16786570743405277,
+          "false_alarms_per_minute": 8.004338394793926,
+          "negative_alarm_fraction": 0.2559652928416486
+        },
+        {
+          "threshold": 0.075,
+          "precision": 0.09352517985611511,
+          "recall": 0.6341463414634146,
+          "f1": 0.16300940438871472,
+          "false_alarms_per_minute": 7.939262472885033,
+          "negative_alarm_fraction": 0.17462039045553146
+        },
+        {
+          "threshold": 0.1,
+          "precision": 0.09876543209876543,
+          "recall": 0.3902439024390244,
+          "f1": 0.15763546798029557,
+          "false_alarms_per_minute": 6.702819956616052,
+          "negative_alarm_fraction": 0.0992407809110629
+        },
+        {
+          "threshold": 0.15,
+          "precision": 0.05555555555555555,
+          "recall": 0.07317073170731707,
+          "f1": 0.06315789473684211,
+          "false_alarms_per_minute": 3.1887201735357915,
+          "negative_alarm_fraction": 0.031995661605206074
+        },
+        {
+          "threshold": 0.2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.5856832971800434,
+          "negative_alarm_fraction": 0.005422993492407809
+        },
+        {
+          "threshold": 0.25,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        },
+        {
+          "threshold": 0.3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        },
+        {
+          "threshold": 0.4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        },
+        {
+          "threshold": 0.5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        },
+        {
+          "threshold": 0.6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        },
+        {
+          "threshold": 0.7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        },
+        {
+          "threshold": 0.9,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        }
+      ],
+      "minimum_false_alarm_point_with_recall_at_least_half": {
+        "threshold": 0.075,
+        "precision": 0.09352517985611511,
+        "recall": 0.6341463414634146,
+        "f1": 0.16300940438871472,
+        "false_alarms_per_minute": 7.939262472885033,
+        "negative_alarm_fraction": 0.17462039045553146
+      }
+    },
+    "1.0": {
+      "runtime_sha256": "7030977be61d62c6e2c71337ed2661018bd1ae0cbd7b0e26080cbe0347bcc83c",
+      "truth_sha256": "3824b2a74a080738636f7b2294ef00369fbac46b7791df8b88e73728f4c1dcde",
+      "fitted_model_threshold": 0.3,
+      "diagnostic_points": [
+        {
+          "threshold": 0.02,
+          "precision": 0.09318181818181819,
+          "recall": 1.0,
+          "f1": 0.1704781704781705,
+          "false_alarms_per_minute": 9.397590361445783,
+          "negative_alarm_fraction": 0.37513691128148957
+        },
+        {
+          "threshold": 0.05,
+          "precision": 0.08888888888888889,
+          "recall": 0.7804878048780488,
+          "f1": 0.1596009975062344,
+          "false_alarms_per_minute": 8.28039430449069,
+          "negative_alarm_fraction": 0.244249726177437
+        },
+        {
+          "threshold": 0.075,
+          "precision": 0.06910569105691057,
+          "recall": 0.4146341463414634,
+          "f1": 0.11846689895470383,
+          "false_alarms_per_minute": 8.871851040525739,
+          "negative_alarm_fraction": 0.16319824753559695
+        },
+        {
+          "threshold": 0.1,
+          "precision": 0.0736196319018405,
+          "recall": 0.2926829268292683,
+          "f1": 0.11764705882352941,
+          "false_alarms_per_minute": 7.228915662650603,
+          "negative_alarm_fraction": 0.10733844468784227
+        },
+        {
+          "threshold": 0.15,
+          "precision": 0.0967741935483871,
+          "recall": 0.14634146341463414,
+          "f1": 0.11650485436893204,
+          "false_alarms_per_minute": 3.6801752464403066,
+          "negative_alarm_fraction": 0.039978094194961664
+        },
+        {
+          "threshold": 0.2,
+          "precision": 0.125,
+          "recall": 0.07317073170731707,
+          "f1": 0.09230769230769231,
+          "false_alarms_per_minute": 1.8400876232201533,
+          "negative_alarm_fraction": 0.017524644030668127
+        },
+        {
+          "threshold": 0.25,
+          "precision": 0.2,
+          "recall": 0.04878048780487805,
+          "f1": 0.0784313725490196,
+          "false_alarms_per_minute": 0.7886089813800657,
+          "negative_alarm_fraction": 0.0065717415115005475
+        },
+        {
+          "threshold": 0.3,
+          "precision": 0.6666666666666666,
+          "recall": 0.04878048780487805,
+          "f1": 0.09090909090909091,
+          "false_alarms_per_minute": 0.13143483023001096,
+          "negative_alarm_fraction": 0.001095290251916758
+        },
+        {
+          "threshold": 0.4,
+          "precision": 1.0,
+          "recall": 0.024390243902439025,
+          "f1": 0.047619047619047616,
+          "false_alarms_per_minute": 0.06571741511500548,
+          "negative_alarm_fraction": 0.000547645125958379
+        },
+        {
+          "threshold": 0.5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        },
+        {
+          "threshold": 0.6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        },
+        {
+          "threshold": 0.7,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        },
+        {
+          "threshold": 0.8,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        },
+        {
+          "threshold": 0.9,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_alarms_per_minute": 0.0,
+          "negative_alarm_fraction": 0.0
+        }
+      ],
+      "minimum_false_alarm_point_with_recall_at_least_half": {
+        "threshold": 0.05,
+        "precision": 0.08888888888888889,
+        "recall": 0.7804878048780488,
+        "f1": 0.1596009975062344,
+        "false_alarms_per_minute": 8.28039430449069,
+        "negative_alarm_fraction": 0.244249726177437
+      }
+    }
+  }
+}

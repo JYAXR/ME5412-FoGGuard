@@ -1,0 +1,5 @@
+module,method,input,representation,model,decision_rule
+FoG,Ankle-history RF,Left ankle: acceleration + gyro,140 current/history features,300-tree RF,FoG threshold 0.18
+FoG,Bilateral RF,Both ankles: gyro,66 window features,300-tree RF; fusion reference,FoG threshold 0.23
+FoG,Ankle CNN,Left ankle: gyro,120 x 3 centered waveform,"4 convolution layers; 8,353 parameters",FoG threshold 0.50
+Direction,Current-direction RF,Left ankle + back: acceleration + gyro,12 gravity/rotation features,300-tree RF,Learned unknown class; fusion confidence gate 0.60

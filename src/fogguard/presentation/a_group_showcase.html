@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FoGGuard | A-group charts &amp; data</title>
+  <link rel="stylesheet" href="showcase.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#top">FoGGuard <span>A-group evidence</span></a>
+  <nav aria-label="Sections">
+    <a href="#workflow">Methods</a><a href="#scope">Data</a><a href="#fog">FoG</a>
+    <a href="#direction">Direction</a><a href="#fusion">Fusion</a>
+    <a href="#timeline">Replay</a><a href="#downloads">Downloads</a>
+  </nav>
+</header>
+<main id="top">
+  <section class="hero">
+    <p class="eyebrow">CHARTS · DATA · SHORT EXPLANATIONS</p>
+    <h1>Freezing &amp; direction perception</h1>
+    <p class="lead">One collection for explaining the methods, reading the locked-test results,
+      and preparing presentation figures.</p>
+    <div class="badges"><span>English figures</span><span>PNG + editable SVG</span>
+      <span>CSV data</span><span>Offline access</span></div>
+    <div class="stats">$scope_cards</div>
+    <p class="scope-note">Existing models and thresholds were fixed before TEST scoring.
+      Raw model results and fused outputs are reported separately.</p>
+  </section>
+
+  <section id="workflow">
+    <div class="section-heading"><span class="number">01</span><div>
+      <p class="eyebrow">IMPLEMENTATION</p><h2>From IMU windows to one perception timeline</h2></div></div>
+    <p class="intro">Three FoG methods are compared. The preselected bilateral RF and the current-direction
+      RF feed the fusion adapter; results from all three FoG methods are not combined into an ensemble.</p>
+    $workflow_figure
+    <h3>Methods at a glance</h3><div class="table-wrap">$methods_table</div>
+    <p class="small">RF = random forest. Scores use complete 120-sample windows at 60 Hz, updated every 30 samples.
+      Current direction means the observed action, not future turning intention.</p>
+  </section>
+
+  <section id="scope">
+    <div class="section-heading"><span class="number">02</span><div>
+      <p class="eyebrow">EVALUATION SCOPE</p><h2>Same held-out people, explicit scoring pools</h2></div></div>
+    $scope_figure
+    <p class="insight">FoG scores use all matched supported windows. Primary direction scores use valid windows
+      with a known direction target. Invalid sensors and unknown targets are counted separately.</p>
+  </section>
+
+  <section id="fog">
+    <div class="section-heading"><span class="number">03</span><div>
+      <p class="eyebrow">FROZEN MODELS · TEST</p><h2>FoG detection: recall versus false alarms</h2></div></div>
+    $fog_figure
+    <div class="table-wrap">$fog_table</div>
+    <p class="insight">$fog_note</p>
+    <details><summary>Show FoG confusion counts</summary>$confusion_figure</details>
+  </section>
+
+  <section id="direction">
+    <div class="section-heading"><span class="number">04</span><div>
+      <p class="eyebrow">CURRENT DIRECTION · TEST</p><h2>Recognition and rejection need separate numbers</h2></div></div>
+    $direction_figure
+    <div class="table-wrap">$direction_table</div>
+    <p class="insight">$direction_note</p>
+  </section>
+
+  <section id="fusion">
+    <div class="section-heading"><span class="number">05</span><div>
+      <p class="eyebrow">FIXED TEMPORAL RULES · TEST</p><h2>What changes after FoG event confirmation?</h2></div></div>
+    $fusion_figure
+    <div class="table-wrap">$fusion_table</div>
+    <p class="insight">Two distinct positive observations confirm FoG. Three negative observations support
+      recovery, with a 0.10 score margin. Hysteresis can retain false positives; this is not a measured
+      step-recovery result. The fixed adapter does not improve FoG F1 on this test.</p>
+  </section>
+
+  <section id="timeline">
+    <div class="section-heading"><span class="number">06</span><div>
+      <p class="eyebrow">REAL-IMU PROCESS EXAMPLE · TEST</p><h2>FoG, direction and state on the same clock</h2></div></div>
+    $timeline_figure
+    <p class="insight">The first TEST record and its first 30 seconds were specified before scoring.
+      This example retains false alarms and unknown direction. Targets describe completed windows;
+      a result becomes usable only at its availability time.</p>
+  </section>
+
+  <section id="downloads">
+    <div class="section-heading"><span class="number">07</span><div>
+      <p class="eyebrow">FIGURE LIBRARY</p><h2>Take the figures and their data</h2></div></div>
+    <p class="intro">PNG files are ready to insert into slides. SVG files remain editable.
+      CSV files contain aggregate data; no raw IMU or per-window patient CSV is included.</p>
+    <div class="table-wrap">$figure_catalog</div>
+    <div class="download-grid">$data_links</div>
+    <details class="appendix"><summary>Development validation: method-selection context</summary>
+      <p>These values belong to development validation. TEST is the main result above.
+        Different people and class balance mean the differences are not an optimization gain.</p>
+      <div class="table-wrap">$development_table</div>
+    </details>
+    <p class="small">Frozen outputs are reorganized for display; no model was retrained, threshold changed,
+      or test case selected by prediction quality. Four held-out participants provide a course-project
+      generalization check; clinical efficacy and live computation latency are not evaluated.</p>
+    <p class="small"><a href="MANIFEST.json">Source and file hashes</a> ·
+      <a href="README.md">Figure guide</a> · <a href="data/summary.json">Machine-readable summary</a></p>
+  </section>
+</main>
+<footer>FoGGuard · A1 + A2 perception · Saved evidence for presentation preparation</footer>
+</body>
+</html>

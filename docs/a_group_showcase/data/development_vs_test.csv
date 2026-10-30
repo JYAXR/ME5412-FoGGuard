@@ -1,0 +1,5 @@
+task,method,metric,development_windows,development_value,test_windows,test_value
+FoG,Ankle-history RF,FoG F1,2014,0.6912366912366913,1605,0.4845605700712589
+FoG,Bilateral RF,FoG F1,2014,0.6859574468085107,1605,0.5535248041775457
+FoG,Ankle CNN,FoG F1,2014,0.6772151898734177,1605,0.5568181818181818
+Direction,Raw current-direction RF,Accuracy,1130,0.6699115044247788,676,0.8106508875739645

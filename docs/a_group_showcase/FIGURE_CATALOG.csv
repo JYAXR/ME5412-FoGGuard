@@ -1,0 +1,8 @@
+id,title,cohort_or_role,png,svg,data,caption
+01_workflow,Workflow and model roles,Implementation,figures/01_workflow.png,figures/01_workflow.svg,data/methods.csv,Complete IMU windows feed independent FoG and current-direction models. The bilateral RF is the fixed fusion reference.
+02_evaluation_scope,Participants and scoring pools,TEST scope,figures/02_evaluation_scope.png,figures/02_evaluation_scope.svg,data/evaluation_scope.csv,The same held-out people support both tasks. FoG and direction use explicitly different scoring pools.
+03_fog_test,Three FoG methods,TEST,figures/03_fog_test.png,figures/03_fog_test.svg,data/fog_test.csv,Higher RF recall comes with more false alarms. The CNN reduces false positives but misses more FoG windows.
+04_direction_test,Current direction and fusion,TEST,figures/04_direction_test.png,figures/04_direction_test.svg,data/direction_test.csv,Unknown predictions count as errors on known targets. Fixed fusion rejects more windows and reduces overall accuracy.
+05_fog_fusion,FoG before and after event confirmation,TEST,figures/05_fog_fusion.png,figures/05_fog_fusion.svg,data/fusion_test.csv,Fixed confirmation and hysteresis do not improve FoG F1 here; positive state can persist through score dips.
+06_joint_timeline,Synchronized TEST replay,TEST example,figures/06_joint_timeline.png,figures/06_joint_timeline.svg,data/figure_selection.csv,The first TEST record and its first 30 seconds are shown. False alarms and unknown direction remain visible.
+07_fog_confusion,FoG confusion matrices,TEST,figures/07_fog_confusion.png,figures/07_fog_confusion.svg,data/fog_test.csv,"The same supported windows expose true positives, false alarms and missed FoG for all three methods."

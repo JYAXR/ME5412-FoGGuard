@@ -1,0 +1,27 @@
+{
+  "schema": "fogguard.a_group.publication.v1",
+  "lock_sha256": "e8ef5b5eaf32ec64a03be157c00dd2edd0d75c3c706b274a8de82f1d0ba7ec36",
+  "evaluation_manifest_sha256": "3569b09d8f2eb6c9c14701eb4748d34258a73688699e4296de59f5fb496f6f4f",
+  "scope": "Curated aggregate scores and figures; per-window patient CSVs stay outside Git",
+  "files": {
+    "CHECKS.json": "0e6e952f48d4e36daecdc43c0da834e8a2ce46319807a9eea6346f033a4dc973",
+    "EVALUATION_MANIFEST.json": "3569b09d8f2eb6c9c14701eb4748d34258a73688699e4296de59f5fb496f6f4f",
+    "INDEPENDENT_VERIFICATION.json": "a9d941d8bbfe3cf8032d522b9811d50617bab4bd13e6d90d1835685b91cbd94f",
+    "README.md": "047ab7e0d2e82a83cca7d983a60dd64b7ae5248a1f78503bc795e42cee4326be",
+    "results.json": "23a824d3060fb02681c41d0a8e8eb57f14f46a0f1679a697f70338501de564ed",
+    "TEST_LOCK.json": "e8ef5b5eaf32ec64a03be157c00dd2edd0d75c3c706b274a8de82f1d0ba7ec36",
+    "presentation/01_fog_test.png": "e394d430566fc30e0fe91ef8b25d95c69136c6e5c359907144327c0bcd948a0b",
+    "presentation/01_fog_test.svg": "072afa812ad8cbba7e1aaf929506570d716ef06387d0a920075482db4b84ac58",
+    "presentation/02_fog_confusion.png": "aaaaff5d4dc31db98dada7902f438fa4efb2c9cdeedf65793803fdf2269aea4a",
+    "presentation/02_fog_confusion.svg": "3a111f5c03a87b145f41c60298a81cf0d902eaaaa7d9f51cd90523df21829caf",
+    "presentation/03_direction_test.png": "389c0244af7443f8a197990c8ba1b88dab8f9834f2e93b0d2f2a210a409421b7",
+    "presentation/03_direction_test.svg": "2c2c3aa9744edf3d895bd0c2c37744d81f8a2611becde5e3f4ab4e9c1dd409c2",
+    "presentation/04_test_timeline.png": "b4c0024ce424a59706c34173f812882351fecdf846a3d1f541a48154779ef0dc",
+    "presentation/04_test_timeline.svg": "884a2393ac7a592739ce4b672791a93fef6f11d48151939816eba3d581b661f4",
+    "presentation/direction_test_metrics.csv": "ebd51c53c5c9fdc66dad8effa05e35db1da3d9f91f98dc0df31401d5ca77a9cd",
+    "presentation/fog_test_metrics.csv": "ba7287765c5a39ae4567d2b891d20f09011a06249e127b8796aa5345aab5254f",
+    "presentation/index.html": "d261da307d4f8be5ff135b35002825a6050b51f002cae2015d34b5aed9d76695",
+    "presentation/MANIFEST.json": "03c3b89fd1a16fdfe6ab9f64bc94bf84151788eda791f11f589860c991c78fc9",
+    "presentation/README.md": "24c86c1de66bb25809e2cc5f23c2ade9afcd4f365e1afad458674e13ea7c577f"
+  }
+}

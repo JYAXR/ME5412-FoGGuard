@@ -28,6 +28,8 @@ A1 输出记录键、`window_start_s / window_end_s / available_at_s`、`fog_pro
 
 A2 按同记录与实际可用时刻融合方向，加入确认、拒识、恢复观察和时效门控。A1 输出不含方向或迈步成功，不能直接作为完整控制输入。任务步骤见仓库内 `docs/tasks/A2.md`，字段见 `docs/INTERFACE_CONTRACT.md`。
 
+已实现的 [A1+A2 感知入口](a2/fusion/README.md) 可直接融合两个运行表，或从原始传感器运行两模型后导出 `perception_runtime.csv`；方法、正式测试、融合与联合时间线统一展示于 [英文图表页](a_group_showcase/index.html)。
+
 ## 下游关系
 
 B1 接收感知事件并观察运动反馈；低 FoG 分数不能替代迈步成功判断。B2 分别评价感知、反馈和策略，再导出展示包。工业设计从保存输出制作最终画面。

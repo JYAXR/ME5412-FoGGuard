@@ -4,3 +4,27 @@ docs/a1/figures/*.svg text eol=lf
 docs/a1/figures/*.csv text eol=lf
 docs/a1/figures/*.json text eol=lf
 docs/a1/figures/*.md text eol=lf
+
+# A2 manifests record exact exported bytes, including Windows CSV/JSON newlines.
+docs/a2/** -text whitespace=cr-at-eol
+# Matplotlib SVG path attributes contain valid, intentional trailing spaces.
+docs/a2/**/*.svg whitespace=cr-at-eol,-blank-at-eol
+# Keep the hashed A2 implementation and configurations portable across checkouts.
+config/a2_*.json text eol=lf
+scripts/*a2*.py text eol=lf
+src/fogguard/turning/learned.py text eol=lf
+src/fogguard/turning/preturn_binary.py text eol=lf
+# Preserve the new perception implementation hashes across operating systems.
+scripts/*perception.py text eol=lf
+src/fogguard/perception.py text eol=lf
+# Held-out evaluation and its pre-score lock use portable source bytes.
+config/a_group_test.json text eol=lf
+src/fogguard/evaluation/heldout.py text eol=lf
+scripts/*a_group_test*.py text eol=lf
+docs/a_group/** -text whitespace=cr-at-eol
+docs/a_group/**/*.svg whitespace=cr-at-eol,-blank-at-eol
+# Unified chart collection preserves source evidence and exported file hashes.
+scripts/build_a_group_showcase.py text eol=lf
+src/fogguard/presentation/a_group_showcase.* text eol=lf
+docs/a_group_showcase/** -text whitespace=cr-at-eol
+docs/a_group_showcase/**/*.svg whitespace=cr-at-eol,-blank-at-eol

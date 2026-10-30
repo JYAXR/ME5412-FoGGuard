@@ -6,7 +6,7 @@
     "bilateral_rf",
     "ankle_cnn"
   ],
-  "scope": "Development validation for the three delivered FoG methods; independent final evaluation pending",
+  "scope": "Development validation for the three delivered FoG methods; final held-out results reported separately",
   "same_windows": 2014,
   "positive_windows": 470,
   "people": 4,
@@ -150,5 +150,6 @@
     "data": "docs/a1/figures/model_comparison.csv",
     "dictionary": "docs/a1/figures/DATA_DICTIONARY.md",
     "scope": "matched development-validation results and one illustrative real-signal timeline"
-  }
+  },
+  "heldout_test_results": "docs/a_group/results.json"
 }

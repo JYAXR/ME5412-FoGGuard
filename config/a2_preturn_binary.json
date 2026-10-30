@@ -1,0 +1,18 @@
+{
+  "schema": "fogguard.a2.binary.v1",
+  "split_file": "config/fog_selected.json",
+  "horizons_s": [0.5, 1.0],
+  "feature_sets": ["left_back_long", "left_back_short", "bilateral_back_short"],
+  "families": ["logistic", "random_forest"],
+  "history_samples": 120,
+  "short_samples": [15, 30, 60, 120],
+  "target_band_s": 0.5,
+  "maximum_oof_false_alarms_per_minute": 1.0,
+  "maximum_oof_negative_alarm_fraction": 0.1,
+  "thresholds": [0.02, 0.05, 0.075, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+  "random_state": 5412,
+  "n_estimators": 200,
+  "min_samples_leaf": 5,
+  "selection": "Maximize binary window F1 under full-stream OOF false alarm budget; select on TRAIN subject OOF only",
+  "test_policy": "TEST is not featurized or scored"
+}

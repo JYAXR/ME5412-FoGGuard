@@ -1,0 +1,207 @@
+{
+  "schema": "fogguard.a_group.test_lock.v1",
+  "created_at_utc": "2026-10-29T19:55:18.367263+00:00",
+  "base_commit": "af4c882fe696a60282280b2b43b2de047adf9176",
+  "raw_sha256": "888875133fef386affddd0a5864f122d527d8d7bc588a69905cc0871bef53477",
+  "split": {
+    "train": [
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "validation": [
+      1,
+      5,
+      10,
+      12
+    ],
+    "test": [
+      7,
+      11,
+      21,
+      22
+    ],
+    "generation": "Two stratified train_test_split operations on sorted participant IDs, stratum=any raw FoG; test_size=4 seed20261029, validation_size=4 seed20261030; one draw, no performance-based retries"
+  },
+  "protocol": {
+    "schema": "fogguard.a_group.test_protocol.v1",
+    "partition": "test",
+    "fog_methods": [
+      "ankle_history_rf",
+      "bilateral_rf",
+      "ankle_cnn"
+    ],
+    "fusion_fog_method": "bilateral_rf",
+    "direction_task": "current",
+    "primary_fog_comparison": "Intersection of exact record/window keys across all three methods",
+    "additional_fog_metrics": "Native supported windows and causal raw-time/event overlap per method",
+    "fog_target": "At least 50 percent annotated FoG samples in the completed 120-sample window",
+    "direction_target": "Existing 80 percent current-direction purity and endpoint agreement",
+    "direction_primary": "Known targets on valid windows; unknown predictions count as errors",
+    "direction_additional": "Full four-class stream, accepted coverage and accepted-only accuracy",
+    "fusion_evaluation": "Score at the corresponding source arrival grid; never weight arbitrary timer ticks as samples",
+    "timeline_selection": "First TEST record by sorted keys; first 30 seconds from record start",
+    "refitting_allowed": false,
+    "test_threshold_selection_allowed": false,
+    "post_test_method_selection_allowed": false
+  },
+  "files_sha256": {
+    "config/a_group_test.json": "67a3baeae5f200458ebb133fd0f3c8b3acc5547e4716e135a89d0ada9882bdcf",
+    "config/fog_selected.json": "a091c9f58a42a0bd36d71c692325f4c1939d4c9a7f9ccb34fe32e3f2df38c40a",
+    "config/a2_turning.json": "9ce9af3d1ac8c83418d5a733eb10a3f13bdba1d07791e5b58adb0512cf5455f6",
+    "scripts/evaluate_a_group_test.py": "e7ceda960d536e9ae8a7a765494a0d465f3458857f6b20a07326b08a56bd37ba",
+    "src/fogguard/evaluation/heldout.py": "ca57f7d45005f7191bf1adbedbd6dfa91681fb6333186466022e333d0970f3d9",
+    "src/fogguard/evaluation/selected_fog.py": "4cba111895a2f23636bbcc25b384ac1e98a7ebfadc1bb6cc3c1f167483daf792",
+    "src/fogguard/evaluation/intervals.py": "4c0462f7bbb156b9a8c6cc8178d395b55d89bcb9043ce7cc5ddf566c7a854428",
+    "src/fogguard/selected_fog.py": "0d1da43ab13cf049188c3ebef33ab45569aa64e08ef31aeafcabf714ea97371f",
+    "src/fogguard/data/fogstar.py": "f0a54f6aa59e770e51ce772c36464120a0d8de593975e4b4f0fe43fefa31b3ad",
+    "src/fogguard/modeling/fogstar_baseline.py": "3c072cb6d3665c992ce0338aea1cdbac9b16a263fd8219ccd9f261fb436e7e40",
+    "src/fogguard/turning/learned.py": "05499f5f6dc8e0f53de4749a37ae03d45cab1f0691dc6c4c1af0bdc457c66e3e",
+    "src/fogguard/perception.py": "73052c55c72478aaa388784dc4befc1c726211e08925cf366292e8fcbe8f9ff6",
+    "src/fogguard/context/fogstar.py": "b034bd436f1e45fb429b975fa0c6bc3fb7aad8f6312449243545ba682dd91151",
+    "src/fogguard/modeling/a1_ankle_history.py": "7a7c3e2b872104803f6c951133af63c0bb400686d8da36067604008583e79d54",
+    "src/fogguard/modeling/a1_author_cnn.py": "172e40c6a51a6465fb1fd3923d7f4a00f718de29af0fa008693a9f9b065822f7",
+    "src/fogguard/modeling/a1_bilateral.py": "4cd469be54f22d73f6957c2e0f322ecca91536086a06bf2fe405c42a62e21d2e",
+    "src/fogguard/modeling/a1_fog.py": "78c1cd49ba262561f495e9fcefe9ffce95ce2084b9906102b19fda4ab2bbba2e",
+    "models/ankle_history_rf": "40604108d72e0e360cb25a873020acb9316bd1264a0d1f4e44efc075ecb738f3",
+    "models/bilateral_rf": "72c396fd322339542bcb5fbbd5e34de4fefb1b05c1fb5df8a16efdbc0e23dffc",
+    "models/ankle_cnn": "2234ff21b65f5c566ed60065f6615f69cab939bbcaead227a011bebe70c88e82",
+    "models/current_direction": "a612c8d8eeed2ab76addecbdd67848d57a18e0f32bef3f8512ed72737a14f8bd",
+    "a1_bundle_manifest": "0b48b9f364c16e2c4c54645aece05dc7f14e8f39e157a69659fc8ce4fce700f5",
+    "a2_training_manifest": "f8a055d8ca216e82711e24939f53d81da2c92a6781777660bc9b7cf1de850ef0"
+  },
+  "perception_config": {
+    "source_max_hold_s": 0.5,
+    "events": {
+      "confirmation_windows": 2,
+      "recovery_windows": 3,
+      "direction_confirmation_windows": 2,
+      "minimum_direction_confidence": 0.6,
+      "minimum_fallback_confidence": 0.6,
+      "use_yaw_agreement_fallback": false,
+      "suppress_stationary_fog": false,
+      "exit_probability_margin": 0.1,
+      "maximum_input_age_s": 1.0,
+      "maximum_window_gap_s": 0.75,
+      "turn_horizon_s": 0.0
+    }
+  },
+  "fog_models": {
+    "ankle_history_rf": {
+      "threshold": 0.18,
+      "fit_participants": [
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "threshold_participants": [
+        1,
+        5,
+        10,
+        12
+      ]
+    },
+    "bilateral_rf": {
+      "threshold": 0.22999999999999998,
+      "fit_participants": [
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "threshold_participants": [
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    "ankle_cnn": {
+      "threshold": 0.49999999999999994,
+      "fit_participants": [
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "threshold_participants": [
+        1,
+        5,
+        10,
+        12
+      ]
+    }
+  },
+  "direction_model": {
+    "horizon_s": 0.0,
+    "rejection_threshold": 0.0,
+    "feature_indices": [
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215
+    ]
+  },
+  "test_scored_at_lock_creation": false,
+  "test_policy": "No fitting, threshold search or method selection after TEST scoring"
+}

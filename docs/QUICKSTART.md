@@ -2,10 +2,10 @@
 
 ## 获取代码和环境
 
-当前交接分支为 `feat/algorithm-readiness-a1`，请克隆到新目录：
+当前 A1+A2 感知交接贡献分支为 `feat/a2-perception-fusion`，请克隆到新目录；合并以接收方审查为准：
 
 ```bash
-git clone --branch feat/algorithm-readiness-a1 --single-branch https://github.com/JYAXR/ME5412-FoGGuard.git FoGGuard
+git clone --branch feat/a2-perception-fusion --single-branch https://github.com/JYAXR/ME5412-FoGGuard.git FoGGuard
 cd FoGGuard
 python -m venv .venv
 ```
@@ -31,6 +31,8 @@ python -X utf8 scripts/predict_selected_fog.py --bundle artifacts/fog-selected -
 
 ## 工程演示
 
+真实 A1+A2 感知的训练重建、联合回放和英文图表入口见 [感知交接](a2/fusion/README.md)。它需要单独提供 A1 模型包和原始数据；下面的工程演示使用构造输入。
+
 ```bash
 python -X utf8 scripts/run_complete_demo.py --output-dir reports/project_demo_NEW
 ```
@@ -46,6 +48,12 @@ python -X utf8 scripts/run_fogstar_end_to_end.py --predictions docs/examples/rob
 该样例演示事件确认、方向拒识和输入时效；不是 A1 三模型的系统联调成绩。
 
 ## 开发检查
+
+完整检查包含 A2 评价测试，先安装其绘图依赖：
+
+```bash
+python -m pip install -r requirements-a2.txt
+```
 
 ```bash
 python -X utf8 scripts/run_automation2_delivery_checks.py
