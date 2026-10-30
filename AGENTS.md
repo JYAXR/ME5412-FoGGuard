@@ -9,6 +9,11 @@ Use `docs/ARCHITECTURE.md` and `docs/INTERFACE_CONTRACT.md` for module boundarie
   `predict_selected_fog.py`, `train_selected_fog.py`, `evaluate_selected_fog.py`
   and `bundle_selected_fog.py`. A2 owns direction and perception fusion; B1
   owns motion feedback and cueing; B2 owns evaluation and joint integration.
+- A1/A2 perception, locked TEST and the unified chart/data showcase are delivered
+  on main. Current A-group tasks are maintenance and concrete handoff support;
+  real feedback/control belongs to B1, receiver/joint acceptance to B2, and
+  final PPT/visualization/video to industrial design. Keep this distinction in
+  current task/status documents; known model limits are not unfinished training.
 - Project-facing documentation describes the current design, implementation,
   remaining work and evidence. Keep a single consistent role plan and avoid
   experiment diaries, superseded task suggestions and cleanup narratives.

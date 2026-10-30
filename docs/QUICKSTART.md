@@ -2,10 +2,10 @@
 
 ## 获取代码和环境
 
-当前 A1+A2 感知交接贡献分支为 `feat/a2-perception-fusion`，请克隆到新目录；合并以接收方审查为准：
+A 组感知、测试和统一图表已合并到 `main`。新同学从 `main` 获取当前基线：
 
 ```bash
-git clone --branch feat/a2-perception-fusion --single-branch https://github.com/JYAXR/ME5412-FoGGuard.git FoGGuard
+git clone --branch main --single-branch https://github.com/JYAXR/ME5412-FoGGuard.git FoGGuard
 cd FoGGuard
 python -m venv .venv
 ```
@@ -19,6 +19,10 @@ python -m pip install -e .
 
 CNN 另外安装 `requirements-a1-deep.txt`，数据可行性静态图工具另外使用 `requirements-readiness.txt`。模型包内的 `TESTED_VERSIONS.json` 记录权重运行的依赖版本。
 
+## 先看已交付图表
+
+直接打开 [统一英文展示](a_group_showcase/index.html)，不需要模型权重或原始数据。7 张 PNG/SVG、9 张 CSV 和简短说明可供工业设计制作 PPT。正式成绩来源为 [固定独立测试](a_group/README.md)，开发验证只在明确标注的附录中展示。
+
 ## A1 模型推理
 
 将三模型包解压，使模型位于 `artifacts/fog-selected/<method>/model.joblib`：
@@ -27,7 +31,7 @@ CNN 另外安装 `requirements-a1-deep.txt`，数据可行性静态图工具另�
 python -X utf8 scripts/predict_selected_fog.py --bundle artifacts/fog-selected --method bilateral_rf --input artifacts/fog-selected/synthetic_input.csv --output reports/fog_interface_NEW.csv
 ```
 
-`--method` 可选 `ankle_history_rf / bilateral_rf / ankle_cnn`。合成样例用于验证接口；真实效果见 [A1 结果](a1/SELECTED_METHODS.md)。输出只有冻结结果，方向与反馈由对应模块提供。
+`--method` 可选 `ankle_history_rf / bilateral_rf / ankle_cnn`。合成样例用于验证接口；正式效果见 [A 组测试](a_group/README.md)。A1 输出只有冻结结果；当前方向和融合已由 A2 交付，真实反馈由 B1 后续提供。
 
 ## 工程演示
 
@@ -61,7 +65,7 @@ python -X utf8 scripts/run_automation2_delivery_checks.py
 
 该命令包括 `tests` 与 `recognition`、Ruff、工程演示和策略比较。没有提供原始数据、OOF 和训练报告时，真实数据审计标为 `NOT_RUN`。
 
-## 真实数据与训练
+## 模型维护与可选训练入口
 
 ```bash
 python scripts/download_fogstar.py
@@ -69,6 +73,6 @@ python -X utf8 scripts/train_selected_fog.py --method all --output reports/selec
 python -X utf8 scripts/evaluate_selected_fog.py --bundle reports/selected_train_NEW --output reports/selected_evaluation_NEW
 ```
 
-训练与评价按 `config/fog_selected.json` 使用 TRAIN/开发验证，当前命令不评分 TEST。A2 可直接使用 A1 交接包开展工作，无需重新训练冻结模型。
+这些训练/开发验证入口按 `config/fog_selected.json` 使用 TRAIN/开发验证，不评分 TEST。现有固定 TEST 已通过专门入口完成，参见 [锁定评价说明](a_group/README.md)。下游开发直接使用已交付权重和感知表；本轮任务不要求重训 A 组或重新选择测试阈值。
 
-任务入口：[A2](tasks/A2.md) · [B1](tasks/B1.md) · [B2](tasks/B2.md) · [工业设计](tasks/DESIGN.md)。
+任务入口：[A1 维护](tasks/A1.md) · [A2 维护](tasks/A2.md) · [B1 反馈/控制](tasks/B1.md) · [B2 接入/验证](tasks/B2.md) · [工业设计](tasks/DESIGN.md)。依赖和执行顺序见 [规划](ROLES_AND_ROADMAP.md)。
