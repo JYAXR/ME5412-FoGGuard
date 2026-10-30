@@ -33,6 +33,10 @@ python -X utf8 scripts/predict_selected_fog.py --bundle artifacts/fog-selected -
 
 `--method` 可选 `ankle_history_rf / bilateral_rf / ankle_cnn`。合成样例用于验证接口；正式效果见 [A 组测试](a_group/README.md)。A1 输出只有冻结结果；当前方向和融合已由 A2 交付，真实反馈由 B1 后续提供。
 
+## 下载并使用预训练模型
+
+**[模型下载与运行](MODEL_DOWNLOADS.md)** 提供 GitHub Release 中的四个正式权重：A1 三个冻结模型和 A2 当前方向模型。下载 ZIP、校验并解压即可运行，无需训练；`git clone` 本身不下载这些附件。包内合成样例不需要原始数据，真实回放另需 FoG-STAR 数据集。
+
 ## 工程演示
 
 真实 A1+A2 感知的训练重建、联合回放和英文图表入口见 [感知交接](a2/fusion/README.md)。它需要单独提供 A1 模型包和原始数据；下面的工程演示使用构造输入。

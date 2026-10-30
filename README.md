@@ -14,6 +14,7 @@ FoGGuard 是 ME5412 课程项目，研究如何利用可穿戴 IMU 识别冻结�
 | 当前完成状态 | [项目状态](docs/PROJECT_STATUS.json) |
 | A 组统一图表与数据展示（英文） | **[打开统一页面](docs/a_group_showcase/index.html)** · [图表及数据索引](docs/a_group_showcase/FIGURE_CATALOG.csv) |
 | A 组测试来源与算法复现 | [固定测试报告](docs/a_group/README.md) · [感知接入](docs/a2/fusion/README.md) |
+| 预训练模型下载（A1 三模型＋A2 当前方向） | **[下载模型 ZIP](https://github.com/JYAXR/ME5412-FoGGuard/releases/download/a-group-models-2026-10-30/FoGGuard-A-Group-Models-20261030.zip)** · [安装与运行](docs/MODEL_DOWNLOADS.md)，无需重新训练 |
 | 环境、模型推理与工程演示 | [快速开始](docs/QUICKSTART.md) |
 | 字段、单位和时序约定 | [接口约定](docs/INTERFACE_CONTRACT.md) · [数据格式](docs/DATA_SCHEMA.md) |
 
